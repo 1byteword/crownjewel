@@ -1,0 +1,54 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: personal-site
+  namespace: argocd
+  # Finalizer ensures cascading deletes
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  # The project the application belongs to
+  project: default
+
+  # Source of the application manifests
+  source:
+    repoURL: https://github.com/1byteword/crownjewel
+    targetRevision: main
+    path: k8s
+
+    # Kustomize options
+    kustomize:
+      version: v5.0.0
+
+  # Destination cluster and namespace
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  # Sync policy
+  syncPolicy:
+    # Automatically create namespace if it doesn't exist
+    syncOptions:
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+
+    # Automated sync
+    automated:
+      # Automatically sync when manifests change in git
+      prune: true
+      # Automatically sync when cluster state differs
+      selfHeal: true
+      # Allow empty resources
+      allowEmpty: false
+
+    # Retry policy for failed syncs
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+
+  # How often to check for drift
+  revisionHistoryLimit: 10
