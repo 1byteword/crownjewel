@@ -16,10 +16,6 @@ spec:
     targetRevision: main
     path: k8s
 
-    # Kustomize options
-    kustomize:
-      version: v5.0.0
-
   # Destination cluster and namespace
   destination:
     server: https://kubernetes.default.svc
