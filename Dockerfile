@@ -12,9 +12,14 @@ COPY index.html /usr/share/nginx/html/
 # Simple 404
 RUN echo '<!DOCTYPE html><html><head><title>404</title><style>*{margin:0;padding:0}body{font:18px sans-serif;padding:50px;text-align:center}a{color:#0066cc}</style></head><body><h1>404</h1><p>Not found</p><a href="/">Home</a></body></html>' > /usr/share/nginx/html/404.html
 
-# Permissions
+# Permissions and cache directories
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
-    chmod -R 755 /usr/share/nginx/html
+    chmod -R 755 /usr/share/nginx/html && \
+    mkdir -p /var/cache/nginx/client_temp /var/cache/nginx/proxy_temp \
+             /var/cache/nginx/fastcgi_temp /var/cache/nginx/uwsgi_temp \
+             /var/cache/nginx/scgi_temp && \
+    chown -R nginx:nginx /var/cache/nginx && \
+    chmod -R 755 /var/cache/nginx
 
 USER nginx
 EXPOSE 80
