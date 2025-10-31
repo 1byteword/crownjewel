@@ -22,9 +22,9 @@ RUN chown -R nginx:nginx /usr/share/nginx/html && \
     chmod -R 755 /var/cache/nginx
 
 USER nginx
-EXPOSE 80
+EXPOSE 8080
 
 HEALTHCHECK --interval=30s --timeout=3s \
-    CMD wget -q --spider http://localhost/ || exit 1
+    CMD wget -q --spider http://localhost:8080/ || exit 1
 
 CMD ["nginx", "-g", "daemon off;"]
