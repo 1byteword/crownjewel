@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: personal-site-canary
+  labels:
+    app: personal-site-canary
+    environment: canary
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 80
+    targetPort: http
+    protocol: TCP
+  selector:
+    app: personal-site-canary
+  sessionAffinity: None

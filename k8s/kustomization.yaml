@@ -7,6 +7,9 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - canary-deployment.yaml
+  - canary-service.yaml
+  - canary-ingress.yaml
 
 # Common labels for all resources
 commonLabels:
