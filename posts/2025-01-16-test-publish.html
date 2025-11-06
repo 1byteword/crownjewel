@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Testing the publish script">
+<title>Testing the publish script - Azhan Khan</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font:15px/1.7 Georgia,serif;
+  background:#fff;
+  color:#000;
+  max-width:700px;
+  margin:0 auto;
+  padding:60px 20px;
+}
+h1{font-size:2.5em;margin-bottom:0.3em;line-height:1.2}
+h2{font-size:1.8em;margin:1.5em 0 0.5em;line-height:1.3}
+h3{font-size:1.3em;margin:1.2em 0 0.5em}
+p{margin-bottom:1em}
+a{color:#000;text-decoration:underline}
+a:hover{text-decoration:none}
+code{
+  background:#f4f4f4;
+  padding:2px 6px;
+  border-radius:3px;
+  font-family:'Courier New',monospace;
+  font-size:0.9em;
+}
+pre{
+  background:#f4f4f4;
+  padding:15px;
+  border-radius:3px;
+  overflow-x:auto;
+  margin:1em 0;
+}
+pre code{background:none;padding:0}
+ul{margin:1em 0 1em 2em}
+li{margin:0.3em 0}
+img{max-width:100%;height:auto;margin:1em 0}
+time{
+  display:block;
+  font-size:0.9em;
+  color:#666;
+  margin-bottom:2em;
+}
+.back{
+  margin-top:3em;
+  padding-top:2em;
+  border-top:1px solid #ddd;
+  font-size:0.9em;
+}
+@media(max-width:768px){
+  body{padding:30px 20px}
+  h1{font-size:2em}
+}
+</style>
+</head>
+<body>
+<article>
+<time>2025.01.16</time>
+<h1>Testing the publish script</h1>
+<p>This is a test post to demonstrate the new publishing workflow.</p>
+<p>Writing is now simple:</p>
+<ul>
+<li>Create a markdown file in <code>src/posts/</code></li>
+<li>Run <code>./publish src/posts/filename.md</code></li>
+<li>Done</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Markdown to HTML conversion</li>
+<li>Automatic date extraction from filename</li>
+<li>Image handling (auto-copy to /img)</li>
+<li>Inserts at top of writing section (newest first)</li>
+</ul>
+<p>The site stays pure - no build step, no JavaScript. Just a convenience script for writing.</p>
+</article>
+<div class="back">
+<a href="/">← back to index</a>
+</div>
+</body>
+</html>

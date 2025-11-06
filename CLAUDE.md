@@ -64,25 +64,67 @@ wc -c index.html            # Check exact byte count
 
 ## Writing Blog Posts
 
-Blog posts are stored as Markdown files in `src/posts/` and manually converted to HTML.
+Blog posts are written in Markdown and published as standalone HTML pages using the `./publish` script.
 
-### Workflow
-1. Create new post: `src/posts/YYYY-MM-DD-title.md`
-2. Write in Markdown format (see examples in directory)
-3. When ready to publish, convert to HTML manually
-4. Add to `index.html` as an `<article>` block:
+### Quick Start
+```bash
+# 1. Create your post in Markdown
+cat > src/posts/2025-01-16-my-post.md <<'EOF'
+# My Post Title
 
-```html
-<article>
-<time>YYYY-MM-DD</time>
-<h3>Post Title</h3>
-<p>Your content here...</p>
-</article>
+First paragraph becomes the excerpt shown on index page.
+
+Rest of your content here with **bold** and *italic*.
+
+- Bullet points
+- Work great
+- Auto-formatted
+
+Images get auto-copied to /img:
+![alt text](image.jpg)
+EOF
+
+# 2. Publish it (creates /posts/2025-01-16-my-post.html)
+./publish src/posts/2025-01-16-my-post.md
+
+# 3. Review locally
+make dev
+open http://localhost:8000/posts/2025-01-16-my-post.html
+
+# 4. Deploy
+make canary-push
 ```
 
-5. Keep chronological order (newest first)
+### Supported Markdown
+- Headers: `# H1`, `## H2`, `### H3`
+- Bold: `**bold**` or `__bold__`
+- Italic: `*italic*` or `_italic_`
+- Inline code: `` `code` ``
+- Code blocks: ` ```language\ncode\n``` `
+- Links: `[text](url)`
+- Images: `![alt](image.jpg)` (auto-copied to /img, paths auto-adjusted)
+- Lists: `- item`
 
-**Note**: The Markdown files are for authoring convenience. The site itself is pure HTML with no build process.
+### How It Works
+- Each post becomes a standalone HTML page in `/posts/`
+- Index page shows post list with title, date, and excerpt
+- First paragraph after title = excerpt (auto-truncated at 200 chars)
+- Date auto-extracted from filename (YYYY-MM-DD-title.md)
+- Or specify manually: `./publish draft.md --date 2025-01-16`
+- Site stays pure HTML - no build step, no JavaScript
+- Post pages use Georgia serif for readability
+
+### File Structure
+```
+index.html              # Homepage with post list
+posts/
+  2025-01-16-my-post.html    # Standalone post page
+  2025-01-15-another.html    # Another post
+img/
+  screenshot.png        # Images auto-copied here
+src/posts/
+  2025-01-16-my-post.md      # Source markdown (not deployed)
+```
 
 ## Configuration Required for Deployment
 

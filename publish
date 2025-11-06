@@ -1,0 +1,337 @@
+#!/usr/bin/env python3
+"""
+Publish a markdown post as a standalone HTML page
+
+Usage:
+  ./publish src/posts/2025-01-15-my-post.md
+
+Creates:
+  - /posts/2025-01-15-my-post.html (full post)
+  - Updates index.html with post entry (title, date, excerpt, link)
+
+Markdown format:
+  # Title
+
+  First paragraph becomes the excerpt.
+
+  Rest of content...
+
+  ![alt text](image.jpg)  # Images auto-copied to /img
+"""
+
+import sys
+import os
+import re
+from datetime import datetime
+from pathlib import Path
+
+def parse_markdown(md_content):
+    """Convert markdown to simple HTML"""
+    html = md_content
+
+    # Headers
+    html = re.sub(r'^# (.+)$', r'<h1>\1</h1>', html, flags=re.MULTILINE)
+    html = re.sub(r'^## (.+)$', r'<h2>\1</h2>', html, flags=re.MULTILINE)
+    html = re.sub(r'^### (.+)$', r'<h3>\1</h3>', html, flags=re.MULTILINE)
+
+    # Bold and italic
+    html = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', html)
+    html = re.sub(r'\*(.+?)\*', r'<em>\1</em>', html)
+    html = re.sub(r'__(.+?)__', r'<strong>\1</strong>', html)
+    html = re.sub(r'_(.+?)_', r'<em>\1</em>', html)
+
+    # Code blocks
+    html = re.sub(r'```([^\n]*)\n(.*?)```', r'<pre><code>\2</code></pre>', html, flags=re.DOTALL)
+
+    # Inline code
+    html = re.sub(r'`(.+?)`', r'<code>\1</code>', html)
+
+    # Links
+    html = re.sub(r'\[([^\]]+)\]\(([^\)]+)\)', r'<a href="\2">\1</a>', html)
+
+    # Images
+    html = re.sub(r'!\[([^\]]*)\]\(([^\)]+)\)', r'<img src="\2" alt="\1">', html)
+
+    # Lists - process line by line to group consecutive items
+    lines = html.split('\n')
+    in_list = False
+    result_lines = []
+
+    for line in lines:
+        if line.strip().startswith('- '):
+            if not in_list:
+                result_lines.append('<ul>')
+                in_list = True
+            item = line.strip()[2:]  # Remove '- '
+            result_lines.append(f'<li>{item}</li>')
+        else:
+            if in_list:
+                result_lines.append('</ul>')
+                in_list = False
+            result_lines.append(line)
+
+    if in_list:
+        result_lines.append('</ul>')
+
+    html = '\n'.join(result_lines)
+
+    # Paragraphs (lines separated by blank line)
+    paragraphs = []
+    current = []
+    for line in html.split('\n'):
+        line = line.strip()
+        if line:
+            if line.startswith(('<h', '<img', '<ul', '<ol', '<li', '</ul', '</ol', '<pre')):
+                if current:
+                    paragraphs.append('<p>' + ' '.join(current) + '</p>')
+                    current = []
+                paragraphs.append(line)
+            elif line == '</code></pre>':
+                paragraphs.append(line)
+            else:
+                current.append(line)
+        else:
+            if current:
+                paragraphs.append('<p>' + ' '.join(current) + '</p>')
+                current = []
+    if current:
+        paragraphs.append('<p>' + ' '.join(current) + '</p>')
+
+    return '\n'.join(paragraphs)
+
+def extract_title(md_content):
+    """Extract title from first # header"""
+    match = re.search(r'^# (.+)$', md_content, re.MULTILINE)
+    return match.group(1) if match else "Untitled"
+
+def extract_excerpt(md_content):
+    """Extract first paragraph after title as excerpt"""
+    # Remove title
+    content = re.sub(r'^# .+$', '', md_content, flags=re.MULTILINE)
+
+    # Get first non-empty paragraph
+    lines = []
+    started = False
+    for line in content.split('\n'):
+        line = line.strip()
+        if not line:
+            if started:
+                break
+            continue
+        if line.startswith(('#', '!', '-', '`')):
+            if started:
+                break
+            continue
+        started = True
+        lines.append(line)
+
+    excerpt = ' '.join(lines)
+    # Truncate if too long
+    if len(excerpt) > 200:
+        excerpt = excerpt[:197] + '...'
+
+    return excerpt if excerpt else "No description available."
+
+def handle_images(md_content, md_file_path):
+    """Copy images to /img and update paths"""
+    img_dir = Path('img')
+    img_dir.mkdir(exist_ok=True)
+
+    md_dir = Path(md_file_path).parent
+
+    # Find all image references
+    images = re.findall(r'!\[[^\]]*\]\(([^\)]+)\)', md_content)
+
+    for img_path in images:
+        # Skip if already absolute or http
+        if img_path.startswith(('http://', 'https://', '/')):
+            continue
+
+        # Copy image to /img
+        src = md_dir / img_path
+        if src.exists():
+            dest = img_dir / src.name
+            import shutil
+            shutil.copy2(src, dest)
+
+            # Update markdown reference (relative to /posts/ directory)
+            md_content = md_content.replace(f']({img_path})', f'](../img/{src.name})')
+            print(f"✓ Copied image: {src.name}")
+
+    return md_content
+
+def create_post_html(title, date, content):
+    """Generate standalone post HTML page"""
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{title}">
+<title>{title} - Azhan Khan</title>
+<style>
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{
+  font:15px/1.7 Georgia,serif;
+  background:#fff;
+  color:#000;
+  max-width:700px;
+  margin:0 auto;
+  padding:60px 20px;
+}}
+h1{{font-size:2.5em;margin-bottom:0.3em;line-height:1.2}}
+h2{{font-size:1.8em;margin:1.5em 0 0.5em;line-height:1.3}}
+h3{{font-size:1.3em;margin:1.2em 0 0.5em}}
+p{{margin-bottom:1em}}
+a{{color:#000;text-decoration:underline}}
+a:hover{{text-decoration:none}}
+code{{
+  background:#f4f4f4;
+  padding:2px 6px;
+  border-radius:3px;
+  font-family:'Courier New',monospace;
+  font-size:0.9em;
+}}
+pre{{
+  background:#f4f4f4;
+  padding:15px;
+  border-radius:3px;
+  overflow-x:auto;
+  margin:1em 0;
+}}
+pre code{{background:none;padding:0}}
+ul{{margin:1em 0 1em 2em}}
+li{{margin:0.3em 0}}
+img{{max-width:100%;height:auto;margin:1em 0}}
+time{{
+  display:block;
+  font-size:0.9em;
+  color:#666;
+  margin-bottom:2em;
+}}
+.back{{
+  margin-top:3em;
+  padding-top:2em;
+  border-top:1px solid #ddd;
+  font-size:0.9em;
+}}
+@media(max-width:768px){{
+  body{{padding:30px 20px}}
+  h1{{font-size:2em}}
+}}
+</style>
+</head>
+<body>
+<article>
+<time>{date}</time>
+{content}
+</article>
+<div class="back">
+<a href="/">← back to index</a>
+</div>
+</body>
+</html>
+'''
+
+def publish_post(md_file, date=None):
+    """Publish markdown post as standalone HTML page"""
+
+    # Read markdown
+    with open(md_file, 'r', encoding='utf-8') as f:
+        md_content = f.read()
+
+    # Extract title and excerpt
+    title = extract_title(md_content)
+    excerpt = extract_excerpt(md_content)
+
+    # Get date
+    if not date:
+        # Try to extract from filename (YYYY-MM-DD-title.md)
+        match = re.search(r'(\d{4}-\d{2}-\d{2})', md_file)
+        if match:
+            date = match.group(1)
+        else:
+            date = datetime.now().strftime('%Y-%m-%d')
+
+    date_formatted = date.replace('-', '.')
+
+    # Generate slug from filename
+    slug = Path(md_file).stem  # e.g., "2025-01-16-my-post"
+
+    # Handle images
+    md_content = handle_images(md_content, md_file)
+
+    # Remove title from content (it'll be in <h1>)
+    md_content_no_title = re.sub(r'^# .+$\n?', '', md_content, count=1, flags=re.MULTILINE)
+
+    # Convert to HTML
+    html_content = parse_markdown(md_content_no_title)
+
+    # Add title as h1
+    full_content = f'<h1>{title}</h1>\n{html_content}'
+
+    # Create post HTML file
+    posts_dir = Path('posts')
+    posts_dir.mkdir(exist_ok=True)
+
+    post_file = posts_dir / f'{slug}.html'
+    post_html = create_post_html(title, date_formatted, full_content)
+
+    with open(post_file, 'w', encoding='utf-8') as f:
+        f.write(post_html)
+
+    # Update index.html with post entry
+    index_entry = f'''    <article>
+      <time>{date_formatted}</time>
+      <h3><a href="/posts/{slug}.html">{title}</a></h3>
+      <p>{excerpt}</p>
+    </article>
+
+'''
+
+    # Read index.html
+    with open('index.html', 'r', encoding='utf-8') as f:
+        index = f.read()
+
+    # Find writing section and insert after <h2>writing</h2>
+    writing_pattern = r'(<section id="writing">\s*<h2>writing</h2>\s*)'
+    match = re.search(writing_pattern, index)
+
+    if not match:
+        print("❌ Could not find writing section in index.html")
+        return False
+
+    # Insert new entry at the top (newest first)
+    new_index = index[:match.end()] + '\n' + index_entry + index[match.end():]
+
+    # Write back
+    with open('index.html', 'w', encoding='utf-8') as f:
+        f.write(new_index)
+
+    print(f"✓ Published: {title}")
+    print(f"  Date: {date_formatted}")
+    print(f"  URL: /posts/{slug}.html")
+    print(f"\nNext steps:")
+    print(f"  1. Review: open posts/{slug}.html in browser")
+    print(f"  2. Deploy: make canary-push")
+
+    return True
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Usage: ./publish <markdown-file> [--date YYYY-MM-DD]")
+        sys.exit(1)
+
+    md_file = sys.argv[1]
+    date = None
+
+    if '--date' in sys.argv:
+        date_idx = sys.argv.index('--date')
+        if date_idx + 1 < len(sys.argv):
+            date = sys.argv[date_idx + 1]
+
+    if not os.path.exists(md_file):
+        print(f"❌ File not found: {md_file}")
+        sys.exit(1)
+
+    publish_post(md_file, date)

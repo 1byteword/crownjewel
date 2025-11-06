@@ -210,14 +210,45 @@ p{
   <section id="writing">
     <h2>writing</h2>
 
-  
+    
     <article>
-      <time>2025.01.16</time>
-      <h3><a href="/posts/2025-01-16-test-publish.html">Testing the publish script</a></h3>
-      <p>This is a test post to demonstrate the new publishing workflow.</p>
+      <time>2025-01-16</time>
+      <h3>Testing the publish script</h3>
+<p>This is a test post to demonstrate the new publishing workflow.</p>
+<p>Writing is now simple:</p>
+<ul>
+<li>Create a markdown file in <code>src/posts/</code></li>
+<li>Run <code>./publish src/posts/filename.md</code></li>
+<li>Done</li>
+<p></ul></p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Markdown to HTML conversion</li>
+<li>Automatic date extraction from filename</li>
+<li>Image handling (auto-copy to /img)</li>
+<li>Inserts at top of writing section (newest first)</li>
+<p></ul></p>
+<p>The site stays pure - no build step, no JavaScript. Just a convenience script for writing.</p>
     </article>
 
-</section>
+<article>
+      <time>2025.01.15</time>
+      <h3>on performance</h3>
+      <p>every kilobyte matters. every millisecond counts. performance isn't just about speed - it's about respecting users' time and resources.</p>
+    </article>
+
+    <article>
+      <time>2025.01.10</time>
+      <h3>building this site</h3>
+      <p>no framework. no build step. no external dependencies. total size: ~3kb. first paint: instant.</p>
+    </article>
+
+    <article>
+      <time>2025.01.05</time>
+      <h3>why simple wins</h3>
+      <p>complexity is easy. simplicity is hard. the best solutions are the ones that don't exist yet - the problems you solve by not creating them.</p>
+    </article>
+  </section>
 
   <section id="contact">
     <h2>contact</h2>
