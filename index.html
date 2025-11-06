@@ -9,11 +9,11 @@
 *{margin:0;padding:0;box-sizing:border-box}
 /* replace your broken block */
 @keyframes blissWind{
-  0%   { transform: translate(-50%,-50%) rotate(-0.4deg) skewX(0deg); }
-  25%  { transform: translate(calc(-50% + 6px), calc(-50% + 2px)) rotate(0.2deg)  skewX(0.4deg); }
-  50%  { transform: translate(-50%,-49%)        rotate(0.6deg)  skewX(0deg); }
-  75%  { transform: translate(calc(-50% - 6px), calc(-50% + 1px)) rotate(0deg)   skewX(-0.4deg); }
-  100% { transform: translate(-50%,-50%) rotate(-0.4deg) skewX(0deg); }
+  0%   { transform: translate(-50%,-50%) scale(2.5) rotate(-0.4deg) skewX(0deg); }
+  25%  { transform: translate(calc(-50% + 6px), calc(-50% + 2px)) scale(2.5) rotate(0.2deg)  skewX(0.4deg); }
+  50%  { transform: translate(-50%,-49%) scale(2.5)       rotate(0.6deg)  skewX(0deg); }
+  75%  { transform: translate(calc(-50% - 6px), calc(-50% + 1px)) scale(2.5) rotate(0deg)   skewX(-0.4deg); }
+  100% { transform: translate(-50%,-50%) scale(2.5) rotate(-0.4deg) skewX(0deg); }
 }
 
 /* improve the layer: subtle fade + stable transform pipeline */
@@ -46,7 +46,7 @@ body{
   position:fixed;
   top:50%;
   left:50%;
-  font:12px/12px 'Courier New',monospace;
+  font:14px/14px 'Courier New',monospace;
   white-space:pre;
   pointer-events:none;
   color:rgba(0,0,0,0.3);
