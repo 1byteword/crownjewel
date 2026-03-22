@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: ghcr.io/1byteword/personal-site:latest
+        image: ghcr.io/1byteword/crownjewel:latest
         imagePullPolicy: Always
         ports:
         - name: http

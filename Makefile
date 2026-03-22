@@ -1,6 +1,6 @@
-.PHONY: help dev build push deploy status clean size canary-build canary-push canary-status promote
+.PHONY: help dev build push deploy status clean size canary-build canary-push canary-test canary-status promote
 
-IMAGE := ghcr.io/1byteword/personal-site
+IMAGE := ghcr.io/1byteword/crownjewel
 TAG := $(shell git rev-parse --short HEAD 2>/dev/null || echo "latest")
 
 help:
@@ -15,6 +15,7 @@ help:
 	@echo ''
 	@echo 'Canary (preview.azhankhan.com):'
 	@echo '  make canary-build  - Build canary image'
+	@echo '  make canary-test   - Run canary locally on :8080'
 	@echo '  make canary-push   - Push canary to registry'
 	@echo '  make canary-status - Check canary deployment'
 	@echo '  make promote       - Promote canary to production'
@@ -46,6 +47,12 @@ canary-build:
 	docker buildx build --platform linux/amd64 \
 		-t $(IMAGE):canary \
 		.
+
+canary-test: canary-build
+	@echo "Starting canary container on http://localhost:8080"
+	@echo "Press Ctrl+C to stop"
+	@docker rm -f personal-site-canary 2>/dev/null || true
+	docker run --name personal-site-canary -p 8080:8080 $(IMAGE):canary
 
 canary-push: canary-build
 	docker push $(IMAGE):canary
