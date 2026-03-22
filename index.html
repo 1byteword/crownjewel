@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Azhan Khan - Software Engineer">
+<meta name="description" content="Azhan Khan - Data Engineer at Rivian × Volkswagen Group Technologies">
 <title>Azhan Khan</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -204,19 +204,30 @@ p{
 
 <div class="container">
   <h1>Azhan Khan</h1>
-  <div class="subtitle">production engineer, perf warrior, deep learning sidekick</div>
+  <div class="subtitle">data engineer II @ rivian and volkswagen group technologies</div>
 
   <nav class="nav">
     <a href="#about">about</a>
+    <a href="#projects">projects</a>
     <a href="#writing">writing</a>
     <a href="#contact">contact</a>
   </nav>
 
   <section id="about">
     <h2>about</h2>
-    <p>software engineer building fast, reliable systems.</p>
-    <p>currently working at Rivian VW Group Technologies (Rivian's Joint Venture with VW).</p>
-    <p>i like to code, kick ass, and measure performance</p>
+    <p>i build observability and infrastructure at <a href="https://rivian.com">rivian × volkswagen group technologies</a> — the joint venture between rivian and vw. day to day that means kubernetes, datadog, grafana, ebpf, and a lot of yaml.</p>
+    <p>i've led our datadog tenant migration across 10+ engineering teams, built a custom crossplane provider in go when the official one didn't cut it, tuned apache druid for high-throughput vehicle telemetry, and architected a self-hosted LGTM stack (loki, grafana, tempo, mimir). i also serve as on-call SRE for production incidents.</p>
+    <p>more recently i've been defining observability strategy for our internal AI/ML teams and building AI agents with a custom tool-calling framework that integrates across slack, argocd, crossplane, and EKS.</p>
+    <p>before this, i interned at rivian where i built an anomaly detection system on grafana OSS for vehicle telemetry and designed CI/CD pipelines that cut deployment lead times by 60%.</p>
+    <p>studied computer science at georgia tech. based in palo alto.</p>
+  </section>
+
+  <section id="projects">
+    <h2>projects</h2>
+    <article>
+      <h3><a href="https://github.com/1byteword/dogwatch">dogwatch</a></h3>
+      <p>single-binary observability platform — a self-hosted alternative to datadog/grafana/pagerduty. uses ebpf kernel probes for zero-config TCP tracking, HTTP tracing, and wire-format parsing of mysql, postgres, and redis. includes a cost intelligence engine that estimates equivalent vendor costs and a control plane for cardinality analysis and data shaping. written in go and c.</p>
+    </article>
   </section>
 
   <section id="writing">
@@ -235,7 +246,7 @@ p{
     <h2>contact</h2>
     <p>
       <a href="https://github.com/1byteword">github</a> ·
-      <a href="https://linkedin.com/in/azhan-khan">linkedin</a> ·
+      <a href="https://linkedin.com/in/azhank">linkedin</a> ·
       <a href="mailto:1byteword@gmail.com">email</a>
     </p>
   </section>
