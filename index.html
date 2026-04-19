@@ -2,260 +2,565 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Azhan Khan - Data Engineer at Rivian × Volkswagen Group Technologies">
 <title>Azhan Khan</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Azhan Khan — production engineering, MLOps and infrastructure. Move at the speed of light and measure things.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-/* replace your broken block */
-@keyframes blissWind{
-  0%   { transform: translate(-50%,-50%) scale(2) rotate(-0.4deg) skewX(0deg); }
-  25%  { transform: translate(calc(-50% + 6px), calc(-50% + 2px)) scale(2) rotate(0.2deg)  skewX(0.4deg); }
-  50%  { transform: translate(-50%,-49%) scale(2)       rotate(0.6deg)  skewX(0deg); }
-  75%  { transform: translate(calc(-50% - 6px), calc(-50% + 1px)) scale(2) rotate(0deg)   skewX(-0.4deg); }
-  100% { transform: translate(-50%,-50%) scale(2) rotate(-0.4deg) skewX(0deg); }
-}
+  :root {
+    --bg: #ffffff;
+    --ink: #0a0a0a;
+    --muted: #8a8a8a;
+    --hi: #fff068;
+    --footer-h: 44px;
+  }
 
-/* improve the layer: subtle fade + stable transform pipeline */
-.bliss-ascii{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform-origin: 50% 50%;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
-          mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
-  will-change: transform;
-  animation: blissWind 18s ease-in-out infinite;
-}
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Syne Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    font-size: 13px;
+    line-height: 1.55;
+  }
 
-/* be kind to folks who reduce motion */
-@media (prefers-reduced-motion: reduce){
-  .bliss-ascii{ animation: none !important; }
-}
+  /* ---- PAGE ---- */
+  .page {
+    position: relative;
+    min-height: 100vh;
+    padding: 0 0 var(--footer-h);
+    display: flex;
+    flex-direction: column;
+  }
 
-body{
-  font:15px/1.7 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
-  background:linear-gradient(180deg,#87CEEB 0%,#87CEEB 40%,#9ACD32 70%,#7EC850 100%);
-  background-attachment:fixed;
-  color:#000;
-  min-height:100vh;
-  padding:60px 20px;
-  position:relative;
-}
-.bliss-ascii{
-  position:fixed;
-  top:50%;
-  left:50%;
-  font:14px/14px 'Courier New',monospace;
-  white-space:pre;
-  pointer-events:none;
-  color:rgba(0,0,0,0.3);
-  z-index:0;
-  animation:blissWind 20s ease-in-out infinite;
-}
-.container{
-  max-width:800px;
-  margin:0 auto;
-  background:#fff;
-  border:3px solid #000;
-  padding:50px 60px;
-  position:relative;
-  z-index:1;
-  box-shadow:0 10px 40px rgba(0,0,0,0.3);
-}
-.rivian-logo{
-  position:fixed;
-  top:30px;
-  right:30px;
-  z-index:0;
-  opacity:0.4;
-  display:block;
-  filter:brightness(0) invert(1);
-}
-h1{
-  font:300 3em -apple-system,sans-serif;
-  letter-spacing:-1px;
-  margin-bottom:8px;
-  color:#000;
-}
-.subtitle{
-  font-size:1em;
-  font-weight:300;
-  opacity:0.7;
-  margin-bottom:60px;
-  color:#000;
-}
-h2{
-  font:500 1.8em -apple-system,sans-serif;
-  margin:50px 0 25px;
-  letter-spacing:-0.5px;
-  color:#000;
-}
-h3{
-  font:500 1.1em -apple-system,sans-serif;
-  margin:12px 0 8px;
-  opacity:0.95;
-  color:#000;
-}
-a{
-  color:#0066ff;
-  text-decoration:none;
-  border-bottom:1px solid rgba(0,102,255,0.3);
-  transition:border 0.2s;
-}
-a:hover{
-  border-bottom:1px solid #0066ff;
-}
-.nav{
-  margin:40px 0 60px;
-  font-size:1.1em;
-}
-.nav a{
-  margin-right:30px;
-  border:none;
-  opacity:0.7;
-  transition:opacity 0.2s;
-  color:#000;
-}
-.nav a:hover{
-  opacity:1;
-}
-article{
-  margin-bottom:40px;
-  padding-bottom:40px;
-  border-bottom:1px solid rgba(0,0,0,0.1);
-}
-article:last-of-type{
-  border-bottom:none;
-}
-time{
-  display:block;
-  font-size:0.9em;
-  opacity:0.6;
-  margin-bottom:10px;
-  font-weight:300;
-  color:#000;
-}
-p{
-  margin-bottom:15px;
-  opacity:0.9;
-  font-weight:300;
-  color:#000;
-}
-.footer{
-  margin-top:80px;
-  padding-top:30px;
-  border-top:1px solid rgba(0,0,0,0.1);
-  font-size:0.9em;
-  opacity:0.6;
-  font-weight:300;
-  color:#000;
-}
-@media(max-width:768px){
-  .container{padding:30px 25px}
-  h1{font-size:2em}
-}
+  /* Hero = spacer + masthead + gif, fills exactly the viewport above the footer */
+  .hero {
+    flex: 0 0 calc(100vh - var(--footer-h));
+    display: flex;
+    flex-direction: column;
+  }
+  .spacer { flex: 1 1 auto; min-height: 0; }
+
+  .masthead {
+    padding: 0 28px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+  }
+  .name-hero {
+    font-size: clamp(36px, 4.2vw, 60px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .masthead .meta {
+    text-align: right;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .masthead .meta .hi { background: var(--hi); color: var(--ink); padding: 1px 5px; }
+
+  /* ---- GIF BANNER ---- */
+  .gif {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 42 / 9;
+    max-height: 70%;
+    background: #fff;
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    flex-shrink: 0;
+  }
+  .gif canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  /* ---- SECTIONS ---- */
+  .section {
+    border-top: 1px solid var(--ink);
+    padding: 48px 28px 56px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
+  }
+  .section:first-of-type { margin-top: 120px; }
+  .section .sec-label {
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+  .section .sec-label .num {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 1px 5px;
+    margin-right: 6px;
+    font-weight: 500;
+  }
+  .section .sec-body { max-width: 720px; }
+
+  /* work */
+  .work-list { display: flex; flex-direction: column; }
+  .work-item {
+    display: grid;
+    grid-template-columns: 56px 1fr auto auto;
+    gap: 20px;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--muted);
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .work-item:last-child { border-bottom: none; }
+  .work-item .idx { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; }
+  .work-item .title { font-weight: 500; }
+  .work-item .client { color: var(--muted); font-size: 12px; }
+  .work-item .year { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .work-item:hover .title,
+  .work-item:focus-visible .title { background: var(--hi); }
+
+  /* writing */
+  .writing-list { display: flex; flex-direction: column; gap: 22px; }
+  .writing-item { display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: baseline; }
+  .writing-item .date { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .writing-item .title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .writing-item .title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+  .writing-item .title a:hover,
+  .writing-item .title a:focus-visible { border-bottom-color: var(--ink); }
+  .writing-item .dek { color: var(--muted); font-size: 13px; line-height: 1.5; max-width: 60ch; }
+
+  /* contact */
+  .contact-body { display: flex; flex-direction: column; gap: 28px; }
+  .contact-mail {
+    font-size: clamp(28px, 3.4vw, 44px);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .contact-mail a { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--ink); }
+  .contact-mail a:hover,
+  .contact-mail a:focus-visible { background: var(--hi); }
+  .socials { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+  .socials a:hover,
+  .socials a:focus-visible { opacity: 0.5; }
+  .socials .handle { color: var(--muted); margin-left: 6px; text-transform: none; letter-spacing: 0; }
+
+  /* ---- FIXED FOOTER ---- */
+  .footer {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    background: var(--bg);
+    border-top: 1px solid var(--ink);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    z-index: 50;
+  }
+  .footer .links { display: flex; gap: 24px; }
+  .footer .links a { text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+  .footer .links a:hover,
+  .footer .links a:focus-visible { opacity: 0.5; }
+  .footer .clock { color: var(--muted); }
+
+  /* ---- MOBILE ---- */
+  @media (max-width: 720px) {
+    :root { --footer-h: 52px; }
+    .masthead {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 0 18px 14px;
+    }
+    .masthead .meta { text-align: left; font-size: 10px; }
+    .name-hero { font-size: clamp(40px, 11vw, 64px); }
+    .gif { aspect-ratio: 4 / 3; max-height: 45%; }
+    .section { grid-template-columns: 1fr; gap: 14px; padding: 36px 18px 40px; }
+    .section:first-of-type { margin-top: 64px; }
+    .section .sec-label { padding-top: 0; }
+    .work-item { grid-template-columns: 28px 1fr auto; gap: 12px; font-size: 13px; }
+    .work-item .client { display: none; }
+    .writing-item { grid-template-columns: 60px 1fr; gap: 12px; }
+    .writing-item .title { font-size: 14px; }
+    .contact-mail { font-size: clamp(22px, 7vw, 32px); }
+    .footer { flex-direction: column; align-items: flex-start; gap: 4px; padding: 8px 18px; font-size: 10px; }
+    .footer .links { gap: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
 </style>
 </head>
 <body>
 
-<div class="bliss-ascii">.                      .                      .                      .                      .                      .                      .                     
-                .                      .                      .                      .                      .                      .                      .     
-         .                      .                      .                      .                      .                      .                      .            
-  .                      .                      .                      .                      .                      .                      .                   
-                  .                      .                      .                      .                      .                      .                      .   
-           .                      .                      .                      .                      .                      .                      .          
-    .                      .                      .                      .                      .                      .                      .                 
-                    .                      .                      .                      .                      .                      .                      . 
-             .                      .                      .                      .                      .                      .                      .        
-      .                      .                      .                      .                      .                      .                      .               
-    ~                              ~                              ~                              ~                              ~                              ~
-                       ~                              ~                              ~                              ~                              ~            
-           ~                              ~                              ~                              ~                              ~                        
-                              ~                              ~                              ~                              ~                              ~     
-                  ~                              ~                              ~                              ~                              ~                 
-      ~                              ~                              ~                              ~                              ~                             
-                         ....::::::::....                                                                  ....::::::::....                                     
-                       ....:::::::::::....                                                               ....:::::::::::....                                    
-                      ....::::::::::::::...                                                             ....::::::::::::::...                                   
-                     ....::::::::::::::::...                                                           ....::::::::::::::::...                                  
-                    ...:::::::::::::::::::...                                                         ...:::::::::::::::::::...                                 
-                   ...:::::::;;;;;;;;::::::....                                                      ...:::::::;;;;;;;;::::::...                                
-                  ...::::::;;;;;;;;;;;::::::....                                                    ...::::::;;;;;;;;;;;::::::...                               
-                 ...::::::;;;;;;;;;;;;;;:::::....                                                 ....::::::;;;;;;;;;;;;;;:::::...                              
-                ...::::::;;;;;;;;;;;;;;;;::::::...                                               ....::::::;;;;;;;;;;;;;;;;:::::...                        .....
-               ...:::::;;;;;;;;;;;;;;;;;;;::::::....               ..............              .....:::::;;;;;;;;;;;;;;;;;;;:::::...                     .......
-              ...:::::;;;;;;;;;;;;;;;;;;;;;::::::.....          ....................         .....::::::;;;;;;;;;;;;;;;;;;;;;:::::...                 ..........
-            ....:::::;;;;;;;;;;;;;;;;;;;;;;;::::::...............................................::::::;;;;;;;;;;;;;;;;;;;;;;;:::::....             .......:::::
-..        .....:::::;;;;;;;;;########;;;;;;;;:::::::...............::::::::::::::..............:::::::;;;;;;;;;########;;;;;;;;:::::.....         .......:::::::
-..............:::::;;;;;;;;###########;;;;;;;;;:::::::..........::::::::::::::::::::.........::::::::;;;;;;;;###########;;;;;;;;:::::.................::::::::::
-............::::::;;;;;;;;##############;;;;;;;;::::::::::::::::::::::::::::::::::::::::::::::::::::;;;;;;;;##############;;;;;;;::::::.............::::::::::::
-::........:::::::;;;;;;;;################;;;;;;;;:::::::::::::::::::::::::::::::::::::::::::::::::;;;;;;;;;################;;;;;;;:::::::.........::::::::::::::
-::::::::::::::::;;;;;;;###################;;;;;;;;:::::::::::::::::::::::::::::::::::::::::::::::;;;;;;;;###################;;;;;;;::::::::::::::::::::::::;;;;;
-:::::::::::::::;;;;;;;#####################;;;;;;;;;:::::::::::::::;;;;;;;;;;;;;;::::::::::::::;;;;;;;;;#####################;;;;;;;:::::::::::::::::::::;;;;;;;
-::::::::::::::;;;;;;;#######################;;;;;;;;;;::::::::::;;;;;;;;;;;;;;;;;;;;:::::::::;;;;;;;;;;#######################;;;;;;;:::::::::::::::::;;;;;;;;;;
-::::::::::::;;;;;;;;#########################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;#########################;;;;;;;;:::::::::::::;;;;;;;;;;;;
-;;::::::::;;;;;;;;;############################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;###########################;;;;;;;;;:::::::::;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;##############################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;#############################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;################################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;################################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;##################################;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;##################################;;;;;;;;;;;;;;;;;;;;;;;;#####</div>
+<div class="page">
+  <div class="hero">
+    <div class="spacer"></div>
 
-<img src="/img/rivian-logo.png" alt="Rivian" width="60" class="rivian-logo">
+    <div class="masthead">
+      <h1 class="name-hero">Azhan Khan</h1>
+      <div class="meta">
+        <b>Production Engineering, MLOps and Infrastructure</b><br>
+        <span class="hi">move at the speed of light and measure things</span>
+      </div>
+    </div>
 
-<div class="container">
-  <h1>Azhan Khan</h1>
-  <div class="subtitle">data engineer II @ rivian and volkswagen group technologies</div>
-
-  <nav class="nav">
-    <a href="#about">about</a>
-    <a href="#projects">projects</a>
-    <a href="#writing">writing</a>
-    <a href="#contact">contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>about</h2>
-    <p>i build observability and infrastructure at <a href="https://rivian.com">rivian × volkswagen group technologies</a> — the joint venture between rivian and vw. day to day that means kubernetes, datadog, grafana, ebpf, and a lot of yaml.</p>
-    <p>i've led our datadog tenant migration across 10+ engineering teams, built a custom crossplane provider in go when the official one didn't cut it, tuned apache druid for high-throughput vehicle telemetry, and architected a self-hosted LGTM stack (loki, grafana, tempo, mimir). i also serve as on-call SRE for production incidents.</p>
-    <p>more recently i've been defining observability strategy for our internal AI/ML teams and building AI agents with a custom tool-calling framework that integrates across slack, argocd, crossplane, and EKS.</p>
-    <p>before this, i interned at rivian where i built an anomaly detection system on grafana OSS for vehicle telemetry and designed CI/CD pipelines that cut deployment lead times by 60%.</p>
-    <p>studied computer science at georgia tech. based in palo alto.</p>
-  </section>
-
-  <section id="projects">
-    <h2>projects</h2>
-    <article>
-      <h3><a href="https://github.com/1byteword/dogwatch">dogwatch</a></h3>
-      <p>single-binary observability platform — a self-hosted alternative to datadog/grafana/pagerduty. uses ebpf kernel probes for zero-config TCP tracking, HTTP tracing, and wire-format parsing of mysql, postgres, and redis. includes a cost intelligence engine that estimates equivalent vendor costs and a control plane for cardinality analysis and data shaping. written in go and c.</p>
-    </article>
-  </section>
-
-  <section id="writing">
-    <h2>writing</h2>
-
-  
-    <article>
-      <time>2025.01.16</time>
-      <h3><a href="/posts/2025-01-16-test-publish.html">Testing the publish script</a></h3>
-      <p>This is a test post to demonstrate the new publishing workflow.</p>
-    </article>
-
-</section>
-
-  <section id="contact">
-    <h2>contact</h2>
-    <p>
-      <a href="https://github.com/1byteword">github</a> ·
-      <a href="https://linkedin.com/in/azhank">linkedin</a> ·
-      <a href="mailto:1byteword@gmail.com">email</a>
-    </p>
-  </section>
-
-  <div class="footer">
-    <p>pure html + css / zero javascript / ~3kb</p>
-    <p>i care about your memory</p>
+    <div class="gif" aria-hidden="true">
+      <canvas id="palmCanvas" role="img" aria-label="Animated dithered palm tree skyline"></canvas>
+      <noscript>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase">
+          [ animated banner — javascript disabled ]
+        </div>
+      </noscript>
+    </div>
   </div>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <div class="sec-label"><span class="num">01</span>selected work</div>
+    <div class="sec-body">
+      <div class="work-list">
+        <a class="work-item" href="https://github.com/1byteword/dogwatch">
+          <span class="idx">→ 01</span>
+          <span class="title">dogwatch — eBPF observability</span>
+          <span class="client">single-binary platform</span>
+          <span class="year">2025</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="section" id="writing">
+    <div class="sec-label"><span class="num">02</span>writing</div>
+    <div class="sec-body">
+      <div class="writing-list">
+        <div class="writing-item">
+          <div class="date">2025.09</div>
+          <div>
+            <div class="title"><a href="#">Notes on designing slowly</a></div>
+            <div class="dek">On the relief of dropping 4 projects to finish 1. A short essay about pacing, attention, and the quiet middle of craft.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="sec-label"><span class="num">03</span>contact</div>
+    <div class="sec-body">
+      <div class="contact-body">
+        <div class="contact-mail">
+          <a href="mailto:1byteword@gmail.com">1byteword@gmail.com</a>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/1byteword" rel="me">GitHub<span class="handle">/1byteword</span></a>
+          <a href="https://linkedin.com/in/azhank" rel="me">LinkedIn<span class="handle">/in/azhank</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
+<div class="footer">
+  <div class="links">
+    <a href="#work">WORK</a>
+    <a href="#writing">WRITING</a>
+    <a href="#contact">EMAIL</a>
+  </div>
+  <div class="clock" id="clock">— PST</div>
+</div>
+
+<script>
+(() => {
+  // ---- Tunables (edit these to taste) -----------------------------------
+  const PALETTE  = { sky: ["#0a1b66", "#2b5bd7", "#6ea4ff", "#c9e2ff"], trunk: "#0a1b66" };
+  const DITHER_PX = 2;   // size of one dither block in display pixels (1-8)
+  const WIND      = 1.3; // 0..2 ish
+  const TARGET_FPS = 24; // animation pacing
+  const DISPLAY_W = 1680;
+  const DISPLAY_H = 360;
+
+  // ---- Canvas setup -----------------------------------------------------
+  const canvas = document.getElementById("palmCanvas");
+  if (!canvas) return;
+
+  // Display canvas is sized at full resolution but we only ever render
+  // the scene at dither resolution and upscale with image-rendering:pixelated.
+  canvas.width  = DISPLAY_W;
+  canvas.height = DISPLAY_H;
+  const dctx = canvas.getContext("2d", { alpha: false, desynchronized: true });
+  dctx.imageSmoothingEnabled = false;
+
+  // Scene/dither buffer dimensions (small).
+  const SW = Math.max(1, Math.ceil(DISPLAY_W / DITHER_PX));
+  const SH = Math.max(1, Math.ceil(DISPLAY_H / DITHER_PX));
+
+  // Single offscreen buffer reused every frame.
+  const off = document.createElement("canvas");
+  off.width = SW;
+  off.height = SH;
+  const octx = off.getContext("2d", { alpha: false, willReadFrequently: true });
+  octx.imageSmoothingEnabled = false;
+
+  // Pre-cache the trunk RGB once.
+  const trunkRGB = (() => {
+    let h = PALETTE.trunk.replace("#", "");
+    if (h.length === 3) h = h.split("").map(c => c + c).join("");
+    return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+  })();
+
+  const BAYER4 = [
+    [ 0,  8,  2, 10],
+    [12,  4, 14,  6],
+    [ 3, 11,  1,  9],
+    [15,  7, 13,  5],
+  ].map(r => r.map(v => (v + 0.5) / 16));
+
+  // ---- Drawing primitives ----------------------------------------------
+  function drawPalmTree(cx, baseX, baseY, trunkH, lean, t, windAmp, frondCount, sizeScale) {
+    cx.save();
+    cx.strokeStyle = PALETTE.trunk;
+    cx.lineCap = "round";
+    cx.beginPath();
+    const segs = 10;
+    let prevX = baseX, prevY = baseY;
+    cx.moveTo(prevX, prevY);
+    for (let i = 1; i <= segs; i++) {
+      const p = i / segs;
+      const sway = Math.sin(t * 0.7 + p * 1.2) * 3 * windAmp;
+      const x = baseX + lean * p * p * 40 + sway;
+      const y = baseY - trunkH * p;
+      cx.lineWidth = (14 - p * 8) * sizeScale;
+      cx.lineTo(x, y);
+      prevX = x; prevY = y;
+    }
+    cx.stroke();
+
+    cx.lineWidth = 1 * sizeScale;
+    for (let i = 1; i <= 8; i++) {
+      const p = i / 9;
+      const sway = Math.sin(t * 0.7 + p * 1.2) * 3 * windAmp;
+      const x = baseX + lean * p * p * 40 + sway;
+      const y = baseY - trunkH * p;
+      cx.beginPath();
+      cx.ellipse(x, y, (6 - p * 3) * sizeScale, 2 * sizeScale, 0, 0, Math.PI * 2);
+      cx.stroke();
+    }
+
+    const topX = prevX, topY = prevY;
+    for (let f = 0; f < frondCount; f++) {
+      const baseAng = (f / frondCount) * Math.PI * 2;
+      const wind = Math.sin(t * 1.4 + f * 0.9) * 0.18 * windAmp;
+      const droop = Math.sin(baseAng) * 0.25;
+      const ang = baseAng + wind + droop;
+      drawFrond(cx, topX, topY, ang, (90 + (f % 3) * 18) * sizeScale, t, f, windAmp);
+    }
+
+    cx.fillStyle = PALETTE.trunk;
+    for (let k = 0; k < 4; k++) {
+      const a = -Math.PI / 2 + (k - 1.5) * 0.18;
+      const cxp = topX + Math.cos(a) * 8 * sizeScale;
+      const cyp = topY + Math.sin(a) * 8 * sizeScale + 4 * sizeScale;
+      cx.beginPath();
+      cx.arc(cxp, cyp, 4 * sizeScale, 0, Math.PI * 2);
+      cx.fill();
+    }
+    cx.restore();
+  }
+
+  function drawFrond(cx, x0, y0, angle, length, t, f, windAmp) {
+    cx.save();
+    cx.translate(x0, y0);
+    cx.rotate(angle);
+    cx.strokeStyle = PALETTE.trunk;
+    cx.lineWidth = 1.6;
+    cx.beginPath();
+    cx.moveTo(0, 0);
+    const c1x = length * 0.4,  c1y = -length * 0.15;
+    const c2x = length * 0.75, c2y = length * 0.25;
+    const ex  = length,        ey  = length * 0.55 + Math.sin(t * 2 + f) * 3 * windAmp;
+    cx.bezierCurveTo(c1x, c1y, c2x, c2y, ex, ey);
+    cx.stroke();
+
+    const n = 14;
+    cx.lineWidth = 1.2;
+    for (let i = 1; i < n; i++) {
+      const p = i / n;
+      const px = 3 * Math.pow(1 - p, 2) * p * c1x + 3 * (1 - p) * p * p * c2x + p * p * p * ex;
+      const py = 3 * Math.pow(1 - p, 2) * p * c1y + 3 * (1 - p) * p * p * c2y + p * p * p * ey;
+      const tx = 3 * (1 - 3 * p + 3 * p * p) * c1x + 3 * (2 * p - 3 * p * p) * c2x + 3 * p * p * ex;
+      const ty = 3 * (1 - 3 * p + 3 * p * p) * c1y + 3 * (2 * p - 3 * p * p) * c2y + 3 * p * p * ey;
+      const tl = Math.hypot(tx, ty) || 1;
+      const nx = -ty / tl, ny = tx / tl;
+      const leafLen = ((1 - Math.abs(p - 0.4)) * 18 + 6);
+      const flutter = Math.sin(t * 3 + i * 0.6 + f) * 2 * windAmp;
+      cx.beginPath();
+      cx.moveTo(px, py);
+      cx.lineTo(px + nx * (leafLen + flutter), py + ny * (leafLen + flutter) - 2);
+      cx.stroke();
+      cx.beginPath();
+      cx.moveTo(px, py);
+      cx.lineTo(px - nx * (leafLen - flutter * 0.5), py - ny * (leafLen - flutter * 0.5) - 2);
+      cx.stroke();
+    }
+    cx.restore();
+  }
+
+  function drawScene(t) {
+    // Sky.
+    const sky = octx.createLinearGradient(0, 0, 0, SH);
+    sky.addColorStop(0.00, PALETTE.sky[0]);
+    sky.addColorStop(0.45, PALETTE.sky[1]);
+    sky.addColorStop(0.80, PALETTE.sky[2]);
+    sky.addColorStop(1.00, "#ffffff");
+    octx.fillStyle = sky;
+    octx.fillRect(0, 0, SW, SH);
+
+    // Sun.
+    const sunX = SW * 0.66;
+    const sunY = SH * 0.62;
+    const sunR = SH * 0.42;
+    const sunGrad = octx.createRadialGradient(sunX, sunY, sunR * 0.1, sunX, sunY, sunR);
+    sunGrad.addColorStop(0.00, "#ffffff");
+    sunGrad.addColorStop(0.55, "#ffffff");
+    sunGrad.addColorStop(0.85, PALETTE.sky[2]);
+    sunGrad.addColorStop(1.00, PALETTE.sky[1]);
+    octx.fillStyle = sunGrad;
+    octx.beginPath();
+    octx.arc(sunX, sunY, sunR, 0, Math.PI * 2);
+    octx.fill();
+
+    // Horizon hint.
+    octx.fillStyle = PALETTE.trunk;
+    octx.globalAlpha = 0.25;
+    octx.fillRect(0, SH * 0.94, SW, 1);
+    octx.globalAlpha = 1;
+
+    // Palms (drawn at scene resolution; sizes scale with SH).
+    const hs = SH / 480;
+    drawPalmTree(octx, SW * 0.06, SH * 0.92, 240 * hs, -0.5, t * 0.9,        WIND * 0.7, 10, hs);
+    drawPalmTree(octx, SW * 0.18, SH * 0.95, 330 * hs, -0.3, t,              WIND * 0.9, 12, hs);
+    drawPalmTree(octx, SW * 0.34, SH * 0.92, 280 * hs, -0.5, t * 1.1 + 0.6,  WIND * 0.8, 11, hs);
+    drawPalmTree(octx, SW * 0.47, SH * 0.96, 370 * hs,  0.1, t * 0.95 + 1.2, WIND * 1.0, 13, hs);
+    drawPalmTree(octx, SW * 0.60, SH * 0.93, 300 * hs,  0.4, t * 1.05 + 0.4, WIND * 0.85, 12, hs);
+    drawPalmTree(octx, SW * 0.88, SH * 0.94, 350 * hs,  0.6, t * 1.0  + 2.1, WIND * 0.95, 12, hs);
+    drawPalmTree(octx, SW * 0.96, SH * 0.90, 220 * hs,  0.7, t * 0.9  + 0.2, WIND * 0.7, 10, hs);
+
+    // Bayer 2-tone dither, in place on the small buffer.
+    const img = octx.getImageData(0, 0, SW, SH);
+    const data = img.data;
+    const [tr, tg, tb] = trunkRGB;
+    for (let y = 0; y < SH; y++) {
+      const row = BAYER4[y & 3];
+      for (let x = 0; x < SW; x++) {
+        const i = (y * SW + x) * 4;
+        const lum = (0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2]) / 255;
+        const isInk = (1 - lum) > row[x & 3];
+        if (isInk) { data[i] = tr; data[i + 1] = tg; data[i + 2] = tb; }
+        else       { data[i] = 255; data[i + 1] = 255; data[i + 2] = 255; }
+        data[i + 3] = 255;
+      }
+    }
+    octx.putImageData(img, 0, 0);
+
+    // Upscale to display canvas — pixelated.
+    dctx.drawImage(off, 0, 0, DISPLAY_W, DISPLAY_H);
+  }
+
+  // ---- Animation loop with throttle / pause -----------------------------
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const minFrameMs = 1000 / TARGET_FPS;
+  let running = true;
+  let visibleOnScreen = true;
+  let rafId = 0;
+  let start = performance.now();
+  let lastFrame = 0;
+
+  function frame(now) {
+    rafId = 0;
+    if (!running || !visibleOnScreen) return;
+    if (now - lastFrame >= minFrameMs) {
+      lastFrame = now;
+      drawScene((now - start) / 1000);
+    }
+    rafId = requestAnimationFrame(frame);
+  }
+
+  function play() {
+    if (rafId) return;
+    rafId = requestAnimationFrame(frame);
+  }
+  function pause() {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = 0;
+  }
+
+  // Render one static frame regardless, so something is visible immediately
+  // (and so reduced-motion users still see the art).
+  drawScene(0);
+
+  if (!reduceMotion) {
+    // Pause when the canvas scrolls offscreen.
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          visibleOnScreen = e.isIntersecting;
+          if (visibleOnScreen) play(); else pause();
+        }
+      }, { threshold: 0.01 });
+      io.observe(canvas);
+    }
+    // Pause when the tab is hidden.
+    document.addEventListener("visibilitychange", () => {
+      running = !document.hidden;
+      if (running) play(); else pause();
+    });
+    play();
+  }
+
+  // ---- Footer clock -----------------------------------------------------
+  const clockEl = document.getElementById("clock");
+  function updateClock() {
+    if (!clockEl) return;
+    const t = new Date().toLocaleTimeString("en-US", {
+      hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "America/Los_Angeles",
+    });
+    clockEl.textContent = `${t} PST`;
+  }
+  updateClock();
+  setInterval(updateClock, 30000);
+})();
+</script>
 </body>
 </html>
