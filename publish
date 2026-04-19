@@ -78,13 +78,23 @@ def parse_markdown(md_content):
     # Paragraphs (lines separated by blank line)
     paragraphs = []
     current = []
+    blank_count = 0
+
     for line in html.split('\n'):
         line = line.strip()
         if line:
             if line.startswith(('<h', '<img', '<ul', '<ol', '<li', '</ul', '</ol', '<pre')):
                 if current:
-                    paragraphs.append('<p>' + ' '.join(current) + '</p>')
+                    p_text = ' '.join(current)
+                    # Check if it's an attribution (italic only)
+                    if p_text.startswith('<em>') and p_text.endswith('</em>') and p_text.count('<em>') == 1:
+                        paragraphs.append('<p class="attribution">' + p_text + '</p>')
+                    else:
+                        # Add spacer class if multiple blank lines preceded this
+                        p_class = ' class="spacer"' if blank_count > 1 else ''
+                        paragraphs.append(f'<p{p_class}>' + p_text + '</p>')
                     current = []
+                    blank_count = 0
                 paragraphs.append(line)
             elif line == '</code></pre>':
                 paragraphs.append(line)
@@ -92,10 +102,24 @@ def parse_markdown(md_content):
                 current.append(line)
         else:
             if current:
-                paragraphs.append('<p>' + ' '.join(current) + '</p>')
+                p_text = ' '.join(current)
+                # Check if it's an attribution (italic only)
+                if p_text.startswith('<em>') and p_text.endswith('</em>') and p_text.count('<em>') == 1:
+                    paragraphs.append('<p class="attribution">' + p_text + '</p>')
+                else:
+                    # Add spacer class if multiple blank lines preceded this
+                    p_class = ' class="spacer"' if blank_count > 1 else ''
+                    paragraphs.append(f'<p{p_class}>' + p_text + '</p>')
                 current = []
+                blank_count = 0
+            blank_count += 1
+
     if current:
-        paragraphs.append('<p>' + ' '.join(current) + '</p>')
+        p_text = ' '.join(current)
+        if p_text.startswith('<em>') and p_text.endswith('</em>') and p_text.count('<em>') == 1:
+            paragraphs.append('<p class="attribution">' + p_text + '</p>')
+        else:
+            paragraphs.append('<p>' + p_text + '</p>')
 
     return '\n'.join(paragraphs)
 
@@ -183,6 +207,8 @@ h1{{font-size:2.5em;margin-bottom:0.3em;line-height:1.2}}
 h2{{font-size:1.8em;margin:1.5em 0 0.5em;line-height:1.3}}
 h3{{font-size:1.3em;margin:1.2em 0 0.5em}}
 p{{margin-bottom:1em}}
+p.attribution{{margin-top:-0.6em;margin-bottom:2em;font-size:0.95em;opacity:0.8}}
+p.spacer{{margin-bottom:2.5em}}
 a{{color:#000;text-decoration:underline}}
 a:hover{{text-decoration:none}}
 code{{
@@ -200,7 +226,7 @@ pre{{
   margin:1em 0;
 }}
 pre code{{background:none;padding:0}}
-ul{{margin:1em 0 1em 2em}}
+ul{{margin:0.5em 0 1em 2em}}
 li{{margin:0.3em 0}}
 img{{max-width:100%;height:auto;margin:1em 0}}
 time{{
@@ -280,8 +306,8 @@ def publish_post(md_file, date=None):
     with open(post_file, 'w', encoding='utf-8') as f:
         f.write(post_html)
 
-    # Update index.html with post entry
-    index_entry = f'''    <article>
+    # Update writing.html with post entry
+    writing_entry = f'''    <article>
       <time>{date_formatted}</time>
       <h3><a href="/posts/{slug}.html">{title}</a></h3>
       <p>{excerpt}</p>
@@ -289,24 +315,24 @@ def publish_post(md_file, date=None):
 
 '''
 
-    # Read index.html
-    with open('index.html', 'r', encoding='utf-8') as f:
-        index = f.read()
+    # Read writing.html
+    with open('writing.html', 'r', encoding='utf-8') as f:
+        writing_page = f.read()
 
     # Find writing section and insert after <h2>writing</h2>
     writing_pattern = r'(<section id="writing">\s*<h2>writing</h2>\s*)'
-    match = re.search(writing_pattern, index)
+    match = re.search(writing_pattern, writing_page)
 
     if not match:
-        print("❌ Could not find writing section in index.html")
+        print("❌ Could not find writing section in writing.html")
         return False
 
     # Insert new entry at the top (newest first)
-    new_index = index[:match.end()] + '\n' + index_entry + index[match.end():]
+    new_writing_page = writing_page[:match.end()] + '\n' + writing_entry + writing_page[match.end():]
 
     # Write back
-    with open('index.html', 'w', encoding='utf-8') as f:
-        f.write(new_index)
+    with open('writing.html', 'w', encoding='utf-8') as f:
+        f.write(new_writing_page)
 
     print(f"✓ Published: {title}")
     print(f"  Date: {date_formatted}")

@@ -7,7 +7,7 @@ RUN rm -rf /usr/share/nginx/html/* /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy site
-COPY index.html /usr/share/nginx/html/
+COPY *.html /usr/share/nginx/html/
 COPY posts /usr/share/nginx/html/posts
 COPY img /usr/share/nginx/html/img
 

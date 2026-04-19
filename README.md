@@ -1,82 +1,49 @@
-# Personal Site
+# azhankhan.com
 
-Ultra-minimal personal website. Single page. Zero dependencies. Fast.
+Personal site. Two pages — a homepage with a dithered animated palm‑tree banner
+(`index.html`) and a writing index (`writing.html`) — plus standalone post
+pages under `posts/`.
 
-## Stats
+## Stack
 
-- **Total size**: ~2KB (single HTML file with inline CSS)
-- **Load time**: <100ms
-- **Files**: 1 (index.html)
-- **Docker image**: ~25MB
-- **Memory usage**: 16Mi
-- **First paint**: Instant
+- **Static HTML** with inline CSS + a single inline `<script>` for the canvas
+- **nginx alpine** container, ~25 MB
+- **Kubernetes** on a small DigitalOcean cluster, 2 replicas
+- **ArgoCD** GitOps from this repo's `main` branch (watches `k8s/`)
+- **GitHub Actions** builds + pushes the image to `ghcr.io/1byteword/crownjewel`
+- **cert-manager + Let's Encrypt** for SSL
 
-## Structure
+## Layout
 
 ```
 .
-├── index.html              # Everything (2KB)
-├── src/posts/             # Blog posts (Markdown)
-├── Dockerfile             # nginx alpine
-├── nginx.conf             # Minimal config
-└── k8s/                   # Kubernetes + ArgoCD
+├── index.html                       # Homepage (Syne Mono + dithered canvas)
+├── writing.html                     # Blog index
+├── posts/                           # Published post pages (HTML)
+├── src/posts/                       # Post sources (Markdown)
+├── img/                             # Static images
+├── publish                          # Markdown → HTML publisher
+├── nginx.conf                       # Cache + gzip + security headers
+├── Dockerfile                       # nginx:alpine, copies *.html + posts/ + img/
+├── Makefile                         # dev / build / push / canary / promote
+├── k8s/                             # Deployment, service, ingress, ArgoCD app
+└── .github/workflows/build.yaml     # CI build + Trivy scan
 ```
 
-## Local Dev
+## Local dev
 
 ```bash
-# Start server
-python3 -m http.server 8000
-
-# Or with Docker
-docker build -t site .
-docker run -p 8080:80 site
+make dev                    # python http server on :8000
 ```
 
-## Deploy
-
-1. Update `k8s/deployment.yaml` with your image registry
-2. Update `k8s/ingress.yaml` with your domain
-3. Push to GitHub
-4. Deploy with ArgoCD:
+## Publish a blog post
 
 ```bash
-kubectl apply -f k8s/argocd-application.yaml
+# 1. Write src/posts/YYYY-MM-DD-slug.md
+# 2. Run the publisher (creates posts/YYYY-MM-DD-slug.html and inserts an
+#    entry into writing.html)
+./publish src/posts/YYYY-MM-DD-slug.md
 ```
 
-## Blog Posts
-
-Write posts in `src/posts/` as Markdown, then manually convert to HTML:
-
-```html
-<article>
-<time>2025-01-15</time>
-<h3>Post Title</h3>
-<p>Content here...</p>
-</article>
-```
-
-## Customize
-
-- **Content**: Edit `index.html` (everything is there)
-- **Styling**: Modify inline `<style>` block
-- **Links**: Update GitHub/LinkedIn/email
-
-## Performance
-
-- Single HTML file (one HTTP request)
-- Inline CSS (17 lines, minified)
-- Zero JavaScript
-- System fonts (Georgia serif)
-- Gzip compression (~800 bytes transferred)
-- No external requests
-- Dark mode via CSS media query
-
-## Why This Works
-
-Every byte removed is a byte not transferred, not parsed, not executed.
-The fastest code is the code you don't write.
-
-## License
-
-Public domain - use however you want
+See [`AGENTS.md`](./AGENTS.md) for deployment, canary workflow, and the rest
+of the operational detail.

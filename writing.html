@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Azhan Khan - Writing" />
+        <title>Writing - Azhan Khan</title>
+        <style>
+            /* reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* layout */
+            body {
+                font:
+                    15px/1.7 Georgia,
+                    serif;
+                background: url("/img/bg.png") center/cover fixed;
+                color: #000;
+                min-height: 100vh;
+                padding: 60px 20px;
+            }
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                background: #fff;
+                border: 3px solid #000;
+                padding: 50px 60px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            }
+
+            /* typography */
+            h1 {
+                font:
+                    300 3em Georgia,
+                    serif;
+                letter-spacing: -1px;
+                margin-bottom: 8px;
+            }
+            h2 {
+                font:
+                    500 1.8em Georgia,
+                    serif;
+                letter-spacing: -0.5px;
+                margin: 50px 0 25px;
+            }
+            h3 {
+                font:
+                    500 1.1em Georgia,
+                    serif;
+                margin: 12px 0 8px;
+                opacity: 0.95;
+            }
+            p,
+            time {
+                font-weight: 300;
+                opacity: 0.9;
+            }
+            p {
+                margin-bottom: 15px;
+            }
+            time {
+                display: block;
+                font-size: 0.9em;
+                opacity: 0.6;
+                margin-bottom: 10px;
+            }
+
+            /* components */
+            .subtitle {
+                font-weight: 300;
+                opacity: 0.7;
+                margin-bottom: 60px;
+            }
+            .nav {
+                margin: 40px 0 60px;
+                font-size: 1.1em;
+            }
+            .nav a {
+                margin-right: 30px;
+                border: none;
+                opacity: 0.7;
+                transition: opacity 0.2s;
+                color: #000;
+            }
+            .nav a:hover {
+                opacity: 1;
+            }
+
+            a {
+                color: #0066ff;
+                text-decoration: none;
+                border-bottom: 1px solid rgba(0, 102, 255, 0.3);
+                transition: border 0.2s;
+            }
+            a:hover {
+                border-bottom: 1px solid #0066ff;
+            }
+
+            article {
+                margin-bottom: 40px;
+                padding-bottom: 40px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            article:last-of-type {
+                border-bottom: none;
+            }
+
+            .footer {
+                margin-top: 80px;
+                padding-top: 30px;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                font-size: 0.9em;
+                opacity: 0.6;
+                font-weight: 300;
+            }
+
+            /* responsive */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 30px 25px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Azhan Khan</h1>
+            <div class="subtitle">production engineer</div>
+            <nav class="nav">
+                <a href="/">about</a>
+                <a href="/writing.html">writing</a>
+                <a href="/#contact">contact</a>
+            </nav>
+
+            <section id="writing">
+                <h2>writing</h2>
+
+                <article>
+                    <time>2025.11.07</time>
+                    <h3><a href="/posts/2025-11-07-on-matters-of-great-importance.html">The matters of great importance</a></h3>
+                    <p>"He saw a way to win. The Full Web remained a possibility. His, now. It all depended. Another *twist*. Yes, he would win. Almost certainly. But that was no longer enough. The Full Web beckoned, tan...</p>
+                </article>
+            </section>
+
+            <div class="footer">
+                <p>pure html + css / zero javascript / ~3kb</p>
+                <p>i care about your memory</p>
+            </div>
+        </div>
+    </body>
+</html>
