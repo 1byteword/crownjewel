@@ -1,11 +1,14 @@
-.PHONY: help dev build push deploy status clean size canary-build canary-push canary-test canary-status promote
+.PHONY: help dev serve build push deploy status clean size canary-build canary-push canary-test canary-status promote
 
 IMAGE := ghcr.io/1byteword/crownjewel
 TAG := $(shell git rev-parse --short HEAD 2>/dev/null || echo "latest")
 
 help:
+	@echo 'Local preview:'
+	@echo '  make dev           - Serve site at http://localhost:8000 (use this; file:// breaks absolute paths)'
+	@echo '  make serve         - Alias for `make dev`'
+	@echo ''
 	@echo 'Production:'
-	@echo '  make dev           - Start local server'
 	@echo '  make build         - Build Docker image'
 	@echo '  make push          - Push to registry'
 	@echo '  make deploy        - Deploy to K8s'
@@ -21,7 +24,10 @@ help:
 	@echo '  make promote       - Promote canary to production'
 
 dev:
+	@echo 'Serving site at http://localhost:8000  (Ctrl-C to stop)'
 	@python3 -m http.server 8000
+
+serve: dev
 
 build:
 	docker build -t $(IMAGE):$(TAG) -t $(IMAGE):latest .

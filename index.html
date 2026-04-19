@@ -105,7 +105,7 @@
     grid-template-columns: 180px 1fr;
     gap: 28px;
   }
-  .section:first-of-type { margin-top: 120px; }
+  .section:first-of-type { margin-top: 64px; }
   .section .sec-label {
     font-size: 10.5px;
     letter-spacing: 0.12em;
@@ -122,6 +122,22 @@
     font-weight: 500;
   }
   .section .sec-body { max-width: 720px; }
+
+  /* about */
+  .lede {
+    max-width: 60ch;
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 0 0 14px;
+  }
+  .lede.muted { color: var(--muted); }
+  .lede a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    text-decoration: none;
+  }
+  .lede a:hover,
+  .lede a:focus-visible { background: var(--hi); }
 
   /* work */
   .work-list { display: flex; flex-direction: column; }
@@ -153,6 +169,19 @@
   .writing-item .title a:hover,
   .writing-item .title a:focus-visible { border-bottom-color: var(--ink); }
   .writing-item .dek { color: var(--muted); font-size: 13px; line-height: 1.5; max-width: 60ch; }
+  .writing-more {
+    display: inline-block;
+    margin-top: 26px;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .writing-more:hover,
+  .writing-more:focus-visible { background: var(--hi); }
 
   /* contact */
   .contact-body { display: flex; flex-direction: column; gap: 28px; }
@@ -245,9 +274,18 @@
     </div>
   </div>
 
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="sec-label"><span class="num">01</span>about</div>
+    <div class="sec-body">
+      <p class="lede">Production engineer working on infrastructure that needs to be fast, observable, and quiet about it. Currently focused on eBPF-based systems and the kind of low-level work that compounds over years, not sprints.</p>
+      <p class="lede muted">Always thinking about <a href="/posts/2025-11-07-on-matters-of-great-importance.html">the handful of things that really matter</a> — and trying to spend my time accordingly.</p>
+    </div>
+  </section>
+
   <!-- WORK -->
   <section class="section" id="work">
-    <div class="sec-label"><span class="num">01</span>selected work</div>
+    <div class="sec-label"><span class="num">02</span>selected work</div>
     <div class="sec-body">
       <div class="work-list">
         <a class="work-item" href="https://github.com/1byteword/dogwatch">
@@ -262,23 +300,24 @@
 
   <!-- WRITING -->
   <section class="section" id="writing">
-    <div class="sec-label"><span class="num">02</span>writing</div>
+    <div class="sec-label"><span class="num">03</span>writing</div>
     <div class="sec-body">
       <div class="writing-list">
         <div class="writing-item">
-          <div class="date">2025.09</div>
+          <div class="date">2025.11</div>
           <div>
-            <div class="title"><a href="#">Notes on designing slowly</a></div>
-            <div class="dek">On the relief of dropping 4 projects to finish 1. A short essay about pacing, attention, and the quiet middle of craft.</div>
+            <div class="title"><a href="/posts/2025-11-07-on-matters-of-great-importance.html">The matters of great importance</a></div>
+            <div class="dek">On urgency, scientific revolutions, and the handful of problems worth our time. A short essay built around two passages — one from Banks, one from Kuhn.</div>
           </div>
         </div>
       </div>
+      <a class="writing-more" href="/writing.html">all writing →</a>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section" id="contact">
-    <div class="sec-label"><span class="num">03</span>contact</div>
+    <div class="sec-label"><span class="num">04</span>contact</div>
     <div class="sec-body">
       <div class="contact-body">
         <div class="contact-mail">

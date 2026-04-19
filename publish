@@ -185,79 +185,215 @@ def handle_images(md_content, md_file_path):
     return md_content
 
 def create_post_html(title, date, content):
-    """Generate standalone post HTML page"""
+    """Generate standalone post HTML page in the monospace homepage aesthetic.
+
+    Matches index.html / writing.html: Syne Mono, white bg, single ink color,
+    yellow hover highlight. The shared CSS lives inline so each post is
+    self-contained and cacheable as a standalone artifact.
+    """
+    # Title and content are rendered inside the <article>, with the title
+    # becoming an <h1>. publish_post() already prepends "<h1>{title}</h1>"
+    # to the content string, so we just drop {content} in.
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{title}">
-<title>{title} - Azhan Khan</title>
+<title>{title} — Azhan Khan</title>
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap">
+
 <style>
-*{{margin:0;padding:0;box-sizing:border-box}}
-body{{
-  font:15px/1.7 Georgia,serif;
-  background:#fff;
-  color:#000;
-  max-width:700px;
-  margin:0 auto;
-  padding:60px 20px;
-}}
-h1{{font-size:2.5em;margin-bottom:0.3em;line-height:1.2}}
-h2{{font-size:1.8em;margin:1.5em 0 0.5em;line-height:1.3}}
-h3{{font-size:1.3em;margin:1.2em 0 0.5em}}
-p{{margin-bottom:1em}}
-p.attribution{{margin-top:-0.6em;margin-bottom:2em;font-size:0.95em;opacity:0.8}}
-p.spacer{{margin-bottom:2.5em}}
-a{{color:#000;text-decoration:underline}}
-a:hover{{text-decoration:none}}
-code{{
-  background:#f4f4f4;
-  padding:2px 6px;
-  border-radius:3px;
-  font-family:'Courier New',monospace;
-  font-size:0.9em;
-}}
-pre{{
-  background:#f4f4f4;
-  padding:15px;
-  border-radius:3px;
-  overflow-x:auto;
-  margin:1em 0;
-}}
-pre code{{background:none;padding:0}}
-ul{{margin:0.5em 0 1em 2em}}
-li{{margin:0.3em 0}}
-img{{max-width:100%;height:auto;margin:1em 0}}
-time{{
-  display:block;
-  font-size:0.9em;
-  color:#666;
-  margin-bottom:2em;
-}}
-.back{{
-  margin-top:3em;
-  padding-top:2em;
-  border-top:1px solid #ddd;
-  font-size:0.9em;
-}}
-@media(max-width:768px){{
-  body{{padding:30px 20px}}
-  h1{{font-size:2em}}
-}}
+  :root {{
+    --bg: #ffffff;
+    --ink: #0a0a0a;
+    --muted: #8a8a8a;
+    --hi: #fff068;
+    --rule: #e5e5e5;
+  }}
+
+  * {{ box-sizing: border-box; }}
+  html, body {{ margin: 0; padding: 0; }}
+  body {{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Syne Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }}
+
+  .shell {{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 28px 28px 96px;
+  }}
+
+  .topbar {{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 64px;
+  }}
+  .topbar a {{
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }}
+  .topbar a:hover,
+  .topbar a:focus-visible {{ background: var(--hi); }}
+
+  article h1 {{
+    font-size: clamp(28px, 4.2vw, 42px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }}
+  article time {{
+    display: block;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 40px;
+  }}
+  article h2 {{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 44px 0 14px;
+    letter-spacing: -0.005em;
+  }}
+  article h3 {{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 32px 0 10px;
+  }}
+  article p {{ margin: 0 0 18px; max-width: 64ch; }}
+  article p.attribution {{
+    margin-top: -10px;
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 12.5px;
+  }}
+  article p.spacer {{ margin-bottom: 32px; }}
+  article a {{
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+  }}
+  article a:hover,
+  article a:focus-visible {{ background: var(--hi); }}
+  article ul, article ol {{
+    margin: 0 0 22px 1.5em;
+    padding: 0;
+    max-width: 64ch;
+  }}
+  article li {{ margin: 6px 0; }}
+  article code {{
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12.5px;
+    background: #f4f4f4;
+    padding: 1px 6px;
+    border: 1px solid var(--rule);
+  }}
+  article pre {{
+    background: #f7f7f7;
+    border: 1px solid var(--rule);
+    padding: 14px 16px;
+    overflow-x: auto;
+    margin: 18px 0 26px;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }}
+  article pre code {{
+    background: none;
+    border: none;
+    padding: 0;
+  }}
+  article img {{ max-width: 100%; height: auto; margin: 18px 0; }}
+  article em {{ font-style: italic; }}
+  article strong {{ font-weight: 500; }}
+
+  .back {{
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }}
+  .back a {{
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }}
+  .back a:hover,
+  .back a:focus-visible {{ background: var(--hi); }}
+
+  @media (max-width: 720px) {{
+    .shell {{ padding: 18px 18px 64px; }}
+    .topbar {{ margin-bottom: 40px; }}
+    article h1 {{ font-size: clamp(26px, 8vw, 36px); }}
+    article time {{ margin-bottom: 28px; }}
+    .back {{ flex-direction: column; gap: 12px; align-items: flex-start; }}
+  }}
 </style>
 </head>
 <body>
-<article>
-<time>{date}</time>
-{content}
-</article>
-<div class="back">
-<a href="/">← back to index</a>
+
+<div class="shell">
+  <div class="topbar">
+    <a href="/writing.html">← Writing</a>
+    <span>Azhan Khan</span>
+  </div>
+
+  <article>
+{_inject_post_meta(content, date)}
+  </article>
+
+  <div class="back">
+    <a href="/writing.html">← all writing</a>
+    <a href="/">Azhan Khan →</a>
+  </div>
 </div>
+
 </body>
 </html>
 '''
+
+
+def _inject_post_meta(content, date):
+    """Insert <time> immediately after the <h1> title in rendered post content.
+
+    parse_markdown() emits the full content; publish_post() wraps it with
+    "<h1>{title}</h1>\\n{html_content}". We slip the <time> in after the h1
+    so the date sits with the title as the article meta header.
+    """
+    time_tag = f'    <time>{date}</time>'
+    return re.sub(
+        r'(<h1>[^<]*</h1>)',
+        lambda m: f'    {m.group(1)}\n{time_tag}',
+        content,
+        count=1,
+    )
 
 def publish_post(md_file, date=None):
     """Publish markdown post as standalone HTML page"""
@@ -306,29 +442,29 @@ def publish_post(md_file, date=None):
     with open(post_file, 'w', encoding='utf-8') as f:
         f.write(post_html)
 
-    # Update writing.html with post entry
+    # Update writing.html with post entry. The new writing.html structure
+    # uses an explicit insertion marker so we don't have to depend on heading
+    # text or class names that might change with future redesigns.
     writing_entry = f'''    <article>
       <time>{date_formatted}</time>
-      <h3><a href="/posts/{slug}.html">{title}</a></h3>
-      <p>{excerpt}</p>
+      <div>
+        <h2><a href="/posts/{slug}.html">{title}</a></h2>
+        <p>{excerpt}</p>
+      </div>
     </article>
-
 '''
 
-    # Read writing.html
     with open('writing.html', 'r', encoding='utf-8') as f:
         writing_page = f.read()
 
-    # Find writing section and insert after <h2>writing</h2>
-    writing_pattern = r'(<section id="writing">\s*<h2>writing</h2>\s*)'
-    match = re.search(writing_pattern, writing_page)
-
-    if not match:
-        print("❌ Could not find writing section in writing.html")
+    marker = '<!-- POST_ENTRIES_START -->'
+    idx = writing_page.find(marker)
+    if idx == -1:
+        print("❌ Could not find <!-- POST_ENTRIES_START --> marker in writing.html")
         return False
 
-    # Insert new entry at the top (newest first)
-    new_writing_page = writing_page[:match.end()] + '\n' + writing_entry + writing_page[match.end():]
+    insert_at = idx + len(marker)
+    new_writing_page = writing_page[:insert_at] + '\n' + writing_entry + writing_page[insert_at:]
 
     # Write back
     with open('writing.html', 'w', encoding='utf-8') as f:
