@@ -193,7 +193,6 @@
 
   /* ---- MOBILE ---- */
   @media (max-width: 720px) {
-    :root { --footer-h: 52px; }
     .masthead {
       flex-direction: column;
       align-items: flex-start;
@@ -202,7 +201,7 @@
     }
     .masthead .meta { text-align: left; font-size: 10px; }
     .name-hero { font-size: clamp(40px, 11vw, 64px); }
-    .gif { aspect-ratio: 4 / 3; max-height: 45%; }
+    .gif { aspect-ratio: 16 / 9; max-height: 50%; }
     .section { grid-template-columns: 1fr; gap: 14px; padding: 36px 18px 40px; }
     .section:first-of-type { margin-top: 64px; }
     .section .sec-label { padding-top: 0; }
@@ -211,8 +210,10 @@
     .writing-item { grid-template-columns: 60px 1fr; gap: 12px; }
     .writing-item .title { font-size: 14px; }
     .contact-mail { font-size: clamp(22px, 7vw, 32px); }
-    .footer { flex-direction: column; align-items: flex-start; gap: 4px; padding: 8px 18px; font-size: 10px; }
-    .footer .links { gap: 16px; }
+    /* keep the footer on a single row -- links left, clock right -- to
+       match desktop and stop the clock orphaning on its own line */
+    .footer { padding: 10px 16px; font-size: 10px; gap: 12px; }
+    .footer .links { gap: 14px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -308,15 +309,25 @@
   const DITHER_PX = 2;   // size of one dither block in display pixels (1-8)
   const WIND      = 1.3; // 0..2 ish
   const TARGET_FPS = 24; // animation pacing
-  const DISPLAY_W = 1680;
-  const DISPLAY_H = 360;
+  // Cap the bitmap width so very wide displays don't render a huge canvas;
+  // dither stays chunky at the intended scale and the upscale to display
+  // pixels is handled by image-rendering: pixelated.
+  const MAX_DISPLAY_W = 1680;
 
   // ---- Canvas setup -----------------------------------------------------
   const canvas = document.getElementById("palmCanvas");
   if (!canvas) return;
 
-  // Display canvas is sized at full resolution but we only ever render
-  // the scene at dither resolution and upscale with image-rendering:pixelated.
+  // Size the canvas bitmap to match the container's actual aspect ratio so
+  // the scene never gets stretched (esp. on mobile, where the container is
+  // 16:9 instead of desktop's 42:9).
+  const container = canvas.parentElement;
+  const rect = container.getBoundingClientRect();
+  const cw = Math.round(rect.width)  || MAX_DISPLAY_W;
+  const ch = Math.round(rect.height) || Math.round(MAX_DISPLAY_W * 9 / 42);
+  const DISPLAY_W = Math.max(1, Math.min(MAX_DISPLAY_W, cw));
+  const DISPLAY_H = Math.max(1, Math.round(DISPLAY_W * (ch / cw)));
+
   canvas.width  = DISPLAY_W;
   canvas.height = DISPLAY_H;
   const dctx = canvas.getContext("2d", { alpha: false, desynchronized: true });
