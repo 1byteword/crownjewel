@@ -61,7 +61,6 @@
   }
   .topbar a:hover,
   .topbar a:focus-visible { background: var(--hi); }
-  .topbar .clock { color: var(--muted); }
 
   /* page header */
   .page-header {
@@ -150,13 +149,12 @@
 
 <div class="shell">
   <div class="topbar">
-    <a href="/">← Azhan Khan</a>
-    <span class="clock" id="clock">— PST</span>
+    <a href="/">← Home</a>
   </div>
 
   <header class="page-header">
     <h1>writing</h1>
-    <p class="lede">Short essays and technical notes. Updated when I have something worth saying.</p>
+    <p class="lede">I think I read Montaigne once and decided it'd be very cool to write like him.</p>
   </header>
 
   <section id="posts" class="post-list">
@@ -164,16 +162,8 @@
     <article>
       <time>2026.04.19</time>
       <div>
-        <h2><a href="/posts/2026-04-19-the-half-measure-tax.html">Untitled</a></h2>
-        <p>Some notes on my coding of this site</p>
-      </div>
-    </article>
-
-    <article>
-      <time>2026.04.19</time>
-      <div>
-        <h2><a href="/posts/2026-04-19-the-half-measure-tax.html">Untitled</a></h2>
-        <p>Some notes on my coding of this site</p>
+        <h2><a href="/posts/2026-04-19-the-half-measure-tax.html">The half-measure tax</a></h2>
+        <p>Some notes on my coding of this site.</p>
       </div>
     </article>
 
@@ -181,27 +171,12 @@
       <time>2025.11.07</time>
       <div>
         <h2><a href="/posts/2025-11-07-on-matters-of-great-importance.html">The matters of great importance</a></h2>
-        <p>On urgency, scientific revolutions, and the handful of problems worth our time. A short essay built around two passages — one from Banks, one from Kuhn.</p>
+        <p>Some back of napkin thinking on a handful of things that really matter, why, what bottlenecks are in the way, and where they lead.</p>
       </div>
     </article>
     <!-- POST_ENTRIES_END -->
   </section>
 </div>
-
-<script>
-  (() => {
-    const c = document.getElementById('clock');
-    function tick() {
-      if (!c) return;
-      const t = new Date().toLocaleTimeString('en-US', {
-        hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Los_Angeles',
-      });
-      c.textContent = t + ' PST';
-    }
-    tick();
-    setInterval(tick, 30000);
-  })();
-</script>
 
 </body>
 </html>

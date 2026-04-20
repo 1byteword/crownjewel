@@ -58,12 +58,17 @@ def parse_markdown(md_content):
     result_lines = []
 
     for line in lines:
-        if line.strip().startswith('- '):
+        stripped = line.strip()
+        if stripped.startswith('- '):
             if not in_list:
                 result_lines.append('<ul>')
                 in_list = True
-            item = line.strip()[2:]  # Remove '- '
+            item = stripped[2:]
             result_lines.append(f'<li>{item}</li>')
+        elif in_list and not stripped:
+            # Blank line inside a bullet list -- don't close the list,
+            # markdown allows space between items in the same list.
+            continue
         else:
             if in_list:
                 result_lines.append('</ul>')
@@ -442,42 +447,146 @@ def publish_post(md_file, date=None):
     with open(post_file, 'w', encoding='utf-8') as f:
         f.write(post_html)
 
-    # Update writing.html with post entry. The new writing.html structure
-    # uses an explicit insertion marker so we don't have to depend on heading
-    # text or class names that might change with future redesigns.
-    writing_entry = f'''    <article>
-      <time>{date_formatted}</time>
-      <div>
-        <h2><a href="/posts/{slug}.html">{title}</a></h2>
-        <p>{excerpt}</p>
-      </div>
-    </article>
-'''
+    # Update writing.html: dedupe by slug, insert, then sort newest-first
+    # by the <time> tag so the ordering is always chronological regardless
+    # of what order posts were published in.
+    writing_entry = (
+        f'    <article>\n'
+        f'      <time>{date_formatted}</time>\n'
+        f'      <div>\n'
+        f'        <h2><a href="/posts/{slug}.html">{title}</a></h2>\n'
+        f'        <p>{excerpt}</p>\n'
+        f'      </div>\n'
+        f'    </article>\n'
+    )
 
-    with open('writing.html', 'r', encoding='utf-8') as f:
-        writing_page = f.read()
-
-    marker = '<!-- POST_ENTRIES_START -->'
-    idx = writing_page.find(marker)
-    if idx == -1:
-        print("❌ Could not find <!-- POST_ENTRIES_START --> marker in writing.html")
+    if not _update_writing_index(slug, writing_entry):
         return False
 
-    insert_at = idx + len(marker)
-    new_writing_page = writing_page[:insert_at] + '\n' + writing_entry + writing_page[insert_at:]
-
-    # Write back
-    with open('writing.html', 'w', encoding='utf-8') as f:
-        f.write(new_writing_page)
+    # Mirror the newest post into the homepage's 03/writing block so the
+    # landing page doesn't silently go stale when a new post ships.
+    _update_homepage_latest()
 
     print(f"✓ Published: {title}")
     print(f"  Date: {date_formatted}")
     print(f"  URL: /posts/{slug}.html")
     print(f"\nNext steps:")
     print(f"  1. Review: open posts/{slug}.html in browser")
-    print(f"  2. Deploy: make canary-push")
+    print(f"  2. Deploy: make ship")
 
     return True
+
+
+def _update_writing_index(slug, writing_entry):
+    """Insert a post entry into writing.html between the POST_ENTRIES markers,
+    removing any prior entry for the same slug (idempotent re-publish) and
+    sorting the final list of entries by <time> descending.
+    """
+    start_marker = '<!-- POST_ENTRIES_START -->'
+    end_marker = '<!-- POST_ENTRIES_END -->'
+
+    with open('writing.html', 'r', encoding='utf-8') as f:
+        page = f.read()
+
+    s = page.find(start_marker)
+    e = page.find(end_marker)
+    if s == -1 or e == -1 or e < s:
+        print(f"❌ writing.html is missing {start_marker} / {end_marker} markers")
+        return False
+
+    inner = page[s + len(start_marker):e]
+
+    # Pull existing <article>…</article> blocks out of the region. Anything
+    # else (stray whitespace) we drop on the floor when we rebuild.
+    articles = re.findall(r'<article\b[\s\S]*?</article>', inner)
+
+    # Drop any existing entry that links to this slug (idempotent re-publish).
+    slug_href = f'/posts/{slug}.html'
+    articles = [a for a in articles if slug_href not in a]
+
+    # Add the new one (entry already ends with a trailing newline).
+    articles.append(writing_entry.rstrip('\n'))
+
+    # Sort newest-first by the <time> value. Articles without a parseable
+    # <time> sort to the bottom.
+    def _sort_key(article_html):
+        m = re.search(r'<time>([^<]+)</time>', article_html)
+        return m.group(1) if m else ''
+
+    articles.sort(key=_sort_key, reverse=True)
+
+    rebuilt = '\n' + '\n\n'.join('    ' + a.lstrip() for a in articles) + '\n    '
+    new_page = page[:s + len(start_marker)] + rebuilt + page[e:]
+
+    with open('writing.html', 'w', encoding='utf-8') as f:
+        f.write(new_page)
+
+    return True
+
+
+# How many of the newest posts to surface in the homepage's writing section.
+# The rest live one click away on /writing.html. Bump this knob if the list
+# starts feeling sparse.
+HOMEPAGE_LATEST_COUNT = 5
+
+
+def _update_homepage_latest():
+    """Rewrite the HOMEPAGE_LATEST_POST block in index.html to mirror the
+    N newest posts from writing.html (already sorted newest-first there).
+    Silent no-op if either page is missing the expected markers.
+    """
+    index_path = Path('index.html')
+    writing_path = Path('writing.html')
+    if not index_path.exists() or not writing_path.exists():
+        return
+
+    writing_page = writing_path.read_text(encoding='utf-8')
+    m = re.search(
+        r'<!-- POST_ENTRIES_START -->([\s\S]*?)<!-- POST_ENTRIES_END -->',
+        writing_page,
+    )
+    if not m:
+        return
+
+    articles = re.findall(r'<article\b[\s\S]*?</article>', m.group(1))
+    if not articles:
+        return
+
+    blocks = []
+    for article in articles[:HOMEPAGE_LATEST_COUNT]:
+        title_m = re.search(r'<h2><a href="([^"]+)">([^<]+)</a></h2>', article)
+        time_m = re.search(r'<time>([^<]+)</time>', article)
+        dek_m = re.search(r'<p>([^<]+)</p>', article)
+        if not (title_m and time_m and dek_m):
+            continue
+        href, title = title_m.group(1), title_m.group(2)
+        # Homepage shows YYYY.MM (shorter), writing page shows YYYY.MM.DD.
+        date_short = '.'.join(time_m.group(1).split('.')[:2])
+        dek = dek_m.group(1)
+        blocks.append(
+            '        <div class="writing-item">\n'
+            '          <div class="row">\n'
+            f'            <div class="title"><a href="{href}">{title}</a></div>\n'
+            f'            <div class="date">{date_short}</div>\n'
+            '          </div>\n'
+            f'          <div class="dek">{dek}</div>\n'
+            '        </div>\n'
+        )
+
+    if not blocks:
+        return
+
+    rendered = ''.join(blocks)
+
+    index_page = index_path.read_text(encoding='utf-8')
+    new_index = re.sub(
+        r'(<!-- HOMEPAGE_LATEST_POST_START -->)[\s\S]*?(<!-- HOMEPAGE_LATEST_POST_END -->)',
+        lambda mm: f'{mm.group(1)}\n{rendered}        {mm.group(2)}',
+        index_page,
+        count=1,
+    )
+    if new_index != index_page:
+        index_path.write_text(new_index, encoding='utf-8')
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:

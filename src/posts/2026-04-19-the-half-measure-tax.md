@@ -1,4 +1,6 @@
-Some notes on my coding of this site
+# The half-measure tax
+
+Some notes on my coding of this site.
 
 - Vibe coding is great and all, but for every hour spent vibe coding, you must also spend an hour going back through the code with a fine tooth comb. This is where your training and intuition matters (some people call this taste).
 

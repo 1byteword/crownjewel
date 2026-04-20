@@ -142,10 +142,10 @@
   /* work */
   .work-list { display: flex; flex-direction: column; }
   .work-item {
-    display: grid;
-    grid-template-columns: 56px 1fr auto auto;
-    gap: 20px;
+    display: flex;
+    justify-content: space-between;
     align-items: baseline;
+    gap: 20px;
     padding: 16px 0;
     border-bottom: 1px dashed var(--muted);
     font-size: 14px;
@@ -153,22 +153,51 @@
     text-decoration: none;
   }
   .work-item:last-child { border-bottom: none; }
-  .work-item .idx { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; }
+  .work-item .main {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
   .work-item .title { font-weight: 500; }
   .work-item .client { color: var(--muted); font-size: 12px; }
-  .work-item .year { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .work-item .year {
+    color: var(--muted);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
   .work-item:hover .title,
   .work-item:focus-visible .title { background: var(--hi); }
 
   /* writing */
   .writing-list { display: flex; flex-direction: column; gap: 22px; }
-  .writing-item { display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: baseline; }
-  .writing-item .date { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; padding-top: 2px; }
-  .writing-item .title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .writing-item { display: flex; flex-direction: column; gap: 6px; }
+  .writing-item .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .writing-item .title {
+    font-size: 15px;
+    font-weight: 500;
+    min-width: 0;
+  }
   .writing-item .title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
   .writing-item .title a:hover,
   .writing-item .title a:focus-visible { border-bottom-color: var(--ink); }
-  .writing-item .dek { color: var(--muted); font-size: 13px; line-height: 1.5; max-width: 60ch; }
+  .writing-item .date {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .writing-item .dek { color: var(--muted); font-size: 13px; line-height: 1.55; max-width: 60ch; margin: 0; }
   .writing-more {
     display: inline-block;
     margin-top: 26px;
@@ -218,7 +247,6 @@
   .footer .links a { text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
   .footer .links a:hover,
   .footer .links a:focus-visible { opacity: 0.5; }
-  .footer .clock { color: var(--muted); }
 
   /* ---- MOBILE ---- */
   @media (max-width: 720px) {
@@ -234,10 +262,11 @@
     .section { grid-template-columns: 1fr; gap: 14px; padding: 36px 18px 40px; }
     .section:first-of-type { margin-top: 64px; }
     .section .sec-label { padding-top: 0; }
-    .work-item { grid-template-columns: 28px 1fr auto; gap: 12px; font-size: 13px; }
+    .work-item { gap: 14px; font-size: 13px; }
+    .work-item .main { gap: 10px; }
     .work-item .client { display: none; }
-    .writing-item { grid-template-columns: 60px 1fr; gap: 12px; }
     .writing-item .title { font-size: 14px; }
+    .writing-item .row { gap: 12px; }
     .contact-mail { font-size: clamp(22px, 7vw, 32px); }
     /* keep the footer on a single row -- links left, clock right -- to
        match desktop and stop the clock orphaning on its own line */
@@ -259,7 +288,7 @@
     <div class="masthead">
       <h1 class="name-hero">Azhan Khan</h1>
       <div class="meta">
-        <b>Production Engineering, MLOps and Infrastructure</b><br>
+        <b>Production Engineering, SRE, MLOps and Infrastructure</b><br>
         <span class="hi">move at the speed of light and measure things</span>
       </div>
     </div>
@@ -278,8 +307,8 @@
   <section class="section" id="about">
     <div class="sec-label"><span class="num">01</span>about</div>
     <div class="sec-body">
-      <p class="lede">Production engineer working on infrastructure that needs to be fast, observable, and quiet about it. Currently focused on eBPF-based systems and the kind of low-level work that compounds over years, not sprints.</p>
-      <p class="lede muted">Always thinking about <a href="/posts/2025-11-07-on-matters-of-great-importance.html">the handful of things that really matter</a> — and trying to spend my time accordingly.</p>
+      <p class="lede">Currently hacking on the AI & Data Platform at Rivian Automotive - with a focus on infra, o11y, MLOps, and production engineering.</p>
+      <p class="lede muted">Musing on <a href="/posts/2025-11-07-on-matters-of-great-importance.html">the handful of things that really matter</a> — and trying to spend my time accordingly.</p>
     </div>
   </section>
 
@@ -289,9 +318,10 @@
     <div class="sec-body">
       <div class="work-list">
         <a class="work-item" href="https://github.com/1byteword/dogwatch">
-          <span class="idx">→ 01</span>
-          <span class="title">dogwatch — eBPF observability</span>
-          <span class="client">single-binary platform</span>
+          <span class="main">
+            <span class="title">dogwatch — eBPF observability</span>
+            <span class="client">single-binary platform</span>
+          </span>
           <span class="year">2025</span>
         </a>
       </div>
@@ -303,13 +333,22 @@
     <div class="sec-label"><span class="num">03</span>writing</div>
     <div class="sec-body">
       <div class="writing-list">
+        <!-- HOMEPAGE_LATEST_POST_START -->
         <div class="writing-item">
-          <div class="date">2025.11</div>
-          <div>
-            <div class="title"><a href="/posts/2025-11-07-on-matters-of-great-importance.html">The matters of great importance</a></div>
-            <div class="dek">On urgency, scientific revolutions, and the handful of problems worth our time. A short essay built around two passages — one from Banks, one from Kuhn.</div>
+          <div class="row">
+            <div class="title"><a href="/posts/2026-04-19-the-half-measure-tax.html">The half-measure tax</a></div>
+            <div class="date">2026.04</div>
           </div>
+          <div class="dek">Some notes on my coding of this site.</div>
         </div>
+        <div class="writing-item">
+          <div class="row">
+            <div class="title"><a href="/posts/2025-11-07-on-matters-of-great-importance.html">The matters of great importance</a></div>
+            <div class="date">2025.11</div>
+          </div>
+          <div class="dek">Some back of napkin thinking on a handful of things that really matter and where they lead.</div>
+        </div>
+        <!-- HOMEPAGE_LATEST_POST_END -->
       </div>
       <a class="writing-more" href="/writing.html">all writing →</a>
     </div>
@@ -338,7 +377,6 @@
     <a href="#writing">WRITING</a>
     <a href="#contact">EMAIL</a>
   </div>
-  <div class="clock" id="clock">— PST</div>
 </div>
 
 <script>
@@ -599,17 +637,6 @@
     play();
   }
 
-  // ---- Footer clock -----------------------------------------------------
-  const clockEl = document.getElementById("clock");
-  function updateClock() {
-    if (!clockEl) return;
-    const t = new Date().toLocaleTimeString("en-US", {
-      hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "America/Los_Angeles",
-    });
-    clockEl.textContent = `${t} PST`;
-  }
-  updateClock();
-  setInterval(updateClock, 30000);
 })();
 </script>
 </body>
