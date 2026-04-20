@@ -6,8 +6,10 @@ Usage:
   ./publish src/posts/2025-01-15-my-post.md
 
 Creates:
-  - /posts/2025-01-15-my-post.html (full post)
-  - Updates index.html with post entry (title, date, excerpt, link)
+  - writing/my-post.html (served at /writing/my-post -- date prefix in
+    source filename is used for sort/organization, not routing)
+  - Updates writing/index.html with a post list entry
+  - Mirrors the N newest posts into the homepage's writing section
 
 Markdown format:
   # Title
@@ -183,7 +185,8 @@ def handle_images(md_content, md_file_path):
             import shutil
             shutil.copy2(src, dest)
 
-            # Update markdown reference (relative to /posts/ directory)
+            # Rewrite to /img/ (relative) so the post HTML at
+            # writing/<slug>.html finds it at ../img/<name>.
             md_content = md_content.replace(f']({img_path})', f'](../img/{src.name})')
             print(f"✓ Copied image: {src.name}")
 
@@ -192,7 +195,7 @@ def handle_images(md_content, md_file_path):
 def create_post_html(title, date, content):
     """Generate standalone post HTML page in the monospace homepage aesthetic.
 
-    Matches index.html / writing.html: Bricolage Grotesque, white bg, single ink color,
+    Matches index.html / writing/index.html: Bricolage Grotesque, white bg, single ink color,
     yellow hover highlight. The shared CSS lives inline so each post is
     self-contained and cacheable as a standalone artifact.
     """
@@ -366,7 +369,7 @@ def create_post_html(title, date, content):
 
 <div class="shell">
   <div class="topbar">
-    <a href="/writing.html">← Writing</a>
+    <a href="/writing">← Writing</a>
     <span>Azhan Khan</span>
   </div>
 
@@ -375,7 +378,7 @@ def create_post_html(title, date, content):
   </article>
 
   <div class="back">
-    <a href="/writing.html">← all writing</a>
+    <a href="/writing">← all writing</a>
     <a href="/">Azhan Khan →</a>
   </div>
 </div>
@@ -422,8 +425,10 @@ def publish_post(md_file, date=None):
 
     date_formatted = date.replace('-', '.')
 
-    # Generate slug from filename
-    slug = Path(md_file).stem  # e.g., "2025-01-16-my-post"
+    # Slug: strip the YYYY-MM-DD- prefix so the URL stays stable even if
+    # the source filename conventions change. The date lives on the page
+    # and in the filesystem sort key; it doesn't need to be in the URL.
+    slug = re.sub(r'^\d{4}-\d{2}-\d{2}-', '', Path(md_file).stem)
 
     # Handle images
     md_content = handle_images(md_content, md_file)
@@ -438,23 +443,23 @@ def publish_post(md_file, date=None):
     full_content = f'<h1>{title}</h1>\n{html_content}'
 
     # Create post HTML file
-    posts_dir = Path('posts')
-    posts_dir.mkdir(exist_ok=True)
+    writing_dir = Path('writing')
+    writing_dir.mkdir(exist_ok=True)
 
-    post_file = posts_dir / f'{slug}.html'
+    post_file = writing_dir / f'{slug}.html'
     post_html = create_post_html(title, date_formatted, full_content)
 
     with open(post_file, 'w', encoding='utf-8') as f:
         f.write(post_html)
 
-    # Update writing.html: dedupe by slug, insert, then sort newest-first
-    # by the <time> tag so the ordering is always chronological regardless
+    # Update writing/index.html: dedupe by slug, insert, then sort
+    # newest-first by <time> so ordering is always chronological regardless
     # of what order posts were published in.
     writing_entry = (
         f'    <article>\n'
         f'      <time>{date_formatted}</time>\n'
         f'      <div>\n'
-        f'        <h2><a href="/posts/{slug}.html">{title}</a></h2>\n'
+        f'        <h2><a href="/writing/{slug}">{title}</a></h2>\n'
         f'        <p>{excerpt}</p>\n'
         f'      </div>\n'
         f'    </article>\n'
@@ -463,35 +468,38 @@ def publish_post(md_file, date=None):
     if not _update_writing_index(slug, writing_entry):
         return False
 
-    # Mirror the newest post into the homepage's 03/writing block so the
+    # Mirror the newest posts into the homepage's 03/writing block so the
     # landing page doesn't silently go stale when a new post ships.
     _update_homepage_latest()
 
     print(f"✓ Published: {title}")
     print(f"  Date: {date_formatted}")
-    print(f"  URL: /posts/{slug}.html")
+    print(f"  URL: /writing/{slug}")
     print(f"\nNext steps:")
-    print(f"  1. Review: open posts/{slug}.html in browser")
-    print(f"  2. Deploy: make ship")
+    print(f"  1. Review: open writing/{slug}.html  (or http://localhost:8000/writing/{slug} under `make dev`)")
+    print(f"  2. Deploy: git push && make ship")
 
     return True
 
 
+WRITING_INDEX = 'writing/index.html'
+
+
 def _update_writing_index(slug, writing_entry):
-    """Insert a post entry into writing.html between the POST_ENTRIES markers,
-    removing any prior entry for the same slug (idempotent re-publish) and
-    sorting the final list of entries by <time> descending.
+    """Insert a post entry into writing/index.html between the POST_ENTRIES
+    markers, removing any prior entry for the same slug (idempotent
+    re-publish) and sorting by <time> descending.
     """
     start_marker = '<!-- POST_ENTRIES_START -->'
     end_marker = '<!-- POST_ENTRIES_END -->'
 
-    with open('writing.html', 'r', encoding='utf-8') as f:
+    with open(WRITING_INDEX, 'r', encoding='utf-8') as f:
         page = f.read()
 
     s = page.find(start_marker)
     e = page.find(end_marker)
     if s == -1 or e == -1 or e < s:
-        print(f"❌ writing.html is missing {start_marker} / {end_marker} markers")
+        print(f"❌ {WRITING_INDEX} is missing {start_marker} / {end_marker} markers")
         return False
 
     inner = page[s + len(start_marker):e]
@@ -501,7 +509,9 @@ def _update_writing_index(slug, writing_entry):
     articles = re.findall(r'<article\b[\s\S]*?</article>', inner)
 
     # Drop any existing entry that links to this slug (idempotent re-publish).
-    slug_href = f'/posts/{slug}.html'
+    # Match on "/writing/<slug>" with a word boundary so we don't accidentally
+    # prefix-match (e.g. /writing/foo must not match /writing/foo-bar).
+    slug_href = f'/writing/{slug}"'
     articles = [a for a in articles if slug_href not in a]
 
     # Add the new one (entry already ends with a trailing newline).
@@ -518,25 +528,25 @@ def _update_writing_index(slug, writing_entry):
     rebuilt = '\n' + '\n\n'.join('    ' + a.lstrip() for a in articles) + '\n    '
     new_page = page[:s + len(start_marker)] + rebuilt + page[e:]
 
-    with open('writing.html', 'w', encoding='utf-8') as f:
+    with open(WRITING_INDEX, 'w', encoding='utf-8') as f:
         f.write(new_page)
 
     return True
 
 
 # How many of the newest posts to surface in the homepage's writing section.
-# The rest live one click away on /writing.html. Bump this knob if the list
+# The rest live one click away at /writing. Bump this knob if the list
 # starts feeling sparse.
 HOMEPAGE_LATEST_COUNT = 5
 
 
 def _update_homepage_latest():
     """Rewrite the HOMEPAGE_LATEST_POST block in index.html to mirror the
-    N newest posts from writing.html (already sorted newest-first there).
+    N newest posts from writing/index.html (already sorted newest-first there).
     Silent no-op if either page is missing the expected markers.
     """
     index_path = Path('index.html')
-    writing_path = Path('writing.html')
+    writing_path = Path(WRITING_INDEX)
     if not index_path.exists() or not writing_path.exists():
         return
 

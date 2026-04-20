@@ -8,7 +8,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy site
 COPY *.html /usr/share/nginx/html/
-COPY posts /usr/share/nginx/html/posts
+COPY writing /usr/share/nginx/html/writing
 COPY img /usr/share/nginx/html/img
 
 # Simple 404

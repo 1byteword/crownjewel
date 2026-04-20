@@ -12,9 +12,13 @@ honest if you change the architecture.
   inline `<script>` that drives the canvas. Renders the scene at dither
   resolution, reuses one offscreen buffer, throttles to 24 fps, pauses when
   offscreen / tab hidden / `prefers-reduced-motion`.
-- `writing.html` — blog index. Georgia serif on `/img/bg.png`. Lists posts.
-  The `publish` script appends new entries here.
-- `posts/*.html` — standalone post pages, one per published post.
+- `writing/index.html` — blog index, served at `/writing`. Bricolage Grotesque,
+  same aesthetic as the homepage. The `publish` script inserts entries between
+  the `<!-- POST_ENTRIES_START -->` / `<!-- POST_ENTRIES_END -->` markers and
+  keeps them sorted newest-first.
+- `writing/<slug>.html` — standalone post pages, one per published post, served
+  at `/writing/<slug>` (extensionless). Filenames are derived from the source
+  markdown with the `YYYY-MM-DD-` prefix stripped.
 
 > Historical note: an earlier iteration of this repo aimed for a single
 > ~3 KB `index.html` with zero JS and no fonts. That constraint is **retired**
@@ -83,7 +87,7 @@ Two independent stacks share the same cluster:
 Typical loop:
 
 ```bash
-# edit index.html / writing.html / etc.
+# edit index.html / writing/index.html / writing/<slug>.html / etc.
 make canary-push                       # ships preview.azhankhan.com
 # review at https://preview.azhankhan.com
 make promote                           # canary → latest
@@ -103,8 +107,12 @@ git add . && git commit -m "..." && git push
 ./publish src/posts/YYYY-MM-DD-slug.md
 
 # Side effects:
-#   - posts/YYYY-MM-DD-slug.html created
-#   - <article> entry inserted into writing.html under <section id="writing">
+#   - writing/<slug>.html created (date prefix stripped from filename; URL is
+#     extensionless: /writing/<slug>)
+#   - <article> entry inserted into writing/index.html, sorted by <time> desc,
+#     dedup-by-slug on re-publish
+#   - Homepage 03/writing block re-mirrored with the N newest posts
+#     (HOMEPAGE_LATEST_COUNT in publish, default 5)
 #   - Any ![](image.jpg) refs auto-copied into img/ with paths rewritten
 ```
 

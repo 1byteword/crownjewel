@@ -28,8 +28,7 @@ help:
 	@echo '  make promote       - Promote canary to production'
 
 dev:
-	@echo 'Serving site at http://localhost:8000  (Ctrl-C to stop)'
-	@python3 -m http.server 8000
+	@python3 dev.py 8000
 
 serve: dev
 
