@@ -7,8 +7,8 @@ honest if you change the architecture.
 ## What this site is
 
 - **Two-page** static site behind nginx in Kubernetes.
-- `index.html` — homepage. Syne Mono + an animated dithered palm‑tree canvas.
-  Has a single Google Font (`Syne Mono`, preconnected + preloaded) and an
+- `index.html` — homepage. Bricolage Grotesque + an animated dithered palm‑tree canvas.
+  Has a single Google Font (`Bricolage Grotesque`, preconnected + preloaded) and an
   inline `<script>` that drives the canvas. Renders the scene at dither
   resolution, reuses one offscreen buffer, throttles to 24 fps, pauses when
   offscreen / tab hidden / `prefers-reduced-motion`.
@@ -18,7 +18,7 @@ honest if you change the architecture.
 
 > Historical note: an earlier iteration of this repo aimed for a single
 > ~3 KB `index.html` with zero JS and no fonts. That constraint is **retired**
-> as of the Syne Mono / canvas redesign. Don't reintroduce it without
+> as of the Bricolage Grotesque / canvas redesign. Don't reintroduce it without
 > explicit intent.
 
 ## Deploy pipeline (current)

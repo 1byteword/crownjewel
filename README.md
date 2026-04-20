@@ -17,7 +17,7 @@ pages under `posts/`.
 
 ```
 .
-├── index.html                       # Homepage (Syne Mono + dithered canvas)
+├── index.html                       # Homepage (Bricolage Grotesque + dithered canvas)
 ├── writing.html                     # Blog index
 ├── posts/                           # Published post pages (HTML)
 ├── src/posts/                       # Post sources (Markdown)

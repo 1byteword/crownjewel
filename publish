@@ -187,7 +187,7 @@ def handle_images(md_content, md_file_path):
 def create_post_html(title, date, content):
     """Generate standalone post HTML page in the monospace homepage aesthetic.
 
-    Matches index.html / writing.html: Syne Mono, white bg, single ink color,
+    Matches index.html / writing.html: Bricolage Grotesque, white bg, single ink color,
     yellow hover highlight. The shared CSS lives inline so each post is
     self-contained and cacheable as a standalone artifact.
     """
@@ -206,8 +206,8 @@ def create_post_html(title, date, content):
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..700&display=swap">
 
 <style>
   :root {{
@@ -223,7 +223,7 @@ def create_post_html(title, date, content):
   body {{
     background: var(--bg);
     color: var(--ink);
-    font-family: "Syne Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
     font-size: 14px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
