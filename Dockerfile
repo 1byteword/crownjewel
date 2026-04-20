@@ -10,6 +10,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY *.html /usr/share/nginx/html/
 COPY writing /usr/share/nginx/html/writing
 COPY img /usr/share/nginx/html/img
+COPY fonts /usr/share/nginx/html/fonts
 
 # Simple 404
 RUN echo '<!DOCTYPE html><html><head><title>404</title><style>*{margin:0;padding:0}body{font:18px sans-serif;padding:50px;text-align:center}a{color:#0066cc}</style></head><body><h1>404</h1><p>Not found</p><a href="/">Home</a></body></html>' > /usr/share/nginx/html/404.html
