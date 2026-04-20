@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Untitled">
+<title>Untitled — Azhan Khan</title>
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap">
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #0a0a0a;
+    --muted: #8a8a8a;
+    --hi: #fff068;
+    --rule: #e5e5e5;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Syne Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .shell {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 28px 28px 96px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 64px;
+  }
+  .topbar a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .topbar a:hover,
+  .topbar a:focus-visible { background: var(--hi); }
+
+  article h1 {
+    font-size: clamp(28px, 4.2vw, 42px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }
+  article time {
+    display: block;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 40px;
+  }
+  article h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 44px 0 14px;
+    letter-spacing: -0.005em;
+  }
+  article h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 32px 0 10px;
+  }
+  article p { margin: 0 0 18px; max-width: 64ch; }
+  article p.attribution {
+    margin-top: -10px;
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+  article p.spacer { margin-bottom: 32px; }
+  article a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+  }
+  article a:hover,
+  article a:focus-visible { background: var(--hi); }
+  article ul, article ol {
+    margin: 0 0 22px 1.5em;
+    padding: 0;
+    max-width: 64ch;
+  }
+  article li { margin: 6px 0; }
+  article code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12.5px;
+    background: #f4f4f4;
+    padding: 1px 6px;
+    border: 1px solid var(--rule);
+  }
+  article pre {
+    background: #f7f7f7;
+    border: 1px solid var(--rule);
+    padding: 14px 16px;
+    overflow-x: auto;
+    margin: 18px 0 26px;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  article pre code {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  article img { max-width: 100%; height: auto; margin: 18px 0; }
+  article em { font-style: italic; }
+  article strong { font-weight: 500; }
+
+  .back {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .back a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .back a:hover,
+  .back a:focus-visible { background: var(--hi); }
+
+  @media (max-width: 720px) {
+    .shell { padding: 18px 18px 64px; }
+    .topbar { margin-bottom: 40px; }
+    article h1 { font-size: clamp(26px, 8vw, 36px); }
+    article time { margin-bottom: 28px; }
+    .back { flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <div class="topbar">
+    <a href="/writing.html">← Writing</a>
+    <span>Azhan Khan</span>
+  </div>
+
+  <article>
+    <h1>Untitled</h1>
+    <time>2026.04.19</time>
+<p>Some notes on my coding of this site</p>
+<ul>
+<li>Vibe coding is great and all, but for every hour spent vibe coding, you must also spend an hour going back through the code with a fine tooth comb. This is where your training and intuition matters (some people call this taste).</li>
+</ul>
+<ul>
+<li>Design should never be in the hands of a machine</li>
+</ul>
+<ul>
+<li>Details really matter - why are you half-assing things that end-users won't ever tangibly feel? Or do you not care about them?</li>
+</ul>
+<ul>
+<li>Everyone's a critic - correct by expanding on sheer volume and have a self-correcting quality about your works</li>
+</ul>
+<ul>
+<li>Those works that have been created through half-measures and laziness can be felt to be lacking spiritually, and there's almost an emotional backlash that we as animals intrinsically feel to not being cared for.</li>
+</ul>
+  </article>
+
+  <div class="back">
+    <a href="/writing.html">← all writing</a>
+    <a href="/">Azhan Khan →</a>
+  </div>
+</div>
+
+</body>
+</html>
