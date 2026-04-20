@@ -1,4 +1,4 @@
-.PHONY: help dev serve build push deploy status clean size canary-build canary-push canary-test canary-status promote
+.PHONY: help dev serve build push deploy status clean size cf-purge ship canary-build canary-push canary-test canary-status promote
 
 IMAGE := ghcr.io/1byteword/crownjewel
 TAG := $(shell git rev-parse --short HEAD 2>/dev/null || echo "latest")
@@ -15,6 +15,10 @@ help:
 	@echo '  make status        - Check deployment'
 	@echo '  make size          - Show bundle size'
 	@echo '  make clean         - Remove images'
+	@echo ''
+	@echo 'Edge / Cloudflare:'
+	@echo '  make cf-purge      - Purge Cloudflare cache (needs CLOUDFLARE_API_TOKEN, CLOUDFLARE_ZONE_ID)'
+	@echo '  make ship          - kubectl rollout restart + cf-purge (use after `git push`)'
 	@echo ''
 	@echo 'Canary (preview.azhankhan.com):'
 	@echo '  make canary-build  - Build canary image'
@@ -47,6 +51,37 @@ size:
 
 clean:
 	docker rmi $(IMAGE):$(TAG) $(IMAGE):latest || true
+
+# ----- Edge / Cloudflare -----------------------------------------------------
+# Both targets require these env vars (don't put them in the repo):
+#   CLOUDFLARE_API_TOKEN  - scoped token (Zone:Cache Purge:Purge, etc.)
+#   CLOUDFLARE_ZONE_ID    - from CF dashboard sidebar of the zone
+cf-purge:
+	@if [ -z "$$CLOUDFLARE_API_TOKEN" ] || [ -z "$$CLOUDFLARE_ZONE_ID" ]; then \
+		echo 'Error: set CLOUDFLARE_API_TOKEN and CLOUDFLARE_ZONE_ID in your shell env.'; \
+		echo 'Add to ~/.zshrc:'; \
+		echo '  export CLOUDFLARE_API_TOKEN="cfat_..."'; \
+		echo '  export CLOUDFLARE_ZONE_ID="<from CF dashboard sidebar>"'; \
+		exit 1; \
+	fi
+	@echo '→ Purging Cloudflare cache (zone $(shell echo $$CLOUDFLARE_ZONE_ID | cut -c1-8)…)'
+	@curl -fsS -X POST \
+		"https://api.cloudflare.com/client/v4/zones/$$CLOUDFLARE_ZONE_ID/purge_cache" \
+		-H "Authorization: Bearer $$CLOUDFLARE_API_TOKEN" \
+		-H "Content-Type: application/json" \
+		--data '{"purge_everything":true}' \
+		| python3 -c 'import sys,json; r=json.load(sys.stdin); print("✓ purge ok" if r.get("success") else "✗ failed: "+json.dumps(r))'
+
+# Use after `git push` once GitHub Actions has built the new :latest image
+# (give it ~2-3 min). Restarts pods to pull the new image, then purges CF.
+ship:
+	@echo '→ Rolling out personal-site...'
+	@kubectl rollout restart deployment personal-site
+	@kubectl rollout status deployment personal-site --timeout=120s
+	@$(MAKE) --no-print-directory cf-purge
+	@echo ''
+	@echo '✓ Live. Verify:'
+	@echo '  curl -sI https://azhankhan.com/ | grep -iE "last-modified|cf-cache-status|age"'
 
 # Canary deployment commands
 canary-build:
