@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="100 great albums">
+<title>100 great albums — Azhan Khan</title>
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preload" as="font" type="font/woff2" href="/fonts/bricolage-grotesque-latin.woff2" crossorigin>
+
+<style>
+  @font-face {
+    font-family: 'Bricolage Grotesque';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('/fonts/bricolage-grotesque-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  :root {
+    --bg: #ffffff;
+    --ink: #0a0a0a;
+    --muted: #8a8a8a;
+    --hi: #fff068;
+    --rule: #e5e5e5;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .shell {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 28px 28px 96px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 64px;
+  }
+  .topbar a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .topbar a:hover,
+  .topbar a:focus-visible { background: var(--hi); }
+
+  article h1 {
+    font-size: clamp(28px, 4.2vw, 42px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }
+  article time {
+    display: block;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 40px;
+  }
+  article h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 44px 0 14px;
+    letter-spacing: -0.005em;
+  }
+  article h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 32px 0 10px;
+  }
+  article p { margin: 0 0 18px; max-width: 64ch; }
+  article p.attribution {
+    margin-top: -10px;
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+  article p.spacer { margin-bottom: 32px; }
+  article a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+  }
+  article a:hover,
+  article a:focus-visible { background: var(--hi); }
+  article ul, article ol {
+    margin: 0 0 22px 1.5em;
+    padding: 0;
+    max-width: 64ch;
+  }
+  article li { margin: 6px 0; }
+  article code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12.5px;
+    background: #f4f4f4;
+    padding: 1px 6px;
+    border: 1px solid var(--rule);
+  }
+  article pre {
+    background: #f7f7f7;
+    border: 1px solid var(--rule);
+    padding: 14px 16px;
+    overflow-x: auto;
+    margin: 18px 0 26px;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  article pre code {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  article img { max-width: 100%; height: auto; margin: 18px 0; }
+  article em { font-style: italic; }
+  article strong { font-weight: 500; }
+
+  .back {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .back a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .back a:hover,
+  .back a:focus-visible { background: var(--hi); }
+
+  @media (max-width: 720px) {
+    .shell { padding: 18px 18px 64px; }
+    .topbar { margin-bottom: 40px; }
+    article h1 { font-size: clamp(26px, 8vw, 36px); }
+    article time { margin-bottom: 28px; }
+    .back { flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <div class="topbar">
+    <a href="/writing">← Writing</a>
+    <span>Azhan Khan</span>
+  </div>
+
+  <article>
+    <h1>100 great albums</h1>
+    <time>2026.05.25</time>
+<p>I've spent the last few years deliberately broadening what I read, watch, and look at — different writers, different eras, different traditions. Music is the one medium where I never bothered.</p>
+<p>What I actually listen to is a few dozen songs, on rotation, for years. The shuffle is mine but the well is shallow. I don't sit with an album. I don't follow an artist through their arc. I skip the third track because I always skip the third track, and I've never stopped to figure out why someone put it there.</p>
+<p>That's the block I earnestly wish to chip away at. Many of the purported great albums are sickly sweet on a fourth or fifth listen - I feel ill entertaining such false idols (can you honestly listen to a Kendrick album on repeat for the rest of your life?)</p>
+<p>A koan to myself — the song I have heard a thousand times, have I heard it once?</p>
+<p>The list, as I work through it:</p>
+<ul>
+<li><strong>Black British Music</strong> — Jim Legxacy — 10/10</li>
+<li><strong>Heaven or Las Vegas</strong> — Cocteau Twins — 9/10</li>
+<li><strong>Sgt. Pepper's Lonely Hearts Club Band</strong> — The Beatles — 10/10</li>
+<li><strong>The Downward Spiral</strong> — Nine Inch Nails — 5/10</li>
+</ul>
+  </article>
+
+  <div class="back">
+    <a href="/writing">← all writing</a>
+    <a href="/">Azhan Khan →</a>
+  </div>
+</div>
+
+</body>
+</html>
