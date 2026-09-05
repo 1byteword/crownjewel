@@ -4,688 +4,184 @@
 <meta charset="UTF-8">
 <title>Azhan Khan</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Azhan Khan — production engineering, MLOps and infrastructure. Move at the speed of light and measure things.">
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#ffffff">
-
-<link rel="preload" as="font" type="font/woff2" href="/fonts/bricolage-grotesque-latin.woff2" crossorigin>
-
+<meta name="description" content="Azhan Khan. Production engineering, independent projects, and writing about software, music, and things worth working on.">
+<meta name="theme-color" content="#e8ebe2">
 <style>
-  /* Self-hosted Bricolage Grotesque (variable, 400..700). Latin subset only
-     -- site is English + a couple accented loanwords (ï, é), all inside
-     U+0000-00FF. ~41 KB woff2, served immutably from the same origin so
-     it rides the existing HTTP/2 connection instead of opening two more
-     to fonts.googleapis.com + fonts.gstatic.com. */
-  @font-face {
-    font-family: 'Bricolage Grotesque';
-    font-style: normal;
-    font-weight: 400 700;
-    font-display: swap;
-    src: url('/fonts/bricolage-grotesque-latin.woff2') format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-
-  :root {
-    --bg: #ffffff;
-    --ink: #0a0a0a;
-    --muted: #8a8a8a;
-    --hi: #fff068;
-    --footer-h: 44px;
-  }
-
+  :root { --paper: #e8ebe2; --ink: #202c23; --muted: #566153; --rule: #bdc7b6; --serif: "Bodoni 72", Didot, "Times New Roman", serif; }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
-    font-size: 13px;
-    line-height: 1.55;
-  }
+  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+  body { margin: 0; background: #cfd6cb; color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  a:hover { color: #52643b; }
+  a:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
+  ::selection { background: #d1dc84; color: #202c23; }
+  .skip-link { position: absolute; top: -70px; left: 24px; z-index: 3; background: var(--paper); padding: 12px; }
+  .skip-link:focus { top: 12px; }
+  .book { max-width: 1180px; margin: 30px auto; padding: 0 35px; background: var(--paper); border-top: 3px solid #a85364; border-bottom: 3px solid #c5d58b; }
+  .running-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0 0; font-size: 12px; }
+  .running-head a { text-decoration: none; }
+  .running-head a:hover { text-decoration: underline; }
+  .running-head nav { display: flex; gap: 25px; }
+  .wordmark { display: flex; align-items: baseline; justify-content: center; gap: .075em; margin: 5px 0 19px; padding: 0 12px; font-size: clamp(90px, 14.5vw, 184px); line-height: 1.03; white-space: nowrap; font-weight: 400; }
+  .wordmark .given { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.075em; }
+  .wordmark .surname { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif; font-weight: 900; letter-spacing: -.09em; }
+  .book-footer { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0; border-top: 1px solid var(--rule); font-size: 11px; }
+  @media (max-width: 1180px) { .book { margin: 0; } }
+  @media (max-width: 720px) { .book { padding: 0 22px; } .wordmark { font-size: 14.4vw; margin-top: 16px; padding: 0; } }
+  @media (max-width: 420px) { .running-head { font-size: 11px; gap: 15px; } .running-head nav { gap: 16px; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-  /* ---- PAGE ---- */
-  .page {
-    position: relative;
-    min-height: 100vh;
-    padding: 0 0 var(--footer-h);
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Hero = spacer + masthead + gif, fills exactly the viewport above the footer */
-  .hero {
-    flex: 0 0 calc(100vh - var(--footer-h));
-    display: flex;
-    flex-direction: column;
-  }
-  .spacer { flex: 1 1 auto; min-height: 0; }
-
-  .masthead {
-    padding: 0 28px 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 24px;
-  }
-  .name-hero {
-    font-size: clamp(36px, 4.2vw, 60px);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1;
-  }
-  .masthead .meta {
-    text-align: right;
-    font-size: 10.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .masthead .meta .hi { background: var(--hi); color: var(--ink); padding: 1px 5px; }
-
-  /* ---- GIF BANNER ---- */
-  .gif {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 42 / 9;
-    max-height: 70%;
-    background: #fff;
-    overflow: hidden;
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    flex-shrink: 0;
-  }
-  .gif canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-  }
-
-  /* ---- SECTIONS ---- */
-  .section {
-    border-top: 1px solid var(--ink);
-    padding: 48px 28px 56px;
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 28px;
-  }
-  .section:first-of-type { margin-top: 64px; }
-  .section .sec-label {
-    font-size: 10.5px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding-top: 4px;
-  }
-  .section .sec-label .num {
-    display: inline-block;
-    background: var(--ink);
-    color: var(--bg);
-    padding: 1px 5px;
-    margin-right: 6px;
-    font-weight: 500;
-  }
-  .section .sec-body { max-width: 720px; }
-
-  /* about */
-  .lede {
-    max-width: 60ch;
-    font-size: 14px;
-    line-height: 1.65;
-    margin: 0 0 14px;
-  }
-  .lede.muted { color: var(--muted); }
-  .lede a {
-    color: var(--ink);
-    border-bottom: 1px solid var(--ink);
-    text-decoration: none;
-  }
-  .lede a:hover,
-  .lede a:focus-visible { background: var(--hi); }
-
-  /* work */
-  .work-list { display: flex; flex-direction: column; }
-  .work-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 20px;
-    padding: 16px 0;
-    border-bottom: 1px dashed var(--muted);
-    font-size: 14px;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .work-item:last-child { border-bottom: none; }
-  .work-item .main {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    flex-wrap: wrap;
-    min-width: 0;
-  }
-  .work-item .title { font-weight: 500; }
-  .work-item .client { color: var(--muted); font-size: 12px; }
-  .work-item .year {
-    color: var(--muted);
-    font-size: 12px;
-    font-variant-numeric: tabular-nums;
-    flex-shrink: 0;
-    white-space: nowrap;
-  }
-  .work-item:hover .title,
-  .work-item:focus-visible .title { background: var(--hi); }
-
-  /* writing */
-  .writing-list { display: flex; flex-direction: column; gap: 22px; }
-  .writing-item { display: flex; flex-direction: column; gap: 6px; }
-  .writing-item .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 20px;
-  }
-  .writing-item .title {
-    font-size: 15px;
-    font-weight: 500;
-    min-width: 0;
-  }
-  .writing-item .title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
-  .writing-item .title a:hover,
-  .writing-item .title a:focus-visible { border-bottom-color: var(--ink); }
-  .writing-item .date {
-    color: var(--muted);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    font-variant-numeric: tabular-nums;
-    flex-shrink: 0;
-    white-space: nowrap;
-  }
-  .writing-item .dek { color: var(--muted); font-size: 13px; line-height: 1.55; max-width: 60ch; margin: 0; }
-  .writing-more {
-    display: inline-block;
-    margin-top: 26px;
-    font-size: 10.5px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 1px;
-  }
-  .writing-more:hover,
-  .writing-more:focus-visible { background: var(--hi); }
-
-  /* contact */
-  .contact-body { display: flex; flex-direction: column; gap: 28px; }
-  .contact-mail {
-    font-size: clamp(28px, 3.4vw, 44px);
-    letter-spacing: -0.01em;
-    line-height: 1.1;
-  }
-  .contact-mail a { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--ink); }
-  .contact-mail a:hover,
-  .contact-mail a:focus-visible { background: var(--hi); }
-  .socials { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
-  .socials a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
-  .socials a:hover,
-  .socials a:focus-visible { opacity: 0.5; }
-  .socials .handle { color: var(--muted); margin-left: 6px; text-transform: none; letter-spacing: 0; }
-
-  /* ---- FIXED FOOTER ---- */
-  .footer {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 28px;
-    background: var(--bg);
-    border-top: 1px solid var(--ink);
-    font-size: 10.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    z-index: 50;
-  }
-  .footer .links { display: flex; gap: 24px; }
-  .footer .links a { text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
-  .footer .links a:hover,
-  .footer .links a:focus-visible { opacity: 0.5; }
-
-  /* ---- MOBILE ---- */
-  @media (max-width: 720px) {
-    .masthead {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 0 18px 14px;
-    }
-    .masthead .meta { text-align: left; font-size: 10px; }
-    .name-hero { font-size: clamp(40px, 11vw, 64px); }
-    .gif { aspect-ratio: 16 / 9; max-height: 50%; }
-    .section { grid-template-columns: 1fr; gap: 14px; padding: 36px 18px 40px; }
-    .section:first-of-type { margin-top: 64px; }
-    .section .sec-label { padding-top: 0; }
-    .work-item { gap: 14px; font-size: 13px; }
-    .work-item .main { gap: 10px; }
-    .work-item .client { display: none; }
-    .writing-item .title { font-size: 14px; }
-    .writing-item .row { gap: 12px; }
-    .contact-mail { font-size: clamp(22px, 7vw, 32px); }
-    /* keep the footer on a single row -- links left, clock right -- to
-       match desktop and stop the clock orphaning on its own line */
-    .footer { padding: 10px 16px; font-size: 10px; gap: 12px; }
-    .footer .links { gap: 14px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
+  .canopy { margin: 0 -17px; position: relative; overflow: hidden; isolation: isolate; background: var(--paper); }
+  .canopy img { display: block; width: 100%; height: auto; aspect-ratio: 3; object-fit: cover; mix-blend-mode: multiply; }
+  .canopy canvas { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: multiply; }
+  .canopy canvas[hidden] { display: none; }
+  .canopy.is-animated { background: #d9dcd2; }
+  .canopy.is-animated img { visibility: hidden; }
+  .spread { display: grid; grid-template-columns: 1fr 1fr; }
+  .leaf { padding: 29px 31px 0 0; min-width: 0; display: flex; flex-direction: column; }
+  .leaf + .leaf { padding: 29px 0 0 31px; border-left: 1px solid var(--rule); }
+  .section-title { font-family: var(--serif); font-style: italic; font-size: 41px; line-height: 1; font-weight: 400; letter-spacing: -.035em; margin: 0 0 23px; }
+  .lead { font-size: 27px; line-height: 1.27; letter-spacing: -.02em; margin: 0 0 21px; }
+  .copy { font-size: 19px; line-height: 1.45; margin: 0 0 21px; }
+  .work { margin-top: 21px; }
+  .work h3 { font-size: 12px; font-weight: 400; margin: 0 0 12px; }
+  .work .project { font-size: 23px; letter-spacing: -.025em; text-decoration: none; }
+  .work .project:hover { text-decoration: underline; }
+  .work p { font-size: 15px; line-height: 1.4; margin: 8px 0 0; }
+  .contact { display: flex; flex-wrap: wrap; gap: 12px 21px; font-size: 12px; margin-top: 32px; }
+  .writing-item { margin-bottom: 23px; }
+  .row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  .writing-item .title { font-size: 22px; line-height: 1.18; letter-spacing: -.02em; }
+  .writing-item .title a { text-decoration: none; }
+  .writing-item .title a:hover { text-decoration: underline; }
+  .date { font-size: 10px; flex-shrink: 0; color: var(--muted); }
+  .dek { font-size: 16px; line-height: 1.45; margin-top: 9px; }
+  .writing-item:first-child .title { font-family: var(--serif); font-size: 34px; line-height: 1.1; letter-spacing: -.025em; }
+  .writing-item:first-child .dek { font-size: 21px; line-height: 1.35; }
+  .writing-more { font-size: 12px; align-self: flex-start; }
+  .folio { text-align: center; margin-top: auto; padding: 30px 0 23px; font-size: 12px; }
+  @media (max-width: 800px) { .leaf { padding-right: 22px; } .leaf + .leaf { padding-left: 22px; } .lead { font-size: 24px; } .row { flex-direction: column; gap: 7px; } }
+  @media (max-width: 560px) {
+    .canopy { margin: 0 -10px; } .canopy img { aspect-ratio: 2.15; }
+    .spread { grid-template-columns: 1fr; }
+    .leaf, .leaf + .leaf { padding: 27px 0 0; border: 0; }
+    .leaf + .leaf { border-top: 1px solid var(--rule); }
+    .section-title { font-size: 37px; }
+    .lead { font-size: 25px; }
+    .copy { font-size: 18px; }
+    .row { flex-direction: row; gap: 12px; }
+    .writing-item:first-child .title { font-size: 29px; }
+    .writing-item:first-child .dek { font-size: 19px; }
   }
 </style>
 </head>
 <body>
-
-<div class="page">
-  <div class="hero">
-    <div class="spacer"></div>
-
-    <div class="masthead">
-      <h1 class="name-hero">Azhan Khan</h1>
-      <div class="meta">
-        <b>Production Engineering, SRE, MLOps and Infrastructure</b><br>
-        <span class="hi">move at the speed of light and measure things</span>
-      </div>
-    </div>
-
-    <div class="gif" aria-hidden="true">
-      <canvas id="palmCanvas" role="img" aria-label="Animated dithered palm tree skyline"></canvas>
-      <noscript>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase">
-          [ animated banner — javascript disabled ]
-        </div>
-      </noscript>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="sec-label"><span class="num">01</span>about</div>
-    <div class="sec-body">
-      <p class="lede">Currently hacking on the AI & Data Platform at Rivian Automotive - with a focus on infra, o11y, MLOps, and production engineering.</p>
-      <p class="lede muted">Musing on <a href="/writing/matters-of-great-importance">the handful of things that really matter</a> — and trying to spend my time accordingly.</p>
-    </div>
+<a class="skip-link" href="#about">Skip to content</a>
+<main class="book">
+<header class="running-head"><a href="/">Azhan Khan</a><nav aria-label="Main navigation"><a href="/writing">Writing</a><a href="mailto:1byteword@gmail.com">Email</a></nav></header>
+<h1 class="wordmark" aria-label="Azhan Khan"><span class="given" aria-hidden="true">Azhan</span><span class="surname" aria-hidden="true">Khan</span></h1>
+<figure class="canopy"><img src="img/reaching-hands.png" width="1774" height="887" alt="Two hands reaching toward each other, rendered in black halftone." fetchpriority="high"></figure>
+<div class="spread">
+  <section class="leaf" id="about" aria-labelledby="about-title">
+    <h2 class="section-title" id="about-title">Engineering</h2>
+    <p class="lead">I work on infrastructure and machine learning systems at Rivian.</p>
+    <p class="copy">My team builds Rivian’s AI &amp; Data Platform. I focus on production engineering, observability, and getting models into production.</p>
+    <p class="copy">Outside work, I’m listening to whole albums and thinking about <a href="/writing/matters-of-great-importance">which problems are worth spending my time on.</a></p>
+    <section class="work" id="work" aria-labelledby="work-title"><h3 id="work-title">Selected work</h3><a class="project" href="https://github.com/1byteword/dogwatch">dogwatch ↗</a><p>eBPF observability, packaged as a single binary.</p></section>
+    <div class="contact"><a href="mailto:1byteword@gmail.com">Email</a><a href="https://github.com/1byteword" rel="me">GitHub</a><a href="https://linkedin.com/in/azhank" rel="me">LinkedIn</a></div>
+    <div class="folio" aria-hidden="true">1</div>
   </section>
-
-  <!-- WORK -->
-  <section class="section" id="work">
-    <div class="sec-label"><span class="num">02</span>selected work</div>
-    <div class="sec-body">
-      <div class="work-list">
-        <a class="work-item" href="https://github.com/1byteword/dogwatch">
-          <span class="main">
-            <span class="title">dogwatch — eBPF observability</span>
-            <span class="client">single-binary platform</span>
-          </span>
-          <span class="year">2025</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WRITING -->
-  <section class="section" id="writing">
-    <div class="sec-label"><span class="num">03</span>writing</div>
-    <div class="sec-body">
-      <div class="writing-list">
+  <section class="leaf" id="writing" aria-labelledby="writing-title">
+    <h2 class="section-title" id="writing-title">Writing</h2>
+    <div class="writing-list">
         <!-- HOMEPAGE_LATEST_POST_START -->
         <div class="writing-item">
           <div class="row">
-            <div class="title"><a href="/writing/100-great-albums">100 great albums</a></div>
+            <div class="title"><a href="/writing/100-great-albums">An album at a time</a></div>
             <div class="date">2026.05</div>
           </div>
-          <div class="dek">I've spent the last few years deliberately broadening what I read, watch, and look at — different writers, different eras, different traditions. Music is the one medium where I never bothered.</div>
+          <div class="dek">I keep listening to the same few dozen songs. I'm making myself listen to whole albums for a change.</div>
         </div>
         <div class="writing-item">
           <div class="row">
             <div class="title"><a href="/writing/the-half-measure-tax">The half-measure tax</a></div>
             <div class="date">2026.04</div>
           </div>
-          <div class="dek">Some notes on my coding of this site.</div>
+          <div class="dek">Getting this site to work was easy. Knowing when it was good enough was the part I kept getting wrong.</div>
         </div>
         <div class="writing-item">
           <div class="row">
-            <div class="title"><a href="/writing/matters-of-great-importance">The matters of great importance</a></div>
+            <div class="title"><a href="/writing/matters-of-great-importance">Things worth working on</a></div>
             <div class="date">2025.11</div>
           </div>
-          <div class="dek">"He saw a way to win. The Full Web remained a possibility. His, now. It all depended. Another *twist*. Yes, he would win. Almost certainly. But that was no longer enough. The Full Web beckoned, tan...</div>
+          <div class="dek">AI alignment, world models, brain-computer interfaces, energy, and robotics. These are the five problems I keep coming back to when I think about what to spend my time on.</div>
         </div>
         <!-- HOMEPAGE_LATEST_POST_END -->
-      </div>
-      <a class="writing-more" href="/writing">all writing →</a>
     </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="sec-label"><span class="num">04</span>contact</div>
-    <div class="sec-body">
-      <div class="contact-body">
-        <div class="contact-mail">
-          <a href="mailto:1byteword@gmail.com">1byteword@gmail.com</a>
-        </div>
-        <div class="socials">
-          <a href="https://github.com/1byteword" rel="me">GitHub<span class="handle">/1byteword</span></a>
-          <a href="https://linkedin.com/in/azhank" rel="me">LinkedIn<span class="handle">/in/azhank</span></a>
-        </div>
-      </div>
-    </div>
+    <a class="writing-more" href="/writing">All writing →</a>
+    <div class="folio" aria-hidden="true">2</div>
   </section>
 </div>
-
-<div class="footer">
-  <div class="links">
-    <a href="#work">WORK</a>
-    <a href="#writing">WRITING</a>
-    <a href="#contact">EMAIL</a>
-  </div>
-</div>
-
+</main>
 <script>
 (() => {
-  // ---- Tunables (edit these to taste) -----------------------------------
-  const PALETTE  = { sky: ["#0a1b66", "#2b5bd7", "#6ea4ff", "#c9e2ff"], trunk: "#0a1b66" };
-  const DITHER_PX = 2;   // size of one dither block in display pixels (1-8)
-  const WIND      = 1.3; // 0..2 ish
-  const TARGET_FPS = 24; // animation pacing
-  // Cap the bitmap width so very wide displays don't render a huge canvas;
-  // dither stays chunky at the intended scale and the upscale to display
-  // pixels is handled by image-rendering: pixelated.
-  const MAX_DISPLAY_W = 1680;
-
-  // ---- Canvas setup -----------------------------------------------------
-  const canvas = document.getElementById("palmCanvas");
-  if (!canvas) return;
-
-  // Size the canvas bitmap to match the container's actual aspect ratio so
-  // the scene never gets stretched (esp. on mobile, where the container is
-  // 16:9 instead of desktop's 42:9).
-  const container = canvas.parentElement;
-  const rect = container.getBoundingClientRect();
-  const cw = Math.round(rect.width)  || MAX_DISPLAY_W;
-  const ch = Math.round(rect.height) || Math.round(MAX_DISPLAY_W * 9 / 42);
-  const DISPLAY_W = Math.max(1, Math.min(MAX_DISPLAY_W, cw));
-  const DISPLAY_H = Math.max(1, Math.round(DISPLAY_W * (ch / cw)));
-
-  canvas.width  = DISPLAY_W;
-  canvas.height = DISPLAY_H;
-  const dctx = canvas.getContext("2d", { alpha: false, desynchronized: true });
-  dctx.imageSmoothingEnabled = false;
-
-  // Scene/dither buffer dimensions (small).
-  const SW = Math.max(1, Math.ceil(DISPLAY_W / DITHER_PX));
-  const SH = Math.max(1, Math.ceil(DISPLAY_H / DITHER_PX));
-
-  // Single offscreen buffer reused every frame.
-  const off = document.createElement("canvas");
-  off.width = SW;
-  off.height = SH;
-  const octx = off.getContext("2d", { alpha: false, willReadFrequently: true });
-  octx.imageSmoothingEnabled = false;
-
-  // Pre-cache the trunk RGB once.
-  const trunkRGB = (() => {
-    let h = PALETTE.trunk.replace("#", "");
-    if (h.length === 3) h = h.split("").map(c => c + c).join("");
-    return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
-  })();
-
-  const BAYER4 = [
-    [ 0,  8,  2, 10],
-    [12,  4, 14,  6],
-    [ 3, 11,  1,  9],
-    [15,  7, 13,  5],
-  ].map(r => r.map(v => (v + 0.5) / 16));
-
-  // ---- Drawing primitives ----------------------------------------------
-  // Palm physics notes (ported from the v2 specimen):
-  //   - Trunk sway is weighted by p^2 so only the top of the trunk moves;
-  //     the base is stiff like a real heavy palm.
-  //   - Fronds get a constant +0.18 droop baked into every angle (gravity),
-  //     so the arrangement doesn't look like a radial star.
-  //   - Wind attenuates on lower fronds via `upperBias` -- only the fronds
-  //     above horizontal catch much wind.
-  //   - Individual leaflets sag DOWNWARD from the midrib (+1.5 y-offset,
-  //     previously -2) and flutter less.
-  function drawPalmTree(cx, baseX, baseY, trunkH, lean, t, windAmp, frondCount, sizeScale) {
-    cx.save();
-    cx.strokeStyle = PALETTE.trunk;
-    cx.lineCap = "round";
-    cx.beginPath();
-    const segs = 10;
-    let prevX = baseX, prevY = baseY;
-    cx.moveTo(prevX, prevY);
-    for (let i = 1; i <= segs; i++) {
-      const p = i / segs;
-      // Stiff base, gentle sway only at the top.
-      const sway = Math.sin(t * 0.7 + p * 1.2) * 3 * windAmp * Math.pow(p, 2);
-      const x = baseX + lean * p * p * 40 + sway;
-      const y = baseY - trunkH * p;
-      cx.lineWidth = (24 - p * 12) * sizeScale;
-      cx.lineTo(x, y);
-      prevX = x; prevY = y;
-    }
-    cx.stroke();
-
-    cx.lineWidth = 1 * sizeScale;
-    for (let i = 1; i <= 8; i++) {
-      const p = i / 9;
-      const sway = Math.sin(t * 0.7 + p * 1.2) * 3 * windAmp * Math.pow(p, 2);
-      const x = baseX + lean * p * p * 40 + sway;
-      const y = baseY - trunkH * p;
-      cx.beginPath();
-      cx.ellipse(x, y, (6 - p * 3) * sizeScale, 2 * sizeScale, 0, 0, Math.PI * 2);
-      cx.stroke();
-    }
-
-    const topX = prevX, topY = prevY;
-    for (let f = 0; f < frondCount; f++) {
-      const baseAng = (f / frondCount) * Math.PI * 2;
-      // 1 at the top of the crown, 0 at the sides, clamped below horizontal.
-      const upperBias = Math.max(0, Math.sin(baseAng));
-      const wind  = Math.sin(t * 1.1 + f * 0.9) * 0.10 * windAmp * (0.4 + upperBias);
-      const droop = Math.sin(baseAng) * 0.45 + 0.18;
-      const ang = baseAng + wind + droop;
-      drawFrond(cx, topX, topY, ang, (90 + (f % 3) * 18) * sizeScale, t, f, windAmp, sizeScale);
-    }
-
-    cx.fillStyle = PALETTE.trunk;
-    for (let k = 0; k < 4; k++) {
-      const a = -Math.PI / 2 + (k - 1.5) * 0.18;
-      const cxp = topX + Math.cos(a) * 8 * sizeScale;
-      const cyp = topY + Math.sin(a) * 8 * sizeScale + 4 * sizeScale;
-      cx.beginPath();
-      cx.arc(cxp, cyp, 4 * sizeScale, 0, Math.PI * 2);
-      cx.fill();
-    }
-    cx.restore();
+  const artwork = document.querySelector('.canopy');
+  const original = artwork.querySelector('img');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let visible = false, frame = 0, elapsed = 0, last = 0;
+  const canvas = document.createElement('canvas');
+  canvas.setAttribute('aria-hidden', 'true');
+  const ctx = canvas.getContext('2d');
+  const ink = document.createElement('canvas');
+  let ready = false;
+  function draw(time) {
+    const w = canvas.width, h = canvas.height;
+    const phase = (time % 9000) / 9000;
+    const ease = (1 - Math.cos(phase * Math.PI * 2)) / 2;
+    const shift = w * (-.012 + .025 * ease);
+    ctx.clearRect(0, 0, w, h);
+    ctx.drawImage(ink, 0, 0, w / 2, h, shift, 0, w / 2, h);
+    ctx.drawImage(ink, w / 2, 0, w / 2, h, w / 2 - shift, 0, w / 2, h);
   }
-
-  function drawFrond(cx, x0, y0, angle, length, t, f, windAmp, sizeScale) {
-    const s = sizeScale || 1;
-    cx.save();
-    cx.translate(x0, y0);
-    cx.rotate(angle);
-    cx.strokeStyle = PALETTE.trunk;
-    cx.lineWidth = 3.6 * s;
-    cx.beginPath();
-    cx.moveTo(0, 0);
-    // Heavy frond: less initial lift, much more droop mid-span, tip hangs.
-    const c1x = length * 0.4,  c1y = -length * 0.05;
-    const c2x = length * 0.7,  c2y =  length * 0.55;
-    const ex  = length * 0.92, ey  =  length * 0.85 + Math.sin(t * 1.6 + f) * 1.2 * windAmp;
-    cx.bezierCurveTo(c1x, c1y, c2x, c2y, ex, ey);
-    cx.stroke();
-
-    const n = 14;
-    cx.lineWidth = 3.0 * s;
-    for (let i = 1; i < n; i++) {
-      const p = i / n;
-      const px = 3 * Math.pow(1 - p, 2) * p * c1x + 3 * (1 - p) * p * p * c2x + p * p * p * ex;
-      const py = 3 * Math.pow(1 - p, 2) * p * c1y + 3 * (1 - p) * p * p * c2y + p * p * p * ey;
-      const tx = 3 * (1 - 3 * p + 3 * p * p) * c1x + 3 * (2 * p - 3 * p * p) * c2x + 3 * p * p * ex;
-      const ty = 3 * (1 - 3 * p + 3 * p * p) * c1y + 3 * (2 * p - 3 * p * p) * c2y + 3 * p * p * ey;
-      const tl = Math.hypot(tx, ty) || 1;
-      const nx = -ty / tl, ny = tx / tl;
-      const leafLen = ((1 - Math.abs(p - 0.4)) * 28 + 8) * s;
-      // Leaflets resist wind (tiny flutter) and bias downward off the midrib.
-      const flutter = Math.sin(t * 2.4 + i * 0.6 + f) * 0.8 * windAmp;
-      cx.beginPath();
-      cx.moveTo(px, py);
-      cx.lineTo(px + nx * (leafLen + flutter), py + ny * (leafLen + flutter) + 1.5);
-      cx.stroke();
-      cx.beginPath();
-      cx.moveTo(px, py);
-      cx.lineTo(px - nx * (leafLen - flutter * 0.5), py - ny * (leafLen - flutter * 0.5) + 1.5);
-      cx.stroke();
+  function tick(now) {
+    elapsed += last ? Math.min(now - last, 80) : 0;
+    last = now;
+    draw(elapsed);
+    frame = requestAnimationFrame(tick);
+  }
+  function update() {
+    cancelAnimationFrame(frame);
+    last = 0;
+    artwork.classList.toggle('is-animated', ready && !reducedMotion.matches);
+    canvas.hidden = reducedMotion.matches;
+    if (ready && visible && !document.hidden && !reducedMotion.matches) frame = requestAnimationFrame(tick);
+  }
+  function prepare() {
+    canvas.width = ink.width = original.naturalWidth;
+    canvas.height = ink.height = Math.round(canvas.width / (innerWidth <= 560 ? 2.15 : 3));
+    const buffer = ink.getContext('2d', { willReadFrequently: true });
+    const cropHeight = canvas.height;
+    buffer.drawImage(original, 0, (original.naturalHeight - cropHeight) / 2, canvas.width, cropHeight, 0, 0, canvas.width, canvas.height);
+    const pixels = buffer.getImageData(0, 0, ink.width, ink.height);
+    for (let i = 0; i < pixels.data.length; i += 4) {
+      const light = .2126 * pixels.data[i] + .7152 * pixels.data[i + 1] + .0722 * pixels.data[i + 2];
+      // Keep the printed ink; discard the light paper before moving either hand.
+      pixels.data[i + 3] = Math.round(255 * Math.max(0, Math.min(1, (170 - light) / 65)));
+      pixels.data[i] = 28; pixels.data[i + 1] = 32; pixels.data[i + 2] = 27;
     }
-    cx.restore();
+    buffer.putImageData(pixels, 0, 0);
+    if (!ready) artwork.append(canvas);
+    ready = true;
+    draw(elapsed);
+    update();
   }
-
-  function drawScene(t) {
-    // Sky.
-    const sky = octx.createLinearGradient(0, 0, 0, SH);
-    sky.addColorStop(0.00, PALETTE.sky[0]);
-    sky.addColorStop(0.45, PALETTE.sky[1]);
-    sky.addColorStop(0.80, PALETTE.sky[2]);
-    sky.addColorStop(1.00, "#ffffff");
-    octx.fillStyle = sky;
-    octx.fillRect(0, 0, SW, SH);
-
-    // Sun.
-    const sunX = SW * 0.66;
-    const sunY = SH * 0.62;
-    const sunR = SH * 0.42;
-    const sunGrad = octx.createRadialGradient(sunX, sunY, sunR * 0.1, sunX, sunY, sunR);
-    sunGrad.addColorStop(0.00, "#ffffff");
-    sunGrad.addColorStop(0.55, "#ffffff");
-    sunGrad.addColorStop(0.85, PALETTE.sky[2]);
-    sunGrad.addColorStop(1.00, PALETTE.sky[1]);
-    octx.fillStyle = sunGrad;
-    octx.beginPath();
-    octx.arc(sunX, sunY, sunR, 0, Math.PI * 2);
-    octx.fill();
-
-    // Ground strip: a short gradient band the palms plant into, with a
-    // gentle mound profile along its top edge so the horizon doesn't read
-    // as a hard rule. Uses palette darks so it dithers into solid ink.
-    const groundTop = SH * 0.93;
-    const ground = octx.createLinearGradient(0, groundTop, 0, SH);
-    ground.addColorStop(0.00, PALETTE.sky[0]);
-    ground.addColorStop(0.45, PALETTE.sky[1]);
-    ground.addColorStop(1.00, PALETTE.sky[2]);
-    octx.fillStyle = ground;
-    octx.fillRect(0, groundTop, SW, SH - groundTop);
-    octx.fillStyle = PALETTE.sky[0];
-    octx.beginPath();
-    octx.moveTo(0, groundTop);
-    for (let x = 0; x <= SW; x += SW / 32) {
-      const bump = Math.sin(x * 0.012) * 4 + Math.sin(x * 0.04 + 1.3) * 2;
-      octx.lineTo(x, groundTop + bump);
-    }
-    octx.lineTo(SW, SH);
-    octx.lineTo(0, SH);
-    octx.closePath();
-    octx.fill();
-
-    // Palms planted INTO the ground strip (y > groundTop) so the heavy
-    // trunks look rooted rather than floating on the horizon.
-    const hs = SH / 480;
-    drawPalmTree(octx, SW * 0.06, SH * 0.96, 240 * hs, -0.5, t * 0.9,        WIND * 0.7,  7, hs);
-    drawPalmTree(octx, SW * 0.18, SH * 0.97, 330 * hs, -0.3, t,              WIND * 0.9,  8, hs);
-    drawPalmTree(octx, SW * 0.34, SH * 0.96, 280 * hs, -0.5, t * 1.1 + 0.6,  WIND * 0.8,  7, hs);
-    drawPalmTree(octx, SW * 0.47, SH * 0.98, 370 * hs,  0.1, t * 0.95 + 1.2, WIND * 1.0,  9, hs);
-    drawPalmTree(octx, SW * 0.60, SH * 0.97, 300 * hs,  0.4, t * 1.05 + 0.4, WIND * 0.85, 8, hs);
-    drawPalmTree(octx, SW * 0.88, SH * 0.98, 350 * hs,  0.6, t * 1.0  + 2.1, WIND * 0.95, 8, hs);
-    drawPalmTree(octx, SW * 0.96, SH * 0.95, 220 * hs,  0.7, t * 0.9  + 0.2, WIND * 0.7,  7, hs);
-
-    // Bayer 2-tone dither, in place on the small buffer.
-    const img = octx.getImageData(0, 0, SW, SH);
-    const data = img.data;
-    const [tr, tg, tb] = trunkRGB;
-    for (let y = 0; y < SH; y++) {
-      const row = BAYER4[y & 3];
-      for (let x = 0; x < SW; x++) {
-        const i = (y * SW + x) * 4;
-        const lum = (0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2]) / 255;
-        const isInk = (1 - lum) > row[x & 3];
-        if (isInk) { data[i] = tr; data[i + 1] = tg; data[i + 2] = tb; }
-        else       { data[i] = 255; data[i + 1] = 255; data[i + 2] = 255; }
-        data[i + 3] = 255;
-      }
-    }
-    octx.putImageData(img, 0, 0);
-
-    // Upscale to display canvas — pixelated.
-    dctx.drawImage(off, 0, 0, DISPLAY_W, DISPLAY_H);
-  }
-
-  // ---- Animation loop with throttle / pause -----------------------------
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const minFrameMs = 1000 / TARGET_FPS;
-  let running = true;
-  let visibleOnScreen = true;
-  let rafId = 0;
-  let start = performance.now();
-  let lastFrame = 0;
-
-  function frame(now) {
-    rafId = 0;
-    if (!running || !visibleOnScreen) return;
-    if (now - lastFrame >= minFrameMs) {
-      lastFrame = now;
-      drawScene((now - start) / 1000);
-    }
-    rafId = requestAnimationFrame(frame);
-  }
-
-  function play() {
-    if (rafId) return;
-    rafId = requestAnimationFrame(frame);
-  }
-  function pause() {
-    if (rafId) cancelAnimationFrame(rafId);
-    rafId = 0;
-  }
-
-  // Render one static frame regardless, so something is visible immediately
-  // (and so reduced-motion users still see the art).
-  drawScene(0);
-
-  if (!reduceMotion) {
-    // Pause when the canvas scrolls offscreen.
-    if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          visibleOnScreen = e.isIntersecting;
-          if (visibleOnScreen) play(); else pause();
-        }
-      }, { threshold: 0.01 });
-      io.observe(canvas);
-    }
-    // Pause when the tab is hidden.
-    document.addEventListener("visibilitychange", () => {
-      running = !document.hidden;
-      if (running) play(); else pause();
-    });
-    play();
-  }
-
+  new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; update(); }).observe(artwork);
+  document.addEventListener('visibilitychange', update);
+  reducedMotion.addEventListener('change', update);
+  let resizeTimer;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(prepare, 150); });
+  if (original.complete && original.naturalWidth) prepare();
+  else original.addEventListener('load', prepare, { once: true });
 })();
 </script>
 </body>

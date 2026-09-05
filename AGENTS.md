@@ -6,13 +6,20 @@ honest if you change the architecture.
 
 ## What this site is
 
-- **Two-page** static site behind nginx in Kubernetes.
-- `index.html` — homepage. Bricolage Grotesque + an animated dithered palm‑tree canvas.
-  Has a single Google Font (`Bricolage Grotesque`, preconnected + preloaded) and an
-  inline `<script>` that drives the canvas. Renders the scene at dither
-  resolution, reuses one offscreen buffer, throttles to 24 fps, pauses when
-  offscreen / tab hidden / `prefers-reduced-motion`.
-- `writing/index.html` — blog index, served at `/writing`. Bricolage Grotesque,
+- **Static personal site with a homepage, writing index, and post pages** behind nginx in Kubernetes.
+- `index.html` — homepage. A book spread with an expressive mixed-type masthead,
+  a halftone illustration of reaching hands spanning both pages, and two editorial columns
+  below. Columns stack on mobile. A small inline canvas script extracts dark ink from the light paper so only
+  the hands move in a slow touch-and-release animation, paused
+  offscreen or in a hidden tab. Reduced motion shows the original still image.
+  The center divider appears only between the text columns. No build step.
+- Visual style: pale green paper, forest imagery, dark ink, and subtle colored
+  page edges. System Bodoni/Didot/Times provides expressive display type;
+  Helvetica Neue/Helvetica/Arial keeps body text readable. The masthead uses
+  italic serif lettering for Azhan and heavy sans-serif lettering for Khan.
+  No font download is needed for the wordmark. Styles stay
+  inline; `publish` embeds the matching reading-page design.
+- `writing/index.html` — blog index, served at `/writing`. Same system sans-serif,
   same aesthetic as the homepage. The `publish` script inserts entries between
   the `<!-- POST_ENTRIES_START -->` / `<!-- POST_ENTRIES_END -->` markers and
   keeps them sorted newest-first.
@@ -58,7 +65,7 @@ rollout-restart step.
 ## Make targets
 
 ```bash
-make dev            # python3 -m http.server 8000
+make dev            # python3 dev.py 8000 (extensionless post URLs)
 
 make build          # docker build -t ghcr.io/1byteword/crownjewel:<sha>,:latest
 make push           # build + push :latest and :<sha>
@@ -167,7 +174,7 @@ free Let's Encrypt certs. Negligible egress for static HTML.
 - Don't add a build step. Static HTML with inline assets only.
 - Don't reintroduce the "single ~3 KB file / no JS / no fonts" doctrine
   unless explicitly resurrecting it.
-- Every external dependency is a deliberate choice — currently: one Google
-  Font, one nginx base image. Don't add more without a reason.
+- Every external dependency is a deliberate choice — currently: one nginx base image. The
+  previous Bricolage font remains in `fonts/` but is no longer loaded. Don't add more without a reason.
 - When editing this file, keep it honest: if you change the architecture,
   update the relevant section here.

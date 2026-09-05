@@ -1,13 +1,15 @@
 # The half-measure tax
 
-Some notes on my coding of this site.
+Getting this site to work was easy. Knowing when it was good enough was the part I kept getting wrong.
 
-- Vibe coding is great and all, but for every hour spent vibe coding, you must also spend an hour going back through the code with a fine tooth comb. This is where your training and intuition matters (some people call this taste).
+Vibe coding gets you to something you can look at very quickly. It also makes it easy to accept things you would have questioned if you'd written them yourself. For every hour spent generating code, I seem to owe another hour going through it with a fine-tooth comb.
 
-- Design should never be in the hands of a machine
+That second hour is where taste matters. The model can produce another version. It can't decide whether I should be satisfied with it. I have to look closely, notice what's wrong, and be willing to throw something away even though it works.
 
-- Details really matter - why are you half-assing things that end-users won't ever tangibly feel? Or do you not care about them?
+The details are awkward because people rarely point to them directly. They won't tell you a paragraph is a little too wide or that three almost-identical spacing values make a page feel off. They just feel that somebody didn't quite finish the job.
 
-- Everyone's a critic - correct by expanding on sheer volume and have a self-correcting quality about your works
+I think that feeling is a response to care. Half-finished work asks the person using it to put up with decisions the maker couldn't be bothered to make. Enough small compromises and the whole thing feels indifferent.
 
-- Those works that have been created through half-measures and laziness can be felt to be lacking spiritually, and there's almost an emotional backlash that we as animals intrinsically feel to not being cared for.
+The answer, for me, is to make more things and get better at looking at them. Finish a version. Use it. Find the parts I was making excuses for. Fix those. Repeat.
+
+A machine can help with the work. I'm still responsible for deciding when it's done.
