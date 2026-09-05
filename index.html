@@ -37,7 +37,7 @@
   .canopy canvas[hidden] { display: none; }
   .canopy.is-animated { background: #d9dcd2; }
   .canopy.is-animated img { visibility: hidden; }
-  .spread { display: grid; grid-template-columns: 1fr 1fr; padding-bottom: 32px; }
+  .spread { display: grid; grid-template-columns: 46fr 54fr; padding-bottom: 32px; }
   .leaf { padding: 29px 31px 0 0; min-width: 0; display: flex; flex-direction: column; }
   .leaf + .leaf { padding: 29px 0 0 31px; border-left: 1px solid var(--rule); }
   .section-title { font-family: var(--serif); font-style: italic; font-size: 41px; line-height: 1; font-weight: 400; letter-spacing: -.035em; margin: 0 0 23px; }
@@ -56,8 +56,9 @@
   .writing-item .title a:hover { text-decoration: underline; }
   .date { font-size: 10px; flex-shrink: 0; color: var(--muted); }
   .dek { font-size: 16px; line-height: 1.45; margin-top: 9px; }
-  .writing-item:first-child .title { font-family: var(--serif); font-size: 34px; line-height: 1.1; letter-spacing: -.025em; }
-  .writing-item:first-child .dek { font-size: 21px; line-height: 1.35; }
+  .writing-item:first-child .title { font-family: var(--serif); font-size: 30px; line-height: 1.15; letter-spacing: -.025em; }
+  .writing-item:first-child .dek { font-size: 18px; line-height: 1.45; }
+  .writing-item:first-child .row { flex-direction: column; align-items: flex-start; gap: 8px; }
   .writing-more { font-size: 12px; align-self: flex-start; }
   @media (max-width: 800px) { .leaf { padding-right: 22px; } .leaf + .leaf { padding-left: 22px; } .lead { font-size: 24px; } .row { flex-direction: column; gap: 7px; } }
   @media (max-width: 560px) {
@@ -69,8 +70,8 @@
     .lead { font-size: 25px; }
     .copy { font-size: 18px; }
     .row { flex-direction: row; gap: 12px; }
-    .writing-item:first-child .title { font-size: 29px; }
-    .writing-item:first-child .dek { font-size: 19px; }
+    .writing-item:first-child .title { font-size: 26px; }
+    .writing-item:first-child .dek { font-size: 18px; }
   }
 </style>
 </head>
@@ -84,7 +85,7 @@
   <section class="leaf" id="about" aria-labelledby="about-title">
     <h2 class="section-title" id="about-title">Engineering</h2>
     <p class="lead">I work on infrastructure and machine learning systems at Rivian.</p>
-    <p class="copy">My team builds Rivian’s AI &amp; Data Platform. I focus on production engineering, observability, and getting models into production.</p>
+    <p class="copy">On the AI &amp; Data Platform team, I work on production engineering, observability, and deploying ML models.</p>
     <p class="copy">Outside work, I’m listening to whole albums and thinking about <a href="/writing/matters-of-great-importance">which problems are worth spending my time on.</a></p>
     <section class="work" id="work" aria-labelledby="work-title"><h3 id="work-title">Selected work</h3><a class="project" href="https://github.com/1byteword/dogwatch">dogwatch ↗</a><p>eBPF observability, packaged as a single binary.</p></section>
     <div class="contact"><a href="mailto:1byteword@gmail.com">Email</a><a href="https://github.com/1byteword" rel="me">GitHub</a><a href="https://linkedin.com/in/azhank" rel="me">LinkedIn</a></div>
@@ -105,7 +106,7 @@
             <div class="title"><a href="/writing/100-great-albums">An album at a time</a></div>
             <div class="date">2026.05</div>
           </div>
-          <div class="dek">I keep listening to the same few dozen songs. I'm making myself listen to whole albums for a change.</div>
+          <div class="dek">I keep listening to the same few dozen songs. I’m making myself listen to whole albums for a change.</div>
         </div>
         <div class="writing-item">
           <div class="row">
