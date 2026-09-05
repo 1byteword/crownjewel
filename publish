@@ -22,6 +22,7 @@ Markdown format:
 """
 
 import sys
+from html import escape
 import os
 import re
 from datetime import datetime
@@ -29,7 +30,19 @@ from pathlib import Path
 
 def parse_markdown(md_content):
     """Convert markdown to simple HTML"""
-    html = md_content
+    protected = []
+
+    def protect_code(match, block=False):
+        content = match.group(2) if block else match.group(1)
+        rendered = '<code>' + escape(content) + '</code>'
+        if block:
+            rendered = '<pre>' + rendered + '</pre>'
+        token = f'CODETOKEN{len(protected)}END'
+        protected.append((token, rendered, block))
+        return token
+
+    html = re.sub(r'```([^\n]*)\n(.*?)```', lambda m: protect_code(m, True), md_content, flags=re.DOTALL)
+    html = re.sub(r'`([^`\n]+)`', protect_code, html)
 
     # Headers
     html = re.sub(r'^# (.+)$', r'<h1>\1</h1>', html, flags=re.MULTILINE)
@@ -128,7 +141,10 @@ def parse_markdown(md_content):
         else:
             paragraphs.append('<p>' + p_text + '</p>')
 
-    return '\n'.join(paragraphs)
+    rendered = '\n'.join(paragraphs)
+    for token, code, block in protected:
+        rendered = rendered.replace('<p>' + token + '</p>' if block else token, code)
+    return rendered
 
 def extract_title(md_content):
     """Extract title from first # header"""

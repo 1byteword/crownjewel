@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Your Observability Platform Should Be a Materialized View"><title>Your Observability Platform Should Be a Materialized View — Azhan Khan</title><meta name="theme-color" content="#e8ebe2">
+<style>
+  :root { --paper: #e8ebe2; --ink: #202c23; --muted: #566153; --rule: #bdc7b6; --serif: "Bodoni 72", Didot, "Times New Roman", serif; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+  body { margin: 0; background: #cfd6cb; color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  a:hover { color: #52643b; }
+  a:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
+  ::selection { background: #d1dc84; color: #202c23; }
+  .skip-link { position: absolute; top: -70px; left: 24px; z-index: 3; background: var(--paper); padding: 12px; }
+  .skip-link:focus { top: 12px; }
+  .book { max-width: 1180px; margin: 30px auto; padding: 0 35px; background: var(--paper); border-top: 3px solid #a85364; border-bottom: 3px solid #c5d58b; }
+  .running-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0 0; font-size: 12px; }
+  .running-head a { text-decoration: none; }
+  .running-head a:hover { text-decoration: underline; }
+  .running-head nav { display: flex; gap: 25px; }
+  .wordmark { display: flex; align-items: baseline; justify-content: center; gap: .075em; margin: 5px 0 19px; padding: 0 12px; font-size: clamp(90px, 14.5vw, 184px); line-height: 1.03; white-space: nowrap; font-weight: 400; }
+  .wordmark .given { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.075em; }
+  .wordmark .surname { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif; font-weight: 900; letter-spacing: -.09em; }
+  .book-footer { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0; border-top: 1px solid var(--rule); font-size: 11px; }
+  @media (max-width: 1180px) { .book { margin: 0; } }
+  @media (max-width: 720px) { .book { padding: 0 22px; } .wordmark { font-size: 14.4vw; margin-top: 16px; padding: 0; } }
+  @media (max-width: 420px) { .running-head { font-size: 11px; gap: 15px; } .running-head nav { gap: 16px; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  .reading { max-width: 680px; margin: 50px auto 55px; }
+  article { font-size: 19px; line-height: 1.65; overflow-wrap: break-word; }
+  article h1 { font-family: var(--serif); font-size: clamp(42px, 5.5vw, 65px); line-height: 1.02; font-weight: 400; letter-spacing: -.035em; margin: 0 0 23px; text-wrap: balance; }
+  article time { display: block; font-size: 12px; color: var(--muted); margin-bottom: 32px; }
+  article time + p { font-size: 25px; line-height: 1.3; letter-spacing: -.02em; margin-bottom: 28px; }
+  article p { margin: 0 0 23px; }
+  article h2 { font-family: var(--serif); font-size: 36px; line-height: 1.1; font-style: italic; font-weight: 400; letter-spacing: -.025em; margin: 38px 0 18px; }
+  article h3 { font-size: 23px; font-weight: 400; margin: 30px 0 16px; }
+  article ul, article ol { padding-left: 24px; margin: 0 0 25px; }
+  article li { padding-left: 4px; margin-bottom: 15px; }
+  article strong { font-weight: 600; }
+  article .attribution { font-size: 15px; color: var(--muted); margin-top: -12px; }
+  article .spacer { margin-bottom: 34px; }
+  article img { max-width: 100%; height: auto; }
+  article code { font-size: .8em; background: #dce2d6; padding: 2px 5px; }
+  article pre { background: #dce2d6; padding: 18px; overflow-x: auto; line-height: 1.5; }
+  article pre code { padding: 0; }
+  .back { margin-top: 43px; padding-top: 20px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 20px; font-size: 13px; }
+  .reading-brand { font-family: var(--serif); font-style: italic; }
+  @media (max-width: 560px) { .reading { margin: 35px auto; } article { font-size: 18px; } article h1 { font-size: 44px; } article time + p { font-size: 23px; } article h2 { font-size: 31px; } }
+</style>
+</head>
+<body><main class="book"><header class="running-head"><a href="/">Azhan Khan</a><nav aria-label="Main navigation"><a href="/writing">Writing</a><a href="mailto:1byteword@gmail.com">Email</a></nav></header>
+<div class="reading"><article>
+    <h1>Your Observability Platform Should Be a Materialized View</h1>
+    <time>2026.09.05</time>
+<p>The log you delete to make this month’s bill smaller might be the one you need next month. I think the observability stack has its source of truth backwards.</p>
+<p>Telemetry has an awkward value distribution. Some of it earns its keep every minute: it powers a monitor, fills a dashboard, or answers a question somebody asks several times a day. Much of the rest waits. An event can go unread for months and still be worth having when something breaks.</p>
+<p>Those two kinds of data need different query budgets. A monitor needs predictable latency. An investigation into an old request can tolerate a slower first result. Paying the same storage and search premium for both is a poor allocation of money.</p>
+<p>Teams respond in familiar ways. Exclude a noisy log source. Sample more traces. Cut retention from thirty days to seven. Remove fields. Turn individual events into aggregates. Each decision makes the bill more manageable and the historical record a little less complete.</p>
+<p>There is an industry around making these decisions. <a href="https://cribl.io/demo/route/">Cribl routes telemetry to multiple destinations, including archives</a>. <a href="https://docs.edgedelta.com/in-cluster-processing/">Edge Delta explicitly describes sending valuable telemetry to expensive monitoring destinations and the rest to cheaper storage</a>. The existence of these products is good evidence that customers want control over downstream costs. Ryo does not need to invent that pain.</p>
+<p>The part that bothers me is the question underneath the filtering rule: will anyone ever need this?</p>
+<h2>You find out what mattered later</h2>
+<p class="spacer">Consider an ordinary line:</p>
+<pre><code>INFO connection reset peer=10.0.4.12
+</code></pre>
+<p>Today it looks repetitive. Three weeks later, it might connect a failing checkout request to a proxy restart and an upstream timeout. The incident supplies the context that makes the line useful. At ingest time, that context does not exist.</p>
+<p>This is the asymmetry: telemetry’s value often becomes apparent after the event that makes it valuable. We ask engineers to make an irreversible decision before they have the information needed to make it well.</p>
+<p>Some filtering is sensible. Nobody needs to preserve a secret accidentally written to a log, and retention should have an end. But reducing a bill should not require pretending we can reliably predict every future investigation.</p>
+<p>I want a third option between an expensive search tier and deletion: retain the event cheaply, with enough search capability to use it when the question finally arrives.</p>
+<h2>An archive has to answer questions</h2>
+<p class="spacer">Putting logs in object storage solves a large part of the retention problem. It does not automatically solve the investigation problem.</p>
+<p>An engineer has a trace ID, a service name, and four minutes of clock time:</p>
+<pre><code>service = checkout
+trace_id = 8afd...
+02:13–02:17 UTC
+</code></pre>
+<p>They need the matching events and enough surrounding context to understand them. If getting there means finding an old export job, restoring a dataset, and waiting for another system to ingest it, the archive is only partially useful. The bytes survived. Their usefulness during an outage did not necessarily survive with them.</p>
+<p>This distinction sets the engineering requirement. Cold telemetry has to be usable while somebody is debugging production. Retention alone is too low a bar.</p>
+<p>The market has already been moving toward that requirement. <a href="https://docs.datadoghq.com/logs/log<em>configuration/flex</em>logs/">Datadog Flex Logs separates storage from query compute</a>. <a href="https://www.datadoghq.com/blog/archive-search/">Archive Search queries archived logs directly without first rehydrating them</a>. Datadog’s archive configuration also distinguishes <a href="https://docs.datadoghq.com/logs/log_configuration/archives/">partition attributes from lookup attributes</a>: the latter can help narrow searches for specific IDs instead of scanning an entire archive.</p>
+<p><a href="https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore/searchable-snapshots">Elastic’s searchable snapshots</a> support cheaper cold and frozen tiers. <a href="https://axiom.co/docs/platform-overview/architecture">Axiom describes object-backed storage with ephemeral query workers</a>. And in January 2025, <a href="https://www.datadoghq.com/blog/datadog-acquires-quickwit/">Datadog acquired Quickwit</a>, a search engine built around the cost and scale problems of log search.</p>
+<p>I read this as convergence on a useful principle: the amount of history you retain should not dictate how much query compute you keep running.</p>
+<p>It also makes the competitive problem uncomfortable. Cheap search over S3 is not a sufficient company thesis anymore. Routing before Datadog is not one either. Cribl combines routing with <a href="https://docs.cribl.io/search/">search in place</a>. Edge Delta offers tiering and reduction. <a href="https://www.mezmo.com/blog/the-mezmo-telemetry-pipeline-product-tour">Mezmo transforms and routes telemetry before downstream ingestion</a>. Calling Ryo a pipeline, an S3 search engine, or a cheaper Elasticsearch would leave the important question unanswered: why should somebody operate another system?</p>
+<h2>Make the cheap copy canonical</h2>
+<p class="spacer">The architecture I want to explore starts by changing which copy we consider authoritative.</p>
+<p>A common cost-cutting path looks roughly like this:</p>
+<pre><code>Production
+    ↓
+Observability platform
+    ↓
+Filter / sample / expire
+    ↓
+Maybe archive what remains
+</code></pre>
+<p>There are already better deployments than this. The proposal is to make the alternative the organizing principle:</p>
+<pre><code>Production
+    ↓
+Ryo Gateway
+    ├── Full-fidelity copy → Customer&#x27;s object storage
+    └── Selected events   → Datadog / Splunk / etc.
+
+Ryo Search → Queries the full-fidelity copy
+</code></pre>
+<p>The canonical history lives in storage the customer owns. The expensive systems receive the portions that justify their latency, dashboards, monitors, and query capabilities.</p>
+<p>In database terms, the observability destinations become materialized views. Conceptually, one might look like this:</p>
+<pre><code>CREATE MATERIALIZED VIEW datadog_hot AS
+SELECT *
+FROM telemetry
+WHERE severity &gt;= WARN
+   OR powers_monitor(event)
+   OR frequently_queried(service)
+   OR policy_requires_hot(event);
+</code></pre>
+<p>Those functions are illustrative policy, not an implemented query language. The point is the direction of ownership: start with the complete dataset, then derive the views each tool needs.</p>
+<p>Datadog does not have to be the system of record. Datadog can be the cache.</p>
+<p>The analogy has limits. Monitors are live dependencies; losing their input is not equivalent to a cache miss. Vendor enrichments and derived metrics may not be reconstructible from raw events alone. Rebuilding a historical view also takes time and may incur ingestion charges. The model still helps because it separates the durable event history from the systems optimized to do particular work with it.</p>
+<p>You keep the monitors, dashboards, APM, and incident workflow that make Datadog useful. The first change is which logs go into its expensive tiers. Splunk, Grafana Cloud, New Relic, or a SIEM can receive their own policy-selected views of the same history.</p>
+<h2>What I mean by Ryo</h2>
+<p class="spacer">Ryo is the architecture I’m working toward, not a claim that I have already solved this. Its proposed promise is straightforward: cut what you send to Datadog, preserve the telemetry, and make the excluded data searchable.</p>
+<p>I think of it as observability insurance. A team should be able to remove a substantial amount of telemetry from an expensive tier without accepting permanent blindness in exchange. Whether that is a useful product depends on the combined economics and operational experience. Individually, its components are familiar.</p>
+<p><strong>Gateway</strong> sits on the telemetry path. I would start with OTLP, then add integrations such as Fluent Bit, Vector, the Datadog Agent, Kafka, and syslog as actual deployments require them. It duplicates and routes events, applies policy, writes the canonical copy, and forwards selected data downstream. Destination-specific transformations belong on the outgoing branches so they do not silently destroy the original record.</p>
+<p>This is necessary plumbing. It also carries a serious obligation: bounded buffering, explicit acknowledgments, retries, backpressure, and visible delivery failures. A cheaper bill is worthless if the pipeline quietly loses the evidence it was supposed to preserve.</p>
+<p><strong>Vault</strong> is customer-owned object storage, initially S3, with GCS and Azure Blob as possible later targets. The design goal is compressed, durable data in a documented, portable format, with modest metadata overhead. The customer controls access and lifecycle policies. Full fidelity means preserving accepted telemetry within those policies; it cannot mean recovering spans an upstream agent already sampled away, or keeping everything forever regardless of privacy requirements.</p>
+<p><strong>Search</strong> makes that copy useful. The first queries are practical: a service, namespace, container, request ID, trace ID, or a phrase such as “connection reset,” bounded by time. The goal is that an SRE will actually use it during an incident. I have no measured basis here for promising a hundred gigabytes in one second. Latency, scan cost, concurrency, and the amount of context returned all need benchmarks on realistic workloads.</p>
+<p>An earlier version of my thinking placed too much weight on having no inverted index. I no longer think that is a useful constraint. Bloom filters, min/max metadata, zone maps, column statistics, sparse indexes, ID lookups, selective inverted indexes, and caching are all available tools. If a small structure makes a common incident query much cheaper, use it.</p>
+<p>The constraint worth defending is economic: keeping more history should not force the customer to maintain a large, always-on search cluster proportional to retained volume. Index maintenance and metadata still count toward the bill. So do object requests, query compute, transfer costs, and operating the gateway.</p>
+<p>Ryo’s own pricing would have to preserve that advantage. Replacing one expensive per-byte toll with another would defeat the purpose. I do not have a final price sheet; the test is net savings after every new cost, including the customer’s time. Lower ingestion also has to translate into a lower invoice, which may take a contract renewal rather than a routing change.</p>
+<h2>The first customer, and the test</h2>
+<p class="spacer">I would start with a cloud-native organization on AWS, using Kubernetes and microservices, with a substantial Datadog bill and a platform or SRE team. Roughly fifty to five hundred engineers, perhaps more. The headcount is a prospecting hypothesis, not a law. The stronger signal is that the team already uses exclusions, sampling, short retention, or an archive because its current bill hurts.</p>
+<p>The person willing to try this is probably a senior or staff platform engineer, an observability lead, or an SRE lead. The person approving the spend may run infrastructure or engineering, with FinOps involved. The trigger is concrete: “We need to cut Datadog spend by thirty percent.” The proposal should let them route less to Datadog without undertaking a migration.</p>
+<p>My product-market-fit hypothesis is that these teams will put a lightweight layer in their telemetry path if it materially reduces downstream costs while preserving full-fidelity data and making excluded events interactively searchable.</p>
+<p>That predicts things we can measure in a pilot:</p>
+<ul>
+<li>A meaningful fraction of telemetry can leave the hot tier without breaking monitors or dashboards.</li>
+<li>The actual savings exceed storage, search, gateway, and operating costs.</li>
+<li>Deployment preserves the existing workflow and demands little ongoing care.</li>
+<li>Delivery accounting demonstrates that accepted telemetry is retained, with failures exposed rather than hidden.</li>
+<li>Engineers run useful searches against data available only through Ryo.</li>
+</ul>
+<p>There is no honest universal percentage for how much can move. Nor is “unqueried” a synonym for “useless.” Both the volume and the safety of diversion need to be established with customers.</p>
+<p>The strongest result would be an engineer resolving a real incident using data that would otherwise have been discarded. A cost report demonstrates savings. That incident demonstrates why keeping the second path mattered.</p>
+<p>The comparison must include using Datadog’s own archive capabilities, or assembling a pipeline and search product that already exists. If either solves the customer’s problem more simply and cheaply, Ryo has not earned the deployment. Combining familiar components is an architectural thesis. Making the combination reliably better is the company’s work.</p>
+<h2>Start by looking at the bill</h2>
+<p class="spacer">Before asking for a place in production, I want Ryo Advisor to examine how the existing system is used.</p>
+<p>Which sources produce the most bytes? Which get queried? Which have gone unqueried for thirty, sixty, or ninety days? What powers a monitor or dashboard? Which fields appear in searches? What is still indexed because nobody feels confident enough to remove it?</p>
+<p>An illustrative finding might look like this:</p>
+<pre><code>Source:                checkout INFO
+Volume:                8.4 TB/month
+Queries in 30 days:     17
+Known monitor users:   none
+Known dashboard users: none
+Candidate policy:      Vault only
+</code></pre>
+<p>Those are made-up numbers, not a customer result. A real recommendation would include a savings estimate based on the customer’s contract, the evidence behind it, and what Advisor could not establish. Seventeen queries still represent demand. Somebody needs to check what those searches were doing and whether Ryo can serve them well enough.</p>
+<p>Usage visibility will be incomplete. API access, saved queries, dashboards, and monitor definitions reveal different parts of the picture. Missing evidence must not become automatic permission to demote a source. Advisor should begin with recommendations an engineer can inspect, a trial period, and a straightforward rollback.</p>
+<p>This gives the first conversation something tangible: here is where the money goes, here is a candidate change, and here is how we will check it. Asking somebody to install a new database before establishing any of that is a much harder sale.</p>
+<h2>Placement should follow use</h2>
+<p class="spacer">Initially, humans would write the routing policies. Over time, Ryo could see both what the system produces and what people depend on. That is the basis for recommending placement continuously.</p>
+<p>A frequently queried source that powers monitors belongs in a fast tier. An occasionally queried source may suit Flex or an equivalent. Rarely consulted history can remain in the Vault. Data that reaches the end of its retention policy can expire. Each move has to respect latency requirements, dependencies, and retention obligations as well as query frequency.</p>
+<p>The question becomes: is this data in the cheapest tier that still supports the work it needs to do?</p>
+<p>That is the longer-term product hypothesis. Advisor would connect observed use to placement, then measure the result. Automation should follow evidence that the recommendations are safe. There is no reason to assume other pipeline vendors cannot pursue the same idea; better decisions and a better feedback loop would have to be demonstrated.</p>
+<h2>Why this is worth trying now</h2>
+<p class="spacer">Object storage gives this design an affordable place to retain history. Systems such as Axiom show that retained volume and continuously provisioned search capacity can be separated. <a href="https://opentelemetry.io/docs/">OpenTelemetry’s vendor-neutral collection and export model</a> offers a more practical insertion point than a world composed entirely of proprietary agents and protocols. It reduces collection lock-in, even though dashboards, semantics, and workflows still require integration work.</p>
+<p>Meanwhile, the incumbent products described above are making cold search a normal expectation. That raises the bar for Ryo and makes the architectural argument easier to explain. Customers should not have to be persuaded that less frequently accessed telemetry deserves different economics.</p>
+<p>The first useful version is narrow: reduce Datadog log spend without losing the logs. If that works, extend the same treatment to traces and events, and use observed demand to improve placement. The longer-term possibility is a vendor-neutral telemetry data plane: the system’s canonical history lives underneath the tools used to investigate it.</p>
+<p>Observability products, security tools, developers, incident tooling, and eventually automated investigators could all use that history, provided the interfaces and access controls support them. If agents begin investigating production continuously, deep historical context may become more valuable. It will also make query cost harder to ignore. More readers strengthen the case for separating storage from compute; they do not make compute free.</p>
+<p>There is plenty left to prove. I think the starting principle is sound: you should not have to know which log will save you before the incident happens.</p>
+<p>Store everything cheaply. Pay for speed selectively.</p>
+</article><nav class="back" aria-label="More reading"><a href="/writing">← All writing</a><a href="/">About Azhan</a></nav></div><footer class="book-footer"><a href="/">Azhan Khan</a><a href="https://github.com/1byteword" rel="me">GitHub ↗</a></footer></main></body></html>
