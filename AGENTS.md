@@ -9,7 +9,8 @@ honest if you change the architecture.
 - **Static personal site with a homepage, writing index, and post pages** behind nginx in Kubernetes.
 - `index.html` — homepage. A book spread with an expressive mixed-type masthead,
   a halftone illustration of reaching hands spanning both pages, and two editorial columns
-  below. Columns stack on mobile. A small inline canvas script extracts dark ink from the light paper so only
+  below. The two-column spread stays side by side on mobile, with smaller type
+  and narrower gutters. A small inline canvas script extracts dark ink from the light paper so only
   the hands move in a slow touch-and-release animation, paused
   offscreen or in a hidden tab. Reduced motion shows the original still image.
   The center divider appears only between the text columns. No build step.
