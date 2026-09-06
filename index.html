@@ -7,7 +7,7 @@
 <meta name="description" content="Azhan Khan. Production engineering, independent projects, and writing about software, music, and things worth working on.">
 <meta name="theme-color" content="#e8ebe2">
 <style>
-  :root { --paper: #e8ebe2; --ink: #202c23; --muted: #566153; --rule: #bdc7b6; --serif: "Bodoni 72", Didot, "Times New Roman", serif; }
+  :root { --paper: #e8ebe2; --ink: #202c23; --muted: #566153; --rule: #c7cec1; --serif: "Bodoni 72", Didot, "Times New Roman", serif; }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; scroll-padding-top: 24px; }
   body { margin: 0; background: #cfd6cb; color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -22,12 +22,12 @@
   .running-head a { text-decoration: none; }
   .running-head a:hover { text-decoration: underline; }
   .running-head nav { display: flex; gap: 25px; }
-  .wordmark { display: flex; align-items: baseline; justify-content: center; gap: .075em; margin: 5px 0 19px; padding: 0 12px; font-size: clamp(90px, 14.5vw, 184px); line-height: 1.03; white-space: nowrap; font-weight: 400; }
+  .wordmark { display: flex; align-items: baseline; justify-content: center; gap: .12em; margin: 5px 0 19px; padding: 0 12px; font-size: clamp(81px, 13.05vw, 165.6px); line-height: 1.03; white-space: nowrap; font-weight: 400; }
   .wordmark .given { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.075em; }
   .wordmark .surname { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif; font-weight: 900; letter-spacing: -.09em; }
   .book-footer { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0; border-top: 1px solid var(--rule); font-size: 11px; }
   @media (max-width: 1180px) { .book { margin: 0; } }
-  @media (max-width: 720px) { .book { padding: 0 22px; } .wordmark { font-size: 14.4vw; margin-top: 16px; padding: 0; } }
+  @media (max-width: 720px) { .book { padding: 0 22px; } .wordmark { font-size: 12.96vw; margin-top: 16px; padding: 0; } }
   @media (max-width: 420px) { .running-head { font-size: 11px; gap: 15px; } .running-head nav { gap: 16px; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -46,18 +46,17 @@
   .work { margin-top: 21px; }
   .work h3 { font-size: 12px; font-weight: 400; margin: 0 0 12px; }
   .work .project { font-size: 23px; letter-spacing: -.025em; text-decoration: none; }
+  .work .project-entry + .project-entry { margin-top: 26px; }
   .work .project:hover { text-decoration: underline; }
   .work p { font-size: 15px; line-height: 1.4; margin: 8px 0 0; }
   .contact { display: flex; flex-wrap: wrap; gap: 12px 21px; font-size: 12px; margin-top: 32px; }
-  .writing-item { padding: 0 0 19px; margin-bottom: 19px; border-bottom: 1px solid var(--rule); }
+  .writing-item { padding: 0 0 23px; margin-bottom: 19px; border-bottom: 1px solid var(--rule); }
   .row { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
   .writing-item .title { font-size: 22px; line-height: 1.25; letter-spacing: -.025em; text-wrap: pretty; }
   .writing-item .title a { text-decoration: none; }
   .writing-item .title a:hover { text-decoration: underline; }
-  .date { order: -1; font-size: 10px; color: var(--muted); }
-  .dek { font-size: 15px; line-height: 1.5; margin-top: 8px; color: var(--muted); text-wrap: pretty; }
-
-
+  .date { order: -1; font-size: 11px; color: #495544; }
+  .dek { font-size: 15px; line-height: 1.5; margin-top: 11px; color: var(--muted); text-wrap: pretty; }
 
   .writing-more { font-size: 12px; align-self: flex-start; }
   @media (max-width: 800px) { .leaf { padding-right: 22px; } .leaf + .leaf { padding-left: 22px; } .lead { font-size: 24px; } .row { flex-direction: column; gap: 7px; } }
@@ -70,8 +69,6 @@
     .lead { font-size: 25px; }
     .copy { font-size: 18px; }
     .row { gap: 6px; }
-
-
   }
 </style>
 </head>
@@ -87,7 +84,11 @@
     <p class="lead">I build infrastructure and ML systems at Rivian.</p>
     <p class="copy">My work spans production engineering, observability, and model deployment on the AI &amp; Data Platform team.</p>
     <p class="copy">Elsewhere: music, books, and <a href="/writing/matters-of-great-importance">things worth working on</a>.</p>
-    <section class="work" id="work" aria-labelledby="work-title"><h3 id="work-title">Selected work</h3><a class="project" href="https://github.com/1byteword/dogwatch">dogwatch ↗</a><p>eBPF observability, packaged as a single binary.</p></section>
+    <section class="work" id="work" aria-labelledby="work-title">
+      <h3 id="work-title">Selected work</h3>
+      <div class="project-entry"><a class="project" href="https://github.com/1byteword/dogwatch">dogwatch ↗</a><p>eBPF observability, packaged as a single binary.</p></div>
+      <div class="project-entry"><a class="project" href="/writing/observability-materialized-view">Ryo ↗</a><p>A work in progress: keeping telemetry searchable without paying hot-storage prices for all of it.</p></div>
+    </section>
     <div class="contact"><a href="mailto:1byteword@gmail.com">Email</a><a href="https://github.com/1byteword" rel="me">GitHub</a><a href="https://linkedin.com/in/azhank" rel="me">LinkedIn</a></div>
   </section>
   <section class="leaf" id="writing" aria-labelledby="writing-title">
