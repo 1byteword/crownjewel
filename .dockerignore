@@ -10,6 +10,8 @@ README.md
 k8s/
 
 # Development
+debug/
+dev.py
 .vscode
 .idea
 *.swp

@@ -7,80 +7,227 @@
 <meta name="description" content="Azhan Khan. Production engineering, independent projects, and writing about software, music, and things worth working on.">
 <meta name="theme-color" content="#e8ebe2">
 <style>
-  :root { --paper: #e8ebe2; --ink: #202c23; --muted: #566153; --rule: #c7cec1; --serif: "Bodoni 72", Didot, "Times New Roman", serif; }
+  /* Current values, not a normalized scale. --space-N means exactly N CSS px.
+     -under-N tokens retain each existing max-width breakpoint override. */
+  :root {
+    --background: #e8ebe2;
+    --text-primary: #202c23;
+    --text-secondary: #566153;
+    --rule-color: #c7cec1;
+    --font-display: "Bodoni 72", Didot, "Times New Roman", serif;
+    --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-surname: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    --surround: #cfd6cb;
+    --accent: #a85364;
+    --accent-bottom: #c5d58b;
+    --link-hover: #52643b;
+    --selection-background: #d1dc84;
+    --date-color: #495544;
+    --art-background: #d9dcd2;
+    --code-background: #dce2d6;
+    --rule-thin: 1px;
+    --rule-medium: 4.5px;
+    --focus-width: 2px;
+    --page-margin: 35px;
+    --masthead-gap: .12em;
+    --masthead-columns: repeat(2, minmax(0, 1fr));
+    --hero-inline-margin: 0px;
+    --tracking-body: normal;
+    --grid-gutter: 62px;
+    --space-24: 24px;
+    --space-4: 4px;
+    --space-5: 5px;
+    --space-neg-70: -70px;
+    --space-12: 12px;
+    --page-width: 1180px;
+    --space-30: 30px;
+    --space-22: 22px;
+    --font-size-nav: 12px;
+    --space-25: 25px;
+    --space-19: 19px;
+    --font-size-masthead: clamp(90px, 14.5vw, 184px);
+    --line-height-masthead: 1.03;
+    --font-weight-masthead: 400;
+    --font-weight-wordmark-given: 400;
+    --font-style-wordmark-given: italic;
+    --tracking-given: -.075em;
+    --font-weight-wordmark-surname: 900;
+    --tracking-surname: -.09em;
+    --space-20: 20px;
+    --space-23: 23px;
+    --font-size-book-footer: 11px;
+    --font-size-masthead-under-720: 18.6vw;
+    --space-16: 16px;
+    --font-size-nav-under-420: 11px;
+    --space-15: 15px;
+    --space-neg-17: -17px;
+    --hero-aspect-ratio: 3;
+    --grid-columns: 1fr 1fr;
+    --paired-entry-count: 4;
+    --entry-rule-space: var(--space-23);
+    --entry-after-space: var(--space-19);
+    --space-32: 32px;
+    --space-29: 29px;
+    --font-style-section: italic;
+    --font-size-section: 41px;
+    --line-height-section: 1;
+    --font-weight-section: 400;
+    --tracking-section: -.035em;
+    --font-size-lead: var(--font-size-title);
+    --line-height-lead: var(--line-height-title);
+    --tracking-lead: var(--tracking-title);
+    --space-21: 21px;
+    --font-size-body: var(--font-size-excerpt);
+    --line-height-body: var(--line-height-excerpt);
+    --font-size-label: var(--font-size-meta);
+    --font-weight-label: 400;
+    --font-size-project: var(--font-size-title);
+    --line-height-project: var(--line-height-title);
+    --tracking-project: var(--tracking-title);
+    --space-26: 26px;
+    --font-size-project-copy: var(--font-size-excerpt);
+    --line-height-project-copy: var(--line-height-excerpt);
+    --space-8: 8px;
+    --font-size-contact: var(--font-size-writing-more);
+    --space-6: 6px;
+    --font-size-title: 22px;
+    --line-height-title: 1.25;
+    --tracking-title: -.025em;
+    --font-size-meta: 11px;
+    --font-size-excerpt: 15px;
+    --line-height-excerpt: 1.5;
+    --space-11: 11px;
+    --description-gap: var(--space-11);
+    --description-gap-under-560: var(--space-10);
+    --font-size-writing-more: 12px;
+    --grid-gutter-under-800: 44px;
+    --font-size-lead-under-800: var(--font-size-title);
+    --space-7: 7px;
+    --space-neg-6: -6px;
+    --hero-aspect-ratio-under-560: 2.15;
+    --grid-gutter-under-560: 24px;
+    --font-size-section-under-560: clamp(24px, 6.5vw, 32px);
+    --font-size-lead-under-560: var(--font-size-title-under-560);
+    --line-height-lead-under-560: var(--line-height-title-under-560);
+    --font-size-body-under-560: var(--font-size-excerpt-under-560);
+    --line-height-body-under-560: var(--line-height-excerpt-under-560);
+    --space-14: 14px;
+    --font-size-label-under-560: var(--font-size-meta-under-560);
+    --font-size-project-under-560: var(--font-size-title-under-560);
+    --line-height-project-under-560: var(--line-height-title-under-560);
+    --font-size-project-copy-under-560: var(--font-size-excerpt-under-560);
+    --line-height-project-copy-under-560: var(--line-height-excerpt-under-560);
+    --font-size-contact-under-560: var(--font-size-writing-more-under-560);
+    --space-10: 10px;
+    --font-size-title-under-560: 16px;
+    --line-height-title-under-560: 1.3;
+    --font-size-meta-under-560: 10px;
+    --font-size-excerpt-under-560: 13px;
+    --line-height-excerpt-under-560: 1.5;
+    --space-18: 18px;
+    --font-size-writing-more-under-560: 11px;
+    --paper: var(--background);
+    --ink: var(--text-primary);
+    --muted: var(--text-secondary);
+    --rule: var(--rule-color);
+    --serif: var(--font-display);
+  }
+
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
-  body { margin: 0; background: #cfd6cb; color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-  a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-  a:hover { color: #52643b; }
-  a:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
-  ::selection { background: #d1dc84; color: #202c23; }
-  .skip-link { position: absolute; top: -70px; left: 24px; z-index: 3; background: var(--paper); padding: 12px; }
-  .skip-link:focus { top: 12px; }
-  .book { max-width: 1180px; margin: 30px auto; padding: 0 35px; background: var(--paper); border-top: 4.5px solid #a85364; border-bottom: 4.5px solid #c5d58b; }
-  .running-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0 0; font-size: 12px; }
+  html { scroll-behavior: smooth; scroll-padding-top: var(--space-24); }
+  body { margin: 0; background: var(--surround); color: var(--ink); font-family: var(--font-body); letter-spacing: var(--tracking-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-underline-offset: var(--space-4); text-decoration-thickness: var(--rule-thin); }
+  a:hover { color: var(--link-hover); }
+  a:focus-visible { outline: var(--focus-width) solid var(--ink); outline-offset: var(--space-5); }
+  ::selection { background: var(--selection-background); color: var(--text-primary); }
+  .skip-link { position: absolute; top: var(--space-neg-70); left: var(--space-24); z-index: 3; background: var(--paper); padding: var(--space-12); }
+  .skip-link:focus { top: var(--space-12); }
+  .book { max-width: var(--page-width); margin: var(--space-30) auto; padding: 0 var(--page-margin); background: var(--paper); border-top: var(--rule-medium) solid var(--accent); border-bottom: var(--rule-medium) solid var(--accent-bottom); }
+  .running-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-24); padding: var(--space-22) 0 0; font-size: var(--font-size-nav); }
   .running-head a { text-decoration: none; }
   .running-head a:hover { text-decoration: underline; }
-  .running-head nav { display: flex; gap: 25px; margin-left: auto; }
-  .wordmark { display: flex; align-items: baseline; justify-content: center; gap: .12em; margin: 5px 0 19px; padding: 0 12px; font-size: clamp(90px, 14.5vw, 184px); line-height: 1.03; white-space: nowrap; font-weight: 400; }
-  .wordmark .given { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.075em; }
-  .wordmark .surname { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif; font-weight: 900; letter-spacing: -.09em; }
-  .book-footer { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0; border-top: 1px solid var(--rule); font-size: 11px; }
+  .running-head nav { display: flex; gap: var(--space-25); margin-left: auto; }
+  .wordmark { display: grid; grid-template-columns: var(--masthead-columns); align-items: baseline; gap: 0; margin: var(--space-5) 0 var(--space-19); padding: 0 var(--space-12); font-size: var(--font-size-masthead); line-height: var(--line-height-masthead); white-space: nowrap; font-weight: var(--font-weight-masthead); }
+  .wordmark .given { justify-self: end; margin-right: var(--masthead-gap); font-family: var(--serif); font-weight: var(--font-weight-wordmark-given); font-style: var(--font-style-wordmark-given); letter-spacing: var(--tracking-given); }
+  .wordmark .surname { justify-self: start; font-family: var(--font-surname); font-weight: var(--font-weight-wordmark-surname); letter-spacing: var(--tracking-surname); }
+  .book-footer { display: flex; justify-content: space-between; gap: var(--space-20); padding: var(--space-23) 0; border-top: var(--rule-thin) solid var(--rule); font-size: var(--font-size-book-footer); }
   @media (max-width: 1180px) { .book { margin: 0; } }
-  @media (max-width: 720px) { .book { padding: 0 22px; } .wordmark { font-size: 18.6vw; margin-top: 16px; padding: 0; } }
-  @media (max-width: 420px) { .running-head { font-size: 11px; gap: 15px; } .running-head nav { gap: 16px; } }
+  @media (max-width: 720px) { .book { padding: 0 var(--space-22); } .wordmark { font-size: var(--font-size-masthead-under-720); margin-top: var(--space-16); padding: 0; } }
+  @media (max-width: 420px) { .running-head { font-size: var(--font-size-nav-under-420); gap: var(--space-15); } .running-head nav { gap: var(--space-16); } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-  .canopy { margin: 0 -17px; position: relative; overflow: hidden; isolation: isolate; background: var(--paper); }
-  .canopy img { display: block; width: 100%; height: auto; aspect-ratio: 3; object-fit: cover; mix-blend-mode: multiply; }
+  .canopy { margin: 0 var(--hero-inline-margin); position: relative; overflow: hidden; isolation: isolate; background: var(--paper); }
+  .canopy img { display: block; width: 100%; height: auto; aspect-ratio: var(--hero-aspect-ratio); object-fit: cover; mix-blend-mode: multiply; }
   .canopy canvas { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: multiply; }
   .canopy canvas[hidden] { display: none; }
-  .canopy.is-animated { background: #d9dcd2; }
+  .canopy.is-animated { background: var(--art-background); }
   .canopy.is-animated img { visibility: hidden; }
-  .spread { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding-bottom: 32px; }
-  .leaf { padding: 29px 31px 0 0; min-width: 0; display: flex; flex-direction: column; }
-  .leaf + .leaf { padding: 29px 0 0 31px; }
-  .spread::before { content: ""; position: absolute; top: 20px; bottom: 32px; left: 50%; width: 1px; background: var(--rule); }
-  .section-title { font-family: var(--serif); font-style: italic; font-size: 41px; line-height: 1; font-weight: 400; letter-spacing: -.035em; margin: 0 0 23px; }
-  .lead { font-size: 27px; line-height: 1.27; letter-spacing: -.02em; margin: 0 0 21px; }
-  .copy { font-size: 18px; line-height: 1.5; margin: 0 0 21px; text-wrap: pretty; }
-  .work { margin-top: 21px; }
-  .work h3 { font-size: 12px; font-weight: 400; margin: 0 0 12px; }
-  .work .project { font-size: 23px; letter-spacing: -.025em; text-decoration: none; }
-  .work .project-entry + .project-entry { margin-top: 26px; }
+  .spread { position: relative; display: grid; grid-template-columns: var(--grid-columns); padding-bottom: var(--space-32); }
+  .leaf { padding: var(--space-29) calc(var(--grid-gutter) / 2) 0 0; min-width: 0; display: flex; flex-direction: column; }
+  .leaf + .leaf { padding: var(--space-29) 0 0 calc(var(--grid-gutter) / 2); }
+  .spread::before { content: ""; position: absolute; top: var(--space-20); bottom: var(--space-32); left: 50%; width: var(--rule-thin); background: var(--rule); }
+  .section-title { font-family: var(--serif); font-style: var(--font-style-section); font-size: var(--font-size-section); line-height: var(--line-height-section); font-weight: var(--font-weight-section); letter-spacing: var(--tracking-section); margin: 0 0 var(--space-23); }
+  .lead { font-size: var(--font-size-lead); line-height: var(--line-height-lead); letter-spacing: var(--tracking-lead); margin: 0 0 var(--space-21); }
+  .copy { font-size: var(--font-size-body); line-height: var(--line-height-body); margin: 0 0 var(--space-21); text-wrap: pretty; }
+  .work { margin-top: var(--space-21); }
+  .work h3 { font-size: var(--font-size-label); font-weight: var(--font-weight-label); margin: 0 0 var(--space-12); }
+  .work .project { display: block; width: fit-content; font-size: var(--font-size-project); line-height: var(--line-height-project); letter-spacing: var(--tracking-project); text-decoration: none; }
+  .work .project-entry + .project-entry { margin-top: var(--space-26); }
   .work .project:hover { text-decoration: underline; }
-  .work p { font-size: 15px; line-height: 1.4; margin: 8px 0 0; }
-  .contact { display: flex; flex-wrap: wrap; gap: 12px 21px; font-size: 12px; margin-top: 32px; }
-  .writing-item { padding: 0 0 23px; margin-bottom: 19px; border-bottom: 1px solid var(--rule); }
-  .row { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
-  .writing-item .title { font-size: 22px; line-height: 1.25; letter-spacing: -.025em; text-wrap: pretty; }
+  .work p { font-size: var(--font-size-project-copy); line-height: var(--line-height-project-copy); margin: var(--description-gap) 0 0; }
+  .contact { display: flex; flex-wrap: wrap; gap: var(--space-12) var(--space-21); font-size: var(--font-size-contact); margin-top: var(--space-32); }
+  .writing-item { padding: 0 0 var(--space-23); margin-bottom: var(--space-19); border-bottom: var(--rule-thin) solid var(--rule); }
+  .row { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-6); }
+  .writing-item .title { font-size: var(--font-size-title); line-height: var(--line-height-title); letter-spacing: var(--tracking-title); text-wrap: pretty; }
   .writing-item .title a { text-decoration: none; }
   .writing-item .title a:hover { text-decoration: underline; }
-  .date { order: 0; font-size: 11px; color: #495544; }
-  .dek { font-size: 15px; line-height: 1.5; margin-top: 11px; color: var(--muted); text-wrap: pretty; }
+  .dek { font-size: var(--font-size-excerpt); line-height: var(--line-height-excerpt); margin-top: var(--description-gap); color: var(--muted); text-wrap: pretty; }
 
-  .writing-more { font-size: 12px; align-self: flex-start; }
-  @media (max-width: 800px) { .leaf { padding-right: 22px; } .leaf + .leaf { padding-left: 22px; } .lead { font-size: 24px; } .row { flex-direction: column; gap: 7px; } }
+  .writing-more { font-size: var(--font-size-writing-more); align-self: flex-start; }
+  @media (max-width: 800px) { .leaf { padding-right: calc(var(--grid-gutter-under-800) / 2); } .leaf + .leaf { padding-left: calc(var(--grid-gutter-under-800) / 2); } .lead { font-size: var(--font-size-lead-under-800); } .row { flex-direction: column; gap: var(--space-7); } }
   @media (max-width: 560px) {
-    .book { padding: 0 16px; }
-    .canopy { margin: 0 -6px; } .canopy img { aspect-ratio: 2.15; }
-    .leaf { padding: 24px 12px 0 0; }
-    .leaf + .leaf { padding: 24px 0 0 12px; }
-    .spread::before { top: 16px; }
-    .section-title { font-size: clamp(24px, 6.5vw, 32px); margin-bottom: 20px; }
-    .lead { font-size: clamp(16px, 4.2vw, 21px); line-height: 1.35; margin-bottom: 16px; }
-    .copy { font-size: 14px; line-height: 1.5; margin-bottom: 16px; }
-    .work { margin-top: 14px; }
-    .work h3 { font-size: 10px; }
-    .work .project { font-size: 18px; }
-    .work p { font-size: 13px; line-height: 1.45; }
-    .contact { font-size: 11px; gap: 10px 14px; margin-top: 24px; }
-    .row { gap: 6px; }
-    .writing-item .title { font-size: 16px; line-height: 1.3; }
-    .date { font-size: 10px; }
-    .dek { font-size: 13px; line-height: 1.5; margin-top: 10px; }
-    .writing-item { padding-bottom: 18px; margin-bottom: 18px; }
-    .writing-more { font-size: 11px; }
+    .book { padding: 0 var(--space-16); }
+    .canopy img { aspect-ratio: var(--hero-aspect-ratio-under-560); }
+    .leaf { padding: var(--space-24) calc(var(--grid-gutter-under-560) / 2) 0 0; }
+    .leaf + .leaf { padding: var(--space-24) 0 0 calc(var(--grid-gutter-under-560) / 2); }
+    .spread::before { top: var(--space-16); }
+    .section-title { font-size: var(--font-size-section-under-560); margin-bottom: var(--space-20); }
+    .lead { font-size: var(--font-size-lead-under-560); line-height: var(--line-height-lead-under-560); margin-bottom: var(--space-16); }
+    .copy { font-size: var(--font-size-body-under-560); line-height: var(--line-height-body-under-560); margin-bottom: var(--space-16); }
+    .work { margin-top: var(--space-14); }
+    .work h3 { font-size: var(--font-size-label-under-560); }
+    .work .project { font-size: var(--font-size-project-under-560); line-height: var(--line-height-project-under-560); }
+    .work p { font-size: var(--font-size-project-copy-under-560); line-height: var(--line-height-project-copy-under-560); margin-top: var(--description-gap-under-560); }
+    .contact { font-size: var(--font-size-contact-under-560); gap: var(--space-10) var(--space-14); margin-top: var(--space-24); }
+    .row { gap: var(--space-6); }
+    .writing-item .title { font-size: var(--font-size-title-under-560); line-height: var(--line-height-title-under-560); }
+    .dek { font-size: var(--font-size-excerpt-under-560); line-height: var(--line-height-excerpt-under-560); margin-top: var(--description-gap-under-560); }
+    .writing-item { padding-bottom: var(--space-18); margin-bottom: var(--space-18); }
+    .writing-more { font-size: var(--font-size-writing-more-under-560); }
+  }
+
+  /* Shared rows: heading, then title / description / rule for
+     each paired entry, then a common footer. No measured JS spacers. */
+  .spread { --entry-title-size: var(--font-size-title); --entry-title-leading: var(--line-height-title); --entry-description-size: var(--font-size-excerpt); --entry-description-leading: var(--line-height-excerpt); grid-template-rows: auto repeat(var(--paired-entry-count), auto auto auto) auto; }
+  .leaf { display: grid; grid-template-rows: subgrid; grid-column: 1; grid-row: 1 / -1; }
+  .leaf + .leaf { grid-column: 2; }
+  .leaf > .section-title { grid-row: 1; }
+  .engineering-intro { grid-row: 2 / span 3; }
+  .work { display: grid; grid-template-rows: subgrid; grid-row: 5 / span 6; margin: 0; min-width: 0; }
+  .work .project-entry { grid-column: 1; grid-row: 1 / span 3; }
+  .work .project-entry + .project-entry { grid-row: 4 / span 3; margin: 0; }
+  .writing-list { display: grid; grid-template-rows: subgrid; grid-row: 2 / -2; min-width: 0; }
+  .writing-item { grid-row: span 3; padding: 0; margin: 0; border: 0; }
+  .engineering-intro, .project-entry, .writing-item { display: grid; grid-template-rows: subgrid; min-width: 0; }
+  .writing-item .row { display: contents; }
+  .engineering-intro > .lead, .project-entry > .project, .writing-item .title { grid-row: 1; align-self: start; margin: 0; font-size: var(--entry-title-size); line-height: var(--entry-title-leading); letter-spacing: var(--tracking-title); color: var(--text-primary); text-wrap: pretty; }
+  .intro-copy, .project-entry > p, .writing-item .dek { grid-row: 2; align-self: start; margin: var(--description-gap) 0 0; font-size: var(--entry-description-size); line-height: var(--entry-description-leading); color: var(--text-secondary); text-wrap: pretty; }
+  .intro-copy .copy { margin: 0; }
+  .engineering-intro::after, .project-entry::after, .writing-item::after { content: ""; grid-row: 3; padding-top: var(--entry-rule-space); border-bottom: var(--rule-thin) solid var(--rule); margin-bottom: var(--entry-after-space); }
+  .contact, .writing-more { grid-row: -2 / -1; align-self: start; margin: 0; }
+  @media (max-width: 560px) {
+    .spread { --entry-title-size: var(--font-size-title-under-560); --entry-title-leading: var(--line-height-title-under-560); --entry-description-size: var(--font-size-excerpt-under-560); --entry-description-leading: var(--line-height-excerpt-under-560); --entry-rule-space: var(--space-18); --entry-after-space: var(--space-18); }
+    .intro-copy, .project-entry > p, .writing-item .dek { margin-top: var(--description-gap-under-560); }
   }
 </style>
 </head>
@@ -93,11 +240,13 @@
 <div class="spread">
   <section class="leaf" id="about" aria-labelledby="about-title">
     <h2 class="section-title" id="about-title">Engineering</h2>
-    <p class="lead">I build infrastructure and ML systems at Rivian.</p>
-    <p class="copy">My work spans production engineering, observability, and model deployment on the AI &amp; Data Platform team.</p>
-    <p class="copy">Elsewhere: music, books, and <a href="/writing/matters-of-great-importance">things worth working on</a>.</p>
-    <section class="work" id="work" aria-labelledby="work-title">
-      <h3 id="work-title">Selected work</h3>
+    <div class="engineering-intro">
+    <p class="lead">I build infrastructure and ML systems at Rivian, from observability to model deployment.</p>
+    <div class="intro-copy">
+    <p class="copy">My work spans production engineering, observability, and model deployment on the AI &amp; Data Platform team. Elsewhere: music, books, and <a href="/writing/matters-of-great-importance">things worth working on</a>.</p>
+    </div>
+    </div>
+    <section class="work" id="work" aria-label="Selected work">
       <div class="project-entry"><a class="project" href="https://github.com/1byteword/dogwatch">dogwatch <svg aria-hidden="true" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" style="vertical-align:baseline"><path d="M2 14 14 2M3 2h11v11"/></svg></a><p>eBPF observability, packaged as a single binary.</p></div>
       <div class="project-entry"><a class="project" href="https://ryo.ai">Ryo <svg aria-hidden="true" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1" style="vertical-align:baseline"><path d="M2 14 14 2M3 2h11v11"/></svg></a><p>A work in progress: keeping telemetry searchable without paying hot-storage prices for all of it.</p></div>
     </section>
@@ -110,28 +259,28 @@
         <div class="writing-item">
           <div class="row">
             <div class="title"><a href="/writing/observability-materialized-view">Your Observability Platform Should Be a Materialized View</a></div>
-            <div class="date">September 2026</div>
+
           </div>
           <div class="dek">The log you delete to make this month’s bill smaller might be the one you need next month. I think the observability stack has its source of truth backwards.</div>
         </div>
         <div class="writing-item">
           <div class="row">
             <div class="title"><a href="/writing/100-great-albums">An album at a time</a></div>
-            <div class="date">May 2026</div>
+
           </div>
           <div class="dek">I keep listening to the same few dozen songs. I’m making myself listen to whole albums for a change.</div>
         </div>
         <div class="writing-item">
           <div class="row">
             <div class="title"><a href="/writing/the-half-measure-tax">The half-measure tax</a></div>
-            <div class="date">April 2026</div>
+
           </div>
           <div class="dek">Getting this site to work was easy. Knowing when it was good enough was the part I kept getting wrong.</div>
         </div>
         <div class="writing-item">
           <div class="row">
             <div class="title"><a href="/writing/matters-of-great-importance">Things worth working on</a></div>
-            <div class="date">November 2025</div>
+
           </div>
           <div class="dek">AI alignment, world models, brain-computer interfaces, energy, and robotics. These are the five problems I keep coming back to when I think about what to spend my time on.</div>
         </div>

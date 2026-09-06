@@ -18,8 +18,21 @@ honest if you change the architecture.
   page edges. System Bodoni/Didot/Times provides expressive display type;
   Helvetica Neue/Helvetica/Arial keeps body text readable. The masthead uses
   italic serif lettering for Azhan and heavy sans-serif lettering for Khan.
+  Equal masthead grid tracks anchor the Khan text box to the column divider;
+  the hero image aligns with the inner content edges at all breakpoints.
   No font download is needed for the wordmark. Styles stay
   inline; `publish` embeds the matching reading-page design.
+- Each page's inline `:root` block exposes its current design tokens. These
+  are preserved values, including differences between page types and
+  breakpoint-specific tokens; they are not a normalized spacing/type scale.
+  Keep reading-page tokens in `publish` and existing post pages in sync.
+- `dev.py` injects `/debug/inspector.js` only into local HTML responses.
+  G toggles the measured grid/landmarks, B the baseline grid, O element
+  outlines, and I the inspector. Query parameters `grid=1`, `baseline=1`,
+  `bounds=1`, and `inspector=1` work independently. Escape hides all modes.
+  The tools use an isolated shadow tree; source HTML has no debug loader,
+  and `debug/` is excluded from the Docker context. See `DESIGN_AUDIT.md`
+  and `debug/README.md` for measurements, controls, and limitations.
 - `writing/index.html` — blog index, served at `/writing`. Same system sans-serif,
   same aesthetic as the homepage. The `publish` script inserts entries between
   the `<!-- POST_ENTRIES_START -->` / `<!-- POST_ENTRIES_END -->` markers and

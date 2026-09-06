@@ -9,12 +9,33 @@ This wrapper adds the same .html fallback so `make dev` shows you the
 same URLs you'll see on azhankhan.com.
 """
 import http.server
+import io
 import os
 import socketserver
 import sys
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
+    def send_head(self):
+        # Instrument only local HTML responses. Source files and the nginx
+        # image contain no debug loader; extensionless URLs use translate_path.
+        path = self.translate_path(self.path)
+        if os.path.isdir(path) and self.path.split('?', 1)[0].endswith('/'):
+            path = os.path.join(path, 'index.html')
+        if os.path.isfile(path) and path.endswith('.html'):
+            with open(path, 'rb') as source:
+                content = source.read()
+            loader = (b'<style>:root { --debug-baseline: 8px; }</style>'
+                      b'<script defer src="/debug/inspector.js"></script>')
+            content = content.replace(b'</head>', loader + b'</head>', 1)
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.send_header('Content-Length', str(len(content)))
+            self.send_header('Cache-Control', 'no-store')
+            self.end_headers()
+            return io.BytesIO(content)
+        return super().send_head()
+
     def translate_path(self, path):
         fs_path = super().translate_path(path)
         if os.path.isdir(fs_path):
@@ -31,8 +52,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 def main():
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
     # Allow quick Ctrl-C / restart without waiting out TIME_WAIT.
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(('', port), Handler) as srv:
+    socketserver.ThreadingTCPServer.allow_reuse_address = True
+    socketserver.ThreadingTCPServer.daemon_threads = True
+    with socketserver.ThreadingTCPServer(('', port), Handler) as srv:
         print(f'Serving at http://localhost:{port}  (Ctrl-C to stop)')
         try:
             srv.serve_forever()

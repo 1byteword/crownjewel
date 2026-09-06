@@ -1,42 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><title>Writing — Azhan Khan</title><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Essays by Azhan Khan on software, music, and things worth working on."><meta name="theme-color" content="#e8ebe2"><style>
-  :root { --paper: #e8ebe2; --ink: #202c23; --muted: #566153; --rule: #bdc7b6; --serif: "Bodoni 72", Didot, "Times New Roman", serif; }
+  /* Current values, not a normalized scale. --space-N means exactly N CSS px.
+     -under-N tokens retain each existing max-width breakpoint override. */
+  :root {
+    --background: #e8ebe2;
+    --text-primary: #202c23;
+    --text-secondary: #566153;
+    --rule-color: #bdc7b6;
+    --font-display: "Bodoni 72", Didot, "Times New Roman", serif;
+    --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-surname: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    --surround: #cfd6cb;
+    --accent: #a85364;
+    --accent-bottom: #c5d58b;
+    --link-hover: #52643b;
+    --selection-background: #d1dc84;
+    --date-color: #495544;
+    --art-background: #d9dcd2;
+    --code-background: #dce2d6;
+    --rule-thin: 1px;
+    --rule-medium: 4.5px;
+    --focus-width: 2px;
+    --page-margin: 35px;
+    --masthead-gap: .075em;
+    --tracking-body: normal;
+    --space-24: 24px;
+    --space-4: 4px;
+    --space-5: 5px;
+    --space-neg-70: -70px;
+    --space-12: 12px;
+    --page-width: 1180px;
+    --space-30: 30px;
+    --space-22: 22px;
+    --font-size-nav: 12px;
+    --space-25: 25px;
+    --space-19: 19px;
+    --font-size-masthead: clamp(90px, 14.5vw, 184px);
+    --line-height-masthead: 1.03;
+    --font-weight-masthead: 400;
+    --font-weight-wordmark-given: 400;
+    --font-style-wordmark-given: italic;
+    --tracking-given: -.075em;
+    --font-weight-wordmark-surname: 900;
+    --tracking-surname: -.09em;
+    --space-20: 20px;
+    --space-23: 23px;
+    --font-size-book-footer: 11px;
+    --font-size-masthead-under-720: 14.4vw;
+    --space-16: 16px;
+    --font-size-nav-under-420: 11px;
+    --space-15: 15px;
+    --font-style-section: italic;
+    --font-size-section: clamp(70px, 12vw, 138px);
+    --line-height-section: 1;
+    --tracking-section: -.05em;
+    --font-weight-section: 400;
+    --space-28: 28px;
+    --grid-template-columns-archive-intro: 1fr 1fr;
+    --space-45: 45px;
+    --space-38: 38px;
+    --font-size-archive-intro-p: 26px;
+    --line-height-archive-intro-p: 1.25;
+    --tracking-archive-intro-p: -.025em;
+    --object-position-archive-intro-img: center 40%;
+    --space-35: 35px;
+    --grid-template-columns-post-list-article: 120px 1fr;
+    --font-size-post-list-time: 12px;
+    --space-8: 8px;
+    --font-size-title: 37px;
+    --font-weight-title: 400;
+    --line-height-title: 1.1;
+    --tracking-title: -.025em;
+    --space-13: 13px;
+    --font-size-body: 18px;
+    --line-height-body: 1.45;
+    --max-width-body: 55ch;
+    --grid-template-columns-archive-intro-under-560: 1fr;
+    --font-size-archive-intro-p-under-560: 23px;
+    --grid-template-columns-post-list-article-under-560: 1fr;
+    --font-size-title-under-560: 31px;
+    --font-size-body-under-560: 17px;
+    --paper: var(--background);
+    --ink: var(--text-primary);
+    --muted: var(--text-secondary);
+    --rule: var(--rule-color);
+    --serif: var(--font-display);
+  }
+
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
-  body { margin: 0; background: #cfd6cb; color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-  a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-  a:hover { color: #52643b; }
-  a:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
-  ::selection { background: #d1dc84; color: #202c23; }
-  .skip-link { position: absolute; top: -70px; left: 24px; z-index: 3; background: var(--paper); padding: 12px; }
-  .skip-link:focus { top: 12px; }
-  .book { max-width: 1180px; margin: 30px auto; padding: 0 35px; background: var(--paper); border-top: 4.5px solid #a85364; border-bottom: 4.5px solid #c5d58b; }
-  .running-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0 0; font-size: 12px; }
+  html { scroll-behavior: smooth; scroll-padding-top: var(--space-24); }
+  body { margin: 0; background: var(--surround); color: var(--ink); font-family: var(--font-body); letter-spacing: var(--tracking-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-underline-offset: var(--space-4); text-decoration-thickness: var(--rule-thin); }
+  a:hover { color: var(--link-hover); }
+  a:focus-visible { outline: var(--focus-width) solid var(--ink); outline-offset: var(--space-5); }
+  ::selection { background: var(--selection-background); color: var(--text-primary); }
+  .skip-link { position: absolute; top: var(--space-neg-70); left: var(--space-24); z-index: 3; background: var(--paper); padding: var(--space-12); }
+  .skip-link:focus { top: var(--space-12); }
+  .book { max-width: var(--page-width); margin: var(--space-30) auto; padding: 0 var(--page-margin); background: var(--paper); border-top: var(--rule-medium) solid var(--accent); border-bottom: var(--rule-medium) solid var(--accent-bottom); }
+  .running-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-24); padding: var(--space-22) 0 0; font-size: var(--font-size-nav); }
   .running-head a { text-decoration: none; }
   .running-head a:hover { text-decoration: underline; }
-  .running-head nav { display: flex; gap: 25px; }
-  .wordmark { display: flex; align-items: baseline; justify-content: center; gap: .075em; margin: 5px 0 19px; padding: 0 12px; font-size: clamp(90px, 14.5vw, 184px); line-height: 1.03; white-space: nowrap; font-weight: 400; }
-  .wordmark .given { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.075em; }
-  .wordmark .surname { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif; font-weight: 900; letter-spacing: -.09em; }
-  .book-footer { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0; border-top: 1px solid var(--rule); font-size: 11px; }
+  .running-head nav { display: flex; gap: var(--space-25); }
+  .wordmark { display: flex; align-items: baseline; justify-content: center; gap: var(--masthead-gap); margin: var(--space-5) 0 var(--space-19); padding: 0 var(--space-12); font-size: var(--font-size-masthead); line-height: var(--line-height-masthead); white-space: nowrap; font-weight: var(--font-weight-masthead); }
+  .wordmark .given { font-family: var(--serif); font-weight: var(--font-weight-wordmark-given); font-style: var(--font-style-wordmark-given); letter-spacing: var(--tracking-given); }
+  .wordmark .surname { font-family: var(--font-surname); font-weight: var(--font-weight-wordmark-surname); letter-spacing: var(--tracking-surname); }
+  .book-footer { display: flex; justify-content: space-between; gap: var(--space-20); padding: var(--space-23) 0; border-top: var(--rule-thin) solid var(--rule); font-size: var(--font-size-book-footer); }
   @media (max-width: 1180px) { .book { margin: 0; } }
-  @media (max-width: 720px) { .book { padding: 0 22px; } .wordmark { font-size: 14.4vw; margin-top: 16px; padding: 0; } }
-  @media (max-width: 420px) { .running-head { font-size: 11px; gap: 15px; } .running-head nav { gap: 16px; } }
+  @media (max-width: 720px) { .book { padding: 0 var(--space-22); } .wordmark { font-size: var(--font-size-masthead-under-720); margin-top: var(--space-16); padding: 0; } }
+  @media (max-width: 420px) { .running-head { font-size: var(--font-size-nav-under-420); gap: var(--space-15); } .running-head nav { gap: var(--space-16); } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-  .archive-heading { font-family: var(--serif); font-style: italic; font-size: clamp(70px, 12vw, 138px); line-height: 1; letter-spacing: -.05em; font-weight: 400; margin: 28px 0 25px; }
-  .archive-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; margin-bottom: 38px; }
-  .archive-intro p { font-size: 26px; line-height: 1.25; letter-spacing: -.025em; margin: 0; }
-  .archive-intro img { width: 100%; height: 160px; object-fit: cover; object-position: center 40%; }
-  .post-list { padding-bottom: 35px; }
-  .post-list article { display: grid; grid-template-columns: 120px 1fr; gap: 28px; border-top: 1px solid var(--rule); padding: 28px 0; }
-  .post-list time { font-size: 12px; padding-top: 8px; color: var(--muted); }
-  .post-list h2 { font-family: var(--serif); font-size: 37px; font-weight: 400; line-height: 1.1; letter-spacing: -.025em; margin: 0 0 13px; }
+  .archive-heading { font-family: var(--serif); font-style: var(--font-style-section); font-size: var(--font-size-section); line-height: var(--line-height-section); letter-spacing: var(--tracking-section); font-weight: var(--font-weight-section); margin: var(--space-28) 0 var(--space-25); }
+  .archive-intro { display: grid; grid-template-columns: var(--grid-template-columns-archive-intro); gap: var(--space-45); margin-bottom: var(--space-38); }
+  .archive-intro p { font-size: var(--font-size-archive-intro-p); line-height: var(--line-height-archive-intro-p); letter-spacing: var(--tracking-archive-intro-p); margin: 0; }
+  .archive-intro img { width: 100%; height: 160px; object-fit: cover; object-position: var(--object-position-archive-intro-img); }
+  .post-list { padding-bottom: var(--space-35); }
+  .post-list article { display: grid; grid-template-columns: var(--grid-template-columns-post-list-article); gap: var(--space-28); border-top: var(--rule-thin) solid var(--rule); padding: var(--space-28) 0; }
+  .post-list time { font-size: var(--font-size-post-list-time); padding-top: var(--space-8); color: var(--muted); }
+  .post-list h2 { font-family: var(--serif); font-size: var(--font-size-title); font-weight: var(--font-weight-title); line-height: var(--line-height-title); letter-spacing: var(--tracking-title); margin: 0 0 var(--space-13); }
   .post-list h2 a { text-decoration: none; }
   .post-list h2 a:hover { text-decoration: underline; }
-  .post-list p { font-size: 18px; line-height: 1.45; max-width: 55ch; margin: 0; }
-  @media (max-width: 560px) { .archive-intro { grid-template-columns: 1fr; gap: 23px; } .archive-intro p { font-size: 23px; } .post-list article { grid-template-columns: 1fr; gap: 12px; } .post-list h2 { font-size: 31px; } .post-list p { font-size: 17px; } }
+  .post-list p { font-size: var(--font-size-body); line-height: var(--line-height-body); max-width: var(--max-width-body); margin: 0; }
+  @media (max-width: 560px) { .archive-intro { grid-template-columns: var(--grid-template-columns-archive-intro-under-560); gap: var(--space-23); } .archive-intro p { font-size: var(--font-size-archive-intro-p-under-560); } .post-list article { grid-template-columns: var(--grid-template-columns-post-list-article-under-560); gap: var(--space-12); } .post-list h2 { font-size: var(--font-size-title-under-560); } .post-list p { font-size: var(--font-size-body-under-560); } }
 </style></head>
 <body><main class="book"><header class="running-head"><a href="/">Azhan Khan</a><nav aria-label="Main navigation"><a href="/writing">Writing</a><a href="mailto:1byteword@gmail.com">Email</a></nav></header><h1 class="archive-heading">Writing</h1><div class="archive-intro"><p>Notes on software, music, and where I want to put my attention.</p><img src="../img/forest-stream.png" width="1122" height="1402" alt="Light falling through a green forest canopy."></div><section class="post-list" aria-label="Essays">
     <!-- POST_ENTRIES_START -->
