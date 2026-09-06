@@ -37,9 +37,10 @@
   .canopy canvas[hidden] { display: none; }
   .canopy.is-animated { background: #d9dcd2; }
   .canopy.is-animated img { visibility: hidden; }
-  .spread { display: grid; grid-template-columns: 1fr 1fr; padding-bottom: 32px; }
+  .spread { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding-bottom: 32px; }
   .leaf { padding: 29px 31px 0 0; min-width: 0; display: flex; flex-direction: column; }
-  .leaf + .leaf { padding: 29px 0 0 31px; border-left: 1px solid var(--rule); }
+  .leaf + .leaf { padding: 29px 0 0 31px; }
+  .spread::before { content: ""; position: absolute; top: 20px; bottom: 32px; left: 50%; width: 1px; background: var(--rule); }
   .section-title { font-family: var(--serif); font-style: italic; font-size: 41px; line-height: 1; font-weight: 400; letter-spacing: -.035em; margin: 0 0 23px; }
   .lead { font-size: 27px; line-height: 1.27; letter-spacing: -.02em; margin: 0 0 21px; }
   .copy { font-size: 18px; line-height: 1.5; margin: 0 0 21px; text-wrap: pretty; }
@@ -63,6 +64,7 @@
   @media (max-width: 560px) {
     .canopy { margin: 0 -10px; } .canopy img { aspect-ratio: 2.15; }
     .spread { grid-template-columns: 1fr; }
+    .spread::before { display: none; }
     .leaf, .leaf + .leaf { padding: 27px 0 0; border: 0; }
     .leaf + .leaf { border-top: 1px solid var(--rule); }
     .section-title { font-size: 37px; }
