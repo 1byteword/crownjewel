@@ -21,13 +21,13 @@
   .running-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 22px 0 0; font-size: 12px; }
   .running-head a { text-decoration: none; }
   .running-head a:hover { text-decoration: underline; }
-  .running-head nav { display: flex; gap: 25px; }
-  .wordmark { display: flex; align-items: baseline; justify-content: center; gap: .12em; margin: 5px 0 19px; padding: 0 12px; font-size: clamp(81px, 13.05vw, 165.6px); line-height: 1.03; white-space: nowrap; font-weight: 400; }
+  .running-head nav { display: flex; gap: 25px; margin-left: auto; }
+  .wordmark { display: flex; align-items: baseline; justify-content: center; gap: .12em; margin: 5px 0 19px; padding: 0 12px; font-size: clamp(90px, 14.5vw, 184px); line-height: 1.03; white-space: nowrap; font-weight: 400; }
   .wordmark .given { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.075em; }
   .wordmark .surname { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif; font-weight: 900; letter-spacing: -.09em; }
   .book-footer { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0; border-top: 1px solid var(--rule); font-size: 11px; }
   @media (max-width: 1180px) { .book { margin: 0; } }
-  @media (max-width: 720px) { .book { padding: 0 22px; } .wordmark { font-size: 12.96vw; margin-top: 16px; padding: 0; } }
+  @media (max-width: 720px) { .book { padding: 0 22px; } .wordmark { font-size: 14.4vw; margin-top: 16px; padding: 0; } }
   @media (max-width: 420px) { .running-head { font-size: 11px; gap: 15px; } .running-head nav { gap: 16px; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -77,7 +77,7 @@
 <body>
 <a class="skip-link" href="#about">Skip to content</a>
 <main class="book">
-<header class="running-head"><a href="/">Azhan Khan</a><nav aria-label="Main navigation"><a href="/writing">Writing</a><a href="mailto:1byteword@gmail.com">Email</a></nav></header>
+<header class="running-head"><nav aria-label="Main navigation"><a href="/writing">Writing</a><a href="mailto:1byteword@gmail.com">Email</a></nav></header>
 <h1 class="wordmark" aria-label="Azhan Khan"><span class="given" aria-hidden="true">Azhan</span><span class="surname" aria-hidden="true">Khan</span></h1>
 <figure class="canopy"><img src="img/reaching-hands.png" width="1774" height="887" alt="Two hands reaching toward each other, rendered in black halftone." fetchpriority="high"></figure>
 <div class="spread">
