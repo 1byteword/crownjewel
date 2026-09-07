@@ -86,8 +86,8 @@ show their first baseline; their line-height is in the panel.
 Density is content extent (from the padded column top to its last child's
 bottom), available content height, and whitespace-normalized character count.
 It includes internal whitespace and does **not** estimate perceived visual
-weight or ink coverage. The hero readout measures the image's CSS box, not
-the moving hands inside its canvas. Animation behavior is unchanged.
+weight or ink coverage. The homepage hero readout measures the fixed print stage. It stays the same
+size as editions rotate. Older image-based pages report the image box.
 
 `inspector.js` reads layout and draws into a fixed, pointer-transparent shadow
 tree. Only the panel receives pointer events. No page selectors are restyled.
@@ -95,3 +95,95 @@ tree. Only the panel receives pointer events. No page selectors are restyled.
 refresh active measurements. If replacing page markup, reload to rebuild the
 element list. Hiding every mode removes all debug visuals; the ordinary local
 page has no inspector host until a mode is first requested.
+
+## Masthead trials
+
+Open `/debug/mastheads.html` locally for three previews, or open the full page
+with `?masthead=mixed`, `?masthead=script`, or `?masthead=grotesk`.
+The alternatives reuse the current italic serif / bold sans-serif treatments
+for both names, preserving the current type size and surname grid anchor.
+They are exploratory font swaps, not production changes or separately tuned
+responsive lockups. Combine with `&grid=1` to inspect their different measures.
+
+The first-name mock is `?masthead=first`: only Azhan, centered, in the existing
+italic serif. `--tracking-first-name: .01em` replaces the original −.075em
+tracking, with native font kerning enabled. It remains local only.
+
+The homepage now uses the print series. Previous full-name trials are preserved
+at `/debug/masthead-base.html?masthead=mixed` (or `script` / `grotesk`).
+The current hero can be inspected at `/?grid=1&inspector=1`; `--print-*`
+tokens control the editions, and Pause holds a print for measurement.
+
+The four editions now include the original animated hands. Typography and frames
+use the same green-gray/ink palette and a Bayer dither. Adjust `--print-dot-size`
+(CSS pixels per raster pixel) and `--print-ink-density` (0–1 coverage) in `index.html`.
+Pause stops both rotation and hand movement. Reduced motion starts paused.
+
+Calligraphic masthead trial: `/debug/calligraphic.html`. Uses the original
+masthead-above-hands layout with a generated raster lettering study.
+Prompt and asset provenance: `calligraphic-prompt.md`.
+
+No-name trial: `/debug/no-masthead.html`. Removes the visible masthead entirely;
+keeps the original navigation, animated hands, and content.
+
+The no-masthead trial now alternates the original hands and a frameless,
+stippled THINK print every 3 seconds. `--art-cycle-ms` sets the interval;
+`--think-ink-coverage` sets ink density. Pause and Next support manual review.
+Rotation pauses offscreen/in hidden tabs; reduced motion starts paused.
+
+THINK now darkens from 18% opacity over 1800ms, then adds ! for the remainder
+of its 3-second turn. Punctuation space is reserved to avoid a layout jump.
+`--think-darken-ms` and `--think-start-opacity` expose the animation values.
+Reduced motion shows the finished THINK! print when manually selected.
+
+THINK motion comparisons: `/debug/think-animations.html`, with three independent
+solid-ink variants (roller, letters, press), replay controls and full-page links.
+Shared implementation is `think-motion.html`; each retains the 3s cadence and
+reduced-motion pause. No brightness animation is used in these trials.
+
+Selected combination: `/debug/rolling-masthead.html` (also the local homepage).
+Restores the live mixed-type masthead with hands first, then rolling THINK!.
+
+Multilingual animation studies: `/debug/language-animations.html`. Two each for
+DENK, 想, and سوچیے; shared runtime in `language-motion.html`. Full-page studies
+retain the original masthead and hands. Urdu is shaped as a complete RTL word,
+with left-side punctuation. These are candidates, not added to the homepage yet.
+
+The selected local homepage rotation is now hands → THINK! (rolling) → DENK!
+(press) → 想! (downward) → سوچیے! (rising), with the same 3-second cadence.
+`/debug/rolling-masthead.html` mirrors this selection.
+
+Sixth print: projected rotating loops with circular THINK lettering, inspired
+by the supplied animated reference. Uses native canvas, the existing ink/paper
+palette, and shared playback controls. Start there with `/?art=orbit` or
+`/debug/rolling-masthead.html?art=orbit`.
+
+Seventh print: Observe floral artwork with a subtle traveling wind displacement.
+Start directly at `/debug/rolling-masthead.html?art=flowers`. The word is embedded
+in the image; animation bends the outer regions while damping the center.
+
+Floral revision: all Observe text removed. The background bitmap stays fixed;
+three clipped foreground blooms pivot at independent stem bases, with a gust
+delayed left-to-right. No mesh or whole-image displacement remains.
+
+All-flower revision: the background is now foliage-only. Fifteen blossom
+instances (three silhouette sources, varied in scale, lean, and mirroring)
+move independently at fixed stem anchors. No flowers remain baked into the
+static backdrop. Motion remains delayed left-to-right.
+
+Dense floral selection: 36 flower/sprig instances, mixing trumpets, heavy peonies,
+light cosmos and bellflower clusters. Each has its own stem pivot and phase;
+response amplitude, delay, duration, and settling depend on the variety’s mass.
+Background foliage stays static. New sprites are keyed once at load time.
+
+Arrangement revision: flower centers use staggered rows with small offsets,
+light petal overlap, and smaller heads to fill the field. At 3:1 there are
+60 heads plus nine bellflower clusters. Tubes and stems render behind all
+faces, preventing stalks crossing the centers of neighboring blooms.
+
+Wind amplitude increased 20%: flower heads .025 → .030 radians before mass
+adjustment, bellflower sprigs .040 → .048 radians. Timing is unchanged.
+
+Flower sway increased another 20% (.036 radians / mass adjustment; bells .0576).
+Flowers now hold for `--flowers-cycle-ms: 6000`; other editions remain 3000ms.
+The passing breeze repeats every 3.2s throughout the longer hold.

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Azhan Khan</title>
+<title>Azhan Khan — no masthead demo</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Azhan Khan. Production engineering, independent projects, and writing about software, music, and things worth working on.">
 <meta name="theme-color" content="#e8ebe2">
@@ -232,14 +232,14 @@
   .art-controls { display: flex; justify-content: flex-end; gap: 16px; margin: 8px var(--hero-inline-margin) 0; color: var(--text-secondary); font-size: 11px; }
   .art-controls[hidden] { display: none; }
   .art-controls button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
-  :root { --art-cycle-ms: 3000; --flowers-cycle-ms: 6000; --think-ink-coverage: .76; --think-reveal-ms: 1200; }
+  :root { --art-cycle-ms: 3000; --think-ink-coverage: .76; --think-darken-ms: 1800; --think-start-opacity: .18; }
 </style>
 </head>
 <body>
 <a class="skip-link" href="#about">Skip to content</a>
 <main class="book">
 <header class="running-head"><nav aria-label="Main navigation"><a href="/writing">Writing</a><a href="mailto:1byteword@gmail.com">Email</a></nav></header>
-<h1 class="wordmark" aria-label="Azhan Khan"><span class="given" aria-hidden="true">Azhan</span><span class="surname" aria-hidden="true">Khan</span></h1>
+
 <figure class="canopy"><img src="/img/reaching-hands.png" width="1774" height="887" alt="Two hands reaching toward each other, rendered in black halftone." fetchpriority="high"></figure>
 <div class="art-controls" hidden><button type="button" class="art-pause">Pause</button><button type="button" class="art-next">Next print →</button></div>
 <div class="spread">
@@ -305,29 +305,16 @@
   canvas.setAttribute('aria-hidden', 'true');
   const ctx = canvas.getContext('2d');
   const ink = document.createElement('canvas');
-  let ready = false, edition = ({orbit: 5, flowers: 6})[new URLSearchParams(location.search).get('art')] || 0, timer = 0, paused = reducedMotion.matches;
-  // Edition zero is the original hands; remaining entries are selected studies.
-  const editions = [
-    null,
-    {text: 'THINK', lang: 'en', effect: 'roller'},
-    {text: 'DENK', lang: 'de', font: 'Arial Black, Helvetica Neue, Arial, sans-serif', italic: true, effect: 'press'},
-    {text: '想', lang: 'zh', font: 'Songti SC, STSong, serif', effect: 'vertical'},
-    {text: 'سوچیے', lang: 'ur', font: 'Geeza Pro, Noto Nastaliq Urdu, serif', rtl: true, effect: 'rise'},
-    {text: 'THINK', effect: 'orbit'},
-    {text: 'Observe', effect: 'flowers'}
-  ];
+  let ready = false, edition = 0, timer = 0, paused = reducedMotion.matches;
   const think = document.createElement('canvas');
   const bang = document.createElement('canvas');
   let thinkElapsed = 0;
   const controls = document.querySelector('.art-controls');
   const pause = controls.querySelector('.art-pause');
   function prepareThink() {
-    const config = editions[edition] || editions[1];
-    if (config.effect === 'orbit' || config.effect === 'flowers') return;
     for (const layer of [think, bang]) {
     layer.width = ink.width; layer.height = ink.height;
     const c = layer.getContext('2d', {willReadFrequently: true});
-    if (config.effect === 'roller') {
     c.font = `900 ${think.width * .215}px Georgia, serif`;
     // Reserve the final punctuation width so the word never jumps sideways.
     const full = c.measureText('THINK!').width;
@@ -338,24 +325,6 @@
     c.save(); c.translate(left, baseline); c.scale(scale, 1);
     c.fillText(layer === think ? 'THINK' : '!', layer === think ? 0 : m.width, 0);
     c.restore();
-    } else {
-    c.direction = config.rtl ? 'rtl' : 'ltr';
-    c.textAlign = 'center';
-    layer.lang = config.lang;
-    let size = think.height * .75;
-    c.font = `${config.italic ? 'italic ' : ''}900 ${size}px ${config.font}`;
-    let m = c.measureText(config.text);
-    size *= Math.min(1, think.width * .76 / m.width, think.height * .60 / (m.actualBoundingBoxAscent + m.actualBoundingBoxDescent));
-    c.font = `${config.italic ? 'italic ' : ''}900 ${size}px ${config.font}`;
-    m = c.measureText(config.text);
-    const center = think.width * (config.rtl ? .53 : .47);
-    const baseline = think.height / 2 + (m.actualBoundingBoxAscent - m.actualBoundingBoxDescent) / 2;
-    if (layer === think) c.fillText(config.text, center, baseline);
-    else {
-      c.font = `900 ${size * .8}px Georgia, serif`;
-      c.fillText('!', config.rtl ? (center - m.actualBoundingBoxLeft) - think.width * .035 : (center + m.actualBoundingBoxRight) + think.width * .035, baseline);
-    }
-    }
     const pixels = c.getImageData(0, 0, think.width, think.height);
     const coverage = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--think-ink-coverage')) || .76;
     // Deterministic stippling with uneven clusters, like the scanned hand ink.
@@ -369,207 +338,22 @@
     c.putImageData(pixels, 0, 0);
     }
   }
-  function next() { edition = (edition + 1) % editions.length; thinkElapsed = 0; if (edition) prepareThink(); update(); }
+  function next() { edition = 1 - edition; thinkElapsed = 0; update(); }
   pause.addEventListener('click', () => { paused = !paused; update(); });
   controls.querySelector('.art-next').addEventListener('click', next);
-  // A projected family of circular loops, drawn live rather than a GIF.
-  const grainTile = document.createElement('canvas');
-  grainTile.width = grainTile.height = 4;
-  const grainContext = grainTile.getContext('2d');
-  grainContext.fillStyle = '#1c201b';
-  grainContext.fillRect(0, 0, 4, 4);
-  grainContext.clearRect(0, 0, 1, 1); grainContext.clearRect(2, 2, 1, 1);
-  const orbitInk = ctx.createPattern(grainTile, 'repeat');
-  function drawOrbit(time) {
-    const w = canvas.width, h = canvas.height;
-    const phase = reducedMotion.matches ? .5 : time / 5000;
-    const radius = h * .335;
-    ctx.clearRect(0, 0, w, h);
-    ctx.save(); ctx.translate(w / 2, h / 2);
-    ctx.strokeStyle = orbitInk; ctx.fillStyle = orbitInk;
-    ctx.lineWidth = Math.max(1.3, h * .0025);
-    const tilt = .78 + .24 * Math.sin(phase);
-    for (let loop = 0; loop < 18; loop++) {
-      const v = loop / 18 * Math.PI * 2 + phase * .7;
-      ctx.beginPath();
-      for (let step = 0; step <= 120; step++) {
-        const u = step / 120 * Math.PI * 2;
-        const ring = radius * (.46 + .54 * Math.cos(u));
-        const x = ring * Math.cos(v), y = ring * Math.sin(v), z = radius * .54 * Math.sin(u);
-        const py = y * Math.cos(tilt) - z * Math.sin(tilt);
-        const angle = phase * .18;
-        const px = x * Math.cos(angle) - py * Math.sin(angle);
-        const fy = x * Math.sin(angle) + py * Math.cos(angle);
-        if (step === 0) ctx.moveTo(px, fy); else ctx.lineTo(px, fy);
-      }
-      ctx.stroke();
-    }
-    const words = 'THINK · THINK · THINK · THINK · THINK · THINK · ';
-    ctx.font = `400 ${h * .068}px Helvetica Neue, Arial, sans-serif`;
-    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    for (let i = 0; i < words.length; i++) {
-      const angle = i / words.length * Math.PI * 2 - Math.PI / 2 - phase * .22;
-      ctx.save(); ctx.rotate(angle); ctx.translate(h * .424, 0); ctx.rotate(Math.PI / 2);
-      ctx.fillText(words[i], 0, 0); ctx.restore();
-    }
-    ctx.restore();
-  }
-  const flowers = new Image();
-  flowers.decoding = 'async';
-  flowers.src = '/img/flower-foliage-background.png';
-  const flowerField = document.createElement('canvas');
-  function prepareFlowers() {
-    if (!flowers.naturalWidth || !canvas.width) return;
-    flowerField.width = canvas.width; flowerField.height = canvas.height;
-    const c = flowerField.getContext('2d');
-    const scale = Math.max(canvas.width / flowers.naturalWidth, canvas.height / flowers.naturalHeight);
-    const w = flowers.naturalWidth * scale, h = flowers.naturalHeight * scale;
-    c.drawImage(flowers, (canvas.width - w) / 2, (canvas.height - h) / 2, w, h);
-  }
-  flowers.addEventListener('load', () => { prepareFlowers(); if (ready && edition === 6) draw(elapsed); });
-  flowers.addEventListener('error', () => { if (edition === 6) next(); });
-  const sprigs = new Image();
-  sprigs.decoding = 'async';
-  sprigs.src = '/img/flower-sprigs-source.png';
-  const bloomLayers = [];
-  // Native silhouette clips isolate each blossom from its source sheet.
-  // No pixels from the botanical background are displaced.
-  const bloomShapes = [
-    {box: [24, 25, 408, 450], path: 'M42 117 Q65 94 99 87 Q104 68 131 62 Q143 43 172 49 Q184 35 207 44 Q239 51 256 67 Q284 62 309 88 Q336 87 352 120 Q370 139 375 168 Q396 184 400 212 Q419 242 410 269 Q419 288 409 310 Q409 344 378 360 Q350 372 327 355 Q299 350 278 330 Q246 324 218 295 Q195 288 182 276 Q174 326 179 379 L171 431 Q167 454 157 459 Q145 436 148 411 L144 311 Q125 266 112 234 Q93 222 90 201 Q62 195 54 174 Q31 157 42 117 Z'},
-    {box: [548, 15, 440, 495], path: 'M564 178 Q568 142 592 126 Q595 100 617 89 Q628 63 656 57 Q678 35 705 39 Q735 22 760 32 Q792 21 811 39 Q841 36 856 54 Q884 54 899 76 Q928 85 932 112 Q953 124 955 149 Q976 175 970 204 Q986 233 968 256 Q966 283 941 300 Q922 328 892 327 Q858 342 829 323 L798 377 Q785 419 776 455 L759 491 Q746 489 742 470 L730 414 L704 354 L678 312 Q646 306 622 287 Q592 280 582 253 Q554 238 559 211 Z'},
-    {box: [1142, 42, 375, 431], path: 'M1205 113 Q1220 88 1247 83 Q1265 58 1292 64 Q1311 53 1334 68 Q1359 65 1378 85 Q1410 87 1422 113 Q1446 129 1449 154 Q1472 172 1475 194 Q1503 208 1497 239 Q1510 262 1500 283 Q1503 311 1479 331 Q1464 358 1438 355 Q1415 370 1391 354 Q1366 352 1348 329 Q1327 315 1310 293 L1260 352 L1224 404 L1190 445 Q1172 458 1162 449 L1197 381 L1223 332 L1239 286 Q1221 270 1225 245 Q1208 225 1216 200 Q1199 180 1206 159 Q1189 139 1205 113 Z'}
-  ];
-  function prepareBlooms() {
-    if (!sprigs.naturalWidth) return;
-
-    for (const [index, shape] of bloomShapes.entries()) {
-      const layer = document.createElement('canvas');
-      const [x, y, w, h] = shape.box;
-      layer.width = w; layer.height = h;
-      const c = layer.getContext('2d');
-      c.translate(-x, -y); c.clip(new Path2D(shape.path));
-      c.drawImage(sprigs, 0, 0, 1536, 1024);
-      bloomLayers[index] = layer;
-    }
-    if (ready && edition === 6) draw(elapsed);
-  }
-  sprigs.addEventListener('load', prepareBlooms);
-  const varieties = new Image();
-  varieties.decoding = 'async';
-  varieties.src = '/img/flower-varieties-source.png';
-  function prepareVarieties() {
-    // Decode the sprite sheet's magenta key once, retaining opaque pale petals.
-    const boxes = [[35, 80, 470, 470], [570, 100, 440, 440], [1120, 120, 350, 820]];
-    boxes.forEach(([x, y, w, h], index) => {
-      const layer = document.createElement('canvas'); layer.width = w; layer.height = h;
-      const c = layer.getContext('2d', {willReadFrequently: true});
-      c.drawImage(varieties, x, y, w, h, 0, 0, w, h);
-      const pixels = c.getImageData(0, 0, w, h);
-      for (let i = 0; i < pixels.data.length; i += 4) {
-        const r = pixels.data[i], g = pixels.data[i + 1], b = pixels.data[i + 2];
-        const key = Math.min(r, b) - g;
-        pixels.data[i + 3] *= 1 - Math.max(0, Math.min(1, (key - 25) / 65));
-        if (key > 10) { pixels.data[i] = Math.min(r, g + 14); pixels.data[i + 2] = Math.min(b, g + 8); }
-      }
-      c.putImageData(pixels, 0, 0); bloomLayers[3 + index] = layer;
-    });
-    if (ready && edition === 6) draw(elapsed);
-  }
-  varieties.addEventListener('load', prepareVarieties);
-  function drawFlowers(time) {
-    const w = canvas.width, h = canvas.height;
-    if (!flowers.naturalWidth) { ctx.clearRect(0, 0, w, h); ctx.drawImage(ink, 0, 0); return; }
-    ctx.clearRect(0, 0, w, h);
-    ctx.drawImage(flowerField, 0, 0);
-    const seconds = (time / 1000) % 3.2;
-    // Place flower faces by their centers, not by the bottoms of their stems.
-    // Petals overlap lightly; all stems/tubes are painted in a separate back pass.
-    const cols = Math.max(8, Math.round(w / h * 4));
-    const pitch = w / (cols - .4);
-    const plants = [];
-    const sources = [3, 0, 4, 1, 3, 4, 2, 4, 1, 3, 0];
-    for (let row = 0; row < 5; row++) for (let col = 0; col < cols; col++) {
-      const id = row * cols + col;
-      const source = sources[(col + row * 3) % sources.length];
-      const bloom = bloomLayers[source];
-      if (!bloom) continue;
-      const headFraction = [ .762, .66, .76, 1, 1 ][source];
-      const x = (col + (row % 2 ? .48 : .06)) * pitch + Math.sin(id * 2.4) * pitch * .055;
-      const y = h * (.01 + row * .245 + .018 * Math.sin(id * 1.9));
-      const width = pitch * (source === 3 ? 1.15 : source === 4 ? 1.04 : 1.12) * (1 + .055 * Math.sin(id));
-      const fullHeight = width * bloom.height / bloom.width;
-      const headHeight = fullHeight * headFraction;
-      const mass = source === 3 ? 2.3 : source === 4 ? .65 : 1.3;
-      const local = Math.max(0, seconds - x / w * .9 - mass * .13);
-      const pulse = (t, span) => t > 0 && t < span ? Math.pow(Math.sin(Math.PI * t / span), 2) : 0;
-      const gust = reducedMotion.matches ? 0 : pulse(local, 1.05 + mass * .38) - .14 * pulse(local - 1.05 - mass * .38, .45 + mass * .12);
-      const angle = .07 * Math.sin(id * 1.3) + gust * .036 / Math.sqrt(mass);
-      plants.push({bloom, source, x, y, width, fullHeight, headHeight, headFraction, angle, mirror: id % 3 === 0});
-    }
-    // Bellflower clusters occupy the small gaps, behind the larger flower faces.
-    if (bloomLayers[5]) for (let i = 0; i < 9; i++) {
-      const x = w * (.045 + i * .115), base = h * (.55 + (i % 2) * .5);
-      const t = Math.max(0, seconds - i * .11);
-      const gust = reducedMotion.matches ? 0 : Math.sin(Math.min(1, t / 1.8) * Math.PI);
-      const bh = h * .56, bw = bh * bloomLayers[5].width / bloomLayers[5].height;
-      ctx.save(); ctx.translate(x, base); ctx.rotate(.12 * Math.sin(i * 2) + gust * .0576);
-      ctx.drawImage(bloomLayers[5], -bw * .55, -bh, bw, bh); ctx.restore();
-    }
-    function place(plant) {
-      ctx.translate(plant.x, plant.y + plant.headHeight * .5);
-      ctx.rotate(plant.angle);
-      if (plant.mirror) ctx.scale(-1, 1);
-    }
-    // Back pass: drawn stems and the long trumpet tubes can never cross a face.
-    for (const plant of plants) {
-      ctx.save(); place(plant);
-      ctx.strokeStyle = '#56644e'; ctx.lineWidth = Math.max(1.2, h * .0025);
-      ctx.beginPath(); ctx.moveTo(0, 0); ctx.quadraticCurveTo(h * .015, h * .18, 0, h * .4); ctx.stroke();
-      if (plant.source < 3) {
-        const cut = plant.bloom.height * plant.headFraction;
-        ctx.drawImage(plant.bloom, 0, cut, plant.bloom.width, plant.bloom.height - cut,
-          -plant.width * .5, 0, plant.width, plant.fullHeight - plant.headHeight);
-      }
-      ctx.restore();
-    }
-    // Face pass: no stem pixels are drawn over these independently moving heads.
-    for (const plant of plants) {
-      ctx.save(); place(plant);
-      ctx.drawImage(plant.bloom, 0, 0, plant.bloom.width, plant.bloom.height * plant.headFraction,
-        -plant.width * .5, -plant.headHeight, plant.width, plant.headHeight);
-      ctx.restore();
-    }
-  }
-
   function draw(time) {
     const w = canvas.width, h = canvas.height;
-    if (edition) {
-      const config = editions[edition];
-      if (config.effect === 'orbit') { drawOrbit(thinkElapsed); return; }
-      if (config.effect === 'flowers') { drawFlowers(thinkElapsed); return; }
-      const duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--think-reveal-ms')) || 1200;
-      const t = reducedMotion.matches ? 3000 : thinkElapsed;
-      const easeOut = p => 1 - Math.pow(1 - Math.max(0, Math.min(1, p)), 3);
+    if (edition === 1) {
+      const tokens = getComputedStyle(document.documentElement);
+      const duration = parseFloat(tokens.getPropertyValue('--think-darken-ms')) || 1800;
+      const start = parseFloat(tokens.getPropertyValue('--think-start-opacity')) || .18;
+      const progress = reducedMotion.matches ? 1 : Math.min(1, thinkElapsed / duration);
+      const ease = progress * progress * (3 - 2 * progress);
       ctx.clearRect(0, 0, w, h);
-      if (config.effect === 'roller' || config.effect === 'vertical') {
-        const p = easeOut(t / duration);
-        ctx.save(); ctx.beginPath();
-        ctx.rect(0, 0, config.effect === 'roller' ? w * p : w, config.effect === 'vertical' ? h * p : h);
-        ctx.clip(); ctx.drawImage(think, 0, 0); ctx.restore();
-      } else if (config.effect === 'press') {
-        const scale = 1.10 - .10 * easeOut(t / 800);
-        ctx.save(); ctx.translate(w / 2, h / 2); ctx.scale(scale, scale);
-        ctx.drawImage(think, -w / 2, -h / 2); ctx.restore();
-      } else {
-        // Preserve Urdu shaping by moving the connected word as one raster.
-        const d = h * .28 * (1 - easeOut(t / duration));
-        ctx.save(); ctx.beginPath(); ctx.rect(0, 0, w, h * .82); ctx.clip();
-        ctx.drawImage(think, 0, d); ctx.restore();
-      }
-      if (t >= duration) {
-        const landing = config.effect === 'press' || config.effect === 'rise' ? -h * .10 * (1 - easeOut((t - duration) / 180)) : 0;
-        ctx.drawImage(bang, 0, landing);
-      }
+      ctx.globalAlpha = start + (1 - start) * ease;
+      ctx.drawImage(think, 0, 0);
+      ctx.globalAlpha = 1;
+      if (progress === 1) ctx.drawImage(bang, 0, 0);
       return;
     }
     const phase = (time % 9000) / 9000;
@@ -593,13 +377,12 @@
     artwork.classList.toggle('is-animated', ready);
     canvas.hidden = !ready;
     artwork.setAttribute('role', 'img');
-    artwork.setAttribute('aria-label', edition === 6 ? 'Flowers: green halftone trumpet flowers swaying gently against a still botanical background.' : edition === 5 ? 'Rotating interwoven loops encircled by THINK lettering, in dark ink on green-gray paper.' : edition ? `${editions[edition].text}!, a dithered dark ink print on green-gray paper.` : 'Two halftone hands reaching toward each other.');
+    artwork.setAttribute('aria-label', edition ? 'THINK!, a dithered dark ink print on green-gray paper.' : 'Two halftone hands reaching toward each other.');
     pause.textContent = paused ? 'Resume' : 'Pause';
     controls.hidden = !ready;
     if (ready) draw(elapsed);
     if (ready && visible && !document.hidden && !paused) {
-      const token = edition === 6 ? '--flowers-cycle-ms' : '--art-cycle-ms';
-      const delay = parseFloat(getComputedStyle(document.documentElement).getPropertyValue(token)) || (edition === 6 ? 6000 : 3000);
+      const delay = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--art-cycle-ms')) || 3000;
       timer = setTimeout(next, delay);
       if (!reducedMotion.matches) frame = requestAnimationFrame(tick);
     }
@@ -619,7 +402,6 @@
     }
     buffer.putImageData(pixels, 0, 0);
     prepareThink();
-    prepareFlowers();
     if (!ready) artwork.append(canvas);
     ready = true;
     draw(elapsed);
@@ -630,7 +412,6 @@
   reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) paused = true; update(); });
   let resizeTimer;
   window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(prepare, 150); });
-  document.fonts.ready.then(() => { if (ready) { prepareThink(); draw(elapsed); } });
   if (original.complete && original.naturalWidth) prepare();
   else original.addEventListener('load', prepare, { once: true });
 })();

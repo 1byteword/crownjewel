@@ -1,5 +1,25 @@
 # Current design audit
 
+Selected homepage: original mixed-type masthead, original content grid, and seven
+art editions: hands, rolling THINK!, press DENK!, downward 想!, rising سوچیے!,
+rotating loops, and independently swaying flowers. Other editions hold 3000ms;
+flowers hold 6000ms with repeating 3.2s gusts. Text punctuation arrives at 1200ms.
+Flower stems render behind all heads. At desktop the composition has 60 heads
+and nine bellflower sprigs; heavier flowers have slower, smaller responses.
+There is no Observe text. The foliage background stays fixed.
+The small Pause/Next row beneath the artwork adds space above the text spread.
+
+The measurements and rejected directions below are historical audit snapshots.
+
+Previous direction: the standalone masthead is replaced by a four-print series.
+The three typographic prints use ordered dithering and the original hands’
+#d9dcd2 paper / #1c201b ink palette. The fourth restores the touching hands.
+Dither dot size is 1.25 CSS pixels, ink coverage .78 before grain modulation.
+The bright frame colors and warm paper of the first print mock are retired. The small header identity is 12px
+(11px at ≤420px). Hero prints share the existing content edges and aspect
+ratios; their palette, borders, lettering, and timing are exposed as
+`--print-*` tokens. The earlier measurements below are historical snapshots.
+
 User-directed refinement after the initial audit: the homepage intro now
 shares the writing titles' size and line-height tokens: 22px / 1.25 above
 560px, and 16px / 1.3 at ≤560px. Its former 800px size override also points

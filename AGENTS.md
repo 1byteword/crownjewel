@@ -7,32 +7,34 @@ honest if you change the architecture.
 ## What this site is
 
 - **Static personal site with a homepage, writing index, and post pages** behind nginx in Kubernetes.
-- `index.html` — homepage. A book spread with an expressive mixed-type masthead,
-  a halftone illustration of reaching hands spanning both pages, and two editorial columns
-  below. The two-column spread stays side by side on mobile, with smaller type
-  and narrower gutters. A small inline canvas script extracts dark ink from the light paper so only
-  the hands move in a slow touch-and-release animation, paused
-  offscreen or in a hidden tab. Reduced motion shows the original still image.
-  The center divider appears only between the text columns. No build step.
-- Visual style: pale green paper, forest imagery, dark ink, and subtle colored
-  page edges. System Bodoni/Didot/Times provides expressive display type;
-  Helvetica Neue/Helvetica/Arial keeps body text readable. The masthead uses
-  italic serif lettering for Azhan and heavy sans-serif lettering for Khan.
-  Equal masthead grid tracks anchor the Khan text box to the column divider;
-  the hero image aligns with the inner content edges at all breakpoints.
-  No font download is needed for the wordmark. Styles stay
-  inline; `publish` embeds the matching reading-page design.
-- Each page's inline `:root` block exposes its current design tokens. These
-  are preserved values, including differences between page types and
-  breakpoint-specific tokens; they are not a normalized spacing/type scale.
-  Keep reading-page tokens in `publish` and existing post pages in sync.
-- `dev.py` injects `/debug/inspector.js` only into local HTML responses.
-  G toggles the measured grid/landmarks, B the baseline grid, O element
-  outlines, and I the inspector. Query parameters `grid=1`, `baseline=1`,
-  `bounds=1`, and `inspector=1` work independently. Escape hides all modes.
-  The tools use an isolated shadow tree; source HTML has no debug loader,
-  and `debug/` is excluded from the Docker context. See `DESIGN_AUDIT.md`
-  and `debug/README.md` for measurements, controls, and limitations.
+- `index.html` — homepage. The original mixed-type masthead (italic serif
+  Azhan, heavy sans Khan) sits above a fixed artwork field and two editorial
+  columns. The artwork alternates every 3 seconds (flowers hold for 6 seconds) between the original
+  animated halftone reaching hands, rolling THINK!, press-impression DENK!,
+  downward-reveal 想!, rising سوچیے!, and rotating loops with circular THINK
+  lettering, followed by the floral print with a dense field of independently swaying flower layers
+  over a stationary foliage-only background. The floral raster lives in `img/flower-foliage-background.png`; foreground trumpets are clipped from `img/flower-sprigs-source.png`; peonies,
+  cosmos and bellflowers use `img/flower-varieties-source.png` (keyed once in
+  canvas). Large peonies have slower, smaller responses; light blooms move sooner.
+  Stems and trumpet tubes render behind all flower faces; heads use a staggered
+  center-based arrangement (60 heads plus nine bellflower sprigs at desktop).
+  There is no Observe lettering or caption. The loop print uses live projected curves and a stippled ink pattern. Each typographic print adds its exclamation
+  after 1200ms; Urdu remains connected with punctuation on the left. Canvas uses the
+  hands’ green-gray paper and dark ink. Pause/Next controls allow inspection;
+  animation and rotation pause offscreen/in hidden tabs. Reduced motion starts
+  paused and shows completed prints on manual selection. Without JS the hands
+  remain visible. No build step or new dependency.
+- Homepage content uses CSS subgrid to align paired title, description and
+  separator tracks. The columns stay side by side on mobile. `publish` maintains
+  `--paired-entry-count`; homepage dates are omitted while writing pages keep them.
+- Inline CSS custom properties expose visual values. `--art-cycle-ms` controls
+  print cadence; `--flowers-cycle-ms` sets the longer floral hold, `--think-reveal-ms` controls the rolling reveal, and
+  `--think-ink-coverage` controls stippling. Existing system display/sans fonts
+  and page colors are retained.
+- `debug/` contains local design inspection and archived visual trials.
+  `dev.py` injects the inspector only for local development; production has no
+  debug loader. G toggles grid, B baselines, O outlines, I the inspector panel.
+  The chosen masthead/rolling-print demo is `/debug/rolling-masthead.html`.
 - `writing/index.html` — blog index, served at `/writing`. Same system sans-serif,
   same aesthetic as the homepage. The `publish` script inserts entries between
   the `<!-- POST_ENTRIES_START -->` / `<!-- POST_ENTRIES_END -->` markers and

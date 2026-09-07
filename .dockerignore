@@ -25,3 +25,6 @@ Thumbs.db
 # Misc
 node_modules
 public/
+
+# Archived local-only lettering demo
+img/azhan-khan-calligraphic-demo.png

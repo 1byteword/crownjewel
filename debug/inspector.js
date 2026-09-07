@@ -4,8 +4,22 @@
 (() => {
   'use strict';
   const query = new URLSearchParams(location.search);
+  // Local font trials reuse the existing treatments at their current sizes.
+  const mastheadVariant = query.get('masthead');
+  const mastheadStyles = {
+    first: '.wordmark { --tracking-first-name: .01em; display: flex; justify-content: center; gap: 0; } .wordmark .given { margin: 0; letter-spacing: var(--tracking-first-name); font-kerning: normal; } .wordmark .surname { display: none; }',
+    script: '.wordmark .surname { font-family: var(--font-display); font-weight: var(--font-weight-wordmark-given); font-style: italic; letter-spacing: var(--tracking-given); }',
+    grotesk: '.wordmark .given { font-family: var(--font-surname); font-weight: var(--font-weight-wordmark-surname); font-style: normal; letter-spacing: var(--tracking-surname); }',
+  };
+  if (mastheadStyles[mastheadVariant]) {
+    const style = document.createElement('style');
+    style.textContent = mastheadStyles[mastheadVariant];
+    document.head.append(style);
+    if (mastheadVariant === 'first') document.querySelector('.wordmark')?.setAttribute('aria-label', 'Azhan');
+  }
+
   const state = Object.fromEntries(['grid', 'baseline', 'bounds', 'inspector'].map(k => [k, query.get(k) === '1']));
-  const selectors = '.book, .running-head, nav, nav a, .wordmark, .given, .surname, .canopy, .canopy img, .spread, .leaf, .engineering-intro, .intro-copy, .section-title, .lead, .copy, .work, .work h3, .project-entry, .project, .project svg, .work p, .contact, .writing-list, .writing-item, .row, .title, .date, .dek, .writing-more, .archive-heading, .archive-intro, .archive-intro p, .archive-intro img, .post-list, .post-list article, .post-list article > div, .post-list h2, .post-list p, time, .reading, article, article h1, article h2, article h3, article p, article li, article img, article pre, .back, .book-footer';
+  const selectors = '.book, .running-head, nav, nav a, .wordmark, .given, .surname, .site-identity, .canopy, .canopy img, .print-stage, .print-edition, .print-lettering, .print-caption, .print-controls, .spread, .leaf, .engineering-intro, .intro-copy, .section-title, .lead, .copy, .work, .work h3, .project-entry, .project, .project svg, .work p, .contact, .writing-list, .writing-item, .row, .title, .date, .dek, .writing-more, .archive-heading, .archive-intro, .archive-intro p, .archive-intro img, .post-list, .post-list article, .post-list article > div, .post-list h2, .post-list p, time, .reading, article, article h1, article h2, article h3, article p, article li, article img, article pre, .back, .book-footer';
   const $ = s => document.querySelector(s);
   const px = n => `${Math.round(n * 100) / 100}px`;
   const num = v => parseFloat(v) || 0;
@@ -117,7 +131,7 @@
     }
     const book = $('.book'); if (!book) return;
     const b = box(book), c = contentBox(book), s = getComputedStyle(book);
-    const spread = $('.spread'), grid = spread || $('.archive-intro'), hero = $('.canopy img, .archive-intro img');
+    const spread = $('.spread'), grid = spread || $('.archive-intro'), hero = $('.print-stage, .canopy img, .archive-intro img');
     let columns = [], gutter = null, divider = null;
     if (grid) {
       const gs = getComputedStyle(grid), g = box(grid);
