@@ -35,6 +35,21 @@ honest if you change the architecture.
   `dev.py` injects the inspector only for local development; production has no
   debug loader. G toggles grid, B baselines, O outlines, I the inspector panel.
   The chosen masthead/rolling-print demo is `/debug/rolling-masthead.html`.
+- `books.html` — personal bookshelf, served at `/books` and linked from the homepage.
+  Contains 81 entries in the supplied inventory order, without categories. A full-bleed circular gallery uses large original-color covers,
+  pale mineral-green serif titles, and a solid deep-water green field. The supplied
+  aerial image informs the palette only; no photograph is used as a background. Native page scrolling,
+  horizontal trackpad gestures, and pointer/touch dragging rotate the books;
+  gestures settle on whole entries, with bounded momentum after dragging.
+  Arrow controls and a range selector also browse all entries; reduced motion removes
+  interpolation. An index toggle exposes a compact uncategorized grid, which is also
+  the no-JavaScript fallback. The detail view keeps the same green/serif treatment. Published jacket art is stored in
+  `img/books/` with provenance in `sources.json`. Four entries without identified
+  art use typographic placeholders. Marshall is grouped as two volumes; the author
+  of Cyrus the Great is unspecified. Public copy is limited to supplied metadata.
+  A keyboard-accessible native dialog supports previous/next, Escape, browser history,
+  and `?book=<slug>` deep links. The catalogue remains visible without JavaScript;
+  detail views require JavaScript. No build step or new dependencies.
 - `writing/index.html` — blog index, served at `/writing`. Same system sans-serif,
   same aesthetic as the homepage. The `publish` script inserts entries between
   the `<!-- POST_ENTRIES_START -->` / `<!-- POST_ENTRIES_END -->` markers and
