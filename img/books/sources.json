@@ -1,74 +1,314 @@
 [
   {
-    "file": "/img/books/american-caesar-douglas-macarthur-18801964-william-manchester.jpg",
-    "title": "American Caesar: Douglas MacArthur 1880–1964",
-    "source": "https://openlibrary.org/works/OL4116613W",
-    "image": "https://covers.openlibrary.org/b/id/189231-L.jpg",
-    "width": 310,
+    "file": "/img/books/designing-dataintensive-applications-martin-kleppmann.jpg",
+    "title": "Designing Data-Intensive Applications",
+    "source": "https://openlibrary.org/works/OL19293745W",
+    "image": "https://covers.openlibrary.org/b/id/8434671-L.jpg?default=false",
+    "width": 381,
     "height": 500
   },
   {
-    "file": "/img/books/constantine-the-emperor-david-s-potter.jpg",
-    "title": "Constantine the Emperor",
-    "source": "https://openlibrary.org/works/OL16564812W",
-    "image": "https://covers.openlibrary.org/b/id/12494048-L.jpg",
-    "width": 331,
+    "file": "/img/books/the-linux-programming-interface-michael-kerrisk.jpg",
+    "title": "The Linux Programming Interface",
+    "source": "https://openlibrary.org/isbn/9781593272203",
+    "image": "https://covers.openlibrary.org/b/isbn/9781593272203-L.jpg?default=false",
+    "width": 378,
     "height": 500
   },
   {
-    "file": "/img/books/10.jpg",
-    "title": "From Third World to First: The Singapore Story, 1965–2000",
-    "source": "https://openlibrary.org/works/OL273573W",
-    "image": "https://covers.openlibrary.org/b/id/23348-L.jpg",
-    "width": 320,
+    "file": "/img/books/linkers-and-loaders-john-r-levine.jpg",
+    "title": "Linkers and Loaders",
+    "source": "https://openlibrary.org/works/OL16994864W",
+    "image": "https://covers.openlibrary.org/b/id/784161-L.jpg?default=false",
+    "width": 369,
     "height": 475
   },
   {
-    "file": "/img/books/the-singapore-story-memoirs-of-lee-kuan-yew-lee-kuan-yew.jpg",
-    "title": "The Singapore Story: Memoirs of Lee Kuan Yew",
-    "source": "https://openlibrary.org/works/OL354132W",
-    "image": "https://covers.openlibrary.org/b/id/7432823-L.jpg",
-    "width": 322,
+    "file": "/img/books/rust-atomics-and-locks-mara-bos.jpg",
+    "title": "Rust Atomics and Locks",
+    "source": "https://openlibrary.org/works/OL27821848W",
+    "image": "https://covers.openlibrary.org/b/id/14596955-L.jpg?default=false",
+    "width": 379,
     "height": 500
   },
   {
-    "file": "/img/books/34.jpg",
-    "title": "Poor Charlie’s Almanack",
-    "source": "https://openlibrary.org/isbn/1578645018",
-    "image": "https://covers.openlibrary.org/b/isbn/1578645018-L.jpg",
-    "width": 484,
+    "file": "/img/books/parallel-programming-hard-cover.jpg",
+    "source": "https://www.goodreads.com/book/show/15710583",
+    "image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1511635197i/15710583.jpg",
+    "width": 5098,
+    "height": 6544,
+    "title": "Is Parallel Programming Hard, And, If So, What Can You Do About It?"
+  },
+  {
+    "file": "/img/books/tcpip-illustrated-volume-1-w-richard-stevens-curated.jpg",
+    "title": "TCP/IP Illustrated, Volume 1",
+    "source": "https://www.informit.com/store/tcp-ip-illustrated-volume-1-the-protocols-9780201633467",
+    "image": "https://www.informit.com/ShowCover.aspx?isbn=0201633469",
+    "width": 500,
+    "height": 602
+  },
+  {
+    "file": "/img/books/computer-architecture-a-quantitative-approach-john-hennessy--david-patterson.jpg",
+    "title": "Computer Architecture: A Quantitative Approach",
+    "source": "https://openlibrary.org/works/OL17914655W",
+    "image": "https://covers.openlibrary.org/b/id/8235535-L.jpg?default=false",
+    "width": 399,
     "height": 500
   },
   {
-    "file": "/img/books/the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming.jpg",
-    "title": "The Art of Doing Science and Engineering: Learning to Learn",
-    "source": "https://openlibrary.org/works/OL1185120W",
-    "image": "https://covers.openlibrary.org/b/id/14153910-L.jpg",
+    "file": "/img/books/programming-massively-parallel-processors-david-kirk-wenmei-hwu--izzat-el-hajj.jpg",
+    "title": "Programming Massively Parallel Processors",
+    "source": "https://openlibrary.org/works/OL25666151W",
+    "image": "https://covers.openlibrary.org/b/id/13599430-L.jpg?default=false",
     "width": 405,
     "height": 500
   },
   {
-    "file": "/img/books/08.jpg",
-    "title": "Napoleon",
-    "source": "https://openlibrary.org/works/OL19357321W",
-    "image": "https://covers.openlibrary.org/b/id/8471751-L.jpg",
-    "width": 325,
+    "file": "/img/books/efficient-processing-of-deep-neural-networks-vivienne-sze-yuhsin-chen-tienju-yang--joel-emer.jpg",
+    "title": "Efficient Processing of Deep Neural Networks",
+    "source": "https://doi.org/10.1007/978-3-031-01766-7",
+    "image": "https://media.springernature.com/w500/springer-static/cover/book/978-3-031-01766-7.jpg",
+    "width": 500,
+    "height": 614
+  },
+  {
+    "file": "/img/books/database-internals-alex-petrov.jpg",
+    "title": "Database Internals",
+    "source": "https://openlibrary.org/works/OL21360140W",
+    "image": "https://covers.openlibrary.org/b/id/14572292-L.jpg?default=false",
+    "width": 381,
     "height": 500
   },
   {
-    "file": "/img/books/07.jpg",
-    "title": "Napoleon: The Decline and Fall of an Empire, 1811–1821",
-    "source": "https://www.simonandschuster.com/books/Napoleon/Michael-Broers/9781639361779",
-    "image": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781639361779/napoleon-9781639361779_hr.jpg",
-    "width": 1400,
-    "height": 2100
+    "file": "/img/books/the-scaling-era-cover.jpg",
+    "source": "https://www.goodreads.com/book/show/239472387",
+    "image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1753831008i/239472387.jpg",
+    "width": 301,
+    "height": 445,
+    "title": "The Scaling Era"
   },
   {
-    "file": "/img/books/41.jpg",
-    "title": "The Way Things Work",
-    "source": "https://openlibrary.org/works/OL15130328W",
-    "image": "https://covers.openlibrary.org/b/id/257822-L.jpg",
-    "width": 370,
+    "file": "/img/books/build-a-large-language-model-from-scratch-sebastian-raschka.jpg",
+    "title": "Build a Large Language Model (From Scratch)",
+    "source": "https://openlibrary.org/works/OL38398010W",
+    "image": "https://covers.openlibrary.org/b/id/15225524-L.jpg",
+    "width": 239,
+    "height": 300
+  },
+  {
+    "file": "/img/books/information-theory-inference-and-learning-algorithms-david-mackay-curated.jpg",
+    "title": "Information Theory, Inference, and Learning Algorithms",
+    "source": "https://www.cambridgebookshop.co.uk/products/information-theory-inference-and-learning-algorithms",
+    "image": "https://cdn.shopify.com/s/files/1/0475/2031/7597/files/9780521642989i.jpg?v=1761728703",
+    "width": 494,
+    "height": 648
+  },
+  {
+    "file": "/img/books/reinforcement-learning-an-introduction-richard-sutton--andrew-barto-curated.jpg",
+    "title": "Reinforcement Learning: An Introduction",
+    "source": "https://mitpress.mit.edu/9780262039246/reinforcement-learning/",
+    "image": "https://images.penguinrandomhouse.com/cover/9780262039246",
+    "width": 327,
+    "height": 450
+  },
+  {
+    "file": "/img/books/algorithms-for-decision-making-mykel-kochenderfer-tim-wheeler--kyle-wray.jpg",
+    "title": "Algorithms for Decision Making",
+    "source": "https://mitpress.mit.edu/9780262047012/algorithms-for-decision-making/",
+    "image": "https://images.penguinrandomhouse.com/cover/9780262047012",
+    "width": 401,
+    "height": 450
+  },
+  {
+    "file": "/img/books/virtual-machines-versatile-platforms-for-systems-and-processes-james-smith--ravi-nair.jpg",
+    "title": "Virtual Machines: Versatile Platforms for Systems and Processes",
+    "source": "https://openlibrary.org/isbn/9781558609105",
+    "image": "https://covers.openlibrary.org/b/isbn/9781558609105-L.jpg?default=false",
+    "width": 381,
+    "height": 500
+  },
+  {
+    "file": "/img/books/the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming-curated.jpg",
+    "title": "The Art of Doing Science and Engineering",
+    "source": "https://press.stripe.com/the-art-of-doing-science-and-engineering",
+    "image": "https://images.penguinrandomhouse.com/cover/9781732265172",
+    "width": 270,
+    "height": 400
+  },
+  {
+    "file": "/img/books/the-neuroscience-of-intelligence-richard-haier.jpg",
+    "title": "The Neuroscience of Intelligence",
+    "source": "https://openlibrary.org/works/OL19733102W",
+    "image": "https://covers.openlibrary.org/b/id/13285135-L.jpg?default=false",
+    "width": 329,
+    "height": 500
+  },
+  {
+    "file": "/img/books/38.jpg",
+    "title": "Game Theory for Applied Economists",
+    "source": "https://openlibrary.org/isbn/9780691003955",
+    "image": "https://covers.openlibrary.org/b/isbn/9780691003955-L.jpg?default=false",
+    "width": 333,
+    "height": 500
+  },
+  {
+    "file": "/img/books/the-structure-of-scientific-revolutions-thomas-kuhn-curated.jpg",
+    "title": "The Structure of Scientific Revolutions",
+    "source": "https://press.uchicago.edu/ucp/books/book/chicago/S/bo13179781.html",
+    "image": "https://tmm.chicagodistributioncenter.com/IsbnImages/9780226458120.jpg",
+    "width": 828,
+    "height": 1280
+  },
+  {
+    "file": "/img/books/skunk-works-ben-r-rich-leo-janos-curated.jpg",
+    "title": "Skunk Works",
+    "source": "https://www.hachettebookgroup.com/titles/ben-r-rich/skunk-works/9780316743006/",
+    "image": "https://www.hachettebookgroup.com/wp-content/uploads/2026/02/9780316743006.jpg",
+    "width": 1733,
+    "height": 2600
+  },
+  {
+    "file": "/img/books/kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith.jpg",
+    "title": "Kelly: More Than My Share of It All",
+    "source": "https://openlibrary.org/isbn/9780874744910",
+    "image": "https://covers.openlibrary.org/b/isbn/9780874744910-L.jpg?default=false",
+    "width": 313,
+    "height": 475
+  },
+  {
+    "file": "/img/books/american-steel-richard-preston-curated.jpg",
+    "title": "American Steel",
+    "source": "https://www.goodreads.com/book/show/710643.American_Steel",
+    "image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1541717846i/710643.jpg",
+    "width": 345,
+    "height": 500
+  },
+  {
+    "file": "/img/books/from-the-american-system-to-mass-production-18001932-david-hounshell.jpg",
+    "title": "From the American System to Mass Production, 1800–1932",
+    "source": "https://www.press.jhu.edu/books/title/1631/american-system-mass-production-1800-1932",
+    "image": "https://covers.openlibrary.org/b/isbn/9780801831584-L.jpg?default=false",
+    "width": 315,
+    "height": 475
+  },
+  {
+    "file": "/img/books/strategy-and-structure-alfred-d-chandler-jr.jpg",
+    "title": "Strategy and Structure",
+    "source": "https://openlibrary.org/works/OL9163907W",
+    "image": "https://covers.openlibrary.org/b/id/151232-L.jpg?default=false",
+    "width": 312,
+    "height": 500
+  },
+  {
+    "file": "/img/books/36.jpg",
+    "title": "Chip War",
+    "source": "https://openlibrary.org/works/OL27846746W",
+    "image": "https://covers.openlibrary.org/b/id/12968901-L.jpg",
+    "width": 238,
+    "height": 360
+  },
+  {
+    "file": "/img/books/call-me-ted-paperback.jpg",
+    "title": "Call Me Ted",
+    "source": "https://www.hachettebookgroup.com/titles/ted-turner/call-me-ted/9780446582032/",
+    "image": "https://www.hachettebookgroup.com/wp-content/uploads/2017/06/9780446582032.jpg?w=640",
+    "width": 640,
+    "height": 1009
+  },
+  {
+    "file": "/img/books/barbarians-at-the-gate-bryan-burrough--john-helyar-curated.jpg",
+    "title": "Barbarians at the Gate",
+    "source": "https://openlibrary.org/isbn/9780061655555",
+    "image": "https://images.penguinrandomhouse.com/cover/9780061655555",
+    "width": 266,
+    "height": 400
+  },
+  {
+    "file": "/img/books/the-predators-ball-connie-bruck-curated.jpg",
+    "title": "The Predators’ Ball",
+    "source": "https://openlibrary.org/isbn/9780140120905",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140120905",
+    "width": 290,
+    "height": 450
+  },
+  {
+    "file": "/img/books/an-engine-not-a-camera-how-financial-models-shape-markets-donald-mackenzie.jpg",
+    "title": "An Engine, Not a Camera: How Financial Models Shape Markets",
+    "source": "https://openlibrary.org/works/OL2947188W",
+    "image": "https://covers.openlibrary.org/b/id/150385-L.jpg?default=false",
+    "width": 350,
+    "height": 500
+  },
+  {
+    "file": "/img/books/the-black-swan-nassim-nicholas-taleb-curated.jpg",
+    "title": "The Black Swan",
+    "source": "https://openlibrary.org/isbn/9780812973815",
+    "image": "https://images.penguinrandomhouse.com/cover/9780812973815",
+    "width": 292,
+    "height": 450
+  },
+  {
+    "file": "/img/books/37.jpg",
+    "title": "Fooled by Randomness",
+    "source": "https://openlibrary.org/works/OL3295029W",
+    "image": "https://covers.openlibrary.org/b/id/855791-L.jpg",
+    "width": 315,
+    "height": 475
+  },
+  {
+    "file": "/img/books/the-park-chung-hee-era-the-transformation-of-south-korea-byungkook-kim--ezra-f-vogel.jpg",
+    "title": "The Park Chung Hee Era: The Transformation of South Korea",
+    "source": "https://openlibrary.org/works/OL15538857W",
+    "image": "https://covers.openlibrary.org/b/id/9417581-L.jpg?default=false",
+    "width": 342,
+    "height": 500
+  },
+  {
+    "file": "/img/books/the-sinews-of-power-war-money-and-the-english-state-16881783-john-brewer.jpg",
+    "title": "The Sinews of Power: War, Money and the English State, 1688–1783",
+    "source": "https://openlibrary.org/works/OL261966W",
+    "image": "https://covers.openlibrary.org/b/id/414021-L.jpg?default=false",
+    "width": 304,
+    "height": 475
+  },
+  {
+    "file": "/img/books/04.jpg",
+    "title": "Metternich",
+    "source": "https://openlibrary.org/isbn/067474392X",
+    "image": "https://covers.openlibrary.org/b/isbn/067474392X-L.jpg",
+    "width": 319,
+    "height": 466
+  },
+  {
+    "file": "/img/books/peasants-into-frenchmen-eugen-weber.jpg",
+    "title": "Peasants into Frenchmen",
+    "source": "https://openlibrary.org/works/OL1397936W",
+    "image": "https://covers.openlibrary.org/b/id/5382808-L.jpg?default=false",
+    "width": 128,
+    "height": 192
+  },
+  {
+    "file": "/img/books/the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro.jpg",
+    "title": "The Path to Power: The Years of Lyndon Johnson",
+    "source": "https://openlibrary.org/works/OL4195862W",
+    "image": "https://covers.openlibrary.org/b/id/12869907-L.jpg",
+    "width": 342,
+    "height": 500
+  },
+  {
+    "file": "/img/books/natures-metropolis-chicago-and-the-great-west-william-cronon.jpg",
+    "title": "Nature’s Metropolis: Chicago and the Great West",
+    "source": "https://openlibrary.org/works/OL4472643W",
+    "image": "https://covers.openlibrary.org/b/id/248644-L.jpg?default=false",
+    "width": 326,
+    "height": 500
+  },
+  {
+    "file": "/img/books/13.jpg",
+    "title": "The Search for Modern China",
+    "source": "https://openlibrary.org/works/OL1842805W",
+    "image": "https://covers.openlibrary.org/b/id/246705-L.jpg",
+    "width": 326,
     "height": 475
   },
   {
@@ -80,147 +320,99 @@
     "height": 500
   },
   {
-    "file": "/img/books/45.jpg",
-    "title": "Snow Crash",
-    "source": "https://openlibrary.org/works/OL38501W",
-    "image": "https://covers.openlibrary.org/b/id/392508-L.jpg",
-    "width": 316,
-    "height": 475
-  },
-  {
-    "file": "/img/books/37.jpg",
-    "title": "Fooled by Randomness",
-    "source": "https://openlibrary.org/works/OL3295029W",
-    "image": "https://covers.openlibrary.org/b/id/855791-L.jpg",
-    "width": 315,
-    "height": 475
-  },
-  {
-    "file": "/img/books/how-great-generals-win-bevin-alexander.jpg",
-    "title": "How Great Generals Win",
-    "source": "https://openlibrary.org/works/OL2734826W",
-    "image": "https://covers.openlibrary.org/b/id/246827-L.jpg",
-    "width": 323,
-    "height": 475
-  },
-  {
-    "file": "/img/books/36.jpg",
-    "title": "Chip War",
-    "source": "https://openlibrary.org/works/OL27846746W",
-    "image": "https://covers.openlibrary.org/b/id/12968901-L.jpg",
-    "width": 238,
-    "height": 360
-  },
-  {
-    "file": "/img/books/38.jpg",
-    "title": "Game Theory for Applied Economists",
-    "source": "https://openlibrary.org/isbn/9780691003955",
-    "image": "https://covers.openlibrary.org/b/isbn/9780691003955-L.jpg?default=false",
-    "width": 333,
-    "height": 500
-  },
-  {
-    "file": "/img/books/selected-essays-michel-de-montaigne.jpg",
-    "title": "Selected Essays",
-    "source": "https://openlibrary.org/works/OL1086472W",
-    "image": "https://covers.openlibrary.org/b/id/9761138-L.jpg",
-    "width": 297,
-    "height": 500
-  },
-  {
-    "file": "/img/books/43.jpg",
-    "title": "The Eye of the World",
-    "source": "https://openlibrary.org/isbn/0812500482",
-    "image": "https://covers.openlibrary.org/b/isbn/0812500482-L.jpg",
-    "width": 304,
-    "height": 475
-  },
-  {
-    "file": "/img/books/italian-journey-johann-wolfgang-von-goethe.jpg",
-    "title": "Italian Journey",
-    "source": "https://openlibrary.org/isbn/9780140442335",
-    "image": "https://covers.openlibrary.org/b/isbn/9780140442335-L.jpg?default=false",
-    "width": 325,
-    "height": 500
-  },
-  {
-    "file": "/img/books/becoming-steve-jobs-brent-schlender-rick-tetzeli.jpg",
-    "title": "Becoming Steve Jobs",
-    "source": "https://openlibrary.org/isbn/9780385347402",
-    "image": "https://covers.openlibrary.org/b/isbn/9780385347402-L.jpg?default=false",
-    "width": 329,
-    "height": 500
-  },
-  {
-    "file": "/img/books/46.jpg",
-    "title": "Vagabond, Vol. 1",
-    "source": "https://openlibrary.org/works/OL8783770W",
-    "image": "https://covers.openlibrary.org/b/id/12856568-L.jpg",
-    "width": 300,
-    "height": 450
-  },
-  {
-    "file": "/img/books/13.jpg",
-    "title": "The Search for Modern China",
-    "source": "https://openlibrary.org/works/OL1842805W",
-    "image": "https://covers.openlibrary.org/b/id/246705-L.jpg",
+    "file": "/img/books/the-measure-of-reality-quantification-and-western-society-12501600-alfred-w-crosby.jpg",
+    "title": "The Measure of Reality: Quantification and Western Society, 1250–1600",
+    "source": "https://assets.cambridge.org/97805215/54275/frontmatter/9780521554275_frontmatter.pdf",
+    "image": "https://covers.openlibrary.org/b/isbn/9780521554275-L.jpg?default=false",
     "width": 326,
-    "height": 475
-  },
-  {
-    "file": "/img/books/the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro.jpg",
-    "title": "The Path to Power: The Years of Lyndon Johnson",
-    "source": "https://openlibrary.org/works/OL4195862W",
-    "image": "https://covers.openlibrary.org/b/id/12869907-L.jpg",
-    "width": 342,
     "height": 500
   },
   {
-    "file": "/img/books/48.jpg",
-    "title": "The Inferno",
-    "source": "https://openlibrary.org/works/OL15877435W",
-    "image": "https://covers.openlibrary.org/b/id/6840110-L.jpg",
-    "width": 298,
-    "height": 500
+    "file": "/img/books/rockets-and-people-vol-ii-creating-a-rocket-industry-boris-chertok-curated.jpg",
+    "title": "Rockets and People, Vol. II: Creating a Rocket Industry",
+    "source": "https://www.nasa.gov/history/history-publications-and-resources/nasa-history-series/rockets-and-people/",
+    "image": "https://www.nasa.gov/wp-content/uploads/2015/04/rocketspeoplevolume2-small.jpg",
+    "width": 226,
+    "height": 322
   },
   {
-    "file": "/img/books/12.jpg",
+    "file": "/img/books/peter-the-great-his-life-and-world-robert-k-massie-curated.jpg",
     "title": "Peter the Great: His Life and World",
-    "source": "https://openlibrary.org/isbn/0345298063",
-    "image": "https://covers.openlibrary.org/b/isbn/0345298063-L.jpg",
-    "width": 302,
-    "height": 475
-  },
-  {
-    "file": "/img/books/22.jpg",
-    "title": "The Wealth of Nations",
-    "source": "https://openlibrary.org/works/OL76827W",
-    "image": "https://covers.openlibrary.org/b/id/12816911-L.jpg",
-    "width": 333,
-    "height": 500
-  },
-  {
-    "file": "/img/books/the-discourses-niccolo-machiavelli.jpg",
-    "title": "The Discourses",
-    "source": "https://www.penguinrandomhouse.com/books/275229/the-discourses-by-niccolo-machiavelli/",
-    "image": "https://images.penguinrandomhouse.com/cover/9780140444285",
-    "width": 293,
+    "source": "https://www.penguinrandomhouse.com/books/108903/peter-the-great-his-life-and-world-by-robert-k-massie/",
+    "image": "https://images.penguinrandomhouse.com/cover/9780679645603",
+    "width": 300,
     "height": 450
   },
   {
-    "file": "/img/books/the-generalship-of-alexander-the-great-j-f-c-fuller.jpg",
-    "title": "The Generalship of Alexander the Great",
-    "source": "https://openlibrary.org/works/OL27107795W",
-    "image": "https://covers.openlibrary.org/b/id/14469497-L.jpg",
-    "width": 300,
+    "file": "/img/books/the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon-curated.jpg",
+    "title": "The History of the Decline and Fall of the Roman Empire",
+    "source": "https://openlibrary.org/isbn/9780140437645",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140437645",
+    "width": 289,
+    "height": 450
+  },
+  {
+    "file": "/img/books/leaves-of-grass-walt-whitman-edition.jpg",
+    "title": "Leaves of Grass",
+    "source": "https://openlibrary.org/isbn/9780143107439",
+    "image": "https://images.penguinrandomhouse.com/cover/9780143107439",
+    "width": 287,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-count-of-monte-cristo-alexandre-dumas-curated.jpg",
+    "title": "The Count of Monte Cristo",
+    "source": "https://openlibrary.org/isbn/9780141392462",
+    "image": "https://images.penguinrandomhouse.com/cover/9780141392462",
+    "width": 284,
+    "height": 450
+  },
+  {
+    "file": "/img/books/lady-of-mazes-karl-schroeder.jpg",
+    "title": "Lady of Mazes",
+    "source": "https://openlibrary.org/works/OL20125760W",
+    "image": "https://covers.openlibrary.org/b/id/8778646-L.jpg?default=false",
+    "width": 319,
     "height": 500
   },
   {
-    "file": "/img/books/the-republic-plato.jpg",
-    "title": "The Republic",
-    "source": "https://openlibrary.org/isbn/9780141442433",
-    "image": "https://covers.openlibrary.org/b/isbn/9780141442433-L.jpg?default=false",
-    "width": 321,
+    "file": "/img/books/his-masters-voice-stanisaw-lem.jpg",
+    "title": "His Master’s Voice",
+    "source": "https://openlibrary.org/works/OL27714066W",
+    "image": "https://covers.openlibrary.org/b/id/14052205-L.jpg?default=false",
+    "width": 328,
+    "height": 500
+  },
+  {
+    "file": "/img/books/accelerando-charles-stross.jpg",
+    "title": "Accelerando",
+    "source": "https://openlibrary.org/works/OL2465670W",
+    "image": "https://covers.openlibrary.org/b/id/284259-L.jpg?default=false",
+    "width": 331,
+    "height": 500
+  },
+  {
+    "file": "/img/books/vacuum-flowers-michael-swanwick.jpg",
+    "title": "Vacuum Flowers",
+    "source": "https://openlibrary.org/works/OL549272W",
+    "image": "https://covers.openlibrary.org/b/id/284645-L.jpg?default=false",
+    "width": 286,
+    "height": 475
+  },
+  {
+    "file": "/img/books/permutation-city-greg-egan.jpg",
+    "title": "Permutation City",
+    "source": "https://openlibrary.org/works/OL115336W",
+    "image": "https://covers.openlibrary.org/b/id/1000639-L.jpg?default=false",
+    "width": 291,
+    "height": 475
+  },
+  {
+    "file": "/img/books/the-invention-of-morel-adolfo-bioy-casares.jpg",
+    "title": "The Invention of Morel",
+    "source": "https://openlibrary.org/works/OL14944456W",
+    "image": "https://covers.openlibrary.org/b/id/859087-L.jpg?default=false",
+    "width": 312,
     "height": 500
   },
   {
@@ -232,291 +424,11 @@
     "height": 475
   },
   {
-    "file": "/img/books/skunk-works-ben-r-rich-leo-janos.jpg",
-    "title": "Skunk Works",
-    "source": "https://openlibrary.org/works/OL3466236W",
-    "image": "https://covers.openlibrary.org/b/id/7321776-L.jpg",
-    "width": 230,
-    "height": 346
-  },
-  {
-    "file": "/img/books/51.jpg",
-    "title": "The Age of Napoleon",
-    "source": "https://openlibrary.org/works/OL10602024M",
-    "image": "https://covers.openlibrary.org/b/id/2560762-L.jpg",
-    "width": 317,
-    "height": 475
-  },
-  {
-    "file": "/img/books/52.jpg",
-    "title": "Caesar and Christ",
-    "source": "https://openlibrary.org/works/OL1073889W",
-    "image": "https://covers.openlibrary.org/b/id/2560528-L.jpg",
-    "width": 317,
-    "height": 475
-  },
-  {
-    "file": "/img/books/53.jpg",
-    "title": "The Life of Greece",
-    "source": "https://www.simonandschuster.com/books/The-Life-of-Greece/Will-Durant/The-Story-of-Civilization/9781451647587",
-    "image": "https://d28hgpri8am2if.cloudfront.net/tagged_assets/cvr9781451647587/life-of-greece-9781451647587_hr.jpg",
-    "width": 1400,
-    "height": 2100
-  },
-  {
-    "file": "/img/books/54.jpg",
-    "title": "The Reformation",
-    "source": "https://openlibrary.org/works/OL10601693M",
-    "image": "https://covers.openlibrary.org/b/id/2560612-L.jpg",
-    "width": 317,
-    "height": 475
-  },
-  {
-    "file": "/img/books/01.jpg",
-    "title": "Alexander the Great",
-    "source": "https://images.penguinrandomhouse.com/cover/9780143035138",
-    "image": "https://images.penguinrandomhouse.com/cover/9780143035138",
-    "width": 293,
-    "height": 450
-  },
-  {
-    "file": "/img/books/18.jpg",
-    "title": "The War for Gaul",
-    "source": "https://openlibrary.org/works/OL20156488W",
-    "image": "https://covers.openlibrary.org/b/id/8801573-L.jpg",
-    "width": 324,
-    "height": 500
-  },
-  {
-    "file": "/img/books/plutarch-lives-plutarch.jpg",
-    "title": "Plutarch / Lives",
-    "source": "https://openlibrary.org/works/OL2521179W",
-    "image": "https://covers.openlibrary.org/b/id/10679669-L.jpg",
-    "width": 322,
-    "height": 500
-  },
-  {
-    "file": "/img/books/11.jpg",
-    "title": "The Last Lion: Winston Spencer Churchill",
-    "source": "https://openlibrary.org/works/OL8051866W",
-    "image": "https://covers.openlibrary.org/b/id/6529225-L.jpg",
-    "width": 325,
-    "height": 500
-  },
-  {
-    "file": "/img/books/build-a-large-language-model-from-scratch-sebastian-raschka.jpg",
-    "title": "Build a Large Language Model (From Scratch)",
-    "source": "https://openlibrary.org/works/OL38398010W",
-    "image": "https://covers.openlibrary.org/b/id/15225524-L.jpg",
-    "width": 239,
-    "height": 300
-  },
-  {
-    "file": "/img/books/the-iliad-of-homer-homer-translated-by-richmond-lattimore.jpg",
-    "title": "The Iliad of Homer",
-    "source": "https://openlibrary.org/isbn/9780226470498",
-    "image": "https://covers.openlibrary.org/b/isbn/9780226470498-L.jpg?default=false",
-    "width": 300,
-    "height": 457
-  },
-  {
-    "file": "/img/books/09.jpg",
-    "title": "Charlemagne",
-    "source": "https://openlibrary.org/works/OL2490970W",
-    "image": "https://covers.openlibrary.org/b/id/162033-L.jpg",
-    "width": 311,
-    "height": 475
-  },
-  {
-    "file": "/img/books/the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon.jpg",
-    "title": "The History of the Decline and Fall of the Roman Empire",
-    "source": "https://openlibrary.org/works/OL1285005W",
-    "image": "https://covers.openlibrary.org/b/id/5978577-L.jpg",
-    "width": 331,
-    "height": 500
-  },
-  {
-    "file": "/img/books/the-life-of-charlemagne-einhard.jpg",
-    "title": "The Life of Charlemagne",
-    "source": "https://openlibrary.org/works/OL24479926W",
-    "image": "https://covers.openlibrary.org/b/id/11092049-L.jpg",
-    "width": 331,
-    "height": 500
-  },
-  {
-    "file": "/img/books/napoleon-and-his-collaborators-isser-woloch.jpg",
-    "title": "Napoleon and His Collaborators",
-    "source": "https://openlibrary.org/works/OL3901955W",
-    "image": "https://covers.openlibrary.org/b/id/250387-L.jpg",
-    "width": 318,
-    "height": 475
-  },
-  {
-    "file": "/img/books/goethes-faust-johann-wolfgang-von-goethe.jpg",
-    "title": "Goethe’s Faust",
-    "source": "https://openlibrary.org/works/OL52456W",
-    "image": "https://covers.openlibrary.org/b/id/6499459-L.jpg",
-    "width": 308,
-    "height": 500
-  },
-  {
-    "file": "/img/books/scipio-africanus-greater-than-napoleon-b-h-liddell-hart.jpg",
-    "title": "Scipio Africanus: Greater Than Napoleon",
-    "source": "https://openlibrary.org/works/OL89102W",
-    "image": "https://covers.openlibrary.org/b/id/164655-L.jpg",
-    "width": 299,
-    "height": 475
-  },
-  {
-    "file": "/img/books/augustus-anthony-everitt.jpg",
-    "title": "Augustus",
-    "source": "https://openlibrary.org/works/OL6045933W",
-    "image": "https://covers.openlibrary.org/b/id/606198-L.jpg",
-    "width": 331,
-    "height": 500
-  },
-  {
-    "file": "/img/books/04.jpg",
-    "title": "Metternich",
-    "source": "https://openlibrary.org/isbn/067474392X",
-    "image": "https://covers.openlibrary.org/b/isbn/067474392X-L.jpg",
-    "width": 319,
-    "height": 466
-  },
-  {
-    "file": "/img/books/bismarck-emil-ludwig.jpg",
-    "title": "Bismarck",
-    "source": "https://openlibrary.org/works/OL1159302W",
-    "image": "https://covers.openlibrary.org/b/id/6472876-L.jpg",
-    "width": 318,
-    "height": 500
-  },
-  {
-    "file": "/img/books/bismarck-and-the-german-empire-erich-eyck.jpg",
-    "title": "Bismarck and the German Empire",
-    "source": "https://openlibrary.org/works/OL1238538W",
-    "image": "https://covers.openlibrary.org/b/id/246434-L.jpg",
-    "width": 312,
-    "height": 475
-  },
-  {
-    "file": "/img/books/henry-viii-alison-weir.jpg",
-    "title": "Henry VIII",
-    "source": "https://openlibrary.org/works/OL497244W",
-    "image": "https://covers.openlibrary.org/b/id/209837-L.jpg",
-    "width": 307,
-    "height": 475
-  },
-  {
-    "file": "/img/books/17.jpg",
-    "title": "The Odyssey and The Iliad: Complete",
-    "source": "https://www.canterburyclassicsbooks.com/books/iliad-odyssey-9781607102120/",
-    "image": "https://www.canterburyclassicsbooks.com/xml/images/9781607102120.jpg",
-    "width": 800,
-    "height": 1143
-  },
-  {
-    "file": "/img/books/24.jpg",
-    "title": "Two Treatises of Government",
-    "source": "https://openlibrary.org/isbn/0521357306",
-    "image": "https://covers.openlibrary.org/b/isbn/0521357306-L.jpg",
-    "width": 319,
-    "height": 500
-  },
-  {
-    "file": "/img/books/19.jpg",
-    "title": "The Lives of the Caesars",
-    "source": "https://openlibrary.org/works/OL15404890W",
-    "image": "https://covers.openlibrary.org/b/id/6896562-L.jpg",
-    "width": 305,
-    "height": 500
-  },
-  {
-    "file": "/img/books/20.jpg",
-    "title": "History of the Peloponnesian War",
-    "source": "https://openlibrary.org/isbn/0140440399",
-    "image": "https://covers.openlibrary.org/b/isbn/0140440399-L.jpg",
-    "width": 311,
-    "height": 475
-  },
-  {
-    "file": "/img/books/14.jpg",
-    "title": "American Sphinx: The Character of Thomas Jefferson",
-    "source": "https://openlibrary.org/works/OL53118W",
-    "image": "https://covers.openlibrary.org/b/id/418532-L.jpg",
-    "width": 339,
-    "height": 475
-  },
-  {
-    "file": "/img/books/25.jpg",
-    "title": "Democracy in America and Two Essays on America",
-    "source": "https://openlibrary.org/isbn/0140447601",
-    "image": "https://covers.openlibrary.org/b/isbn/0140447601-L.jpg",
-    "width": 312,
-    "height": 500
-  },
-  {
-    "file": "/img/books/15.jpg",
-    "title": "Franklin and Winston",
-    "source": "https://openlibrary.org/works/OL6032793W",
-    "image": "https://covers.openlibrary.org/b/id/227879-L.jpg",
-    "width": 318,
-    "height": 475
-  },
-  {
-    "file": "/img/books/28.jpg",
-    "title": "The Machiavellians: Defenders of Freedom",
-    "source": "https://openlibrary.org/isbn/1839013958",
-    "image": "https://covers.openlibrary.org/b/isbn/1839013958-L.jpg",
-    "width": 324,
-    "height": 500
-  },
-  {
-    "file": "/img/books/27.jpg",
-    "title": "Critique of Pure Reason",
-    "source": "https://openlibrary.org/works/OL17104789W",
-    "image": "https://covers.openlibrary.org/b/id/8462052-L.jpg",
-    "width": 333,
-    "height": 500
-  },
-  {
-    "file": "/img/books/29.jpg",
-    "title": "The Origins of Political Order",
-    "source": "https://openlibrary.org/isbn/0374533229",
-    "image": "https://covers.openlibrary.org/b/isbn/0374533229-L.jpg",
-    "width": 333,
-    "height": 500
-  },
-  {
-    "file": "/img/books/twilight-of-the-idols-friedrich-nietzsche.jpg",
-    "title": "Twilight of the Idols",
-    "source": "https://openlibrary.org/works/OL29701074W",
-    "image": "https://covers.openlibrary.org/b/id/13314605-L.jpg",
-    "width": 333,
-    "height": 500
-  },
-  {
-    "file": "/img/books/the-social-contract-and-other-writings-jean-jacques-rousseau.jpg",
-    "title": "The Social Contract and Other Writings",
-    "source": "https://openlibrary.org/works/OL8395636W",
-    "image": "https://covers.openlibrary.org/b/id/8157007-L.jpg",
-    "width": 295,
-    "height": 500
-  },
-  {
-    "file": "/img/books/39.jpg",
-    "title": "Financial Intelligence",
-    "source": "https://openlibrary.org/isbn/1422144119",
-    "image": "https://covers.openlibrary.org/b/isbn/1422144119-L.jpg",
-    "width": 265,
-    "height": 400
-  },
-  {
-    "file": "/img/books/35.jpg",
-    "title": "The Great CEO Within",
-    "source": "https://openlibrary.org/works/OL20791757W",
-    "image": "https://covers.openlibrary.org/b/id/10085060-L.jpg",
-    "width": 333,
+    "file": "/img/books/use-of-weapons-iain-m-banks.jpg",
+    "title": "Use of Weapons",
+    "source": "https://openlibrary.org/works/OL8339333W",
+    "image": "https://covers.openlibrary.org/b/id/2379038-L.jpg",
+    "width": 330,
     "height": 500
   },
   {
@@ -528,91 +440,307 @@
     "height": 475
   },
   {
-    "file": "/img/books/44.jpg",
-    "title": "The Three-Body Problem",
-    "source": "https://openlibrary.org/isbn/0765382032",
-    "image": "https://covers.openlibrary.org/b/isbn/0765382032-L.jpg",
-    "width": 331,
+    "file": "/img/books/schismatrix-plus-bruce-sterling.jpg",
+    "title": "Schismatrix Plus",
+    "source": "https://openlibrary.org/works/OL1888032W",
+    "image": "https://covers.openlibrary.org/b/id/283594-L.jpg?default=false",
+    "width": 326,
     "height": 500
   },
   {
-    "file": "/img/books/use-of-weapons-iain-m-banks.jpg",
-    "title": "Use of Weapons",
-    "source": "https://openlibrary.org/works/OL8339333W",
-    "image": "https://covers.openlibrary.org/b/id/2379038-L.jpg",
-    "width": 330,
-    "height": 500
+    "file": "/img/books/red-plenty-francis-spufford.jpg",
+    "title": "Red Plenty",
+    "source": "https://openlibrary.org/works/OL15919521W",
+    "image": "https://covers.openlibrary.org/b/id/7397789-L.jpg?default=false",
+    "width": 315,
+    "height": 499
   },
   {
-    "file": "/img/books/47.jpg",
-    "title": "Gardens of the Moon",
-    "source": "https://openlibrary.org/works/OL5734756W",
-    "image": "https://covers.openlibrary.org/b/id/374277-L.jpg",
-    "width": 289,
-    "height": 475
+    "file": "/img/books/the-monkeys-wrench-la-chiave-a-stella-primo-levi.jpg",
+    "title": "The Monkey’s Wrench (La chiave a stella)",
+    "source": "https://www.penguinrandomhouse.com/books/323096/the-monkeys-wrench-by-primo-levi/",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140188929",
+    "width": 293,
+    "height": 450
   },
   {
-    "file": "/img/books/49.jpg",
-    "title": "Don Quixote",
-    "source": "https://openlibrary.org/works/OL26799707W",
-    "image": "https://covers.openlibrary.org/b/id/13846974-L.jpg",
-    "width": 333,
-    "height": 500
-  },
-  {
-    "file": "/img/books/war-and-peace-leo-tolstoy.jpg",
+    "file": "/img/books/war-and-peace-leo-tolstoy-curated.jpg",
     "title": "War and Peace",
-    "source": "https://openlibrary.org/works/OL267171W",
-    "image": "https://covers.openlibrary.org/b/id/12621906-L.jpg",
+    "source": "https://openlibrary.org/isbn/9780241265543",
+    "image": "https://images.penguinrandomhouse.com/cover/9780241265543",
+    "width": 294,
+    "height": 450
+  },
+  {
+    "file": "/img/books/don-quixote-cervantes-curated.jpg",
+    "title": "Don Quixote",
+    "source": "https://openlibrary.org/isbn/9780241347768",
+    "image": "https://images.penguinrandomhouse.com/cover/9780241347768",
+    "width": 273,
+    "height": 450
+  },
+  {
+    "file": "/img/books/selected-essays-michel-de-montaigne-curated.png",
+    "title": "Selected Essays",
+    "source": "https://hackettpublishing.com/full-catalog/selected-essays",
+    "image": "https://hackettpublishing.com/media/catalog/product/m/o/montaigne_selectedessays_165x260_1.png",
+    "width": 165,
+    "height": 260
+  },
+  {
+    "file": "/img/books/the-republic-plato-edition.jpg",
+    "title": "The Republic",
+    "source": "https://openlibrary.org/isbn/9780141442433",
+    "image": "https://images.penguinrandomhouse.com/cover/9780141442433",
+    "width": 293,
+    "height": 450
+  },
+  {
+    "file": "/img/books/plutarchs-lives-plutarch-edition.jpg",
+    "title": "Plutarch’s Lives",
+    "source": "https://openlibrary.org/isbn/9780375756764",
+    "image": "https://images.penguinrandomhouse.com/cover/9780375756764",
+    "width": 291,
+    "height": 450
+  },
+  {
+    "file": "/img/books/meditations-marcus-aurelius-edition.jpg",
+    "title": "Meditations",
+    "source": "https://openlibrary.org/isbn/9780141395869",
+    "image": "https://images.penguinrandomhouse.com/cover/9780141395869",
+    "width": 260,
+    "height": 450
+  },
+  {
+    "file": "/img/books/confessions-augustine-edition.jpg",
+    "title": "Confessions",
+    "source": "https://openlibrary.org/isbn/9780140441147",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140441147",
+    "width": 293,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-divine-comedy-dante-curated.jpg",
+    "title": "The Divine Comedy",
+    "source": "https://openlibrary.org/isbn/9780141197494",
+    "image": "https://images.penguinrandomhouse.com/cover/9780141197494",
+    "width": 293,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-decameron-giovanni-boccaccio-edition.jpg",
+    "title": "The Decameron",
+    "source": "https://openlibrary.org/isbn/9780140449303",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140449303",
+    "width": 291,
+    "height": 450
+  },
+  {
+    "file": "/img/books/leviathan-thomas-hobbes-edition.jpg",
+    "title": "Leviathan",
+    "source": "https://openlibrary.org/isbn/9780141395098",
+    "image": "https://images.penguinrandomhouse.com/cover/9780141395098",
+    "width": 293,
+    "height": 450
+  },
+  {
+    "file": "/img/books/two-treatises-of-government-john-locke-edition.jpg",
+    "title": "Two Treatises of Government",
+    "source": "https://openlibrary.org/isbn/9780521357302",
+    "image": "https://images.penguinrandomhouse.com/cover/9780521357302",
+    "width": 256,
+    "height": 400
+  },
+  {
+    "file": "/img/books/reflections-on-the-revolution-in-france-edmund-burke-edition.jpg",
+    "title": "Reflections on the Revolution in France",
+    "source": "https://openlibrary.org/isbn/9780140432046",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140432046",
+    "width": 294,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-federalist-papers-hamilton-madison-jay-edition.jpg",
+    "title": "The Federalist Papers",
+    "source": "https://openlibrary.org/isbn/9780140444957",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140444957",
+    "width": 290,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-social-contract-jean-jacques-rousseau-edition.jpg",
+    "title": "The Social Contract",
+    "source": "https://openlibrary.org/isbn/9780140442014",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140442014",
+    "width": 292,
+    "height": 450
+  },
+  {
+    "file": "/img/books/faust-johann-wolfgang-von-goethe-curated.jpg",
+    "title": "Faust",
+    "source": "https://openlibrary.org/isbn/9780385031141",
+    "image": "https://images.penguinrandomhouse.com/cover/9780385031141",
+    "width": 292,
+    "height": 450
+  },
+  {
+    "file": "/img/books/essays-lectures-ralph-waldo-emerson-edition.jpg",
+    "title": "Essays & Lectures",
+    "source": "https://openlibrary.org/isbn/9780940450158",
+    "image": "https://images.penguinrandomhouse.com/cover/9780940450158",
+    "width": 280,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-red-and-the-black-stendhal-edition.jpg",
+    "title": "The Red and the Black",
+    "source": "https://openlibrary.org/isbn/9780140447644",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140447644",
+    "width": 293,
+    "height": 450
+  },
+  {
+    "file": "/img/books/madame-bovary-gustave-flaubert-edition.jpg",
+    "title": "Madame Bovary",
+    "source": "https://www.penguinrandomhouse.com/books/286336/madame-bovary-by-gustave-flaubert/",
+    "image": "https://images.penguinrandomhouse.com/cover/9780141394671",
+    "width": 279,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-brothers-karamazov-fyodor-dostoevsky-edition.jpg",
+    "title": "The Brothers Karamazov",
+    "source": "https://openlibrary.org/isbn/9780241655566",
+    "image": "https://images.penguinrandomhouse.com/cover/9780241655566",
+    "width": 280,
+    "height": 450
+  },
+  {
+    "file": "/img/books/in-search-of-lost-time-vol-i-swanns-way-marcel-proust-edition.jpg",
+    "title": "In Search of Lost Time, Vol. I: Swann’s Way",
+    "source": "https://openlibrary.org/isbn/9780143124696",
+    "image": "https://images.penguinrandomhouse.com/cover/9780143124696",
+    "width": 287,
+    "height": 450
+  },
+  {
+    "file": "/img/books/labyrinths-jorge-luis-borges-edition.jpg",
+    "title": "Labyrinths",
+    "source": "https://openlibrary.org/isbn/9780811216999",
+    "image": "https://images.penguinrandomhouse.com/cover/9780811216999",
+    "width": 296,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-aeneid-virgil-edition.jpg",
+    "title": "The Aeneid",
+    "source": "https://openlibrary.org/isbn/9780143106296",
+    "image": "https://images.penguinrandomhouse.com/cover/9780143106296",
+    "width": 294,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-annals-tacitus-edition.jpg",
+    "title": "The Annals",
+    "source": "https://openlibrary.org/isbn/9780140440607",
+    "image": "https://images.penguinrandomhouse.com/cover/9780140440607",
+    "width": 293,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-master-and-margarita-mikhail-bulgakov-edition.jpg",
+    "title": "The Master and Margarita",
+    "source": "https://openlibrary.org/isbn/9780143108276",
+    "image": "https://images.penguinrandomhouse.com/cover/9780143108276",
+    "width": 300,
+    "height": 450
+  },
+  {
+    "file": "/img/books/the-quantum-thief-hannu-rajaniemi-edition.jpg",
+    "title": "The Quantum Thief",
+    "source": "https://store.gollancz.co.uk/products/the-quantum-thief",
+    "image": "https://cdn.shopify.com/s/files/1/0571/2642/0664/products/9780575088894-original.jpg?v=1763536321",
+    "width": 1523,
+    "height": 2346
+  },
+  {
+    "file": "/img/books/the-fractal-prince-hannu-rajaniemi-edition.jpg",
+    "title": "The Fractal Prince",
+    "source": "https://store.gollancz.co.uk/products/the-fractal-prince",
+    "image": "https://cdn.shopify.com/s/files/1/0571/2642/0664/products/9780575088931-original.jpg?v=1756519671",
+    "width": 1535,
+    "height": 2359
+  },
+  {
+    "file": "/img/books/the-causal-angel-hannu-rajaniemi-edition.jpg",
+    "title": "The Causal Angel",
+    "source": "https://store.gollancz.co.uk/products/the-causal-angel",
+    "image": "https://cdn.shopify.com/s/files/1/0571/2642/0664/products/9780575088986-original.jpg?v=1768460122",
+    "width": 1524,
+    "height": 2338
+  },
+  {
+    "file": "/img/books/becoming-steve-jobs-brent-schlender-rick-tetzeli.jpg",
+    "title": "Becoming Steve Jobs",
+    "source": "https://openlibrary.org/isbn/9780385347402",
+    "image": "https://covers.openlibrary.org/b/isbn/9780385347402-L.jpg?default=false",
+    "width": 329,
+    "height": 500
+  },
+  {
+    "file": "/img/books/growth-from-microorganisms-to-megacities-vaclav-smil.jpg",
+    "title": "Growth: From Microorganisms to Megacities",
+    "source": "https://openlibrary.org/isbn/9780262539685",
+    "image": "https://covers.openlibrary.org/b/isbn/9780262539685-L.jpg?default=false",
     "width": 333,
     "height": 500
   },
   {
-    "file": "/img/books/40.jpg",
-    "title": "The Singularity Is Near: When Humans Transcend Biology",
-    "source": "https://openlibrary.org/works/OL1958850W",
-    "image": "https://covers.openlibrary.org/b/id/400518-L.jpg",
-    "width": 330,
-    "height": 500
+    "file": "/img/books/quantum-computing-since-democritus-scott-aaronson.jpg",
+    "title": "Quantum Computing Since Democritus",
+    "source": "https://www.cambridgebookshop.co.uk/cdn/shop/products/9780521199568.jpg",
+    "image": "https://www.cambridgebookshop.co.uk/cdn/shop/products/9780521199568.jpg",
+    "width": 429,
+    "height": 648
   },
   {
-    "file": "/img/books/30.jpg",
-    "title": "Diplomacy",
-    "source": "https://openlibrary.org/works/OL1967243W",
-    "image": "https://covers.openlibrary.org/b/id/3945662-L.jpg",
-    "width": 128,
-    "height": 198
+    "file": "/img/books/writing-an-interpreter-in-go-thorsten-ball.png",
+    "title": "Writing an Interpreter in Go",
+    "source": "https://interpreterbook.com/img/cover-cb2da3d1.png",
+    "image": "https://interpreterbook.com/img/cover-cb2da3d1.png",
+    "width": 293,
+    "height": 370
   },
   {
-    "file": "/img/books/kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith.jpg",
-    "title": "Kelly: More Than My Share of It All",
-    "source": "https://openlibrary.org/isbn/9780874744910",
-    "image": "https://covers.openlibrary.org/b/isbn/9780874744910-L.jpg?default=false",
-    "width": 313,
-    "height": 475
+    "file": "/img/books/the-lifecycle-of-software-objects-ted-chiang.jpg",
+    "title": "The Lifecycle of Software Objects",
+    "source": "https://subterraneanpress.com/lifecycle-of-software-objects/",
+    "image": "https://cdn11.bigcommerce.com/s-65f8qukrjx/images/stencil/500x659/products/5903/6965/lifecycle-softwareobjects-web__85640.1687451106.jpg?c=1",
+    "width": 462,
+    "height": 659
   },
   {
-    "file": "/img/books/42.jpg",
-    "title": "The Structure of Scientific Revolutions",
-    "source": "https://openlibrary.org/works/OL3259254W",
-    "image": "https://covers.openlibrary.org/b/id/6566386-L.jpg",
-    "width": 332,
-    "height": 500
-  },
-  {
-    "file": "/img/books/the-ascent-of-money-niall-ferguson.jpg",
-    "title": "The Ascent of Money",
-    "source": "https://openlibrary.org/works/OL792952W",
-    "image": "https://covers.openlibrary.org/b/id/6327852-L.jpg",
-    "width": 197,
+    "file": "/img/books/a-pattern-language-towns-buildings-construction-christopher-alexander-sara-ishikawa-murray-silverstein-with-max-jacobson-ingrid-fiksdahl-king-shlomo-angel.jpg",
+    "title": "A Pattern Language: Towns, Buildings, Construction",
+    "source": "https://openlibrary.org/isbn/9780195019193",
+    "image": "https://covers.openlibrary.org/b/isbn/9780195019193-L.jpg?default=false",
+    "width": 196,
     "height": 300
   },
   {
-    "file": "/img/books/31.jpg",
-    "title": "On China",
-    "source": "https://openlibrary.org/works/OL15921407W",
-    "image": "https://covers.openlibrary.org/b/id/7911685-L.jpg",
-    "width": 304,
+    "file": "/img/books/the-price-of-time-the-real-story-of-interest-edward-chancellor.jpg",
+    "title": "The Price of Time: The Real Story of Interest",
+    "source": "https://openlibrary.org/isbn/9780802160065",
+    "image": "https://covers.openlibrary.org/b/isbn/9780802160065-L.jpg?default=false",
+    "width": 320,
     "height": 500
+  },
+  {
+    "file": "/img/books/alexander-the-great-philip-freeman.jpg",
+    "title": "Alexander the Great",
+    "source": "https://openlibrary.org/isbn/9781416592815",
+    "image": "https://covers.openlibrary.org/b/isbn/9781416592815-L.jpg?default=false",
+    "width": 227,
+    "height": 350
   }
 ]

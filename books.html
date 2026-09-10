@@ -2,14 +2,14 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#073d35"><meta name="description" content="On Azhan Khan’s bookshelf: Books from his personal collection."><title>Bookshelf — Azhan Khan</title><style>
 :root{color-scheme:light;--ground:#fff;--paper:#242728;--muted:#85898a;--rule:#e7e8e8;--accent:#242728;--serif:Arial,Helvetica,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;background:#fff;color:var(--paper);font:14px/1.4 Arial,Helvetica,sans-serif}a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #677a93;outline-offset:5px}button{background:none;border:0}::selection{background:#dce3e8}.skip{position:fixed;top:-80px;left:30px;z-index:20;padding:12px;background:white}.skip:focus{top:25px}.page-width{width:min(1160px,calc(100% - 64px));margin:auto}.topbar{display:flex;justify-content:space-between;padding:30px 0}.topbar a{text-decoration:none}.intro{padding:60px 0 40px}.intro h1{font-weight:400;font-size:48px;letter-spacing:-2px;margin:0}.intro p{color:var(--muted)}.books{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:44px 30px}.book-link{text-decoration:none;min-width:0}.jacket-stage{height:210px;display:flex;align-items:center;justify-content:center;padding:15px}.jacket-stage img{max-height:100%;max-width:100%;object-fit:contain}.catalogue-label{display:block;margin-top:15px}.catalogue-title{display:block;font-size:14px}.catalogue-author,.catalogue-note{display:block;font-size:12px;color:var(--muted);margin-top:5px}.jacket-placeholder{display:flex;align-items:center;justify-content:center;text-align:center;width:130px;height:100%;padding:12px;background:#eeece7;font:14px/1.3 Georgia,serif}.shelf-footer{display:flex;justify-content:space-between;padding:50px 0 30px;color:var(--muted);font-size:12px}.print-defs{display:none}.no-scroll{overflow:hidden}
-.orbit-shell{display:none}.gallery-ready{background:#202526}.gallery-ready>.topbar,.gallery-ready>.intro{display:none}.gallery-ready .orbit-shell{display:block;height:calc(100dvh + 7200px);padding:24px}.orbit-panel{position:sticky;top:24px;height:calc(100dvh - 48px);min-height:520px;border-radius:12px;background:white;overflow:hidden}.orbit-header{position:absolute;z-index:4;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:30px 36px;font-size:12px}.orbit-header a{text-decoration:none}.orbit-header h1{position:absolute;left:50%;transform:translateX(-50%);font-size:12px;font-weight:400;letter-spacing:.01em;margin:0}.view-toggle{padding:8px 0 8px 20px;color:#777}.orbit-field{position:absolute;inset:0;overflow:hidden;touch-action:pan-y}.orbit-card{position:absolute;left:50%;top:0;display:flex;align-items:center;justify-content:center;text-decoration:none;transform-origin:center;will-change:transform;width:90px;height:126px;outline-offset:8px}.orbit-card img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;box-shadow:0 2px 5px #00000012;pointer-events:none}.orbit-card .jacket-placeholder{font-size:11px;width:80px;height:115px}.orbit-card[aria-current=true] img{box-shadow:0 4px 10px #00000020}.orbit-caption{position:absolute;top:68%;left:50%;transform:translate(-50%,-50%);width:min(350px,46%);text-align:center;z-index:2}.orbit-number{font-size:10px;color:#aaa;letter-spacing:.12em;margin:0 0 20px}.orbit-title{font-size:clamp(19px,2.1vw,29px);line-height:1.2;font-weight:400;letter-spacing:-.045em;margin:0 0 12px;text-wrap:balance;white-space:normal;overflow-wrap:break-word}.orbit-author{font-size:12px;color:#8b8e90;margin:0;line-height:1.5}.open-selected{font-size:11px;margin-top:22px;padding:8px;border-bottom:1px solid #c7c9ca}.orbit-bottom{position:absolute;z-index:4;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:22px 36px;background:linear-gradient(transparent,white 35%);font-size:10px;color:#8b8e90}.orbit-controls{display:flex;gap:14px;align-items:center}.orbit-controls button{font-size:20px;padding:5px;color:#333}.orbit-controls button:disabled{opacity:.25;cursor:default}.orbit-range{width:110px;height:2px;accent-color:#3c4549;cursor:pointer}.gallery-ready #shelf{display:none}.gallery-ready.index-view .orbit-shell{height:108px;padding-bottom:0}.index-view .orbit-panel{height:84px;min-height:0;position:relative;top:0;border-radius:12px 12px 0 0}.index-view .orbit-field,.index-view .orbit-caption,.index-view .orbit-bottom{display:none}.gallery-ready.index-view #shelf{display:block;background:white;width:calc(100% - 48px);padding:40px 60px;border-radius:0 0 12px 12px;margin-bottom:24px}.index-view .books{grid-template-columns:repeat(5,minmax(0,1fr))}
+.orbit-shell{display:none}.gallery-ready{background:#202526}.gallery-ready>.topbar,.gallery-ready>.intro{display:none}.gallery-ready .orbit-shell{display:block;height:calc(100dvh + var(--gallery-distance,5400px));padding:24px}.orbit-panel{position:sticky;top:24px;height:calc(100dvh - 48px);min-height:520px;border-radius:12px;background:white;overflow:hidden}.orbit-header{position:absolute;z-index:4;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:30px 36px;font-size:12px}.orbit-header a{text-decoration:none}.orbit-header h1{position:absolute;left:50%;transform:translateX(-50%);font-size:12px;font-weight:400;letter-spacing:.01em;margin:0}.view-toggle{padding:8px 0 8px 20px;color:#777}.orbit-field{position:absolute;inset:0;overflow:hidden;touch-action:pan-y}.orbit-card{position:absolute;left:50%;top:0;display:flex;align-items:center;justify-content:center;text-decoration:none;transform-origin:center;will-change:transform;width:90px;height:126px;outline-offset:8px}.orbit-card img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;box-shadow:0 2px 5px #00000012;pointer-events:none}.orbit-card .jacket-placeholder{font-size:11px;width:80px;height:115px}.orbit-card[aria-current=true] img{box-shadow:0 4px 10px #00000020}.orbit-caption{position:absolute;top:68%;left:50%;transform:translate(-50%,-50%);width:min(350px,46%);text-align:center;z-index:2}.orbit-number{font-size:10px;color:#aaa;letter-spacing:.12em;margin:0 0 20px}.orbit-title{font-size:clamp(19px,2.1vw,29px);line-height:1.2;font-weight:400;letter-spacing:-.045em;margin:0 0 12px;text-wrap:balance;white-space:normal;overflow-wrap:break-word}.orbit-author{font-size:12px;color:#8b8e90;margin:0;line-height:1.5}.open-selected{font-size:11px;margin-top:22px;padding:8px;border-bottom:1px solid #c7c9ca}.orbit-bottom{position:absolute;z-index:4;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:22px 36px;background:linear-gradient(transparent,white 35%);font-size:10px;color:#8b8e90}.orbit-controls{display:flex;gap:14px;align-items:center}.orbit-controls button{font-size:20px;padding:5px;color:#333}.orbit-controls button:disabled{opacity:.25;cursor:default}.orbit-range{width:110px;height:2px;accent-color:#3c4549;cursor:pointer}.gallery-ready #shelf{display:none}.gallery-ready.index-view .orbit-shell{height:108px;padding-bottom:0}.index-view .orbit-panel{height:84px;min-height:0;position:relative;top:0;border-radius:12px 12px 0 0}.index-view .orbit-field,.index-view .orbit-caption,.index-view .orbit-bottom{display:none}.gallery-ready.index-view #shelf{display:block;background:white;width:calc(100% - 48px);padding:40px 60px;border-radius:0 0 12px 12px;margin-bottom:24px}.index-view .books{grid-template-columns:repeat(5,minmax(0,1fr))}
 .detail{position:fixed;inset:24px;width:calc(100% - 48px);height:calc(100% - 48px);max-width:none;max-height:none;padding:0;border:0;border-radius:12px;background:white;color:var(--paper);overflow:auto}.detail::backdrop{background:#202526}.detail-bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:23px 36px;background:white}.close{padding:8px 0;font-size:12px}.detail-count{font-size:11px;color:var(--muted)}.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;width:min(1000px,calc(100% - 120px));margin:35px auto 65px;min-height:calc(100dvh - 230px)}.cover-stage{display:flex;justify-content:center;align-items:center;padding:20px}.cover{aspect-ratio:var(--cover-ratio,.66);width:min(100%,350px,calc(65vh * var(--cover-ratio,.66)));background:var(--binding)}.cover-image{width:100%;height:100%;object-fit:contain;display:block;box-shadow:0 8px 25px #00000012}.cover-fallback{display:flex;flex-direction:column;justify-content:space-between;min-height:100%;padding:25px;color:var(--foil)}.cover-fallback h3{font:normal 28px/1.15 Georgia,serif;overflow-wrap:anywhere}.cover-image[hidden],.cover-fallback[hidden]{display:none}.detail-copy h2{font-size:clamp(28px,3.5vw,48px);line-height:1.07;letter-spacing:-.05em;font-weight:400;margin:0 0 22px}.detail-author{font-size:15px;color:var(--muted)}.edition-note{font-size:12px;color:var(--muted)}.edition-note:empty{display:none}.find-book{display:block;margin-top:40px;padding:16px 0;border-block:1px solid var(--rule);font-size:12px;text-decoration:none}.detail-nav{display:flex;justify-content:space-between;gap:18px;margin-top:22px}.detail-nav button{padding:8px 0;font-size:12px}.detail-nav button:disabled{opacity:.3}.binding-note{font-size:10px;color:var(--muted);margin-top:36px}
 @media(max-width:750px){.gallery-ready .orbit-shell{padding:12px}.orbit-panel{top:12px;height:calc(100dvh - 24px);min-height:500px;border-radius:8px}.orbit-header{padding:22px}.orbit-header h1{font-size:11px}.orbit-header,.view-toggle{font-size:11px}.orbit-card{width:64px;height:92px}.orbit-card .jacket-placeholder{font-size:9px;height:85px;width:60px;padding:6px}.orbit-caption{top:65%;width:52%}.orbit-title{font-size:22px}.orbit-author{font-size:11px}.orbit-bottom{padding:20px}.orbit-bottom>span{max-width:80px}.orbit-controls{gap:9px}.orbit-range{width:72px}.orbit-number{margin-bottom:16px}.detail{inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);border-radius:8px}.detail-bar{padding:18px 22px}.detail-layout{grid-template-columns:1fr;width:calc(100% - 44px);gap:25px;margin:20px auto 40px}.cover{width:min(100%,220px)}.detail-copy h2{font-size:32px}.gallery-ready.index-view #shelf{width:calc(100% - 24px);padding:20px;margin-bottom:12px}.index-view .books,.books{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 20px}.index-view .orbit-panel{height:84px}.gallery-ready.index-view .orbit-shell{height:96px}.jacket-stage{height:190px;padding:10px}}
 @media(max-height:620px) and (min-width:751px){.orbit-panel{min-height:0}.orbit-caption{top:63%}.orbit-title{font-size:20px}.orbit-number{margin-bottom:10px}.open-selected{margin-top:10px}.orbit-card{height:85px;width:60px}}
 
 /* Full-bleed blue gallery. */
 :root{--ground:#1000ff;--paper:#fff;--muted:#c3beff;--rule:#ffffff45;--accent:#fff}
-body,.gallery-ready{background:var(--ground);color:#fff}.gallery-ready .orbit-shell{padding:0;height:calc(100dvh + 7200px)}.orbit-panel{top:0;height:100dvh;min-height:0;border-radius:0;background:var(--ground)}.orbit-header{padding:25px 38px;font-size:14px;align-items:flex-start}.orbit-header h1{font:normal clamp(44px,6vw,90px)/.95 Georgia,'Times New Roman',serif;letter-spacing:-.065em;top:22px}.view-toggle{color:#fff;font-size:14px}.orbit-field{touch-action:pan-y;cursor:grab}.orbit-field.dragging{cursor:grabbing}.orbit-card{width:170px;height:240px;user-select:none;-webkit-user-select:none}.orbit-card img{box-shadow:0 12px 26px #05005638}.orbit-card .jacket-placeholder{width:150px;height:220px;font-size:19px;color:#252525;background:#eee9df}.orbit-card[aria-current=true] img{box-shadow:0 14px 32px #04004655}.orbit-caption{top:72%;width:min(60%,760px,var(--caption-width,760px));pointer-events:none}.orbit-title{font:normal clamp(38px,4.9vw,76px)/.99 Georgia,'Times New Roman',serif;letter-spacing:-.055em;margin-bottom:20px}.orbit-number{color:#c3beff;font-size:12px;margin-bottom:18px}.orbit-author{color:#dfdcff;font-size:16px}.open-selected{pointer-events:auto;font-size:14px;margin-top:18px;padding:12px 10px;border-color:#ffffff80}.orbit-bottom{background:linear-gradient(transparent,#1000ff 45%);padding:20px 38px;font-size:12px;color:#dfdcff}.orbit-controls{gap:18px}.orbit-controls button{color:#fff;font-size:28px;min-width:44px;min-height:44px}.orbit-range{width:150px;height:24px;accent-color:white}.orbit-bottom>span:last-child{color:#c3beff}.gallery-ready.index-view .orbit-shell{height:120px}.index-view .orbit-panel{height:120px;border-radius:0}.gallery-ready.index-view #shelf{width:100%;padding:40px 60px;background:var(--ground);border-radius:0}.catalogue-author,.catalogue-note,.shelf-footer{color:#c3beff}.detail{inset:0;width:100%;height:100%;border-radius:0;background:var(--ground);color:white}.detail::backdrop,.detail-bar{background:var(--ground)}.detail-bar{padding:24px 38px}.detail-copy h2{font:normal clamp(38px,4.5vw,68px)/1 Georgia,'Times New Roman',serif;letter-spacing:-.045em}.detail-author{color:#dfdcff;font-size:18px}.close{font-size:14px}.binding-note,.edition-note,.detail-count{color:#c3beff}.skip{background:var(--ground)}a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#fff}
+body,.gallery-ready{background:var(--ground);color:#fff}.gallery-ready .orbit-shell{padding:0;height:calc(100dvh + var(--gallery-distance,5400px))}.orbit-panel{top:0;height:100dvh;min-height:0;border-radius:0;background:var(--ground)}.orbit-header{padding:25px 38px;font-size:14px;align-items:flex-start}.orbit-header h1{font:normal clamp(44px,6vw,90px)/.95 Georgia,'Times New Roman',serif;letter-spacing:-.065em;top:22px}.view-toggle{color:#fff;font-size:14px}.orbit-field{touch-action:pan-y;cursor:grab}.orbit-field.dragging{cursor:grabbing}.orbit-card{width:170px;height:240px;user-select:none;-webkit-user-select:none}.orbit-card img{box-shadow:0 12px 26px #05005638}.orbit-card .jacket-placeholder{width:150px;height:220px;font-size:19px;color:#252525;background:#eee9df}.orbit-card[aria-current=true] img{box-shadow:0 14px 32px #04004655}.orbit-caption{top:72%;width:min(60%,760px,var(--caption-width,760px));pointer-events:none}.orbit-title{font:normal clamp(38px,4.9vw,76px)/.99 Georgia,'Times New Roman',serif;letter-spacing:-.055em;margin-bottom:20px}.orbit-number{color:#c3beff;font-size:12px;margin-bottom:18px}.orbit-author{color:#dfdcff;font-size:16px}.open-selected{pointer-events:auto;font-size:14px;margin-top:18px;padding:12px 10px;border-color:#ffffff80}.orbit-bottom{background:linear-gradient(transparent,#1000ff 45%);padding:20px 38px;font-size:12px;color:#dfdcff}.orbit-controls{gap:18px}.orbit-controls button{color:#fff;font-size:28px;min-width:44px;min-height:44px}.orbit-range{width:150px;height:24px;accent-color:white}.orbit-bottom>span:last-child{color:#c3beff}.gallery-ready.index-view .orbit-shell{height:120px}.index-view .orbit-panel{height:120px;border-radius:0}.gallery-ready.index-view #shelf{width:100%;padding:40px 60px;background:var(--ground);border-radius:0}.catalogue-author,.catalogue-note,.shelf-footer{color:#c3beff}.detail{inset:0;width:100%;height:100%;border-radius:0;background:var(--ground);color:white}.detail::backdrop,.detail-bar{background:var(--ground)}.detail-bar{padding:24px 38px}.detail-copy h2{font:normal clamp(38px,4.5vw,68px)/1 Georgia,'Times New Roman',serif;letter-spacing:-.045em}.detail-author{color:#dfdcff;font-size:18px}.close{font-size:14px}.binding-note,.edition-note,.detail-count{color:#c3beff}.skip{background:var(--ground)}a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#fff}
 @media(max-width:750px){.gallery-ready .orbit-shell{padding:0}.orbit-panel{top:0;height:100dvh;min-height:0;border-radius:0}.orbit-header{padding:20px;font-size:11px}.orbit-header h1{font-size:42px;top:18px}.view-toggle{font-size:11px;padding-top:3px}.orbit-card{width:100px;height:150px}.orbit-card .jacket-placeholder{width:95px;height:140px;font-size:13px}.orbit-caption{top:71%;width:86%}.orbit-title{font-size:clamp(31px,8vw,47px);line-height:1.02;margin-bottom:13px}.orbit-author{font-size:13px}.orbit-number{font-size:11px;margin-bottom:12px}.open-selected{font-size:12px;margin-top:12px}.orbit-bottom{padding:12px 16px;font-size:10px}.orbit-bottom>span:last-child{display:none}.orbit-bottom>span{max-width:110px}.orbit-controls{gap:8px}.orbit-range{width:90px}.gallery-ready.index-view .orbit-shell,.index-view .orbit-panel{height:88px}.gallery-ready.index-view #shelf{width:100%;padding:20px}.detail{inset:0;width:100%;height:100%;border-radius:0}.detail-bar{padding:18px 22px}.detail-copy h2{font-size:38px}}
 @media(max-height:650px) and (min-width:751px){.orbit-card{width:110px;height:155px}.orbit-caption{top:72%}.orbit-title{font-size:36px}.orbit-number{margin-bottom:8px}.orbit-author{font-size:12px}.open-selected{margin-top:6px;padding:6px}.orbit-header h1{font-size:46px}}
 
@@ -27,987 +27,102 @@ body,.gallery-ready{color:var(--paper);background:var(--ground)}
 .jacket-placeholder,.orbit-card .jacket-placeholder{background:#c9d8bb;color:#16473b}
 .skip{background:var(--ground)}::selection{background:#75bca2;color:#073d35}
 a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#b2dcc0}
-</style></head><body><a class="skip" href="#shelf">Skip to books</a><header class="topbar page-width"><a href="/">Azhan Khan</a><a href="/">Home</a></header><div class="intro page-width"><h1>Bookshelf</h1><p>Books I own.</p></div><section class="orbit-shell" aria-label="Book gallery"><div class="orbit-panel"><header class="orbit-header"><a href="/">Azhan Khan</a><h1>Bookshelf</h1><button class="view-toggle" type="button" aria-pressed="false">View index ↗</button></header><div class="orbit-field" aria-label="Browse covers"></div><div class="orbit-caption"><p class="orbit-number"></p><h2 class="orbit-title"></h2><p class="orbit-author"></p><button class="open-selected" type="button">Open book ↗</button></div><footer class="orbit-bottom"><span>Scroll or drag to explore</span><div class="orbit-controls"><button class="orbit-prev" aria-label="Previous selection">←</button><input class="orbit-range" aria-label="Choose book" type="range" min="0" max="80" value="0"><button class="orbit-next" aria-label="Next selection">→</button></div><span>Personal collection / 81</span></footer></div></section><main id="shelf" class="page-width"><div class="books"><a class="book-link" href="?book=american-caesar-douglas-macarthur-18801964-william-manchester" data-book="0"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/american-caesar-douglas-macarthur-18801964-william-manchester.jpg" alt="" loading="eager" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">American Caesar: Douglas MacArthur 1880–1964</span><span class="catalogue-author">William Manchester</span></span></a>
-<a class="book-link" href="?book=george-c-marshall-forrest-c-pogue" data-book="1"><span class="jacket-stage" aria-hidden="true"><span class="jacket-placeholder">George C. Marshall</span></span><span class="catalogue-label"><span class="catalogue-title">George C. Marshall</span><span class="catalogue-author">Forrest C. Pogue</span><span class="catalogue-note">Two volumes.</span></span></a>
-<a class="book-link" href="?book=constantine-the-emperor-david-s-potter" data-book="2"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/constantine-the-emperor-david-s-potter.jpg" alt="" loading="eager" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Constantine the Emperor</span><span class="catalogue-author">David S. Potter</span></span></a>
-<a class="book-link" href="?book=from-third-world-to-first-lee-kuan-yew" data-book="3"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/10.jpg" alt="" loading="eager" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">From Third World to First: The Singapore Story, 1965–2000</span><span class="catalogue-author">Lee Kuan Yew</span></span></a>
-<a class="book-link" href="?book=the-singapore-story-memoirs-of-lee-kuan-yew-lee-kuan-yew" data-book="4"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-singapore-story-memoirs-of-lee-kuan-yew-lee-kuan-yew.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Singapore Story: Memoirs of Lee Kuan Yew</span><span class="catalogue-author">Lee Kuan Yew</span></span></a>
-<a class="book-link" href="?book=poor-charlies-almanack-charlie-munger" data-book="5"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/34.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Poor Charlie’s Almanack</span><span class="catalogue-author">Charles T. Munger / Peter D. Kaufman</span></span></a>
-<a class="book-link" href="?book=the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming" data-book="6"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Art of Doing Science and Engineering: Learning to Learn</span><span class="catalogue-author">Richard Hamming</span></span></a>
-<a class="book-link" href="?book=napoleon-michael-broers" data-book="7"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/08.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Napoleon</span><span class="catalogue-author">Michael Broers</span></span></a>
-<a class="book-link" href="?book=napoleon-the-decline-and-fall-of-an-empire-18111821-michael-broers" data-book="8"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/07.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Napoleon: The Decline and Fall of an Empire, 1811–1821</span><span class="catalogue-author">Michael Broers</span></span></a>
-<a class="book-link" href="?book=the-way-things-work-david-macaulay" data-book="9"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/41.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Way Things Work</span><span class="catalogue-author">David Macaulay</span></span></a>
-<a class="book-link" href="?book=history-of-the-italian-people-giuliano-procacci" data-book="10"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/history-of-the-italian-people-giuliano-procacci.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">History of the Italian People</span><span class="catalogue-author">Giuliano Procacci</span></span></a>
-<a class="book-link" href="?book=snow-crash-neal-stephenson" data-book="11"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/45.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Snow Crash</span><span class="catalogue-author">Neal Stephenson</span></span></a>
-<a class="book-link" href="?book=fooled-by-randomness-nassim-nicholas-taleb" data-book="12"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/37.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Fooled by Randomness</span><span class="catalogue-author">Nassim Nicholas Taleb</span></span></a>
-<a class="book-link" href="?book=how-great-generals-win-bevin-alexander" data-book="13"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/how-great-generals-win-bevin-alexander.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">How Great Generals Win</span><span class="catalogue-author">Bevin Alexander</span></span></a>
-<a class="book-link" href="?book=chip-war-chris-miller" data-book="14"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/36.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Chip War</span><span class="catalogue-author">Chris Miller</span></span></a>
-<a class="book-link" href="?book=game-theory-for-applied-economists-robert-gibbons" data-book="15"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/38.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Game Theory for Applied Economists</span><span class="catalogue-author">Robert Gibbons</span></span></a>
-<a class="book-link" href="?book=selected-essays-michel-de-montaigne" data-book="16"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/selected-essays-michel-de-montaigne.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Selected Essays</span><span class="catalogue-author">Michel de Montaigne</span></span></a>
-<a class="book-link" href="?book=the-eye-of-the-world-robert-jordan" data-book="17"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/43.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Eye of the World</span><span class="catalogue-author">Robert Jordan</span></span></a>
-<a class="book-link" href="?book=italian-journey-johann-wolfgang-von-goethe" data-book="18"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/italian-journey-johann-wolfgang-von-goethe.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Italian Journey</span><span class="catalogue-author">Johann Wolfgang von Goethe</span></span></a>
-<a class="book-link" href="?book=becoming-steve-jobs-brent-schlender-rick-tetzeli" data-book="19"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/becoming-steve-jobs-brent-schlender-rick-tetzeli.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Becoming Steve Jobs</span><span class="catalogue-author">Brent Schlender &amp; Rick Tetzeli</span></span></a>
-<a class="book-link" href="?book=vagabond-vol-1-takehiko-inoue" data-book="20"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/46.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Vagabond, Vol. 1</span><span class="catalogue-author">Takehiko Inoue</span></span></a>
-<a class="book-link" href="?book=the-search-for-modern-china-jonathan-d-spence" data-book="21"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/13.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Search for Modern China</span><span class="catalogue-author">Jonathan D. Spence</span></span></a>
-<a class="book-link" href="?book=the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro" data-book="22"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Path to Power: The Years of Lyndon Johnson</span><span class="catalogue-author">Robert A. Caro</span></span></a>
-<a class="book-link" href="?book=the-inferno-dante" data-book="23"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/48.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Inferno</span><span class="catalogue-author">Dante Alighieri</span></span></a>
-<a class="book-link" href="?book=peter-the-great-his-life-and-world-robert-k-massie" data-book="24"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/12.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Peter the Great: His Life and World</span><span class="catalogue-author">Robert K. Massie</span></span></a>
-<a class="book-link" href="?book=the-wealth-of-nations-adam-smith" data-book="25"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/22.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Wealth of Nations</span><span class="catalogue-author">Adam Smith</span></span></a>
-<a class="book-link" href="?book=the-discourses-niccolo-machiavelli" data-book="26"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-discourses-niccolo-machiavelli.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Discourses</span><span class="catalogue-author">Niccolò Machiavelli</span></span></a>
-<a class="book-link" href="?book=the-generalship-of-alexander-the-great-j-f-c-fuller" data-book="27"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-generalship-of-alexander-the-great-j-f-c-fuller.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Generalship of Alexander the Great</span><span class="catalogue-author">J. F. C. Fuller</span></span></a>
-<a class="book-link" href="?book=the-republic-plato" data-book="28"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-republic-plato.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Republic</span><span class="catalogue-author">Plato</span></span></a>
-<a class="book-link" href="?book=the-player-of-games-iain-m-banks" data-book="29"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-player-of-games-iain-m-banks.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Player of Games</span><span class="catalogue-author">Iain M. Banks</span></span></a>
-<a class="book-link" href="?book=skunk-works-ben-r-rich-leo-janos" data-book="30"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/skunk-works-ben-r-rich-leo-janos.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Skunk Works</span><span class="catalogue-author">Ben R. Rich &amp; Leo Janos</span></span></a>
-<a class="book-link" href="?book=the-age-of-napoleon-will-durant" data-book="31"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/51.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Age of Napoleon</span><span class="catalogue-author">Will &amp; Ariel Durant</span></span></a>
-<a class="book-link" href="?book=caesar-and-christ-will-durant" data-book="32"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/52.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Caesar and Christ</span><span class="catalogue-author">Will Durant</span></span></a>
-<a class="book-link" href="?book=the-life-of-greece-will-durant" data-book="33"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/53.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Life of Greece</span><span class="catalogue-author">Will Durant</span></span></a>
-<a class="book-link" href="?book=the-reformation-will-durant" data-book="34"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/54.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Reformation</span><span class="catalogue-author">Will Durant</span></span></a>
-<a class="book-link" href="?book=alexander-the-great-robin-lane-fox" data-book="35"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/01.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Alexander the Great</span><span class="catalogue-author">Robin Lane Fox</span></span></a>
-<a class="book-link" href="?book=the-war-for-gaul-julius-caesar" data-book="36"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/18.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The War for Gaul</span><span class="catalogue-author">Julius Caesar</span></span></a>
-<a class="book-link" href="?book=plutarch-lives-plutarch" data-book="37"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/plutarch-lives-plutarch.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Plutarch / Lives</span><span class="catalogue-author">Plutarch</span></span></a>
-<a class="book-link" href="?book=the-last-lion-william-manchester" data-book="38"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/11.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Last Lion: Winston Spencer Churchill</span><span class="catalogue-author">William Manchester</span></span></a>
-<a class="book-link" href="?book=build-a-large-language-model-from-scratch-sebastian-raschka" data-book="39"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/build-a-large-language-model-from-scratch-sebastian-raschka.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Build a Large Language Model (From Scratch)</span><span class="catalogue-author">Sebastian Raschka</span></span></a>
-<a class="book-link" href="?book=cyrus-the-great" data-book="40"><span class="jacket-stage" aria-hidden="true"><span class="jacket-placeholder">Cyrus the Great</span></span><span class="catalogue-label"><span class="catalogue-title">Cyrus the Great</span><span class="catalogue-author"></span><span class="catalogue-note">Author not yet identified.</span></span></a>
-<a class="book-link" href="?book=the-iliad-of-homer-homer-translated-by-richmond-lattimore" data-book="41"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-iliad-of-homer-homer-translated-by-richmond-lattimore.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Iliad of Homer</span><span class="catalogue-author">Homer, translated by Richmond Lattimore</span></span></a>
-<a class="book-link" href="?book=charlemagne-matthias-becher" data-book="42"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/09.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Charlemagne</span><span class="catalogue-author">Matthias Becher</span></span></a>
-<a class="book-link" href="?book=the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon" data-book="43"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The History of the Decline and Fall of the Roman Empire</span><span class="catalogue-author">Edward Gibbon</span></span></a>
-<a class="book-link" href="?book=the-life-of-charlemagne-einhard" data-book="44"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-life-of-charlemagne-einhard.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Life of Charlemagne</span><span class="catalogue-author">Einhard</span></span></a>
-<a class="book-link" href="?book=napoleon-and-his-collaborators-isser-woloch" data-book="45"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/napoleon-and-his-collaborators-isser-woloch.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Napoleon and His Collaborators</span><span class="catalogue-author">Isser Woloch</span></span></a>
-<a class="book-link" href="?book=goethes-faust-johann-wolfgang-von-goethe" data-book="46"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/goethes-faust-johann-wolfgang-von-goethe.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Goethe’s Faust</span><span class="catalogue-author">Johann Wolfgang von Goethe</span></span></a>
-<a class="book-link" href="?book=scipio-africanus-greater-than-napoleon-b-h-liddell-hart" data-book="47"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/scipio-africanus-greater-than-napoleon-b-h-liddell-hart.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Scipio Africanus: Greater Than Napoleon</span><span class="catalogue-author">B. H. Liddell Hart</span></span></a>
-<a class="book-link" href="?book=augustus-anthony-everitt" data-book="48"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/augustus-anthony-everitt.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Augustus</span><span class="catalogue-author">Anthony Everitt</span></span></a>
-<a class="book-link" href="?book=metternich-strategist-and-visionary-wolfram-siemann" data-book="49"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/04.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Metternich</span><span class="catalogue-author">Wolfram Siemann</span></span></a>
-<a class="book-link" href="?book=bismarck-emil-ludwig" data-book="50"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/bismarck-emil-ludwig.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Bismarck</span><span class="catalogue-author">Emil Ludwig</span></span></a>
-<a class="book-link" href="?book=bismarck-and-the-german-empire-erich-eyck" data-book="51"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/bismarck-and-the-german-empire-erich-eyck.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Bismarck and the German Empire</span><span class="catalogue-author">Erich Eyck</span></span></a>
-<a class="book-link" href="?book=henry-viii-alison-weir" data-book="52"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/henry-viii-alison-weir.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Henry VIII</span><span class="catalogue-author">Alison Weir</span></span></a>
-<a class="book-link" href="?book=the-odyssey-and-the-iliad-homer" data-book="53"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/17.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Odyssey and The Iliad: Complete</span><span class="catalogue-author">Homer, translated by Samuel Butler</span></span></a>
-<a class="book-link" href="?book=on-the-sublime-french-revolution-etc-edmund-burke" data-book="54"><span class="jacket-stage" aria-hidden="true"><span class="jacket-placeholder">On the Sublime / French Revolution / etc.</span></span><span class="catalogue-label"><span class="catalogue-title">On the Sublime / French Revolution / etc.</span><span class="catalogue-author">Edmund Burke</span><span class="catalogue-note">Harvard Classics volume.</span></span></a>
-<a class="book-link" href="?book=two-treatises-of-government-john-locke" data-book="55"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/24.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Two Treatises of Government</span><span class="catalogue-author">John Locke</span></span></a>
-<a class="book-link" href="?book=marlowe-shakespeare-christopher-marlowe-william-shakespeare" data-book="56"><span class="jacket-stage" aria-hidden="true"><span class="jacket-placeholder">Marlowe / Shakespeare</span></span><span class="catalogue-label"><span class="catalogue-title">Marlowe / Shakespeare</span><span class="catalogue-author">Christopher Marlowe / William Shakespeare</span><span class="catalogue-note">Harvard Classics volume.</span></span></a>
-<a class="book-link" href="?book=the-lives-of-the-caesars-suetonius" data-book="57"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/19.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Lives of the Caesars</span><span class="catalogue-author">Suetonius</span></span></a>
-<a class="book-link" href="?book=history-of-the-peloponnesian-war-thucydides" data-book="58"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/20.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">History of the Peloponnesian War</span><span class="catalogue-author">Thucydides</span></span></a>
-<a class="book-link" href="?book=american-sphinx-joseph-j-ellis" data-book="59"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/14.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">American Sphinx: The Character of Thomas Jefferson</span><span class="catalogue-author">Joseph J. Ellis</span></span></a>
-<a class="book-link" href="?book=democracy-in-america-and-two-essays-on-america-alexis-de-tocqueville" data-book="60"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/25.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Democracy in America and Two Essays on America</span><span class="catalogue-author">Alexis de Tocqueville</span></span></a>
-<a class="book-link" href="?book=franklin-and-winston-jon-meacham" data-book="61"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/15.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Franklin and Winston</span><span class="catalogue-author">Jon Meacham</span></span></a>
-<a class="book-link" href="?book=the-machiavellians-defenders-of-freedom-james-burnham" data-book="62"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/28.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Machiavellians: Defenders of Freedom</span><span class="catalogue-author">James Burnham</span></span></a>
-<a class="book-link" href="?book=critique-of-pure-reason-immanuel-kant" data-book="63"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/27.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Critique of Pure Reason</span><span class="catalogue-author">Immanuel Kant</span></span></a>
-<a class="book-link" href="?book=the-origins-of-political-order-francis-fukuyama" data-book="64"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/29.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Origins of Political Order</span><span class="catalogue-author">Francis Fukuyama</span></span></a>
-<a class="book-link" href="?book=twilight-of-the-idols-friedrich-nietzsche" data-book="65"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/twilight-of-the-idols-friedrich-nietzsche.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Twilight of the Idols</span><span class="catalogue-author">Friedrich Nietzsche</span></span></a>
-<a class="book-link" href="?book=the-social-contract-and-other-writings-jean-jacques-rousseau" data-book="66"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-social-contract-and-other-writings-jean-jacques-rousseau.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Social Contract and Other Writings</span><span class="catalogue-author">Jean-Jacques Rousseau</span></span></a>
-<a class="book-link" href="?book=financial-intelligence-karen-berman-joe-knight" data-book="67"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/39.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Financial Intelligence</span><span class="catalogue-author">Karen Berman, Joe Knight &amp; John Case</span></span></a>
-<a class="book-link" href="?book=the-great-ceo-within-matt-mochary" data-book="68"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/35.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Great CEO Within</span><span class="catalogue-author">Matt Mochary</span></span></a>
-<a class="book-link" href="?book=against-a-dark-background-iain-m-banks" data-book="69"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/50.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Against a Dark Background</span><span class="catalogue-author">Iain M. Banks</span></span></a>
-<a class="book-link" href="?book=the-three-body-problem-cixin-liu" data-book="70"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/44.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Three-Body Problem</span><span class="catalogue-author">Cixin Liu</span></span></a>
-<a class="book-link" href="?book=use-of-weapons-iain-m-banks" data-book="71"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/use-of-weapons-iain-m-banks.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Use of Weapons</span><span class="catalogue-author">Iain M. Banks</span></span></a>
-<a class="book-link" href="?book=gardens-of-the-moon-steven-erikson" data-book="72"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/47.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Gardens of the Moon</span><span class="catalogue-author">Steven Erikson</span></span></a>
-<a class="book-link" href="?book=don-quixote-cervantes" data-book="73"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/49.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Don Quixote</span><span class="catalogue-author">Miguel de Cervantes</span></span></a>
-<a class="book-link" href="?book=war-and-peace-leo-tolstoy" data-book="74"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/war-and-peace-leo-tolstoy.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">War and Peace</span><span class="catalogue-author">Leo Tolstoy</span></span></a>
-<a class="book-link" href="?book=the-singularity-is-near-ray-kurzweil" data-book="75"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/40.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Singularity Is Near: When Humans Transcend Biology</span><span class="catalogue-author">Ray Kurzweil</span></span></a>
-<a class="book-link" href="?book=diplomacy-henry-kissinger" data-book="76"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/30.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Diplomacy</span><span class="catalogue-author">Henry Kissinger</span></span></a>
-<a class="book-link" href="?book=kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith" data-book="77"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Kelly: More Than My Share of It All</span><span class="catalogue-author">Clarence L. “Kelly” Johnson &amp; Maggie Smith</span></span></a>
-<a class="book-link" href="?book=the-structure-of-scientific-revolutions-thomas-kuhn" data-book="78"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/42.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Structure of Scientific Revolutions</span><span class="catalogue-author">Thomas S. Kuhn</span></span></a>
-<a class="book-link" href="?book=the-ascent-of-money-niall-ferguson" data-book="79"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-ascent-of-money-niall-ferguson.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Ascent of Money</span><span class="catalogue-author">Niall Ferguson</span></span></a>
-<a class="book-link" href="?book=on-china-henry-kissinger" data-book="80"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/31.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">On China</span><span class="catalogue-author">Henry Kissinger</span></span></a></div><footer class="shelf-footer"><p>81 entries</p><a href="#shelf">Back to top ↑</a></footer></main><dialog class="detail" aria-labelledby="detail-title"><div class="detail-bar"><button class="close" type="button" autofocus>← The bookshelf</button><span class="detail-count" id="detail-count"></span></div><div class="detail-layout"><div class="cover-stage" aria-hidden="true"><div class="cover"><img class="cover-image" alt=""><div class="cover-fallback" hidden><p class="cover-author"></p><h3 class="cover-title"></h3></div></div></div><div class="detail-copy"><h2 id="detail-title"></h2><p class="detail-author"></p><p class="edition-note"></p><a class="find-book" target="_blank" rel="noopener noreferrer"><span>Open Library ↗</span></a><nav class="detail-nav" aria-label="Browse books"><button type="button" id="previous">← Previous book</button><button type="button" id="next">Next book →</button></nav><p class="binding-note"></p></div></div></dialog>
-<script id="book-data" type="application/json">
-[
-  {
-    "title": "American Caesar: Douglas MacArthur 1880–1964",
-    "author": "William Manchester",
-    "cover": "/img/books/american-caesar-douglas-macarthur-18801964-william-manchester.jpg",
-    "ratio": 0.62,
-    "source": "https://openlibrary.org/works/OL4116613W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "american-caesar-douglas-macarthur-18801964-william-manchester",
-    "number": 1
-  },
-  {
-    "title": "George C. Marshall",
-    "author": "Forrest C. Pogue",
-    "cover": null,
-    "ratio": 0.66,
-    "source": null,
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "george-c-marshall-forrest-c-pogue",
-    "note": "Two volumes.",
-    "volumes": 2,
-    "number": 2
-  },
-  {
-    "title": "Constantine the Emperor",
-    "author": "David S. Potter",
-    "cover": "/img/books/constantine-the-emperor-david-s-potter.jpg",
-    "ratio": 0.662,
-    "source": "https://openlibrary.org/works/OL16564812W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "constantine-the-emperor-david-s-potter",
-    "number": 3
-  },
-  {
-    "title": "From Third World to First: The Singapore Story, 1965–2000",
-    "author": "Lee Kuan Yew",
-    "id": "from-third-world-to-first-lee-kuan-yew",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 4,
-    "cover": "/img/books/10.jpg",
-    "ratio": 0.6737,
-    "source": "https://openlibrary.org/works/OL273573W"
-  },
-  {
-    "title": "The Singapore Story: Memoirs of Lee Kuan Yew",
-    "author": "Lee Kuan Yew",
-    "cover": "/img/books/the-singapore-story-memoirs-of-lee-kuan-yew-lee-kuan-yew.jpg",
-    "ratio": 0.644,
-    "source": "https://openlibrary.org/works/OL354132W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-singapore-story-memoirs-of-lee-kuan-yew-lee-kuan-yew",
-    "number": 5
-  },
-  {
-    "title": "Poor Charlie’s Almanack",
-    "author": "Charles T. Munger / Peter D. Kaufman",
-    "id": "poor-charlies-almanack-charlie-munger",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 6,
-    "cover": "/img/books/34.jpg",
-    "ratio": 0.968,
-    "source": "https://openlibrary.org/isbn/1578645018"
-  },
-  {
-    "title": "The Art of Doing Science and Engineering: Learning to Learn",
-    "author": "Richard Hamming",
-    "cover": "/img/books/the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming.jpg",
-    "ratio": 0.81,
-    "source": "https://openlibrary.org/works/OL1185120W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming",
-    "number": 7
-  },
-  {
-    "title": "Napoleon",
-    "author": "Michael Broers",
-    "id": "napoleon-michael-broers",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 8,
-    "cover": "/img/books/08.jpg",
-    "ratio": 0.65,
-    "source": "https://openlibrary.org/works/OL19357321W"
-  },
-  {
-    "title": "Napoleon: The Decline and Fall of an Empire, 1811–1821",
-    "author": "Michael Broers",
-    "id": "napoleon-the-decline-and-fall-of-an-empire-18111821-michael-broers",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 9,
-    "cover": "/img/books/07.jpg",
-    "ratio": 0.6667,
-    "source": "https://www.simonandschuster.com/books/Napoleon/Michael-Broers/9781639361779"
-  },
-  {
-    "title": "The Way Things Work",
-    "author": "David Macaulay",
-    "id": "the-way-things-work-david-macaulay",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 10,
-    "cover": "/img/books/41.jpg",
-    "ratio": 0.7789,
-    "source": "https://openlibrary.org/works/OL15130328W"
-  },
-  {
-    "title": "History of the Italian People",
-    "author": "Giuliano Procacci",
-    "cover": "/img/books/history-of-the-italian-people-giuliano-procacci.jpg",
-    "ratio": 0.612,
-    "source": "https://openlibrary.org/works/OL18446608W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "history-of-the-italian-people-giuliano-procacci",
-    "number": 11
-  },
-  {
-    "title": "Snow Crash",
-    "author": "Neal Stephenson",
-    "id": "snow-crash-neal-stephenson",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 12,
-    "cover": "/img/books/45.jpg",
-    "ratio": 0.6653,
-    "source": "https://openlibrary.org/works/OL38501W"
-  },
-  {
-    "title": "Fooled by Randomness",
-    "author": "Nassim Nicholas Taleb",
-    "id": "fooled-by-randomness-nassim-nicholas-taleb",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 13,
-    "cover": "/img/books/37.jpg",
-    "ratio": 0.6632,
-    "source": "https://openlibrary.org/works/OL3295029W"
-  },
-  {
-    "title": "How Great Generals Win",
-    "author": "Bevin Alexander",
-    "cover": "/img/books/how-great-generals-win-bevin-alexander.jpg",
-    "ratio": 0.68,
-    "source": "https://openlibrary.org/works/OL2734826W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "how-great-generals-win-bevin-alexander",
-    "number": 14
-  },
-  {
-    "title": "Chip War",
-    "author": "Chris Miller",
-    "id": "chip-war-chris-miller",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 15,
-    "cover": "/img/books/36.jpg",
-    "ratio": 0.6611,
-    "source": "https://openlibrary.org/works/OL27846746W"
-  },
-  {
-    "title": "Game Theory for Applied Economists",
-    "author": "Robert Gibbons",
-    "id": "game-theory-for-applied-economists-robert-gibbons",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 16,
-    "cover": "/img/books/38.jpg",
-    "ratio": 0.666,
-    "source": "https://openlibrary.org/isbn/9780691003955"
-  },
-  {
-    "title": "Selected Essays",
-    "author": "Michel de Montaigne",
-    "cover": "/img/books/selected-essays-michel-de-montaigne.jpg",
-    "ratio": 0.594,
-    "source": "https://openlibrary.org/works/OL1086472W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "selected-essays-michel-de-montaigne",
-    "number": 17
-  },
-  {
-    "title": "The Eye of the World",
-    "author": "Robert Jordan",
-    "id": "the-eye-of-the-world-robert-jordan",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 18,
-    "cover": "/img/books/43.jpg",
-    "ratio": 0.64,
-    "source": "https://openlibrary.org/isbn/0812500482"
-  },
-  {
-    "title": "Italian Journey",
-    "author": "Johann Wolfgang von Goethe",
-    "cover": "/img/books/italian-journey-johann-wolfgang-von-goethe.jpg",
-    "ratio": 0.65,
-    "source": "https://openlibrary.org/isbn/9780140442335",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "italian-journey-johann-wolfgang-von-goethe",
-    "number": 19
-  },
-  {
-    "title": "Becoming Steve Jobs",
-    "author": "Brent Schlender & Rick Tetzeli",
-    "cover": "/img/books/becoming-steve-jobs-brent-schlender-rick-tetzeli.jpg",
-    "ratio": 0.658,
-    "source": "https://openlibrary.org/isbn/9780385347402",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "becoming-steve-jobs-brent-schlender-rick-tetzeli",
-    "number": 20
-  },
-  {
-    "title": "Vagabond, Vol. 1",
-    "author": "Takehiko Inoue",
-    "id": "vagabond-vol-1-takehiko-inoue",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 21,
-    "cover": "/img/books/46.jpg",
-    "ratio": 0.6667,
-    "source": "https://openlibrary.org/works/OL8783770W"
-  },
-  {
-    "title": "The Search for Modern China",
-    "author": "Jonathan D. Spence",
-    "id": "the-search-for-modern-china-jonathan-d-spence",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 22,
-    "cover": "/img/books/13.jpg",
-    "ratio": 0.6863,
-    "source": "https://openlibrary.org/works/OL1842805W"
-  },
-  {
-    "title": "The Path to Power: The Years of Lyndon Johnson",
-    "author": "Robert A. Caro",
-    "cover": "/img/books/the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro.jpg",
-    "ratio": 0.684,
-    "source": "https://openlibrary.org/works/OL4195862W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro",
-    "number": 23
-  },
-  {
-    "title": "The Inferno",
-    "author": "Dante Alighieri",
-    "id": "the-inferno-dante",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 24,
-    "cover": "/img/books/48.jpg",
-    "ratio": 0.596,
-    "source": "https://openlibrary.org/works/OL15877435W"
-  },
-  {
-    "title": "Peter the Great: His Life and World",
-    "author": "Robert K. Massie",
-    "id": "peter-the-great-his-life-and-world-robert-k-massie",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 25,
-    "cover": "/img/books/12.jpg",
-    "ratio": 0.6358,
-    "source": "https://openlibrary.org/isbn/0345298063"
-  },
-  {
-    "title": "The Wealth of Nations",
-    "author": "Adam Smith",
-    "id": "the-wealth-of-nations-adam-smith",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 26,
-    "cover": "/img/books/22.jpg",
-    "ratio": 0.666,
-    "source": "https://openlibrary.org/works/OL76827W"
-  },
-  {
-    "title": "The Discourses",
-    "author": "Niccolò Machiavelli",
-    "cover": "/img/books/the-discourses-niccolo-machiavelli.jpg",
-    "ratio": 0.6511,
-    "source": "https://www.penguinrandomhouse.com/books/275229/the-discourses-by-niccolo-machiavelli/",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-discourses-niccolo-machiavelli",
-    "number": 27
-  },
-  {
-    "title": "The Generalship of Alexander the Great",
-    "author": "J. F. C. Fuller",
-    "cover": "/img/books/the-generalship-of-alexander-the-great-j-f-c-fuller.jpg",
-    "ratio": 0.6,
-    "source": "https://openlibrary.org/works/OL27107795W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-generalship-of-alexander-the-great-j-f-c-fuller",
-    "number": 28
-  },
-  {
-    "title": "The Republic",
-    "author": "Plato",
-    "cover": "/img/books/the-republic-plato.jpg",
-    "ratio": 0.642,
-    "source": "https://openlibrary.org/isbn/9780141442433",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-republic-plato",
-    "number": 29
-  },
-  {
-    "title": "The Player of Games",
-    "author": "Iain M. Banks",
-    "cover": "/img/books/the-player-of-games-iain-m-banks.jpg",
-    "ratio": 0.6632,
-    "source": "https://openlibrary.org/works/OL100779W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-player-of-games-iain-m-banks",
-    "number": 30
-  },
-  {
-    "title": "Skunk Works",
-    "author": "Ben R. Rich & Leo Janos",
-    "cover": "/img/books/skunk-works-ben-r-rich-leo-janos.jpg",
-    "ratio": 0.6647,
-    "source": "https://openlibrary.org/works/OL3466236W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "skunk-works-ben-r-rich-leo-janos",
-    "number": 31
-  },
-  {
-    "title": "The Age of Napoleon",
-    "author": "Will & Ariel Durant",
-    "id": "the-age-of-napoleon-will-durant",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 32,
-    "cover": "/img/books/51.jpg",
-    "ratio": 0.6674,
-    "source": "https://openlibrary.org/works/OL10602024M"
-  },
-  {
-    "title": "Caesar and Christ",
-    "author": "Will Durant",
-    "id": "caesar-and-christ-will-durant",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 33,
-    "cover": "/img/books/52.jpg",
-    "ratio": 0.6674,
-    "source": "https://openlibrary.org/works/OL1073889W"
-  },
-  {
-    "title": "The Life of Greece",
-    "author": "Will Durant",
-    "id": "the-life-of-greece-will-durant",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 34,
-    "cover": "/img/books/53.jpg",
-    "ratio": 0.6667,
-    "source": "https://www.simonandschuster.com/books/The-Life-of-Greece/Will-Durant/The-Story-of-Civilization/9781451647587"
-  },
-  {
-    "title": "The Reformation",
-    "author": "Will Durant",
-    "id": "the-reformation-will-durant",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 35,
-    "cover": "/img/books/54.jpg",
-    "ratio": 0.6674,
-    "source": "https://openlibrary.org/works/OL10601693M"
-  },
-  {
-    "title": "Alexander the Great",
-    "author": "Robin Lane Fox",
-    "id": "alexander-the-great-robin-lane-fox",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 36,
-    "cover": "/img/books/01.jpg",
-    "ratio": 0.6511,
-    "source": "https://images.penguinrandomhouse.com/cover/9780143035138"
-  },
-  {
-    "title": "The War for Gaul",
-    "author": "Julius Caesar",
-    "id": "the-war-for-gaul-julius-caesar",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 37,
-    "cover": "/img/books/18.jpg",
-    "ratio": 0.648,
-    "source": "https://openlibrary.org/works/OL20156488W"
-  },
-  {
-    "title": "Plutarch / Lives",
-    "author": "Plutarch",
-    "cover": "/img/books/plutarch-lives-plutarch.jpg",
-    "ratio": 0.644,
-    "source": "https://openlibrary.org/works/OL2521179W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "plutarch-lives-plutarch",
-    "number": 38
-  },
-  {
-    "title": "The Last Lion: Winston Spencer Churchill",
-    "author": "William Manchester",
-    "id": "the-last-lion-william-manchester",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 39,
-    "cover": "/img/books/11.jpg",
-    "ratio": 0.65,
-    "source": "https://openlibrary.org/works/OL8051866W"
-  },
-  {
-    "title": "Build a Large Language Model (From Scratch)",
-    "author": "Sebastian Raschka",
-    "cover": "/img/books/build-a-large-language-model-from-scratch-sebastian-raschka.jpg",
-    "ratio": 0.7967,
-    "source": "https://openlibrary.org/works/OL38398010W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "build-a-large-language-model-from-scratch-sebastian-raschka",
-    "number": 40
-  },
-  {
-    "title": "Cyrus the Great",
-    "author": "",
-    "cover": null,
-    "ratio": 0.66,
-    "source": null,
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "cyrus-the-great",
-    "note": "Author not yet identified.",
-    "number": 41
-  },
-  {
-    "title": "The Iliad of Homer",
-    "author": "Homer, translated by Richmond Lattimore",
-    "cover": "/img/books/the-iliad-of-homer-homer-translated-by-richmond-lattimore.jpg",
-    "ratio": 0.6565,
-    "source": "https://openlibrary.org/isbn/9780226470498",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-iliad-of-homer-homer-translated-by-richmond-lattimore",
-    "number": 42
-  },
-  {
-    "title": "Charlemagne",
-    "author": "Matthias Becher",
-    "id": "charlemagne-matthias-becher",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 43,
-    "cover": "/img/books/09.jpg",
-    "ratio": 0.6547,
-    "source": "https://openlibrary.org/works/OL2490970W"
-  },
-  {
-    "title": "The History of the Decline and Fall of the Roman Empire",
-    "author": "Edward Gibbon",
-    "cover": "/img/books/the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon.jpg",
-    "ratio": 0.662,
-    "source": "https://openlibrary.org/works/OL1285005W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon",
-    "number": 44
-  },
-  {
-    "title": "The Life of Charlemagne",
-    "author": "Einhard",
-    "cover": "/img/books/the-life-of-charlemagne-einhard.jpg",
-    "ratio": 0.662,
-    "source": "https://openlibrary.org/works/OL24479926W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-life-of-charlemagne-einhard",
-    "number": 45
-  },
-  {
-    "title": "Napoleon and His Collaborators",
-    "author": "Isser Woloch",
-    "cover": "/img/books/napoleon-and-his-collaborators-isser-woloch.jpg",
-    "ratio": 0.6695,
-    "source": "https://openlibrary.org/works/OL3901955W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "napoleon-and-his-collaborators-isser-woloch",
-    "number": 46
-  },
-  {
-    "title": "Goethe’s Faust",
-    "author": "Johann Wolfgang von Goethe",
-    "cover": "/img/books/goethes-faust-johann-wolfgang-von-goethe.jpg",
-    "ratio": 0.616,
-    "source": "https://openlibrary.org/works/OL52456W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "goethes-faust-johann-wolfgang-von-goethe",
-    "number": 47
-  },
-  {
-    "title": "Scipio Africanus: Greater Than Napoleon",
-    "author": "B. H. Liddell Hart",
-    "cover": "/img/books/scipio-africanus-greater-than-napoleon-b-h-liddell-hart.jpg",
-    "ratio": 0.6295,
-    "source": "https://openlibrary.org/works/OL89102W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "scipio-africanus-greater-than-napoleon-b-h-liddell-hart",
-    "number": 48
-  },
-  {
-    "title": "Augustus",
-    "author": "Anthony Everitt",
-    "cover": "/img/books/augustus-anthony-everitt.jpg",
-    "ratio": 0.662,
-    "source": "https://openlibrary.org/works/OL6045933W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "augustus-anthony-everitt",
-    "number": 49
-  },
-  {
-    "title": "Metternich",
-    "author": "Wolfram Siemann",
-    "id": "metternich-strategist-and-visionary-wolfram-siemann",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 50,
-    "cover": "/img/books/04.jpg",
-    "ratio": 0.6845,
-    "source": "https://openlibrary.org/isbn/067474392X"
-  },
-  {
-    "title": "Bismarck",
-    "author": "Emil Ludwig",
-    "cover": "/img/books/bismarck-emil-ludwig.jpg",
-    "ratio": 0.636,
-    "source": "https://openlibrary.org/works/OL1159302W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "bismarck-emil-ludwig",
-    "number": 51
-  },
-  {
-    "title": "Bismarck and the German Empire",
-    "author": "Erich Eyck",
-    "cover": "/img/books/bismarck-and-the-german-empire-erich-eyck.jpg",
-    "ratio": 0.6568,
-    "source": "https://openlibrary.org/works/OL1238538W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "bismarck-and-the-german-empire-erich-eyck",
-    "number": 52
-  },
-  {
-    "title": "Henry VIII",
-    "author": "Alison Weir",
-    "cover": "/img/books/henry-viii-alison-weir.jpg",
-    "ratio": 0.6463,
-    "source": "https://openlibrary.org/works/OL497244W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "henry-viii-alison-weir",
-    "number": 53
-  },
-  {
-    "title": "The Odyssey and The Iliad: Complete",
-    "author": "Homer, translated by Samuel Butler",
-    "id": "the-odyssey-and-the-iliad-homer",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 54,
-    "cover": "/img/books/17.jpg",
-    "ratio": 0.6999,
-    "source": "https://www.canterburyclassicsbooks.com/books/iliad-odyssey-9781607102120/"
-  },
-  {
-    "title": "On the Sublime / French Revolution / etc.",
-    "author": "Edmund Burke",
-    "cover": null,
-    "ratio": 0.66,
-    "source": null,
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "on-the-sublime-french-revolution-etc-edmund-burke",
-    "note": "Harvard Classics volume.",
-    "number": 55
-  },
-  {
-    "title": "Two Treatises of Government",
-    "author": "John Locke",
-    "id": "two-treatises-of-government-john-locke",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 56,
-    "cover": "/img/books/24.jpg",
-    "ratio": 0.638,
-    "source": "https://openlibrary.org/isbn/0521357306"
-  },
-  {
-    "title": "Marlowe / Shakespeare",
-    "author": "Christopher Marlowe / William Shakespeare",
-    "cover": null,
-    "ratio": 0.66,
-    "source": null,
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "marlowe-shakespeare-christopher-marlowe-william-shakespeare",
-    "note": "Harvard Classics volume.",
-    "number": 57
-  },
-  {
-    "title": "The Lives of the Caesars",
-    "author": "Suetonius",
-    "id": "the-lives-of-the-caesars-suetonius",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 58,
-    "cover": "/img/books/19.jpg",
-    "ratio": 0.61,
-    "source": "https://openlibrary.org/works/OL15404890W"
-  },
-  {
-    "title": "History of the Peloponnesian War",
-    "author": "Thucydides",
-    "id": "history-of-the-peloponnesian-war-thucydides",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 59,
-    "cover": "/img/books/20.jpg",
-    "ratio": 0.6547,
-    "source": "https://openlibrary.org/isbn/0140440399"
-  },
-  {
-    "title": "American Sphinx: The Character of Thomas Jefferson",
-    "author": "Joseph J. Ellis",
-    "id": "american-sphinx-joseph-j-ellis",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 60,
-    "cover": "/img/books/14.jpg",
-    "ratio": 0.7137,
-    "source": "https://openlibrary.org/works/OL53118W"
-  },
-  {
-    "title": "Democracy in America and Two Essays on America",
-    "author": "Alexis de Tocqueville",
-    "cover": "/img/books/25.jpg",
-    "ratio": 0.624,
-    "source": "https://openlibrary.org/isbn/0140447601",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "democracy-in-america-and-two-essays-on-america-alexis-de-tocqueville",
-    "number": 61
-  },
-  {
-    "title": "Franklin and Winston",
-    "author": "Jon Meacham",
-    "id": "franklin-and-winston-jon-meacham",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 62,
-    "cover": "/img/books/15.jpg",
-    "ratio": 0.6695,
-    "source": "https://openlibrary.org/works/OL6032793W"
-  },
-  {
-    "title": "The Machiavellians: Defenders of Freedom",
-    "author": "James Burnham",
-    "id": "the-machiavellians-defenders-of-freedom-james-burnham",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 63,
-    "cover": "/img/books/28.jpg",
-    "ratio": 0.648,
-    "source": "https://openlibrary.org/isbn/1839013958"
-  },
-  {
-    "title": "Critique of Pure Reason",
-    "author": "Immanuel Kant",
-    "id": "critique-of-pure-reason-immanuel-kant",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 64,
-    "cover": "/img/books/27.jpg",
-    "ratio": 0.666,
-    "source": "https://openlibrary.org/works/OL17104789W"
-  },
-  {
-    "title": "The Origins of Political Order",
-    "author": "Francis Fukuyama",
-    "id": "the-origins-of-political-order-francis-fukuyama",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 65,
-    "cover": "/img/books/29.jpg",
-    "ratio": 0.666,
-    "source": "https://openlibrary.org/isbn/0374533229"
-  },
-  {
-    "title": "Twilight of the Idols",
-    "author": "Friedrich Nietzsche",
-    "cover": "/img/books/twilight-of-the-idols-friedrich-nietzsche.jpg",
-    "ratio": 0.666,
-    "source": "https://openlibrary.org/works/OL29701074W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "twilight-of-the-idols-friedrich-nietzsche",
-    "number": 66
-  },
-  {
-    "title": "The Social Contract and Other Writings",
-    "author": "Jean-Jacques Rousseau",
-    "cover": "/img/books/the-social-contract-and-other-writings-jean-jacques-rousseau.jpg",
-    "ratio": 0.59,
-    "source": "https://openlibrary.org/works/OL8395636W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-social-contract-and-other-writings-jean-jacques-rousseau",
-    "number": 67
-  },
-  {
-    "title": "Financial Intelligence",
-    "author": "Karen Berman, Joe Knight & John Case",
-    "id": "financial-intelligence-karen-berman-joe-knight",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 68,
-    "cover": "/img/books/39.jpg",
-    "ratio": 0.6625,
-    "source": "https://openlibrary.org/isbn/1422144119"
-  },
-  {
-    "title": "The Great CEO Within",
-    "author": "Matt Mochary",
-    "id": "the-great-ceo-within-matt-mochary",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 69,
-    "cover": "/img/books/35.jpg",
-    "ratio": 0.666,
-    "source": "https://openlibrary.org/works/OL20791757W"
-  },
-  {
-    "title": "Against a Dark Background",
-    "author": "Iain M. Banks",
-    "id": "against-a-dark-background-iain-m-banks",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 70,
-    "cover": "/img/books/50.jpg",
-    "ratio": 0.6379,
-    "source": "https://openlibrary.org/works/OL8368444W"
-  },
-  {
-    "title": "The Three-Body Problem",
-    "author": "Cixin Liu",
-    "id": "the-three-body-problem-cixin-liu",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 71,
-    "cover": "/img/books/44.jpg",
-    "ratio": 0.662,
-    "source": "https://openlibrary.org/isbn/0765382032"
-  },
-  {
-    "title": "Use of Weapons",
-    "author": "Iain M. Banks",
-    "cover": "/img/books/use-of-weapons-iain-m-banks.jpg",
-    "ratio": 0.66,
-    "source": "https://openlibrary.org/works/OL8339333W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "use-of-weapons-iain-m-banks",
-    "number": 72
-  },
-  {
-    "title": "Gardens of the Moon",
-    "author": "Steven Erikson",
-    "id": "gardens-of-the-moon-steven-erikson",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 73,
-    "cover": "/img/books/47.jpg",
-    "ratio": 0.6084,
-    "source": "https://openlibrary.org/works/OL5734756W"
-  },
-  {
-    "title": "Don Quixote",
-    "author": "Miguel de Cervantes",
-    "id": "don-quixote-cervantes",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 74,
-    "cover": "/img/books/49.jpg",
-    "ratio": 0.666,
-    "source": "https://openlibrary.org/works/OL26799707W"
-  },
-  {
-    "title": "War and Peace",
-    "author": "Leo Tolstoy",
-    "cover": "/img/books/war-and-peace-leo-tolstoy.jpg",
-    "ratio": 0.666,
-    "source": "https://openlibrary.org/works/OL267171W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "war-and-peace-leo-tolstoy",
-    "number": 75
-  },
-  {
-    "title": "The Singularity Is Near: When Humans Transcend Biology",
-    "author": "Ray Kurzweil",
-    "id": "the-singularity-is-near-ray-kurzweil",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 76,
-    "cover": "/img/books/40.jpg",
-    "ratio": 0.66,
-    "source": "https://openlibrary.org/works/OL1958850W"
-  },
-  {
-    "title": "Diplomacy",
-    "author": "Henry Kissinger",
-    "id": "diplomacy-henry-kissinger",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 77,
-    "cover": "/img/books/30.jpg",
-    "ratio": 0.6465,
-    "source": "https://openlibrary.org/works/OL1967243W"
-  },
-  {
-    "title": "Kelly: More Than My Share of It All",
-    "author": "Clarence L. “Kelly” Johnson & Maggie Smith",
-    "cover": "/img/books/kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith.jpg",
-    "ratio": 0.6589,
-    "source": "https://openlibrary.org/isbn/9780874744910",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith",
-    "number": 78
-  },
-  {
-    "title": "The Structure of Scientific Revolutions",
-    "author": "Thomas S. Kuhn",
-    "id": "the-structure-of-scientific-revolutions-thomas-kuhn",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 79,
-    "cover": "/img/books/42.jpg",
-    "ratio": 0.664,
-    "source": "https://openlibrary.org/works/OL3259254W"
-  },
-  {
-    "title": "The Ascent of Money",
-    "author": "Niall Ferguson",
-    "cover": "/img/books/the-ascent-of-money-niall-ferguson.jpg",
-    "ratio": 0.6567,
-    "source": "https://openlibrary.org/works/OL792952W",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "id": "the-ascent-of-money-niall-ferguson",
-    "number": 80
-  },
-  {
-    "title": "On China",
-    "author": "Henry Kissinger",
-    "id": "on-china-henry-kissinger",
-    "bg": "#dfe6d9",
-    "ink": "#315b44",
-    "number": 81,
-    "cover": "/img/books/31.jpg",
-    "ratio": 0.608,
-    "source": "https://openlibrary.org/works/OL15921407W"
-  }
-]
-</script>
+
+.gallery-ready .orbit-shell{height:100dvh}.orbit-field{touch-action:none}.orbit-bottom{justify-content:space-between}
+</style></head><body><a class="skip" href="#shelf">Skip to books</a><header class="topbar page-width"><a href="/">Azhan Khan</a><a href="/">Home</a></header><div class="intro page-width"><h1>Bookshelf</h1><p>Books I own.</p></div><section class="orbit-shell" aria-label="Book gallery"><div class="orbit-panel"><header class="orbit-header"><a href="/">Azhan Khan</a><h1>Bookshelf</h1><button class="view-toggle" type="button" aria-pressed="false">View index ↗</button></header><div class="orbit-field" aria-label="Browse covers"></div><div class="orbit-caption"><p class="orbit-number"></p><h2 class="orbit-title"></h2><p class="orbit-author"></p><button class="open-selected" type="button">Open book ↗</button></div><footer class="orbit-bottom"><span>Scroll or drag to explore</span><div class="orbit-controls"><button class="orbit-prev" aria-label="Previous selection">←</button><input class="orbit-range" aria-label="Choose book" type="range" min="0" max="92" value="0"><button class="orbit-next" aria-label="Next selection">→</button></div></footer></div></section><main id="shelf" class="page-width"><div class="books"><a class="book-link" href="?book=designing-dataintensive-applications-martin-kleppmann" data-book="0"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/designing-dataintensive-applications-martin-kleppmann.jpg" alt="" loading="eager" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Designing Data-Intensive Applications</span><span class="catalogue-author">Martin Kleppmann</span></span></a>
+<a class="book-link" href="?book=the-linux-programming-interface-michael-kerrisk" data-book="1"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-linux-programming-interface-michael-kerrisk.jpg" alt="" loading="eager" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Linux Programming Interface</span><span class="catalogue-author">Michael Kerrisk</span></span></a>
+<a class="book-link" href="?book=linkers-and-loaders-john-r-levine" data-book="2"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/linkers-and-loaders-john-r-levine.jpg" alt="" loading="eager" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Linkers and Loaders</span><span class="catalogue-author">John R. Levine</span></span></a>
+<a class="book-link" href="?book=rust-atomics-and-locks-mara-bos" data-book="3"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/rust-atomics-and-locks-mara-bos.jpg" alt="" loading="eager" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Rust Atomics and Locks</span><span class="catalogue-author">Mara Bos</span></span></a>
+<a class="book-link" href="?book=is-parallel-programming-hard-and-if-so-what-can-you-do-about-it-paul-e-mckenney" data-book="4"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/parallel-programming-hard-cover.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Is Parallel Programming Hard, And, If So, What Can You Do About It?</span><span class="catalogue-author">Paul E. McKenney</span></span></a>
+<a class="book-link" href="?book=tcpip-illustrated-volume-1-w-richard-stevens" data-book="5"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/tcpip-illustrated-volume-1-w-richard-stevens-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">TCP/IP Illustrated, Volume 1</span><span class="catalogue-author">W. Richard Stevens</span></span></a>
+<a class="book-link" href="?book=computer-architecture-a-quantitative-approach-john-hennessy--david-patterson" data-book="6"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/computer-architecture-a-quantitative-approach-john-hennessy--david-patterson.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Computer Architecture: A Quantitative Approach</span><span class="catalogue-author">John Hennessy &amp; David Patterson</span></span></a>
+<a class="book-link" href="?book=programming-massively-parallel-processors-david-kirk-wenmei-hwu--izzat-el-hajj" data-book="7"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/programming-massively-parallel-processors-david-kirk-wenmei-hwu--izzat-el-hajj.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Programming Massively Parallel Processors</span><span class="catalogue-author">David Kirk, Wen-mei Hwu &amp; Izzat El Hajj</span></span></a>
+<a class="book-link" href="?book=efficient-processing-of-deep-neural-networks-vivienne-sze-yuhsin-chen-tienju-yang--joel-emer" data-book="8"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/efficient-processing-of-deep-neural-networks-vivienne-sze-yuhsin-chen-tienju-yang--joel-emer.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Efficient Processing of Deep Neural Networks</span><span class="catalogue-author">Vivienne Sze, Yu-Hsin Chen, Tien-Ju Yang &amp; Joel Emer</span></span></a>
+<a class="book-link" href="?book=database-internals-alex-petrov" data-book="9"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/database-internals-alex-petrov.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Database Internals</span><span class="catalogue-author">Alex Petrov</span></span></a>
+<a class="book-link" href="?book=the-scaling-era-dwarkesh-patel--gavin-leech" data-book="10"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-scaling-era-cover.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Scaling Era</span><span class="catalogue-author">Dwarkesh Patel &amp; Gavin Leech</span></span></a>
+<a class="book-link" href="?book=build-a-large-language-model-from-scratch-sebastian-raschka" data-book="11"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/build-a-large-language-model-from-scratch-sebastian-raschka.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Build a Large Language Model (From Scratch)</span><span class="catalogue-author">Sebastian Raschka</span></span></a>
+<a class="book-link" href="?book=information-theory-inference-and-learning-algorithms-david-mackay" data-book="12"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/information-theory-inference-and-learning-algorithms-david-mackay-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Information Theory, Inference, and Learning Algorithms</span><span class="catalogue-author">David MacKay</span></span></a>
+<a class="book-link" href="?book=reinforcement-learning-an-introduction-richard-sutton--andrew-barto" data-book="13"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/reinforcement-learning-an-introduction-richard-sutton--andrew-barto-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Reinforcement Learning: An Introduction</span><span class="catalogue-author">Richard Sutton &amp; Andrew Barto</span></span></a>
+<a class="book-link" href="?book=algorithms-for-decision-making-mykel-kochenderfer-tim-wheeler--kyle-wray" data-book="14"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/algorithms-for-decision-making-mykel-kochenderfer-tim-wheeler--kyle-wray.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Algorithms for Decision Making</span><span class="catalogue-author">Mykel Kochenderfer, Tim Wheeler &amp; Kyle Wray</span></span></a>
+<a class="book-link" href="?book=virtual-machines-versatile-platforms-for-systems-and-processes-james-smith--ravi-nair" data-book="15"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/virtual-machines-versatile-platforms-for-systems-and-processes-james-smith--ravi-nair.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Virtual Machines: Versatile Platforms for Systems and Processes</span><span class="catalogue-author">James Smith &amp; Ravi Nair</span></span></a>
+<a class="book-link" href="?book=the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming" data-book="16"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Art of Doing Science and Engineering</span><span class="catalogue-author">Richard Hamming</span></span></a>
+<a class="book-link" href="?book=the-neuroscience-of-intelligence-richard-haier" data-book="17"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-neuroscience-of-intelligence-richard-haier.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Neuroscience of Intelligence</span><span class="catalogue-author">Richard Haier</span></span></a>
+<a class="book-link" href="?book=game-theory-for-applied-economists-robert-gibbons" data-book="18"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/38.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Game Theory for Applied Economists</span><span class="catalogue-author">Robert Gibbons</span></span></a>
+<a class="book-link" href="?book=the-structure-of-scientific-revolutions-thomas-kuhn" data-book="19"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-structure-of-scientific-revolutions-thomas-kuhn-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Structure of Scientific Revolutions</span><span class="catalogue-author">Thomas Kuhn</span></span></a>
+<a class="book-link" href="?book=skunk-works-ben-r-rich-leo-janos" data-book="20"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/skunk-works-ben-r-rich-leo-janos-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Skunk Works</span><span class="catalogue-author">Ben Rich &amp; Leo Janos</span></span></a>
+<a class="book-link" href="?book=kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith" data-book="21"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Kelly: More Than My Share of It All</span><span class="catalogue-author">Clarence L. “Kelly” Johnson</span></span></a>
+<a class="book-link" href="?book=american-steel-richard-preston" data-book="22"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/american-steel-richard-preston-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">American Steel</span><span class="catalogue-author">Richard Preston</span></span></a>
+<a class="book-link" href="?book=from-the-american-system-to-mass-production-18001932-david-hounshell" data-book="23"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/from-the-american-system-to-mass-production-18001932-david-hounshell.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">From the American System to Mass Production, 1800–1932</span><span class="catalogue-author">David Hounshell</span></span></a>
+<a class="book-link" href="?book=strategy-and-structure-alfred-d-chandler-jr" data-book="24"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/strategy-and-structure-alfred-d-chandler-jr.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Strategy and Structure</span><span class="catalogue-author">Alfred D. Chandler Jr.</span></span></a>
+<a class="book-link" href="?book=chip-war-chris-miller" data-book="25"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/36.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Chip War</span><span class="catalogue-author">Chris Miller</span></span></a>
+<a class="book-link" href="?book=call-me-ted-ted-turner" data-book="26"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/call-me-ted-paperback.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Call Me Ted</span><span class="catalogue-author">Ted Turner</span></span></a>
+<a class="book-link" href="?book=barbarians-at-the-gate-bryan-burrough--john-helyar" data-book="27"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/barbarians-at-the-gate-bryan-burrough--john-helyar-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Barbarians at the Gate</span><span class="catalogue-author">Bryan Burrough &amp; John Helyar</span></span></a>
+<a class="book-link" href="?book=the-predators-ball-connie-bruck" data-book="28"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-predators-ball-connie-bruck-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Predators’ Ball</span><span class="catalogue-author">Connie Bruck</span></span></a>
+<a class="book-link" href="?book=an-engine-not-a-camera-how-financial-models-shape-markets-donald-mackenzie" data-book="29"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/an-engine-not-a-camera-how-financial-models-shape-markets-donald-mackenzie.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">An Engine, Not a Camera: How Financial Models Shape Markets</span><span class="catalogue-author">Donald MacKenzie</span></span></a>
+<a class="book-link" href="?book=the-black-swan-nassim-nicholas-taleb" data-book="30"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-black-swan-nassim-nicholas-taleb-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Black Swan</span><span class="catalogue-author">Nassim Nicholas Taleb</span></span></a>
+<a class="book-link" href="?book=fooled-by-randomness-nassim-nicholas-taleb" data-book="31"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/37.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Fooled by Randomness</span><span class="catalogue-author">Nassim Nicholas Taleb</span></span></a>
+<a class="book-link" href="?book=the-park-chung-hee-era-the-transformation-of-south-korea-byungkook-kim--ezra-f-vogel" data-book="32"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-park-chung-hee-era-the-transformation-of-south-korea-byungkook-kim--ezra-f-vogel.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Park Chung Hee Era: The Transformation of South Korea</span><span class="catalogue-author">Byung-Kook Kim &amp; Ezra F. Vogel</span></span></a>
+<a class="book-link" href="?book=the-sinews-of-power-war-money-and-the-english-state-16881783-john-brewer" data-book="33"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-sinews-of-power-war-money-and-the-english-state-16881783-john-brewer.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Sinews of Power: War, Money and the English State, 1688–1783</span><span class="catalogue-author">John Brewer</span></span></a>
+<a class="book-link" href="?book=metternich-strategist-and-visionary-wolfram-siemann" data-book="34"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/04.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Metternich</span><span class="catalogue-author">Wolfram Siemann</span></span></a>
+<a class="book-link" href="?book=peasants-into-frenchmen-eugen-weber" data-book="35"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/peasants-into-frenchmen-eugen-weber.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Peasants into Frenchmen</span><span class="catalogue-author">Eugen Weber</span></span></a>
+<a class="book-link" href="?book=the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro" data-book="36"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Path to Power: The Years of Lyndon Johnson</span><span class="catalogue-author">Robert Caro</span></span></a>
+<a class="book-link" href="?book=natures-metropolis-chicago-and-the-great-west-william-cronon" data-book="37"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/natures-metropolis-chicago-and-the-great-west-william-cronon.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Nature’s Metropolis: Chicago and the Great West</span><span class="catalogue-author">William Cronon</span></span></a>
+<a class="book-link" href="?book=the-search-for-modern-china-jonathan-d-spence" data-book="38"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/13.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Search for Modern China</span><span class="catalogue-author">Jonathan Spence</span></span></a>
+<a class="book-link" href="?book=history-of-the-italian-people-giuliano-procacci" data-book="39"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/history-of-the-italian-people-giuliano-procacci.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">History of the Italian People</span><span class="catalogue-author">Giuliano Procacci</span></span></a>
+<a class="book-link" href="?book=the-measure-of-reality-quantification-and-western-society-12501600-alfred-w-crosby" data-book="40"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-measure-of-reality-quantification-and-western-society-12501600-alfred-w-crosby.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Measure of Reality: Quantification and Western Society, 1250–1600</span><span class="catalogue-author">Alfred W. Crosby</span></span></a>
+<a class="book-link" href="?book=rockets-and-people-vol-ii-creating-a-rocket-industry-boris-chertok" data-book="41"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/rockets-and-people-vol-ii-creating-a-rocket-industry-boris-chertok-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Rockets and People, Vol. II: Creating a Rocket Industry</span><span class="catalogue-author">Boris Chertok</span></span></a>
+<a class="book-link" href="?book=peter-the-great-his-life-and-world-robert-k-massie" data-book="42"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/peter-the-great-his-life-and-world-robert-k-massie-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Peter the Great: His Life and World</span><span class="catalogue-author">Robert K. Massie</span></span></a>
+<a class="book-link" href="?book=the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon" data-book="43"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The History of the Decline and Fall of the Roman Empire</span><span class="catalogue-author">Edward Gibbon</span></span></a>
+<a class="book-link" href="?book=leaves-of-grass-walt-whitman" data-book="44"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/leaves-of-grass-walt-whitman-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Leaves of Grass</span><span class="catalogue-author">Walt Whitman</span></span></a>
+<a class="book-link" href="?book=the-count-of-monte-cristo-alexandre-dumas" data-book="45"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-count-of-monte-cristo-alexandre-dumas-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Count of Monte Cristo</span><span class="catalogue-author">Alexandre Dumas</span></span></a>
+<a class="book-link" href="?book=lady-of-mazes-karl-schroeder" data-book="46"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/lady-of-mazes-karl-schroeder.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Lady of Mazes</span><span class="catalogue-author">Karl Schroeder</span></span></a>
+<a class="book-link" href="?book=his-masters-voice-stanisaw-lem" data-book="47"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/his-masters-voice-stanisaw-lem.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">His Master’s Voice</span><span class="catalogue-author">Stanisław Lem</span></span></a>
+<a class="book-link" href="?book=accelerando-charles-stross" data-book="48"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/accelerando-charles-stross.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Accelerando</span><span class="catalogue-author">Charles Stross</span></span></a>
+<a class="book-link" href="?book=vacuum-flowers-michael-swanwick" data-book="49"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/vacuum-flowers-michael-swanwick.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Vacuum Flowers</span><span class="catalogue-author">Michael Swanwick</span></span></a>
+<a class="book-link" href="?book=permutation-city-greg-egan" data-book="50"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/permutation-city-greg-egan.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Permutation City</span><span class="catalogue-author">Greg Egan</span></span></a>
+<a class="book-link" href="?book=the-invention-of-morel-adolfo-bioy-casares" data-book="51"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-invention-of-morel-adolfo-bioy-casares.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Invention of Morel</span><span class="catalogue-author">Adolfo Bioy Casares</span></span></a>
+<a class="book-link" href="?book=the-player-of-games-iain-m-banks" data-book="52"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-player-of-games-iain-m-banks.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Player of Games</span><span class="catalogue-author">Iain M. Banks</span></span></a>
+<a class="book-link" href="?book=use-of-weapons-iain-m-banks" data-book="53"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/use-of-weapons-iain-m-banks.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Use of Weapons</span><span class="catalogue-author">Iain M. Banks</span></span></a>
+<a class="book-link" href="?book=against-a-dark-background-iain-m-banks" data-book="54"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/50.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Against a Dark Background</span><span class="catalogue-author">Iain M. Banks</span></span></a>
+<a class="book-link" href="?book=schismatrix-plus-bruce-sterling" data-book="55"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/schismatrix-plus-bruce-sterling.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Schismatrix Plus</span><span class="catalogue-author">Bruce Sterling</span></span></a>
+<a class="book-link" href="?book=red-plenty-francis-spufford" data-book="56"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/red-plenty-francis-spufford.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Red Plenty</span><span class="catalogue-author">Francis Spufford</span></span></a>
+<a class="book-link" href="?book=the-monkeys-wrench-la-chiave-a-stella-primo-levi" data-book="57"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-monkeys-wrench-la-chiave-a-stella-primo-levi.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Monkey’s Wrench (La chiave a stella)</span><span class="catalogue-author">Primo Levi</span></span></a>
+<a class="book-link" href="?book=war-and-peace-leo-tolstoy" data-book="58"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/war-and-peace-leo-tolstoy-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">War and Peace</span><span class="catalogue-author">Leo Tolstoy</span></span></a>
+<a class="book-link" href="?book=don-quixote-cervantes" data-book="59"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/don-quixote-cervantes-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Don Quixote</span><span class="catalogue-author">Miguel de Cervantes</span></span></a>
+<a class="book-link" href="?book=selected-essays-michel-de-montaigne" data-book="60"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/selected-essays-michel-de-montaigne-curated.png" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Selected Essays</span><span class="catalogue-author">Michel de Montaigne</span></span></a>
+<a class="book-link" href="?book=the-republic-plato" data-book="61"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-republic-plato-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Republic</span><span class="catalogue-author">Plato</span></span></a>
+<a class="book-link" href="?book=plutarchs-lives-plutarch" data-book="62"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/plutarchs-lives-plutarch-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Plutarch’s Lives</span><span class="catalogue-author">Plutarch</span></span></a>
+<a class="book-link" href="?book=meditations-marcus-aurelius" data-book="63"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/meditations-marcus-aurelius-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Meditations</span><span class="catalogue-author">Marcus Aurelius</span></span></a>
+<a class="book-link" href="?book=confessions-augustine" data-book="64"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/confessions-augustine-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Confessions</span><span class="catalogue-author">Augustine</span></span></a>
+<a class="book-link" href="?book=the-divine-comedy-dante" data-book="65"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-divine-comedy-dante-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Divine Comedy</span><span class="catalogue-author">Dante</span></span></a>
+<a class="book-link" href="?book=the-decameron-giovanni-boccaccio" data-book="66"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-decameron-giovanni-boccaccio-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Decameron</span><span class="catalogue-author">Giovanni Boccaccio</span></span></a>
+<a class="book-link" href="?book=leviathan-thomas-hobbes" data-book="67"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/leviathan-thomas-hobbes-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Leviathan</span><span class="catalogue-author">Thomas Hobbes</span></span></a>
+<a class="book-link" href="?book=two-treatises-of-government-john-locke" data-book="68"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/two-treatises-of-government-john-locke-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Two Treatises of Government</span><span class="catalogue-author">John Locke</span></span></a>
+<a class="book-link" href="?book=reflections-on-the-revolution-in-france-edmund-burke" data-book="69"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/reflections-on-the-revolution-in-france-edmund-burke-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Reflections on the Revolution in France</span><span class="catalogue-author">Edmund Burke</span></span></a>
+<a class="book-link" href="?book=the-federalist-papers-hamilton-madison-jay" data-book="70"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-federalist-papers-hamilton-madison-jay-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Federalist Papers</span><span class="catalogue-author">Hamilton, Madison &amp; Jay</span></span></a>
+<a class="book-link" href="?book=the-social-contract-jean-jacques-rousseau" data-book="71"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-social-contract-jean-jacques-rousseau-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Social Contract</span><span class="catalogue-author">Jean-Jacques Rousseau</span></span></a>
+<a class="book-link" href="?book=faust-johann-wolfgang-von-goethe" data-book="72"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/faust-johann-wolfgang-von-goethe-curated.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Faust</span><span class="catalogue-author">Johann Wolfgang von Goethe</span></span></a>
+<a class="book-link" href="?book=essays-lectures-ralph-waldo-emerson" data-book="73"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/essays-lectures-ralph-waldo-emerson-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Essays &amp; Lectures</span><span class="catalogue-author">Ralph Waldo Emerson</span></span></a>
+<a class="book-link" href="?book=the-red-and-the-black-stendhal" data-book="74"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-red-and-the-black-stendhal-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Red and the Black</span><span class="catalogue-author">Stendhal</span></span></a>
+<a class="book-link" href="?book=madame-bovary-gustave-flaubert" data-book="75"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/madame-bovary-gustave-flaubert-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Madame Bovary</span><span class="catalogue-author">Gustave Flaubert</span></span></a>
+<a class="book-link" href="?book=the-brothers-karamazov-fyodor-dostoevsky" data-book="76"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-brothers-karamazov-fyodor-dostoevsky-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Brothers Karamazov</span><span class="catalogue-author">Fyodor Dostoevsky</span></span></a>
+<a class="book-link" href="?book=in-search-of-lost-time-vol-i-swanns-way-marcel-proust" data-book="77"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/in-search-of-lost-time-vol-i-swanns-way-marcel-proust-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">In Search of Lost Time, Vol. I: Swann’s Way</span><span class="catalogue-author">Marcel Proust</span></span></a>
+<a class="book-link" href="?book=labyrinths-jorge-luis-borges" data-book="78"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/labyrinths-jorge-luis-borges-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Labyrinths</span><span class="catalogue-author">Jorge Luis Borges</span></span></a>
+<a class="book-link" href="?book=the-aeneid-virgil" data-book="79"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-aeneid-virgil-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Aeneid</span><span class="catalogue-author">Virgil</span></span></a>
+<a class="book-link" href="?book=the-annals-tacitus" data-book="80"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-annals-tacitus-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Annals</span><span class="catalogue-author">Tacitus</span></span></a>
+<a class="book-link" href="?book=the-master-and-margarita-mikhail-bulgakov" data-book="81"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-master-and-margarita-mikhail-bulgakov-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Master and Margarita</span><span class="catalogue-author">Mikhail Bulgakov</span></span></a>
+<a class="book-link" href="?book=the-quantum-thief-hannu-rajaniemi" data-book="82"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-quantum-thief-hannu-rajaniemi-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Quantum Thief</span><span class="catalogue-author">Hannu Rajaniemi</span></span></a>
+<a class="book-link" href="?book=the-fractal-prince-hannu-rajaniemi" data-book="83"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-fractal-prince-hannu-rajaniemi-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Fractal Prince</span><span class="catalogue-author">Hannu Rajaniemi</span></span></a>
+<a class="book-link" href="?book=the-causal-angel-hannu-rajaniemi" data-book="84"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-causal-angel-hannu-rajaniemi-edition.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Causal Angel</span><span class="catalogue-author">Hannu Rajaniemi</span></span></a>
+<a class="book-link" href="?book=becoming-steve-jobs-brent-schlender-rick-tetzeli" data-book="85"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/becoming-steve-jobs-brent-schlender-rick-tetzeli.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Becoming Steve Jobs</span><span class="catalogue-author">Brent Schlender &amp; Rick Tetzeli</span></span></a>
+<a class="book-link" href="?book=growth-from-microorganisms-to-megacities-vaclav-smil" data-book="86"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/growth-from-microorganisms-to-megacities-vaclav-smil.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Growth: From Microorganisms to Megacities</span><span class="catalogue-author">Vaclav Smil</span></span></a>
+<a class="book-link" href="?book=quantum-computing-since-democritus-scott-aaronson" data-book="87"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/quantum-computing-since-democritus-scott-aaronson.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Quantum Computing Since Democritus</span><span class="catalogue-author">Scott Aaronson</span></span></a>
+<a class="book-link" href="?book=writing-an-interpreter-in-go-thorsten-ball" data-book="88"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/writing-an-interpreter-in-go-thorsten-ball.png" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Writing an Interpreter in Go</span><span class="catalogue-author">Thorsten Ball</span></span></a>
+<a class="book-link" href="?book=the-lifecycle-of-software-objects-ted-chiang" data-book="89"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-lifecycle-of-software-objects-ted-chiang.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Lifecycle of Software Objects</span><span class="catalogue-author">Ted Chiang</span></span></a>
+<a class="book-link" href="?book=a-pattern-language-towns-buildings-construction-christopher-alexander-sara-ishikawa-murray-silverstein-with-max-jacobson-ingrid-fiksdahl-king-shlomo-angel" data-book="90"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/a-pattern-language-towns-buildings-construction-christopher-alexander-sara-ishikawa-murray-silverstein-with-max-jacobson-ingrid-fiksdahl-king-shlomo-angel.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">A Pattern Language: Towns, Buildings, Construction</span><span class="catalogue-author">Christopher Alexander, Sara Ishikawa &amp; Murray Silverstein, with Max Jacobson, Ingrid Fiksdahl-King &amp; Shlomo Angel</span></span></a>
+<a class="book-link" href="?book=the-price-of-time-the-real-story-of-interest-edward-chancellor" data-book="91"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/the-price-of-time-the-real-story-of-interest-edward-chancellor.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">The Price of Time: The Real Story of Interest</span><span class="catalogue-author">Edward Chancellor</span></span></a>
+<a class="book-link" href="?book=alexander-the-great-philip-freeman" data-book="92"><span class="jacket-stage" aria-hidden="true"><img src="/img/books/alexander-the-great-philip-freeman.jpg" alt="" loading="lazy" decoding="async"></span><span class="catalogue-label"><span class="catalogue-title">Alexander the Great</span><span class="catalogue-author">Philip Freeman</span></span></a></div><footer class="shelf-footer"><p>93 entries</p><a href="#shelf">Back to top ↑</a></footer></main><dialog class="detail" aria-labelledby="detail-title"><div class="detail-bar"><button class="close" type="button" autofocus>← The bookshelf</button><span class="detail-count" id="detail-count"></span></div><div class="detail-layout"><div class="cover-stage" aria-hidden="true"><div class="cover"><img class="cover-image" alt=""><div class="cover-fallback" hidden><p class="cover-author"></p><h3 class="cover-title"></h3></div></div></div><div class="detail-copy"><h2 id="detail-title"></h2><p class="detail-author"></p><p class="edition-note"></p><a class="find-book" target="_blank" rel="noopener noreferrer"><span>Open Library ↗</span></a><nav class="detail-nav" aria-label="Browse books"><button type="button" id="previous">← Previous book</button><button type="button" id="next">Next book →</button></nav><p class="binding-note"></p></div></div></dialog>
+<script id="book-data" type="application/json">[{"id":"designing-dataintensive-applications-martin-kleppmann","cover":"/img/books/designing-dataintensive-applications-martin-kleppmann.jpg","source":"https://openlibrary.org/works/OL19293745W","ratio":0.762,"bg":"#c9d8bb","ink":"#16473b","title":"Designing Data-Intensive Applications","author":"Martin Kleppmann","number":1},{"id":"the-linux-programming-interface-michael-kerrisk","cover":"/img/books/the-linux-programming-interface-michael-kerrisk.jpg","source":"https://openlibrary.org/isbn/9781593272203","ratio":0.756,"bg":"#c9d8bb","ink":"#16473b","title":"The Linux Programming Interface","author":"Michael Kerrisk","number":2},{"id":"linkers-and-loaders-john-r-levine","cover":"/img/books/linkers-and-loaders-john-r-levine.jpg","source":"https://openlibrary.org/works/OL16994864W","ratio":0.7768,"bg":"#c9d8bb","ink":"#16473b","title":"Linkers and Loaders","author":"John R. Levine","number":3},{"id":"rust-atomics-and-locks-mara-bos","cover":"/img/books/rust-atomics-and-locks-mara-bos.jpg","source":"https://openlibrary.org/works/OL27821848W","ratio":0.758,"bg":"#c9d8bb","ink":"#16473b","title":"Rust Atomics and Locks","author":"Mara Bos","number":4},{"id":"is-parallel-programming-hard-and-if-so-what-can-you-do-about-it-paul-e-mckenney","cover":"/img/books/parallel-programming-hard-cover.jpg","source":"https://www.goodreads.com/book/show/15710583","ratio":0.779,"bg":"#c9d8bb","ink":"#16473b","title":"Is Parallel Programming Hard, And, If So, What Can You Do About It?","author":"Paul E. McKenney","number":5},{"id":"tcpip-illustrated-volume-1-w-richard-stevens","cover":"/img/books/tcpip-illustrated-volume-1-w-richard-stevens-curated.jpg","source":"https://www.informit.com/store/tcp-ip-illustrated-volume-1-the-protocols-9780201633467","ratio":0.8306,"bg":"#c9d8bb","ink":"#16473b","title":"TCP/IP Illustrated, Volume 1","author":"W. Richard Stevens","number":6},{"id":"computer-architecture-a-quantitative-approach-john-hennessy--david-patterson","cover":"/img/books/computer-architecture-a-quantitative-approach-john-hennessy--david-patterson.jpg","source":"https://openlibrary.org/works/OL17914655W","ratio":0.798,"bg":"#c9d8bb","ink":"#16473b","title":"Computer Architecture: A Quantitative Approach","author":"John Hennessy & David Patterson","number":7},{"id":"programming-massively-parallel-processors-david-kirk-wenmei-hwu--izzat-el-hajj","cover":"/img/books/programming-massively-parallel-processors-david-kirk-wenmei-hwu--izzat-el-hajj.jpg","source":"https://openlibrary.org/works/OL25666151W","ratio":0.81,"bg":"#c9d8bb","ink":"#16473b","title":"Programming Massively Parallel Processors","author":"David Kirk, Wen-mei Hwu & Izzat El Hajj","number":8},{"id":"efficient-processing-of-deep-neural-networks-vivienne-sze-yuhsin-chen-tienju-yang--joel-emer","cover":"/img/books/efficient-processing-of-deep-neural-networks-vivienne-sze-yuhsin-chen-tienju-yang--joel-emer.jpg","source":"https://doi.org/10.1007/978-3-031-01766-7","ratio":0.8143,"bg":"#c9d8bb","ink":"#16473b","title":"Efficient Processing of Deep Neural Networks","author":"Vivienne Sze, Yu-Hsin Chen, Tien-Ju Yang & Joel Emer","number":9},{"id":"database-internals-alex-petrov","cover":"/img/books/database-internals-alex-petrov.jpg","source":"https://openlibrary.org/works/OL21360140W","ratio":0.762,"bg":"#c9d8bb","ink":"#16473b","title":"Database Internals","author":"Alex Petrov","number":10},{"id":"the-scaling-era-dwarkesh-patel--gavin-leech","cover":"/img/books/the-scaling-era-cover.jpg","source":"https://www.goodreads.com/book/show/239472387","ratio":0.6764,"bg":"#c9d8bb","ink":"#16473b","title":"The Scaling Era","author":"Dwarkesh Patel & Gavin Leech","number":11},{"title":"Build a Large Language Model (From Scratch)","author":"Sebastian Raschka","cover":"/img/books/build-a-large-language-model-from-scratch-sebastian-raschka.jpg","ratio":0.7967,"source":"https://openlibrary.org/works/OL38398010W","bg":"#dfe6d9","ink":"#315b44","id":"build-a-large-language-model-from-scratch-sebastian-raschka","number":12},{"id":"information-theory-inference-and-learning-algorithms-david-mackay","cover":"/img/books/information-theory-inference-and-learning-algorithms-david-mackay-curated.jpg","source":"https://www.cambridgebookshop.co.uk/products/information-theory-inference-and-learning-algorithms","ratio":0.7623,"bg":"#c9d8bb","ink":"#16473b","title":"Information Theory, Inference, and Learning Algorithms","author":"David MacKay","number":13},{"id":"reinforcement-learning-an-introduction-richard-sutton--andrew-barto","cover":"/img/books/reinforcement-learning-an-introduction-richard-sutton--andrew-barto-curated.jpg","source":"https://mitpress.mit.edu/9780262039246/reinforcement-learning/","ratio":0.7267,"bg":"#c9d8bb","ink":"#16473b","title":"Reinforcement Learning: An Introduction","author":"Richard Sutton & Andrew Barto","number":14},{"id":"algorithms-for-decision-making-mykel-kochenderfer-tim-wheeler--kyle-wray","cover":"/img/books/algorithms-for-decision-making-mykel-kochenderfer-tim-wheeler--kyle-wray.jpg","source":"https://mitpress.mit.edu/9780262047012/algorithms-for-decision-making/","ratio":0.8911,"bg":"#c9d8bb","ink":"#16473b","title":"Algorithms for Decision Making","author":"Mykel Kochenderfer, Tim Wheeler & Kyle Wray","number":15},{"id":"virtual-machines-versatile-platforms-for-systems-and-processes-james-smith--ravi-nair","cover":"/img/books/virtual-machines-versatile-platforms-for-systems-and-processes-james-smith--ravi-nair.jpg","source":"https://openlibrary.org/isbn/9781558609105","ratio":0.762,"bg":"#c9d8bb","ink":"#16473b","title":"Virtual Machines: Versatile Platforms for Systems and Processes","author":"James Smith & Ravi Nair","number":16},{"title":"The Art of Doing Science and Engineering","author":"Richard Hamming","cover":"/img/books/the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming-curated.jpg","ratio":0.675,"source":"https://press.stripe.com/the-art-of-doing-science-and-engineering","bg":"#dfe6d9","ink":"#315b44","id":"the-art-of-doing-science-and-engineering-learning-to-learn-richard-hamming","number":17},{"id":"the-neuroscience-of-intelligence-richard-haier","cover":"/img/books/the-neuroscience-of-intelligence-richard-haier.jpg","source":"https://openlibrary.org/works/OL19733102W","ratio":0.658,"bg":"#c9d8bb","ink":"#16473b","title":"The Neuroscience of Intelligence","author":"Richard Haier","number":18},{"title":"Game Theory for Applied Economists","author":"Robert Gibbons","id":"game-theory-for-applied-economists-robert-gibbons","bg":"#dfe6d9","ink":"#315b44","number":19,"cover":"/img/books/38.jpg","ratio":0.666,"source":"https://openlibrary.org/isbn/9780691003955"},{"title":"The Structure of Scientific Revolutions","author":"Thomas Kuhn","id":"the-structure-of-scientific-revolutions-thomas-kuhn","bg":"#dfe6d9","ink":"#315b44","number":20,"cover":"/img/books/the-structure-of-scientific-revolutions-thomas-kuhn-curated.jpg","ratio":0.6469,"source":"https://press.uchicago.edu/ucp/books/book/chicago/S/bo13179781.html"},{"title":"Skunk Works","author":"Ben Rich & Leo Janos","cover":"/img/books/skunk-works-ben-r-rich-leo-janos-curated.jpg","ratio":0.6665,"source":"https://www.hachettebookgroup.com/titles/ben-r-rich/skunk-works/9780316743006/","bg":"#dfe6d9","ink":"#315b44","id":"skunk-works-ben-r-rich-leo-janos","number":21},{"title":"Kelly: More Than My Share of It All","author":"Clarence L. “Kelly” Johnson","cover":"/img/books/kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith.jpg","ratio":0.6589,"source":"https://openlibrary.org/isbn/9780874744910","bg":"#dfe6d9","ink":"#315b44","id":"kelly-more-than-my-share-of-it-all-clarence-l-kelly-johnson-maggie-smith","number":22},{"id":"american-steel-richard-preston","cover":"/img/books/american-steel-richard-preston-curated.jpg","source":"https://www.goodreads.com/book/show/710643.American_Steel","ratio":0.69,"bg":"#c9d8bb","ink":"#16473b","title":"American Steel","author":"Richard Preston","number":23},{"id":"from-the-american-system-to-mass-production-18001932-david-hounshell","cover":"/img/books/from-the-american-system-to-mass-production-18001932-david-hounshell.jpg","source":"https://www.press.jhu.edu/books/title/1631/american-system-mass-production-1800-1932","ratio":0.6632,"bg":"#c9d8bb","ink":"#16473b","title":"From the American System to Mass Production, 1800–1932","author":"David Hounshell","number":24},{"id":"strategy-and-structure-alfred-d-chandler-jr","cover":"/img/books/strategy-and-structure-alfred-d-chandler-jr.jpg","source":"https://openlibrary.org/works/OL9163907W","ratio":0.624,"bg":"#c9d8bb","ink":"#16473b","title":"Strategy and Structure","author":"Alfred D. Chandler Jr.","number":25},{"title":"Chip War","author":"Chris Miller","id":"chip-war-chris-miller","bg":"#dfe6d9","ink":"#315b44","number":26,"cover":"/img/books/36.jpg","ratio":0.6611,"source":"https://openlibrary.org/works/OL27846746W"},{"id":"call-me-ted-ted-turner","cover":"/img/books/call-me-ted-paperback.jpg","source":"https://www.hachettebookgroup.com/titles/ted-turner/call-me-ted/9780446582032/","ratio":0.6343,"bg":"#c9d8bb","ink":"#16473b","title":"Call Me Ted","author":"Ted Turner","number":27},{"id":"barbarians-at-the-gate-bryan-burrough--john-helyar","cover":"/img/books/barbarians-at-the-gate-bryan-burrough--john-helyar-curated.jpg","source":"https://openlibrary.org/isbn/9780061655555","ratio":0.665,"bg":"#c9d8bb","ink":"#16473b","title":"Barbarians at the Gate","author":"Bryan Burrough & John Helyar","number":28},{"id":"the-predators-ball-connie-bruck","cover":"/img/books/the-predators-ball-connie-bruck-curated.jpg","source":"https://openlibrary.org/isbn/9780140120905","ratio":0.6444,"bg":"#c9d8bb","ink":"#16473b","title":"The Predators’ Ball","author":"Connie Bruck","number":29},{"id":"an-engine-not-a-camera-how-financial-models-shape-markets-donald-mackenzie","cover":"/img/books/an-engine-not-a-camera-how-financial-models-shape-markets-donald-mackenzie.jpg","source":"https://openlibrary.org/works/OL2947188W","ratio":0.7,"bg":"#c9d8bb","ink":"#16473b","title":"An Engine, Not a Camera: How Financial Models Shape Markets","author":"Donald MacKenzie","number":30},{"id":"the-black-swan-nassim-nicholas-taleb","cover":"/img/books/the-black-swan-nassim-nicholas-taleb-curated.jpg","source":"https://openlibrary.org/isbn/9780812973815","ratio":0.6489,"bg":"#c9d8bb","ink":"#16473b","title":"The Black Swan","author":"Nassim Nicholas Taleb","number":31},{"title":"Fooled by Randomness","author":"Nassim Nicholas Taleb","id":"fooled-by-randomness-nassim-nicholas-taleb","bg":"#dfe6d9","ink":"#315b44","number":32,"cover":"/img/books/37.jpg","ratio":0.6632,"source":"https://openlibrary.org/works/OL3295029W"},{"id":"the-park-chung-hee-era-the-transformation-of-south-korea-byungkook-kim--ezra-f-vogel","cover":"/img/books/the-park-chung-hee-era-the-transformation-of-south-korea-byungkook-kim--ezra-f-vogel.jpg","source":"https://openlibrary.org/works/OL15538857W","ratio":0.684,"bg":"#c9d8bb","ink":"#16473b","title":"The Park Chung Hee Era: The Transformation of South Korea","author":"Byung-Kook Kim & Ezra F. Vogel","number":33},{"id":"the-sinews-of-power-war-money-and-the-english-state-16881783-john-brewer","cover":"/img/books/the-sinews-of-power-war-money-and-the-english-state-16881783-john-brewer.jpg","source":"https://openlibrary.org/works/OL261966W","ratio":0.64,"bg":"#c9d8bb","ink":"#16473b","title":"The Sinews of Power: War, Money and the English State, 1688–1783","author":"John Brewer","number":34},{"title":"Metternich","author":"Wolfram Siemann","id":"metternich-strategist-and-visionary-wolfram-siemann","bg":"#dfe6d9","ink":"#315b44","number":35,"cover":"/img/books/04.jpg","ratio":0.6845,"source":"https://openlibrary.org/isbn/067474392X"},{"id":"peasants-into-frenchmen-eugen-weber","cover":"/img/books/peasants-into-frenchmen-eugen-weber.jpg","source":"https://openlibrary.org/works/OL1397936W","ratio":0.6667,"bg":"#c9d8bb","ink":"#16473b","title":"Peasants into Frenchmen","author":"Eugen Weber","number":36},{"title":"The Path to Power: The Years of Lyndon Johnson","author":"Robert Caro","cover":"/img/books/the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro.jpg","ratio":0.684,"source":"https://openlibrary.org/works/OL4195862W","bg":"#dfe6d9","ink":"#315b44","id":"the-path-to-power-the-years-of-lyndon-johnson-robert-a-caro","number":37},{"id":"natures-metropolis-chicago-and-the-great-west-william-cronon","cover":"/img/books/natures-metropolis-chicago-and-the-great-west-william-cronon.jpg","source":"https://openlibrary.org/works/OL4472643W","ratio":0.652,"bg":"#c9d8bb","ink":"#16473b","title":"Nature’s Metropolis: Chicago and the Great West","author":"William Cronon","number":38},{"title":"The Search for Modern China","author":"Jonathan Spence","id":"the-search-for-modern-china-jonathan-d-spence","bg":"#dfe6d9","ink":"#315b44","number":39,"cover":"/img/books/13.jpg","ratio":0.6863,"source":"https://openlibrary.org/works/OL1842805W"},{"title":"History of the Italian People","author":"Giuliano Procacci","cover":"/img/books/history-of-the-italian-people-giuliano-procacci.jpg","ratio":0.612,"source":"https://openlibrary.org/works/OL18446608W","bg":"#dfe6d9","ink":"#315b44","id":"history-of-the-italian-people-giuliano-procacci","number":40},{"id":"the-measure-of-reality-quantification-and-western-society-12501600-alfred-w-crosby","cover":"/img/books/the-measure-of-reality-quantification-and-western-society-12501600-alfred-w-crosby.jpg","source":"https://assets.cambridge.org/97805215/54275/frontmatter/9780521554275_frontmatter.pdf","ratio":0.652,"bg":"#c9d8bb","ink":"#16473b","title":"The Measure of Reality: Quantification and Western Society, 1250–1600","author":"Alfred W. Crosby","number":41},{"id":"rockets-and-people-vol-ii-creating-a-rocket-industry-boris-chertok","cover":"/img/books/rockets-and-people-vol-ii-creating-a-rocket-industry-boris-chertok-curated.jpg","source":"https://www.nasa.gov/history/history-publications-and-resources/nasa-history-series/rockets-and-people/","ratio":0.7019,"bg":"#c9d8bb","ink":"#16473b","title":"Rockets and People, Vol. II: Creating a Rocket Industry","author":"Boris Chertok","number":42},{"title":"Peter the Great: His Life and World","author":"Robert K. Massie","id":"peter-the-great-his-life-and-world-robert-k-massie","bg":"#dfe6d9","ink":"#315b44","number":43,"cover":"/img/books/peter-the-great-his-life-and-world-robert-k-massie-curated.jpg","ratio":0.6667,"source":"https://www.penguinrandomhouse.com/books/108903/peter-the-great-his-life-and-world-by-robert-k-massie/"},{"title":"The History of the Decline and Fall of the Roman Empire","author":"Edward Gibbon","cover":"/img/books/the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon-curated.jpg","ratio":0.6422,"source":"https://openlibrary.org/isbn/9780140437645","bg":"#dfe6d9","ink":"#315b44","id":"the-history-of-the-decline-and-fall-of-the-roman-empire-edward-gibbon","number":44},{"id":"leaves-of-grass-walt-whitman","cover":"/img/books/leaves-of-grass-walt-whitman-edition.jpg","source":"https://openlibrary.org/isbn/9780143107439","ratio":0.6378,"bg":"#c9d8bb","ink":"#16473b","title":"Leaves of Grass","author":"Walt Whitman","number":45},{"id":"the-count-of-monte-cristo-alexandre-dumas","cover":"/img/books/the-count-of-monte-cristo-alexandre-dumas-curated.jpg","source":"https://openlibrary.org/isbn/9780141392462","ratio":0.6311,"bg":"#c9d8bb","ink":"#16473b","title":"The Count of Monte Cristo","author":"Alexandre Dumas","number":46},{"id":"lady-of-mazes-karl-schroeder","cover":"/img/books/lady-of-mazes-karl-schroeder.jpg","source":"https://openlibrary.org/works/OL20125760W","ratio":0.638,"bg":"#c9d8bb","ink":"#16473b","title":"Lady of Mazes","author":"Karl Schroeder","number":47},{"id":"his-masters-voice-stanisaw-lem","cover":"/img/books/his-masters-voice-stanisaw-lem.jpg","source":"https://openlibrary.org/works/OL27714066W","ratio":0.656,"bg":"#c9d8bb","ink":"#16473b","title":"His Master’s Voice","author":"Stanisław Lem","number":48},{"id":"accelerando-charles-stross","cover":"/img/books/accelerando-charles-stross.jpg","source":"https://openlibrary.org/works/OL2465670W","ratio":0.662,"bg":"#c9d8bb","ink":"#16473b","title":"Accelerando","author":"Charles Stross","number":49},{"id":"vacuum-flowers-michael-swanwick","cover":"/img/books/vacuum-flowers-michael-swanwick.jpg","source":"https://openlibrary.org/works/OL549272W","ratio":0.6021,"bg":"#c9d8bb","ink":"#16473b","title":"Vacuum Flowers","author":"Michael Swanwick","number":50},{"id":"permutation-city-greg-egan","cover":"/img/books/permutation-city-greg-egan.jpg","source":"https://openlibrary.org/works/OL115336W","ratio":0.6126,"bg":"#c9d8bb","ink":"#16473b","title":"Permutation City","author":"Greg Egan","number":51},{"id":"the-invention-of-morel-adolfo-bioy-casares","cover":"/img/books/the-invention-of-morel-adolfo-bioy-casares.jpg","source":"https://openlibrary.org/works/OL14944456W","ratio":0.624,"bg":"#c9d8bb","ink":"#16473b","title":"The Invention of Morel","author":"Adolfo Bioy Casares","number":52},{"title":"The Player of Games","author":"Iain M. Banks","cover":"/img/books/the-player-of-games-iain-m-banks.jpg","ratio":0.6632,"source":"https://openlibrary.org/works/OL100779W","bg":"#dfe6d9","ink":"#315b44","id":"the-player-of-games-iain-m-banks","number":53},{"title":"Use of Weapons","author":"Iain M. Banks","cover":"/img/books/use-of-weapons-iain-m-banks.jpg","ratio":0.66,"source":"https://openlibrary.org/works/OL8339333W","bg":"#dfe6d9","ink":"#315b44","id":"use-of-weapons-iain-m-banks","number":54},{"title":"Against a Dark Background","author":"Iain M. Banks","id":"against-a-dark-background-iain-m-banks","bg":"#dfe6d9","ink":"#315b44","number":55,"cover":"/img/books/50.jpg","ratio":0.6379,"source":"https://openlibrary.org/works/OL8368444W"},{"id":"schismatrix-plus-bruce-sterling","cover":"/img/books/schismatrix-plus-bruce-sterling.jpg","source":"https://openlibrary.org/works/OL1888032W","ratio":0.652,"bg":"#c9d8bb","ink":"#16473b","title":"Schismatrix Plus","author":"Bruce Sterling","number":56},{"id":"red-plenty-francis-spufford","cover":"/img/books/red-plenty-francis-spufford.jpg","source":"https://openlibrary.org/works/OL15919521W","ratio":0.6313,"bg":"#c9d8bb","ink":"#16473b","title":"Red Plenty","author":"Francis Spufford","number":57},{"id":"the-monkeys-wrench-la-chiave-a-stella-primo-levi","cover":"/img/books/the-monkeys-wrench-la-chiave-a-stella-primo-levi.jpg","source":"https://www.penguinrandomhouse.com/books/323096/the-monkeys-wrench-by-primo-levi/","ratio":0.6511,"bg":"#c9d8bb","ink":"#16473b","title":"The Monkey’s Wrench (La chiave a stella)","author":"Primo Levi","number":58},{"title":"War and Peace","author":"Leo Tolstoy","cover":"/img/books/war-and-peace-leo-tolstoy-curated.jpg","ratio":0.6533,"source":"https://openlibrary.org/isbn/9780241265543","bg":"#dfe6d9","ink":"#315b44","id":"war-and-peace-leo-tolstoy","number":59},{"title":"Don Quixote","author":"Miguel de Cervantes","id":"don-quixote-cervantes","bg":"#dfe6d9","ink":"#315b44","number":60,"cover":"/img/books/don-quixote-cervantes-curated.jpg","ratio":0.6067,"source":"https://openlibrary.org/isbn/9780241347768"},{"title":"Selected Essays","author":"Michel de Montaigne","cover":"/img/books/selected-essays-michel-de-montaigne-curated.png","ratio":0.6346,"source":"https://hackettpublishing.com/full-catalog/selected-essays","bg":"#dfe6d9","ink":"#315b44","id":"selected-essays-michel-de-montaigne","number":61},{"title":"The Republic","author":"Plato","id":"the-republic-plato","cover":"/img/books/the-republic-plato-edition.jpg","source":"https://openlibrary.org/isbn/9780141442433","ratio":0.6511,"bg":"#c9d8bb","ink":"#16473b","number":62},{"title":"Plutarch’s Lives","author":"Plutarch","id":"plutarchs-lives-plutarch","cover":"/img/books/plutarchs-lives-plutarch-edition.jpg","source":"https://openlibrary.org/isbn/9780375756764","ratio":0.6467,"bg":"#c9d8bb","ink":"#16473b","number":63},{"title":"Meditations","author":"Marcus Aurelius","id":"meditations-marcus-aurelius","cover":"/img/books/meditations-marcus-aurelius-edition.jpg","source":"https://openlibrary.org/isbn/9780141395869","ratio":0.5778,"bg":"#c9d8bb","ink":"#16473b","number":64},{"title":"Confessions","author":"Augustine","id":"confessions-augustine","cover":"/img/books/confessions-augustine-edition.jpg","source":"https://openlibrary.org/isbn/9780140441147","ratio":0.6511,"bg":"#c9d8bb","ink":"#16473b","number":65},{"title":"The Divine Comedy","author":"Dante","id":"the-divine-comedy-dante","cover":"/img/books/the-divine-comedy-dante-curated.jpg","source":"https://openlibrary.org/isbn/9780141197494","ratio":0.6511,"bg":"#c9d8bb","ink":"#16473b","number":66},{"title":"The Decameron","author":"Giovanni Boccaccio","id":"the-decameron-giovanni-boccaccio","cover":"/img/books/the-decameron-giovanni-boccaccio-edition.jpg","source":"https://openlibrary.org/isbn/9780140449303","ratio":0.6467,"bg":"#c9d8bb","ink":"#16473b","number":67},{"title":"Leviathan","author":"Thomas Hobbes","id":"leviathan-thomas-hobbes","cover":"/img/books/leviathan-thomas-hobbes-edition.jpg","source":"https://openlibrary.org/isbn/9780141395098","ratio":0.6511,"bg":"#c9d8bb","ink":"#16473b","number":68},{"title":"Two Treatises of Government","author":"John Locke","id":"two-treatises-of-government-john-locke","cover":"/img/books/two-treatises-of-government-john-locke-edition.jpg","source":"https://openlibrary.org/isbn/9780521357302","ratio":0.64,"bg":"#c9d8bb","ink":"#16473b","number":69},{"title":"Reflections on the Revolution in France","author":"Edmund Burke","id":"reflections-on-the-revolution-in-france-edmund-burke","cover":"/img/books/reflections-on-the-revolution-in-france-edmund-burke-edition.jpg","source":"https://openlibrary.org/isbn/9780140432046","ratio":0.6533,"bg":"#c9d8bb","ink":"#16473b","number":70},{"title":"The Federalist Papers","author":"Hamilton, Madison & Jay","id":"the-federalist-papers-hamilton-madison-jay","cover":"/img/books/the-federalist-papers-hamilton-madison-jay-edition.jpg","source":"https://openlibrary.org/isbn/9780140444957","ratio":0.6444,"bg":"#c9d8bb","ink":"#16473b","number":71},{"title":"The Social Contract","author":"Jean-Jacques Rousseau","id":"the-social-contract-jean-jacques-rousseau","cover":"/img/books/the-social-contract-jean-jacques-rousseau-edition.jpg","source":"https://openlibrary.org/isbn/9780140442014","ratio":0.6489,"bg":"#c9d8bb","ink":"#16473b","number":72},{"title":"Faust","author":"Johann Wolfgang von Goethe","id":"faust-johann-wolfgang-von-goethe","cover":"/img/books/faust-johann-wolfgang-von-goethe-curated.jpg","source":"https://openlibrary.org/isbn/9780385031141","ratio":0.6489,"bg":"#c9d8bb","ink":"#16473b","number":73},{"title":"Essays & Lectures","author":"Ralph Waldo Emerson","id":"essays-lectures-ralph-waldo-emerson","cover":"/img/books/essays-lectures-ralph-waldo-emerson-edition.jpg","source":"https://openlibrary.org/isbn/9780940450158","ratio":0.6222,"bg":"#c9d8bb","ink":"#16473b","number":74},{"title":"The Red and the Black","author":"Stendhal","id":"the-red-and-the-black-stendhal","cover":"/img/books/the-red-and-the-black-stendhal-edition.jpg","source":"https://openlibrary.org/isbn/9780140447644","ratio":0.6511,"bg":"#c9d8bb","ink":"#16473b","number":75},{"title":"Madame Bovary","author":"Gustave Flaubert","id":"madame-bovary-gustave-flaubert","cover":"/img/books/madame-bovary-gustave-flaubert-edition.jpg","source":"https://www.penguinrandomhouse.com/books/286336/madame-bovary-by-gustave-flaubert/","ratio":0.62,"bg":"#c9d8bb","ink":"#16473b","number":76},{"title":"The Brothers Karamazov","author":"Fyodor Dostoevsky","id":"the-brothers-karamazov-fyodor-dostoevsky","cover":"/img/books/the-brothers-karamazov-fyodor-dostoevsky-edition.jpg","source":"https://openlibrary.org/isbn/9780241655566","ratio":0.6222,"bg":"#c9d8bb","ink":"#16473b","number":77},{"title":"In Search of Lost Time, Vol. I: Swann’s Way","author":"Marcel Proust","id":"in-search-of-lost-time-vol-i-swanns-way-marcel-proust","cover":"/img/books/in-search-of-lost-time-vol-i-swanns-way-marcel-proust-edition.jpg","source":"https://openlibrary.org/isbn/9780143124696","ratio":0.6378,"bg":"#c9d8bb","ink":"#16473b","number":78},{"title":"Labyrinths","author":"Jorge Luis Borges","id":"labyrinths-jorge-luis-borges","cover":"/img/books/labyrinths-jorge-luis-borges-edition.jpg","source":"https://openlibrary.org/isbn/9780811216999","ratio":0.6578,"bg":"#c9d8bb","ink":"#16473b","number":79},{"title":"The Aeneid","author":"Virgil","id":"the-aeneid-virgil","cover":"/img/books/the-aeneid-virgil-edition.jpg","source":"https://openlibrary.org/isbn/9780143106296","ratio":0.6533,"bg":"#c9d8bb","ink":"#16473b","number":80},{"title":"The Annals","author":"Tacitus","id":"the-annals-tacitus","cover":"/img/books/the-annals-tacitus-edition.jpg","source":"https://openlibrary.org/isbn/9780140440607","ratio":0.6511,"bg":"#c9d8bb","ink":"#16473b","number":81},{"title":"The Master and Margarita","author":"Mikhail Bulgakov","id":"the-master-and-margarita-mikhail-bulgakov","cover":"/img/books/the-master-and-margarita-mikhail-bulgakov-edition.jpg","source":"https://openlibrary.org/isbn/9780143108276","ratio":0.6667,"bg":"#c9d8bb","ink":"#16473b","number":82},{"title":"The Quantum Thief","author":"Hannu Rajaniemi","id":"the-quantum-thief-hannu-rajaniemi","cover":"/img/books/the-quantum-thief-hannu-rajaniemi-edition.jpg","source":"https://store.gollancz.co.uk/products/the-quantum-thief","ratio":0.6492,"bg":"#c9d8bb","ink":"#16473b","number":83},{"title":"The Fractal Prince","author":"Hannu Rajaniemi","id":"the-fractal-prince-hannu-rajaniemi","cover":"/img/books/the-fractal-prince-hannu-rajaniemi-edition.jpg","source":"https://store.gollancz.co.uk/products/the-fractal-prince","ratio":0.6507,"bg":"#c9d8bb","ink":"#16473b","number":84},{"title":"The Causal Angel","author":"Hannu Rajaniemi","id":"the-causal-angel-hannu-rajaniemi","cover":"/img/books/the-causal-angel-hannu-rajaniemi-edition.jpg","source":"https://store.gollancz.co.uk/products/the-causal-angel","ratio":0.6518,"bg":"#c9d8bb","ink":"#16473b","number":85},{"id":"becoming-steve-jobs-brent-schlender-rick-tetzeli","title":"Becoming Steve Jobs","author":"Brent Schlender & Rick Tetzeli","cover":"/img/books/becoming-steve-jobs-brent-schlender-rick-tetzeli.jpg","source":"https://openlibrary.org/isbn/9780385347402","ratio":0.658,"bg":"#c9d8bb","ink":"#16473b","number":86},{"id":"growth-from-microorganisms-to-megacities-vaclav-smil","title":"Growth: From Microorganisms to Megacities","author":"Vaclav Smil","cover":"/img/books/growth-from-microorganisms-to-megacities-vaclav-smil.jpg","source":"https://openlibrary.org/isbn/9780262539685","ratio":0.666,"bg":"#c9d8bb","ink":"#16473b","number":87},{"id":"quantum-computing-since-democritus-scott-aaronson","title":"Quantum Computing Since Democritus","author":"Scott Aaronson","cover":"/img/books/quantum-computing-since-democritus-scott-aaronson.jpg","source":"https://www.cambridgebookshop.co.uk/cdn/shop/products/9780521199568.jpg","ratio":0.662,"bg":"#c9d8bb","ink":"#16473b","number":88},{"id":"writing-an-interpreter-in-go-thorsten-ball","title":"Writing an Interpreter in Go","author":"Thorsten Ball","cover":"/img/books/writing-an-interpreter-in-go-thorsten-ball.png","source":"https://interpreterbook.com/img/cover-cb2da3d1.png","ratio":0.7919,"bg":"#c9d8bb","ink":"#16473b","number":89},{"id":"the-lifecycle-of-software-objects-ted-chiang","title":"The Lifecycle of Software Objects","author":"Ted Chiang","cover":"/img/books/the-lifecycle-of-software-objects-ted-chiang.jpg","source":"https://subterraneanpress.com/lifecycle-of-software-objects/","ratio":0.7011,"bg":"#c9d8bb","ink":"#16473b","number":90},{"id":"a-pattern-language-towns-buildings-construction-christopher-alexander-sara-ishikawa-murray-silverstein-with-max-jacobson-ingrid-fiksdahl-king-shlomo-angel","title":"A Pattern Language: Towns, Buildings, Construction","author":"Christopher Alexander, Sara Ishikawa & Murray Silverstein, with Max Jacobson, Ingrid Fiksdahl-King & Shlomo Angel","cover":"/img/books/a-pattern-language-towns-buildings-construction-christopher-alexander-sara-ishikawa-murray-silverstein-with-max-jacobson-ingrid-fiksdahl-king-shlomo-angel.jpg","source":"https://openlibrary.org/isbn/9780195019193","ratio":0.6533,"bg":"#c9d8bb","ink":"#16473b","number":91},{"id":"the-price-of-time-the-real-story-of-interest-edward-chancellor","title":"The Price of Time: The Real Story of Interest","author":"Edward Chancellor","cover":"/img/books/the-price-of-time-the-real-story-of-interest-edward-chancellor.jpg","source":"https://openlibrary.org/isbn/9780802160065","ratio":0.64,"bg":"#c9d8bb","ink":"#16473b","number":92},{"id":"alexander-the-great-philip-freeman","title":"Alexander the Great","author":"Philip Freeman","cover":"/img/books/alexander-the-great-philip-freeman.jpg","source":"https://openlibrary.org/isbn/9781416592815","ratio":0.6486,"bg":"#c9d8bb","ink":"#16473b","number":93}]</script>
 <script>
 (() => {
   const books = JSON.parse(document.getElementById('book-data').textContent);
@@ -1017,6 +132,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#b2dcc0}
   const panel = document.querySelector('.orbit-panel');
   const shell = document.querySelector('.orbit-shell');
   const range = document.querySelector('.orbit-range');
+  range.max=books.length-1;
+  const wrap = value => (value % books.length + books.length) % books.length;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let position = 0, target = 0, current = 0, frame = 0, indexMode = false;
   const orbitCards = Array.from({length:13}, () => {
@@ -1048,57 +165,56 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#b2dcc0}
       const x=Math.sin(angle)*radius, y=cy-Math.cos(angle)*radius;
       const scale=1+.14*Math.max(0,1-Math.abs(raw-position));
       card.style.transform=`translate(calc(-50% + ${x}px), ${y-card.offsetHeight/2}px) rotate(${angle*180/Math.PI}deg) scale(${scale})`;
-      card.setAttribute('aria-current',index===base?'true':'false');
-      card.tabIndex=index===base?0:-1;
+      card.setAttribute('aria-current',index===wrap(base)?'true':'false');
+      card.tabIndex=index===wrap(base)?0:-1;
       card.style.visibility=y>h-55?'hidden':'visible';
     });
-    current=Math.max(0,Math.min(books.length-1,base));
+    current=wrap(base);
     const book=books[current];
     document.querySelector('.orbit-title').textContent=book.title;
     document.querySelector('.orbit-author').textContent=book.author;
     document.querySelector('.orbit-number').textContent=String(current+1).padStart(2,'0')+' / '+books.length;
     range.value=current;
-    document.querySelector('.orbit-prev').disabled=current===0;
-    document.querySelector('.orbit-next').disabled=current===books.length-1;
+
   }
   function animate(){
     frame=0;position=reduced.matches?target:position+(target-position)*.17;
     if(Math.abs(target-position)<.002)position=target;
     paint();if(position!==target)frame=requestAnimationFrame(animate);
   }
-  function update(){
-    if(indexMode)return;
-    target=Math.max(0,Math.min(80,scrollY/90));
-    if(!frame)frame=requestAnimationFrame(animate);
-  }
   function select(index){
-    index=Math.max(0,Math.min(80,index));
-    scrollTo(0,index*90);target=index;
+    target=index;
     if(!frame)frame=requestAnimationFrame(animate);
   }
-  addEventListener('scroll',update,{passive:true});
   addEventListener('resize',paint);
-  range.addEventListener('input',()=>select(Number(range.value)));
-  // Horizontal gestures scrub directly; vertical gestures keep native scrolling.
+  range.addEventListener('input',()=>{
+    let delta=Number(range.value)-wrap(Math.round(target));
+    if(delta>books.length/2)delta-=books.length;
+    if(delta<-books.length/2)delta+=books.length;
+    select(Math.round(target)+delta);
+  });
+  // Drag in either direction; keep logical position continuous across the seam.
   let drag=null, suppressClick=false, snapTimer=0;
   field.addEventListener('pointerdown',event=>{
     if(event.button!==0)return;
-    drag={id:event.pointerId,x:event.clientX,y:event.clientY,start:target,lastX:event.clientX,lastTime:performance.now(),velocity:0,active:false};
+    drag={id:event.pointerId,x:event.clientX,y:event.clientY,start:target,lastCoordinate:0,lastTime:performance.now(),velocity:0,active:false,axis:null};
+    clearTimeout(snapTimer);
   });
   field.addEventListener('pointermove',event=>{
     if(!drag||event.pointerId!==drag.id)return;
     const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
     if(!drag.active){
-      if(Math.abs(dy)>12 && Math.abs(dy)>Math.abs(dx)){drag=null;return;}
-      if(Math.abs(dx)<8)return;
+      if(Math.max(Math.abs(dx),Math.abs(dy))<8)return;
+      drag.axis=Math.abs(dx)>=Math.abs(dy)?'x':'y';
       drag.active=true;field.setPointerCapture(event.pointerId);field.classList.add('dragging');
     }
     const now=performance.now();
-    drag.velocity=(event.clientX-drag.lastX)/Math.max(1,now-drag.lastTime);
-    drag.lastX=event.clientX;drag.lastTime=now;
+    const coordinate=drag.axis==='x'?dx:dy;
+    drag.velocity=(coordinate-drag.lastCoordinate)/Math.max(1,now-drag.lastTime);
+    drag.lastCoordinate=coordinate;drag.lastTime=now;
     const pixels=panel.clientWidth<750?75:120;
-    const value=Math.max(0,Math.min(80,drag.start-dx/pixels));
-    scrollTo(0,value*90);target=value;position=value;paint();
+    const value=drag.start-coordinate/pixels;
+    target=value;position=value;paint();
   });
   function endDrag(event){
     if(!drag||event.pointerId!==drag.id)return;
@@ -1116,34 +232,34 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#b2dcc0}
   field.addEventListener('click',event=>{if(suppressClick){event.preventDefault();event.stopImmediatePropagation();}},true);
   field.addEventListener('dragstart',event=>event.preventDefault());
   panel.addEventListener('wheel',event=>{
-    if(indexMode || Math.abs(event.deltaX)<=Math.abs(event.deltaY))return;
-    event.preventDefault();scrollBy(0,event.deltaX*(event.deltaMode===1?16:1));
-  },{passive:false});
-  addEventListener('scroll',()=>{
+    if(indexMode || event.ctrlKey)return;
+    event.preventDefault();
+    const delta=Math.abs(event.deltaX)>Math.abs(event.deltaY)?event.deltaX:event.deltaY;
+    const unit=event.deltaMode===1?16:event.deltaMode===2?panel.clientHeight:1;
+    select(target+delta*unit/90);
     clearTimeout(snapTimer);
-    if(indexMode || drag)return;
     snapTimer=setTimeout(()=>{if(!indexMode&&!drag)select(Math.round(target));},160);
-  },{passive:true});
+  },{passive:false});
 
-  document.querySelector('.orbit-prev').addEventListener('click',()=>select(current-1));
-  document.querySelector('.orbit-next').addEventListener('click',()=>select(current+1));
+  document.querySelector('.orbit-prev').addEventListener('click',()=>select(Math.round(target)-1));
+  document.querySelector('.orbit-next').addEventListener('click',()=>select(Math.round(target)+1));
   document.querySelector('.open-selected').addEventListener('click',()=>orbitCards.find(c=>Number(c.dataset.book)===current).click());
   panel.addEventListener('keydown',event=>{
     if(event.target===range)return;
     if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
-      event.preventDefault();select(current+(event.key==='ArrowRight'?1:-1));
+      event.preventDefault();select(Math.round(target)+(event.key==='ArrowRight'?1:-1));
     }
   });
   document.querySelector('.view-toggle').addEventListener('click',event=>{
     indexMode=!indexMode;document.body.classList.toggle('index-view',indexMode);
     event.currentTarget.textContent=indexMode?'View gallery ↗':'View index ↗';
     event.currentTarget.setAttribute('aria-pressed',String(indexMode));
-    scrollTo(0,indexMode?0:current*90);if(!indexMode)update();
+    clearTimeout(snapTimer);scrollTo(0,0);if(!indexMode)paint();
   });
   document.querySelector('.skip').addEventListener('click',()=>{
     if(!indexMode)document.querySelector('.view-toggle').click();
   });
-  update();paint();
+  paint();
 
   const links = [...document.querySelectorAll('[data-book]')];
   let selected = -1, opener = null, openedFromShelf = false;
@@ -1173,8 +289,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#b2dcc0}
     const find = dialog.querySelector('.find-book');
     find.href = 'https://openlibrary.org/search?q='+encodeURIComponent(book.title+' '+book.author);
     find.setAttribute('aria-label', 'Find '+book.title+' on Open Library (opens in a new tab)');
-    document.getElementById('previous').disabled = index === 0;
-    document.getElementById('next').disabled = index === books.length-1;
+    document.getElementById('previous').disabled = false;
+    document.getElementById('next').disabled = false;
     document.title = book.title+' — Bookshelf — Azhan Khan';
     if (!dialog.open) { document.body.classList.add('no-scroll'); dialog.showModal(); }
     dialog.scrollTop = 0;
@@ -1204,7 +320,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#b2dcc0}
   document.querySelectorAll('.jacket-stage img').forEach(img => {
     img.addEventListener('error', () => { img.hidden = true; });
   });
-  function step(delta) { const index = selected+delta; if(!books[index]) return; history.replaceState(null,'',urlFor(index)); show(index); }
+  function step(delta) { const index = wrap(selected+delta); history.replaceState(null,'',urlFor(index)); show(index); }
   document.getElementById('previous').addEventListener('click',()=>step(-1));
   document.getElementById('next').addEventListener('click',()=>step(1));
   dialog.querySelector('.close').addEventListener('click',close);

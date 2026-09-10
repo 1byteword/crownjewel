@@ -36,17 +36,17 @@ honest if you change the architecture.
   debug loader. G toggles grid, B baselines, O outlines, I the inspector panel.
   The chosen masthead/rolling-print demo is `/debug/rolling-masthead.html`.
 - `books.html` — personal bookshelf, served at `/books` and linked from the homepage.
-  Contains 81 entries in the supplied inventory order, without categories. A full-bleed circular gallery uses large original-color covers,
+  Contains 93 entries in the supplied inventory order, without categories. A full-bleed circular gallery uses large original-color covers,
   pale mineral-green serif titles, and a solid deep-water green field. The supplied
-  aerial image informs the palette only; no photograph is used as a background. Native page scrolling,
-  horizontal trackpad gestures, and pointer/touch dragging rotate the books;
+  aerial image informs the palette only; no photograph is used as a background. Wheel and trackpad scrolling plus pointer/touch dragging rotate the books continuously
+  in either direction, wrapping between the first and last entries;
   gestures settle on whole entries, with bounded momentum after dragging.
   Arrow controls and a range selector also browse all entries; reduced motion removes
   interpolation. An index toggle exposes a compact uncategorized grid, which is also
   the no-JavaScript fallback. The detail view keeps the same green/serif treatment. Published jacket art is stored in
-  `img/books/` with provenance in `sources.json`. Four entries without identified
-  art use typographic placeholders. Marshall is grouped as two volumes; the author
-  of Cyrus the Great is unspecified. Public copy is limited to supplied metadata.
+  `img/books/` with provenance in `sources.json`. All entries have identified cover art; failed image loads in the detail view
+  use typographic placeholders. Selection markers from the supplied list are
+  private notes and are omitted from the page. Gallery wrapping derives from the inventory length. The index retains native page scrolling. Public copy is limited to supplied metadata.
   A keyboard-accessible native dialog supports previous/next, Escape, browser history,
   and `?book=<slug>` deep links. The catalogue remains visible without JavaScript;
   detail views require JavaScript. No build step or new dependencies.
