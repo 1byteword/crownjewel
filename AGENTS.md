@@ -13,12 +13,12 @@ honest if you change the architecture.
   animated halftone reaching hands, rolling THINK!, press-impression DENK!,
   downward-reveal 想!, rising سوچیے!, and rotating loops with circular THINK
   lettering, followed by the floral print with a dense field of independently swaying flower layers
-  over a stationary foliage-only background. The floral raster lives in `img/flower-foliage-background.png`; foreground trumpets are clipped from `img/flower-sprigs-source.png`; peonies,
+  over a stationary foliage-only background, then a dithered “Take your time” cut-paper typographic print. `/?art=time` opens it directly; its irregular letter silhouettes are drawn in Canvas 2D and stippled once per size/selection. The floral raster lives in `img/flower-foliage-background.png`; foreground trumpets are clipped from `img/flower-sprigs-source.png`; peonies,
   cosmos and bellflowers use `img/flower-varieties-source.png` (keyed once in
   canvas). Large peonies have slower, smaller responses; light blooms move sooner.
   Stems and trumpet tubes render behind all flower faces; heads use a staggered
   center-based arrangement (60 heads plus nine bellflower sprigs at desktop).
-  There is no Observe lettering or caption. The loop print uses live projected curves and a stippled ink pattern. Each typographic print adds its exclamation
+  There is no Observe lettering or caption. The loop print uses live projected curves and a stippled ink pattern. The THINK, DENK, Chinese and Urdu prints add their exclamation
   after 1200ms; Urdu remains connected with punctuation on the left. Canvas uses the
   hands’ green-gray paper and dark ink. Pause/Next controls allow inspection;
   animation and rotation pause offscreen/in hidden tabs. Reduced motion starts

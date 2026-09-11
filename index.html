@@ -305,7 +305,7 @@
   canvas.setAttribute('aria-hidden', 'true');
   const ctx = canvas.getContext('2d');
   const ink = document.createElement('canvas');
-  let ready = false, edition = ({orbit: 5, flowers: 6})[new URLSearchParams(location.search).get('art')] || 0, timer = 0, paused = reducedMotion.matches;
+  let ready = false, edition = ({orbit: 5, flowers: 6, time: 7})[new URLSearchParams(location.search).get('art')] || 0, timer = 0, paused = reducedMotion.matches;
   // Edition zero is the original hands; remaining entries are selected studies.
   const editions = [
     null,
@@ -314,7 +314,8 @@
     {text: '想', lang: 'zh', font: 'Songti SC, STSong, serif', effect: 'vertical'},
     {text: 'سوچیے', lang: 'ur', font: 'Geeza Pro, Noto Nastaliq Urdu, serif', rtl: true, effect: 'rise'},
     {text: 'THINK', effect: 'orbit'},
-    {text: 'Observe', effect: 'flowers'}
+    {text: 'Observe', effect: 'flowers'},
+    {text: 'Take your time', effect: 'cutout'}
   ];
   const think = document.createElement('canvas');
   const bang = document.createElement('canvas');
@@ -324,6 +325,7 @@
   function prepareThink() {
     const config = editions[edition] || editions[1];
     if (config.effect === 'orbit' || config.effect === 'flowers') return;
+    if (config.effect === 'cutout') { prepareCutout(); return; }
     for (const layer of [think, bang]) {
     layer.width = ink.width; layer.height = ink.height;
     const c = layer.getContext('2d', {willReadFrequently: true});
@@ -368,6 +370,56 @@
     }
     c.putImageData(pixels, 0, 0);
     }
+  }
+  // Irregular paper silhouettes and tightly fitted type, composed as one print.
+  // Rasterize and stipple only on resize/selection, not on every animation frame.
+  function prepareCutout() {
+    think.width = bang.width = ink.width; think.height = bang.height = ink.height;
+    const c = think.getContext('2d', {willReadFrequently: true});
+    const w = think.width, h = think.height;
+    const letters = 'TAKEYOURTIME';
+    const heights = [1.08,.96,1.10,.79,1.16,.80,.94,.82,1.12,.87,1.10,.88];
+    const angles = [-6,4,-4,3,5,-6,2,-4,-3,4,-5,4];
+    const widths = [.66,.68,.70,.55,.72,.62,.65,.61,.64,.38,.83,.56];
+    const unit = Math.min(w / 9.4, h / 1.95);
+    const total = widths.reduce((a,b)=>a+b,0)*unit;
+    const glyphs = []; let x = (w-total)/2;
+    for (let i=0;i<letters.length;i++) {
+      glyphs.push({letter:letters[i],x:x+widths[i]*unit/2,y:h*.52+(i%3-1)*unit*.035,
+        width:widths[i]*unit,height:heights[i]*unit,angle:angles[i]*Math.PI/180});
+      x += widths[i]*unit;
+    }
+    function shape(g,i) {
+      const a=g.width*.58,b=g.height*.59;
+      c.beginPath();c.moveTo(-a,-b*.93);c.lineTo(a*.84,-b);c.lineTo(a,b*.11);
+      c.lineTo(a*.91,b*.94);c.lineTo(-a*.89,b);c.lineTo(-a,b*.18);c.closePath();
+    }
+    // Draw the entire border first so adjacent scraps join without seams.
+    for (const [i,g] of glyphs.entries()) {
+      c.save();c.translate(g.x,g.y);c.rotate(g.angle);shape(g,i);
+      c.strokeStyle='#1c201b';c.lineWidth=unit*.14;c.lineJoin='miter';c.stroke();c.restore();
+    }
+    for (const [i,g] of glyphs.entries()) {
+      c.save();c.translate(g.x,g.y);c.rotate(g.angle);shape(g,i);
+      c.fillStyle='#e4e7dc';c.fill();c.restore();
+    }
+    for (const [i,g] of glyphs.entries()) {
+      c.save();c.translate(g.x,g.y);c.rotate(g.angle);
+      c.font=`900 ${g.height}px ${i%4===3 ? 'Georgia, serif' : 'Impact, Arial Black, sans-serif'}`;
+      const m=c.measureText(g.letter), ascent=m.actualBoundingBoxAscent, descent=m.actualBoundingBoxDescent;
+      c.scale(g.width*.91/m.width,g.height/(ascent+descent));
+      c.fillStyle='#1c201b';c.fillText(g.letter,-m.width/2,(ascent-descent)/2);c.restore();
+    }
+    const pixels=c.getImageData(0,0,w,h);
+    for(let y=0;y<h;y++) for(let x=0;x<w;x++) {
+      const i=(y*w+x)*4;if(!pixels.data[i+3]) continue;
+      const dark=pixels.data[i]<100;
+      const n=Math.sin(x*12.9898+y*78.233)*43758.5453;
+      const coverage=.87+.07*Math.sin(x*.12)*Math.cos(y*.16);
+      if(!dark || n-Math.floor(n)>coverage) pixels.data[i+3]=0;
+      pixels.data[i]=28;pixels.data[i+1]=32;pixels.data[i+2]=27;
+    }
+    c.putImageData(pixels,0,0);
   }
   function next() { edition = (edition + 1) % editions.length; thinkElapsed = 0; if (edition) prepareThink(); update(); }
   pause.addEventListener('click', () => { paused = !paused; update(); });
@@ -556,7 +608,7 @@
         ctx.save(); ctx.beginPath();
         ctx.rect(0, 0, config.effect === 'roller' ? w * p : w, config.effect === 'vertical' ? h * p : h);
         ctx.clip(); ctx.drawImage(think, 0, 0); ctx.restore();
-      } else if (config.effect === 'press') {
+      } else if (config.effect === 'press' || config.effect === 'cutout') {
         const scale = 1.10 - .10 * easeOut(t / 800);
         ctx.save(); ctx.translate(w / 2, h / 2); ctx.scale(scale, scale);
         ctx.drawImage(think, -w / 2, -h / 2); ctx.restore();
@@ -593,7 +645,7 @@
     artwork.classList.toggle('is-animated', ready);
     canvas.hidden = !ready;
     artwork.setAttribute('role', 'img');
-    artwork.setAttribute('aria-label', edition === 6 ? 'Flowers: green halftone trumpet flowers swaying gently against a still botanical background.' : edition === 5 ? 'Rotating interwoven loops encircled by THINK lettering, in dark ink on green-gray paper.' : edition ? `${editions[edition].text}!, a dithered dark ink print on green-gray paper.` : 'Two halftone hands reaching toward each other.');
+    artwork.setAttribute('aria-label', edition === 7 ? 'Take your time: irregular cut-paper lettering in dithered dark ink.' : edition === 6 ? 'Flowers: green halftone trumpet flowers swaying gently against a still botanical background.' : edition === 5 ? 'Rotating interwoven loops encircled by THINK lettering, in dark ink on green-gray paper.' : edition ? `${editions[edition].text}!, a dithered dark ink print on green-gray paper.` : 'Two halftone hands reaching toward each other.');
     pause.textContent = paused ? 'Resume' : 'Pause';
     controls.hidden = !ready;
     if (ready) draw(elapsed);
