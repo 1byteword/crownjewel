@@ -319,7 +319,7 @@
   ];
   const think = document.createElement('canvas');
   const bang = document.createElement('canvas');
-  let thinkElapsed = 0;
+  let thinkElapsed = 0, flowerElapsed = 0;
   const controls = document.querySelector('.art-controls');
   const pause = controls.querySelector('.art-pause');
   function prepareThink() {
@@ -421,7 +421,8 @@
     }
     c.putImageData(pixels,0,0);
   }
-  function next() { edition = (edition + 1) % editions.length; thinkElapsed = 0; if (edition) prepareThink(); update(); }
+  const rotation = [0, 1, 4, 5, 6, 7];
+  function next() { edition = rotation[(rotation.indexOf(edition) + 1) % rotation.length]; thinkElapsed = 0; if (edition) prepareThink(); update(); }
   pause.addEventListener('click', () => { paused = !paused; update(); });
   controls.querySelector('.art-next').addEventListener('click', next);
   // A projected family of circular loops, drawn live rather than a GIF.
@@ -533,38 +534,50 @@
     if (!flowers.naturalWidth) { ctx.clearRect(0, 0, w, h); ctx.drawImage(ink, 0, 0); return; }
     ctx.clearRect(0, 0, w, h);
     ctx.drawImage(flowerField, 0, 0);
-    const seconds = (time / 1000) % 3.2;
+    const seconds = time / 1000;
+    // Shared gust fronts plus small local eddies. Different periods avoid a
+    // metronomic sway; heavier heads filter the quick motion and lag behind.
+    // Continuous analytic waves have no reset, idle interval, or frame-rate drift.
+    const wind = (delay, mass, seed) => {
+      if (reducedMotion.matches) return 0;
+      const t = seconds - delay;
+      const response = (period, amplitude, phase = 0) => {
+        const frequency = Math.PI * 2 / period;
+        const inertia = frequency * mass * .22;
+        return amplitude * Math.sin(t * frequency + phase - Math.atan(inertia)) / Math.sqrt(1 + inertia * inertia);
+      };
+      const envelope = .85 + .25 * Math.sin(t * Math.PI * 2 / 7.7 + .6);
+      return .18 + envelope * (response(4.6, .82) + response(2.3, .34, .9))
+        + response(1.17, .18, seed * 2.399) + response(.71, .065, seed * 1.37);
+    };
     // Place flower faces by their centers, not by the bottoms of their stems.
-    // Petals overlap lightly; all stems/tubes are painted in a separate back pass.
-    const cols = Math.max(8, Math.round(w / h * 4));
+    // Petals overlap densely; all stems/tubes are painted in a separate back pass.
+    const cols = Math.max(10, Math.round(w / h * 4.6));
     const pitch = w / (cols - .4);
     const plants = [];
     const sources = [3, 0, 4, 1, 3, 4, 2, 4, 1, 3, 0];
-    for (let row = 0; row < 5; row++) for (let col = 0; col < cols; col++) {
+    for (let row = 0; row < 6; row++) for (let col = 0; col < cols; col++) {
       const id = row * cols + col;
       const source = sources[(col + row * 3) % sources.length];
       const bloom = bloomLayers[source];
       if (!bloom) continue;
       const headFraction = [ .762, .66, .76, 1, 1 ][source];
       const x = (col + (row % 2 ? .48 : .06)) * pitch + Math.sin(id * 2.4) * pitch * .055;
-      const y = h * (.01 + row * .245 + .018 * Math.sin(id * 1.9));
-      const width = pitch * (source === 3 ? 1.15 : source === 4 ? 1.04 : 1.12) * (1 + .055 * Math.sin(id));
+      const y = h * (.01 + row * .196 + .018 * Math.sin(id * 1.9));
+      const width = pitch * (source === 3 ? 1.28 : source === 4 ? 1.16 : 1.24) * (1 + .055 * Math.sin(id));
       const fullHeight = width * bloom.height / bloom.width;
       const headHeight = fullHeight * headFraction;
       const mass = source === 3 ? 2.3 : source === 4 ? .65 : 1.3;
-      const local = Math.max(0, seconds - x / w * .9 - mass * .13);
-      const pulse = (t, span) => t > 0 && t < span ? Math.pow(Math.sin(Math.PI * t / span), 2) : 0;
-      const gust = reducedMotion.matches ? 0 : pulse(local, 1.05 + mass * .38) - .14 * pulse(local - 1.05 - mass * .38, .45 + mass * .12);
-      const angle = .07 * Math.sin(id * 1.3) + gust * .036 / Math.sqrt(mass);
+      const gust = wind(x / w * 1.25 + row * .075, mass, id);
+      const angle = .07 * Math.sin(id * 1.3) + gust * .105 / Math.sqrt(mass);
       plants.push({bloom, source, x, y, width, fullHeight, headHeight, headFraction, angle, mirror: id % 3 === 0});
     }
     // Bellflower clusters occupy the small gaps, behind the larger flower faces.
-    if (bloomLayers[5]) for (let i = 0; i < 9; i++) {
-      const x = w * (.045 + i * .115), base = h * (.55 + (i % 2) * .5);
-      const t = Math.max(0, seconds - i * .11);
-      const gust = reducedMotion.matches ? 0 : Math.sin(Math.min(1, t / 1.8) * Math.PI);
+    if (bloomLayers[5]) for (let i = 0; i < 14; i++) {
+      const x = w * (.025 + i * .074), base = h * (.45 + (i % 3) * .29);
+      const gust = wind(x / w * 1.25, .55, 80 + i);
       const bh = h * .56, bw = bh * bloomLayers[5].width / bloomLayers[5].height;
-      ctx.save(); ctx.translate(x, base); ctx.rotate(.12 * Math.sin(i * 2) + gust * .0576);
+      ctx.save(); ctx.translate(x, base); ctx.rotate(.12 * Math.sin(i * 2) + gust * .135);
       ctx.drawImage(bloomLayers[5], -bw * .55, -bh, bw, bh); ctx.restore();
     }
     function place(plant) {
@@ -598,7 +611,7 @@
     if (edition) {
       const config = editions[edition];
       if (config.effect === 'orbit') { drawOrbit(thinkElapsed); return; }
-      if (config.effect === 'flowers') { drawFlowers(thinkElapsed); return; }
+      if (config.effect === 'flowers') { drawFlowers(flowerElapsed); return; }
       const duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--think-reveal-ms')) || 1200;
       const t = reducedMotion.matches ? 3000 : thinkElapsed;
       const easeOut = p => 1 - Math.pow(1 - Math.max(0, Math.min(1, p)), 3);
@@ -635,6 +648,8 @@
     const delta = last ? Math.min(now - last, 80) : 0;
     elapsed += delta;
     if (edition) thinkElapsed += delta;
+    // Keep the wind moving for the whole visible print, preserving its phase.
+    if (editions[edition]?.effect === 'flowers') flowerElapsed += delta;
     last = now;
     draw(elapsed);
     frame = requestAnimationFrame(tick);
