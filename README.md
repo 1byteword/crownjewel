@@ -23,6 +23,7 @@ at `/writing/<slug>`. Source lives under `src/posts/` as Markdown.
 │   └── <slug>.html                  # One file per post, served at /writing/<slug>
 ├── src/posts/YYYY-MM-DD-slug.md     # Post sources (date prefix = sort key, not URL)
 ├── img/                             # Static images
+├── blade-study/                     # Built game (Vite dist from ~/Documents/Game), served at /blade-study/
 ├── dev.py                           # Local dev server with .html fallback (mirrors nginx)
 ├── publish                          # Markdown → HTML publisher
 ├── nginx.conf                       # Cache + gzip + security headers + legacy redirects
@@ -36,6 +37,13 @@ at `/writing/<slug>`. Source lives under `src/posts/` as Markdown.
 
 ```bash
 make dev                    # dev.py on :8000 -- matches prod URL routing
+```
+
+## Update Blade Study
+
+```bash
+(cd ~/Documents/Game && npm run build)
+rsync -a --delete --exclude 'art/zainan.png' ~/Documents/Game/dist/ blade-study/
 ```
 
 ## Publish a blog post

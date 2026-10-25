@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "animations": [
+  {
+   "key": "tiny-swords-warrior-blue-hit-right",
+   "character": "tiny-swords-warrior-blue",
+   "animation": "hit",
+   "facing": "right",
+   "mirrorForOpposite": true,
+   "atlas": "tiny-swords-warrior-blue/tiny-swords-warrior-blue-hit-right.json",
+   "image": "tiny-swords-warrior-blue/tiny-swords-warrior-blue-hit-right.png",
+   "frames": [
+    {
+     "frame": "hit-right/0",
+     "label": "impact",
+     "duration": 83
+    },
+    {
+     "frame": "hit-right/1",
+     "label": "recoil",
+     "duration": 83
+    },
+    {
+     "frame": "hit-right/2",
+     "label": "stagger",
+     "duration": 83
+    },
+    {
+     "frame": "hit-right/3",
+     "label": "recover",
+     "duration": 83
+    }
+   ],
+   "frameSize": 192,
+   "pivot": {
+    "x": 95.65,
+    "y": 128.0
+   },
+   "loop": false,
+   "status": "approved",
+   "approvedAt": "2026-10-25",
+   "provenance": {
+    "candidate": "art/candidates/hit/right/D1-procedural-rig/s0",
+    "experiment": "D1-procedural-rig",
+    "approach": "D",
+    "workflow": "procedural",
+    "seed": 0,
+    "spec": "art/workflows/experiments/hit-right/D1-procedural-rig.json"
+   },
+   "validation": {
+    "warnings": []
+   }
+  }
+ ]
+}

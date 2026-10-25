@@ -1,0 +1,407 @@
+{
+ "icon-berserker": {
+  "candidate": "art/candidates/batch/icons/berserker/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: a horned orange skull with flames in its eye sockets. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-blade-echo": {
+  "candidate": "art/candidates/batch/icons/blade-echo/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: two overlapping sword slashes, one solid and one ghostly violet. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-blood-rush": {
+  "candidate": "art/candidates/batch/icons/blood-rush/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: a crimson blood drop with motion streaks and a small lightning spark. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-executioner": {
+  "candidate": "art/candidates/batch/icons/executioner/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A single fantasy action-RPG ability icon: a heavy executioner's axe with a glowing red edge splitting a cracked shield. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-ghost-step": {
+  "candidate": "art/candidates/batch/icons/ghost-step/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A single fantasy action-RPG ability icon: a translucent mint-green spectral boot leaving afterimages. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-hearty": {
+  "candidate": "art/candidates/batch/icons/hearty/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A single fantasy action-RPG ability icon: a roasted meat leg and a red heart. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-iron-resolve": {
+  "candidate": "art/candidates/batch/icons/iron-resolve/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: a riveted iron kite shield with a steel boss. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-mirror-guard": {
+  "candidate": "art/candidates/batch/icons/mirror-guard/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: a polished silver diamond mirror shield reflecting an arrow. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-perfect-edge": {
+  "candidate": "art/candidates/batch/icons/perfect-edge/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A single fantasy action-RPG ability icon: a sword blade gleaming with cyan light and a starburst at the tip. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-phoenix-ember": {
+  "candidate": "art/candidates/batch/icons/phoenix-ember/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: a golden-orange phoenix feather burning with embers. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-relentless": {
+  "candidate": "art/candidates/batch/icons/relentless/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A single fantasy action-RPG ability icon: three orange chevrons stacked forward like an advancing charge. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-thunderstrike": {
+  "candidate": "art/candidates/batch/icons/thunderstrike/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: a sword struck by a pale blue lightning bolt with arcs of electricity. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-titan-grip": {
+  "candidate": "art/candidates/batch/icons/titan-grip/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: a huge armored gauntlet fist cracking the ground. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-vampiric-steel": {
+  "candidate": "art/candidates/batch/icons/vampiric-steel/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: a dark curved blade dripping crimson with a bat wing hilt. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "icon-wind-cutter": {
+  "candidate": "art/candidates/batch/icons/wind-cutter/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single fantasy action-RPG ability icon: a swirling pale green gust shaped like a crescent blade. Chunky pixel art matching the reference sheet's style: thick dark navy outline, soft cel shading with one bright highlight, limited palette, readable silhouette at 48 pixels. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no border, no frame.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "portrait-archer": {
+  "candidate": "art/candidates/batch/portraits/archer/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A character avatar portrait in exactly the style of the reference avatars (Tiny Swords pixel art: bold outline, chunky shapes, warm cel shading, head and shoulders tilted on a small colored cloth backdrop): a hooded purple archer with a bow over the shoulder, sharp eyes in shadow. Flat solid magenta (#FF00FF) background outside the backdrop. No text.",
+  "references": [
+   "art/references/batch/avatar-board.png"
+  ]
+ },
+ "portrait-bomber": {
+  "candidate": "art/candidates/batch/portraits/bomber/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A character avatar portrait in exactly the style of the reference avatars (Tiny Swords pixel art: bold outline, chunky shapes, warm cel shading, head and shoulders tilted on a small colored cloth backdrop): a goblin sapper with goggles and a bandolier of red dynamite sticks, crazed grin. Flat solid magenta (#FF00FF) background outside the backdrop. No text.",
+  "references": [
+   "art/references/batch/avatar-board.png"
+  ]
+ },
+ "portrait-boss": {
+  "candidate": "art/candidates/batch/portraits/boss/s4.png",
+  "workflow": "klein_edit.v1",
+  "seed": 4,
+  "prompt": "A character avatar portrait in exactly the style of the reference avatars (Tiny Swords pixel art: bold outline, chunky shapes, warm cel shading, head and shoulders tilted on a small colored cloth backdrop): Morgrave the Gilded Warden: a massive knight in ornate gold armor with a spiked crown fused to the great helm, glowing amber eye slit, crimson cape, menacing. Flat solid magenta (#FF00FF) background outside the backdrop. No text.",
+  "references": [
+   "art/references/batch/avatar-board.png"
+  ]
+ },
+ "portrait-duelist": {
+  "candidate": "art/candidates/batch/portraits/duelist/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A character avatar portrait in exactly the style of the reference avatars (Tiny Swords pixel art: bold outline, chunky shapes, warm cel shading, head and shoulders tilted on a small colored cloth backdrop): a red-armored warden knight with a plumed helm and a stern face. Flat solid magenta (#FF00FF) background outside the backdrop. No text.",
+  "references": [
+   "art/references/batch/avatar-board.png"
+  ]
+ },
+ "portrait-lancer": {
+  "candidate": "art/candidates/batch/portraits/lancer/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A character avatar portrait in exactly the style of the reference avatars (Tiny Swords pixel art: bold outline, chunky shapes, warm cel shading, head and shoulders tilted on a small colored cloth backdrop): an iron lancer in black plate armor with a tall visored helm, a lance tip behind the shoulder. Flat solid magenta (#FF00FF) background outside the backdrop. No text.",
+  "references": [
+   "art/references/batch/avatar-board.png"
+  ]
+ },
+ "portrait-player": {
+  "candidate": "art/candidates/batch/portraits/player/s4.png",
+  "workflow": "klein_edit.v1",
+  "seed": 4,
+  "prompt": "A character avatar portrait in exactly the style of the reference avatars (Tiny Swords pixel art: bold outline, chunky shapes, warm cel shading, head and shoulders tilted on a small colored cloth backdrop): a young blue-armored knight with a dented steel helm, visor raised, determined eyes, a small scar. Flat solid magenta (#FF00FF) background outside the backdrop. No text.",
+  "references": [
+   "art/references/batch/avatar-board.png"
+  ]
+ },
+ "portrait-raider": {
+  "candidate": "art/candidates/batch/portraits/raider/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A character avatar portrait in exactly the style of the reference avatars (Tiny Swords pixel art: bold outline, chunky shapes, warm cel shading, head and shoulders tilted on a small colored cloth backdrop): a green goblin raider with a red hood holding a burning torch, grinning with sharp teeth. Flat solid magenta (#FF00FF) background outside the backdrop. No text.",
+  "references": [
+   "art/references/batch/avatar-board.png"
+  ]
+ },
+ "scene-title": {
+  "candidate": "art/candidates/batch/scenes/title/s4.png",
+  "workflow": "klein_edit.v1",
+  "seed": 4,
+  "prompt": "Wide pixel-art key illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A lone small blue knight with a sword stands on a grassy island path at dusk, facing a distant golden fortress on a hill; pine trees, floating embers, dramatic sky with clouds. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "scene-boss": {
+  "candidate": "art/candidates/batch/scenes/boss/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "Wide pixel-art key illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A towering gilded armored warden with a crown-helm and crimson cape stands before a golden throne, greatsword planted in the floor, braziers burning on both sides, a tiny blue knight in the foreground. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "scene-victory": {
+  "candidate": "art/candidates/batch/scenes/victory/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "Wide pixel-art key illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A small blue knight stands on the steps of an empty golden throne room at sunrise, a broken gilded crown on the floor, light pouring through the windows. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "scene-defeat": {
+  "candidate": "art/candidates/batch/scenes/defeat/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "Wide pixel-art key illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A fallen blue knight's helmet and sword lying in the grass among embers at night, a distant fortress silhouette, melancholy. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "vignette-verge": {
+  "candidate": "art/candidates/batch/vignettes/verge/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "Wide pixel-art encounter illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A green forest clearing at the edge of a wood, two goblin raiders with burning torches lurking among pine trees. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "vignette-thornpath": {
+  "candidate": "art/candidates/batch/vignettes/thornpath/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "Wide pixel-art encounter illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A narrow thorny forest path, a hooded purple archer drawing a bow from behind brambles, a red-armored knight beyond. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "vignette-chapel": {
+  "candidate": "art/candidates/batch/vignettes/chapel/s1.png",
+  "workflow": "klein_edit.v1",
+  "seed": 1,
+  "prompt": "Wide pixel-art encounter illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A ruined stone chapel in the forest at sunset, a black-armored iron lancer guarding the broken doorway. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "vignette-cloister": {
+  "candidate": "art/candidates/batch/vignettes/cloister/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "Wide pixel-art encounter illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A crumbling cloister courtyard with smoke, goblin sappers throwing lit dynamite from the walls. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "vignette-irongate": {
+  "candidate": "art/candidates/batch/vignettes/irongate/s1.png",
+  "workflow": "klein_edit.v1",
+  "seed": 1,
+  "prompt": "Wide pixel-art encounter illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A massive iron fortress gate between black stone towers with braziers, two iron lancers standing guard. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "vignette-barbican": {
+  "candidate": "art/candidates/batch/vignettes/barbican/s1.png",
+  "workflow": "klein_edit.v1",
+  "seed": 1,
+  "prompt": "Wide pixel-art encounter illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A fortress barbican wall walk at dusk, archers on the battlements and goblin raiders swarming the stairs. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "vignette-throne": {
+  "candidate": "art/candidates/batch/vignettes/throne/s1.png",
+  "workflow": "klein_edit.v1",
+  "seed": 1,
+  "prompt": "Wide pixel-art encounter illustration in the style of the Tiny Swords reference: bright stylized pixel art, bold dark outlines, chunky readable shapes, warm palette. A golden throne hall ringed by fire, the gilded crowned warden rising from the throne with a greatsword. No text, no logo, no UI.",
+  "references": [
+   "art/references/batch/scene-board.png"
+  ]
+ },
+ "prop-banner": {
+  "candidate": "art/candidates/batch/props/banner/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a tall red war banner on a wooden pole with a gold emblem. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-brazier-gold": {
+  "candidate": "art/candidates/batch/props/brazier-gold/s1.png",
+  "workflow": "klein_edit.v1",
+  "seed": 1,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: an ornate golden brazier with a roaring fire. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-cart": {
+  "candidate": "art/candidates/batch/props/cart/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a broken wooden supply cart with spilled barrels. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-chest": {
+  "candidate": "art/candidates/batch/props/chest/s4.png",
+  "workflow": "klein_edit.v1",
+  "seed": 4,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a gold-trimmed wooden treasure chest, closed. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-gate": {
+  "candidate": "art/candidates/batch/props/gate/s4.png",
+  "workflow": "klein_edit.v1",
+  "seed": 4,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a heavy iron portcullis gate set in a stone arch. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-lantern": {
+  "candidate": "art/candidates/batch/props/lantern/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: an iron lantern post with a warm flame. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-pillar": {
+  "candidate": "art/candidates/batch/props/pillar/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a broken sandstone pillar with fallen chunks. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-rack": {
+  "candidate": "art/candidates/batch/props/rack/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a wooden weapon rack holding spears and a sword. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-shrine": {
+  "candidate": "art/candidates/batch/props/shrine/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a small stone boon shrine altar with a glowing blue crystal on top. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-skulls": {
+  "candidate": "art/candidates/batch/props/skulls/s1.png",
+  "workflow": "klein_edit.v1",
+  "seed": 1,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a small pile of bleached skulls and bones. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-statue": {
+  "candidate": "art/candidates/batch/props/statue/s2.png",
+  "workflow": "klein_edit.v1",
+  "seed": 2,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a weathered stone knight statue on a square plinth, mossy. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ },
+ "prop-tent": {
+  "candidate": "art/candidates/batch/props/tent/s3.png",
+  "workflow": "klein_edit.v1",
+  "seed": 3,
+  "prompt": "A single top-down 3/4 view game prop sprite in exactly the reference sheet's Tiny Swords pixel-art style: a small goblin camp tent made of patched red cloth. Thick dark outline, soft cel shading, limited warm palette, small soft contact shadow. Centered with generous margin on a perfectly flat solid magenta (#FF00FF) background. No text, no ground tiles, no border.",
+  "references": [
+   "art/references/batch/style-board.png"
+  ]
+ }
+}

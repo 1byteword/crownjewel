@@ -1,0 +1,869 @@
+{
+ "pack": "Tiny Swords by Pixel Frog (owner-supplied archives)",
+ "url": "https://pixelfrog-assets.itch.io/tiny-swords",
+ "files": [
+  {
+   "name": "raider.png",
+   "source": "old/Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Red/Torch_Red.png",
+   "size": "1344x960"
+  },
+  {
+   "name": "bomber.png",
+   "source": "old/Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Red/TNT_Red.png",
+   "size": "1344x576"
+  },
+  {
+   "name": "dynamite.png",
+   "source": "old/Tiny Swords (Update 010)/Factions/Goblins/Troops/TNT/Dynamite/Dynamite.png",
+   "size": "384x64"
+  },
+  {
+   "name": "archer.png",
+   "source": [
+    "free/Tiny Swords (Free Pack)/Units/Purple Units/Archer/Archer_Idle.png",
+    "free/Tiny Swords (Free Pack)/Units/Purple Units/Archer/Archer_Run.png",
+    "free/Tiny Swords (Free Pack)/Units/Purple Units/Archer/Archer_Shoot.png"
+   ],
+   "size": "8x3 frames of 192"
+  },
+  {
+   "name": "arrow.png",
+   "source": "free/Tiny Swords (Free Pack)/Units/Purple Units/Archer/Arrow.png",
+   "size": "64x64"
+  },
+  {
+   "name": "lancer.png",
+   "source": [
+    "free/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_Idle.png",
+    "free/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_Run.png",
+    "free/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_Right_Attack.png",
+    "free/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_Down_Attack.png",
+    "free/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_Up_Attack.png",
+    "free/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_DownRight_Attack.png",
+    "free/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_UpRight_Attack.png",
+    "free/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_Right_Defence.png"
+   ],
+   "size": "12x8 frames of 320"
+  },
+  {
+   "name": "explosion.png",
+   "source": "free/Tiny Swords (Free Pack)/Particle FX/Explosion_01.png",
+   "size": "1536x192"
+  },
+  {
+   "name": "fire.png",
+   "source": "free/Tiny Swords (Free Pack)/Particle FX/Fire_01.png",
+   "size": "512x64"
+  },
+  {
+   "name": "dust2.png",
+   "source": "free/Tiny Swords (Free Pack)/Particle FX/Dust_02.png",
+   "size": "640x64"
+  },
+  {
+   "name": "dead.png",
+   "source": "old/Tiny Swords (Update 010)/Factions/Knights/Troops/Dead/Dead.png",
+   "size": "896x256"
+  },
+  {
+   "name": "tiles1.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color1.png",
+   "size": "576x384"
+  },
+  {
+   "name": "tiles2.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color2.png",
+   "size": "576x384"
+  },
+  {
+   "name": "tiles3.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color3.png",
+   "size": "576x384"
+  },
+  {
+   "name": "tiles4.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color4.png",
+   "size": "576x384"
+  },
+  {
+   "name": "tiles5.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color5.png",
+   "size": "576x384"
+  },
+  {
+   "name": "water.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Tileset/Water Background color.png",
+   "size": "64x64"
+  },
+  {
+   "name": "foam.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Tileset/Water Foam.png",
+   "size": "3072x192"
+  },
+  {
+   "name": "shadow.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Tileset/Shadow.png",
+   "size": "192x192"
+  },
+  {
+   "name": "tree1.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree1.png",
+   "size": "1536x256"
+  },
+  {
+   "name": "stump1.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Stump 1.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bush1.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe1.png",
+   "size": "1024x128"
+  },
+  {
+   "name": "rock1.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks/Rock1.png",
+   "size": "64x64"
+  },
+  {
+   "name": "waterrock1.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water/Water Rocks_01.png",
+   "size": "1024x64"
+  },
+  {
+   "name": "tree2.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree2.png",
+   "size": "1536x256"
+  },
+  {
+   "name": "stump2.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Stump 2.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bush2.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe2.png",
+   "size": "1024x128"
+  },
+  {
+   "name": "rock2.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks/Rock2.png",
+   "size": "64x64"
+  },
+  {
+   "name": "waterrock2.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water/Water Rocks_02.png",
+   "size": "1024x64"
+  },
+  {
+   "name": "tree3.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree3.png",
+   "size": "1536x192"
+  },
+  {
+   "name": "stump3.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Stump 3.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bush3.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe3.png",
+   "size": "1024x128"
+  },
+  {
+   "name": "rock3.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks/Rock3.png",
+   "size": "64x64"
+  },
+  {
+   "name": "waterrock3.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water/Water Rocks_03.png",
+   "size": "1024x64"
+  },
+  {
+   "name": "tree4.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree4.png",
+   "size": "1536x192"
+  },
+  {
+   "name": "stump4.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Stump 4.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bush4.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe4.png",
+   "size": "1024x128"
+  },
+  {
+   "name": "rock4.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks/Rock4.png",
+   "size": "64x64"
+  },
+  {
+   "name": "waterrock4.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water/Water Rocks_04.png",
+   "size": "1024x64"
+  },
+  {
+   "name": "cloud1.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_01.png",
+   "size": "576x256"
+  },
+  {
+   "name": "cloud2.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_02.png",
+   "size": "576x256"
+  },
+  {
+   "name": "cloud3.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_03.png",
+   "size": "576x256"
+  },
+  {
+   "name": "cloud4.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_04.png",
+   "size": "576x256"
+  },
+  {
+   "name": "cloud5.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_05.png",
+   "size": "576x256"
+  },
+  {
+   "name": "cloud6.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_06.png",
+   "size": "576x256"
+  },
+  {
+   "name": "cloud7.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_07.png",
+   "size": "576x256"
+  },
+  {
+   "name": "cloud8.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_08.png",
+   "size": "576x256"
+  },
+  {
+   "name": "gold1.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones/Gold Stone 1.png",
+   "size": "128x128"
+  },
+  {
+   "name": "gold2.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones/Gold Stone 2.png",
+   "size": "128x128"
+  },
+  {
+   "name": "gold3.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones/Gold Stone 3.png",
+   "size": "128x128"
+  },
+  {
+   "name": "bld-black-castle.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Black Buildings/Castle.png",
+   "size": "320x256"
+  },
+  {
+   "name": "bld-black-tower.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Black Buildings/Tower.png",
+   "size": "128x256"
+  },
+  {
+   "name": "bld-black-house1.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Black Buildings/House1.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-black-house2.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Black Buildings/House2.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-black-barracks.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Black Buildings/Barracks.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bld-black-monastery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Black Buildings/Monastery.png",
+   "size": "192x320"
+  },
+  {
+   "name": "bld-black-archery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Black Buildings/Archery.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bld-red-castle.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Red Buildings/Castle.png",
+   "size": "320x256"
+  },
+  {
+   "name": "bld-red-tower.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Red Buildings/Tower.png",
+   "size": "128x256"
+  },
+  {
+   "name": "bld-red-house1.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Red Buildings/House1.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-red-house2.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Red Buildings/House2.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-red-barracks.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Red Buildings/Barracks.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bld-red-monastery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Red Buildings/Monastery.png",
+   "size": "192x320"
+  },
+  {
+   "name": "bld-red-archery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Red Buildings/Archery.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bld-blue-castle.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Blue Buildings/Castle.png",
+   "size": "320x256"
+  },
+  {
+   "name": "bld-blue-tower.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Blue Buildings/Tower.png",
+   "size": "128x256"
+  },
+  {
+   "name": "bld-blue-house1.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Blue Buildings/House1.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-blue-house2.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Blue Buildings/House2.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-blue-barracks.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Blue Buildings/Barracks.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bld-blue-monastery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Blue Buildings/Monastery.png",
+   "size": "192x320"
+  },
+  {
+   "name": "bld-blue-archery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Blue Buildings/Archery.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bld-yellow-castle.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Yellow Buildings/Castle.png",
+   "size": "320x256"
+  },
+  {
+   "name": "bld-yellow-tower.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Yellow Buildings/Tower.png",
+   "size": "128x256"
+  },
+  {
+   "name": "bld-yellow-house1.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Yellow Buildings/House1.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-yellow-house2.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Yellow Buildings/House2.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-yellow-barracks.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Yellow Buildings/Barracks.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bld-yellow-monastery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Yellow Buildings/Monastery.png",
+   "size": "192x320"
+  },
+  {
+   "name": "bld-yellow-archery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Yellow Buildings/Archery.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bld-purple-castle.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Purple Buildings/Castle.png",
+   "size": "320x256"
+  },
+  {
+   "name": "bld-purple-tower.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Purple Buildings/Tower.png",
+   "size": "128x256"
+  },
+  {
+   "name": "bld-purple-house1.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Purple Buildings/House1.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-purple-house2.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Purple Buildings/House2.png",
+   "size": "128x192"
+  },
+  {
+   "name": "bld-purple-barracks.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Purple Buildings/Barracks.png",
+   "size": "192x256"
+  },
+  {
+   "name": "bld-purple-monastery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Purple Buildings/Monastery.png",
+   "size": "192x320"
+  },
+  {
+   "name": "bld-purple-archery.png",
+   "source": "free/Tiny Swords (Free Pack)/Buildings/Purple Buildings/Archery.png",
+   "size": "192x256"
+  },
+  {
+   "name": "deco1.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/01.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco2.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/02.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco3.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/03.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco4.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/04.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco5.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/05.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco6.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/06.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco7.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/07.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco8.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/08.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco9.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/09.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco10.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/10.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco11.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/11.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco12.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/12.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco13.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/13.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco14.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/14.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco15.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/15.png",
+   "size": "64x64"
+  },
+  {
+   "name": "deco16.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/16.png",
+   "size": "64x128"
+  },
+  {
+   "name": "deco17.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/17.png",
+   "size": "64x128"
+  },
+  {
+   "name": "deco18.png",
+   "source": "old/Tiny Swords (Update 010)/Deco/18.png",
+   "size": "192x192"
+  },
+  {
+   "name": "castle-ruin.png",
+   "source": "old/Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle/Castle_Destroyed.png",
+   "size": "320x256"
+  },
+  {
+   "name": "tower-ruin.png",
+   "source": "old/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Destroyed.png",
+   "size": "128x256"
+  },
+  {
+   "name": "house-ruin.png",
+   "source": "old/Tiny Swords (Update 010)/Factions/Knights/Buildings/House/House_Destroyed.png",
+   "size": "128x192"
+  },
+  {
+   "name": "goblin-house.png",
+   "source": "old/Tiny Swords (Update 010)/Factions/Goblins/Buildings/Wood_House/Goblin_House.png",
+   "size": "128x192"
+  },
+  {
+   "name": "goblin-tower.png",
+   "source": "old/Tiny Swords (Update 010)/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Red.png",
+   "size": "1024x192"
+  },
+  {
+   "name": "fire-big.png",
+   "source": "old/Tiny Swords (Update 010)/Effects/Fire/Fire.png",
+   "size": "896x128"
+  },
+  {
+   "name": "sheep.png",
+   "source": "free/Tiny Swords (Free Pack)/Terrain/Resources/Meat/Sheep/Sheep_Idle.png",
+   "size": "768x128"
+  },
+  {
+   "name": "ui-bigbar.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Bars/BigBar_Base.png",
+   "size": "320x64"
+  },
+  {
+   "name": "ui-bigbar-fill.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Bars/BigBar_Fill.png",
+   "size": "64x64"
+  },
+  {
+   "name": "ui-smallbar.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Bars/SmallBar_Base.png",
+   "size": "320x64"
+  },
+  {
+   "name": "ui-smallbar-fill.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Bars/SmallBar_Fill.png",
+   "size": "64x64"
+  },
+  {
+   "name": "ui-ribbons.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/BigRibbons.png",
+   "size": "448x640"
+  },
+  {
+   "name": "ui-ribbons-small.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/SmallRibbons.png",
+   "size": "320x640"
+  },
+  {
+   "name": "ui-paper.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Papers/RegularPaper.png",
+   "size": "320x320"
+  },
+  {
+   "name": "ui-paper-special.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Papers/SpecialPaper.png",
+   "size": "320x320"
+  },
+  {
+   "name": "ui-banner.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Banners/Banner.png",
+   "size": "448x448"
+  },
+  {
+   "name": "ui-table.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Wood Table/WoodTable.png",
+   "size": "448x448"
+  },
+  {
+   "name": "ui-swords.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Swords/Swords.png",
+   "size": "448x640"
+  },
+  {
+   "name": "ui-cursor.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Cursors/Cursor_02.png",
+   "size": "64x64"
+  },
+  {
+   "name": "avatar1.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_01.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar2.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_02.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar3.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_03.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar4.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_04.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar5.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_05.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar6.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_06.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar7.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_07.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar8.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_08.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar9.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_09.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar10.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_10.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar11.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_11.png",
+   "size": "256x256"
+  },
+  {
+   "name": "avatar12.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Human Avatars/Avatars_12.png",
+   "size": "256x256"
+  },
+  {
+   "name": "icon1.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_01.png",
+   "size": "64x64"
+  },
+  {
+   "name": "icon2.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_02.png",
+   "size": "64x64"
+  },
+  {
+   "name": "icon3.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_03.png",
+   "size": "64x64"
+  },
+  {
+   "name": "icon4.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_04.png",
+   "size": "64x64"
+  },
+  {
+   "name": "icon5.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_05.png",
+   "size": "64x64"
+  },
+  {
+   "name": "icon6.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_06.png",
+   "size": "64x64"
+  },
+  {
+   "name": "icon7.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_07.png",
+   "size": "64x64"
+  },
+  {
+   "name": "icon8.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_08.png",
+   "size": "64x64"
+  },
+  {
+   "name": "icon9.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_09.png",
+   "size": "64x64"
+  },
+  {
+   "name": "icon10.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Icons/Regular_10.png",
+   "size": "64x64"
+  },
+  {
+   "name": "9-paper.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Papers/RegularPaper.png",
+   "size": "192x192 packed"
+  },
+  {
+   "name": "9-paper-special.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Papers/SpecialPaper.png",
+   "size": "192x192 packed"
+  },
+  {
+   "name": "9-table.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Wood Table/WoodTable.png",
+   "size": "320x320 packed"
+  },
+  {
+   "name": "9-banner.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Banners/Banner.png",
+   "size": "320x320 packed"
+  },
+  {
+   "name": "3-bigbar.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Bars/BigBar_Base.png",
+   "size": "192x64 packed"
+  },
+  {
+   "name": "3-smallbar.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Bars/SmallBar_Base.png",
+   "size": "192x64 packed"
+  },
+  {
+   "name": "3-ribbon-blue.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/BigRibbons.png",
+   "size": "320x128 packed"
+  },
+  {
+   "name": "3-ribbon-red.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/BigRibbons.png",
+   "size": "320x128 packed"
+  },
+  {
+   "name": "3-ribbon-yellow.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/BigRibbons.png",
+   "size": "320x128 packed"
+  },
+  {
+   "name": "3-ribbon-purple.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/BigRibbons.png",
+   "size": "320x128 packed"
+  },
+  {
+   "name": "3-ribbon-black.png",
+   "source": "free/Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/BigRibbons.png",
+   "size": "320x128 packed"
+  },
+  {
+   "name": "old-button_blue_3slides.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Buttons/Button_Blue_3Slides.png",
+   "size": "192x64"
+  },
+  {
+   "name": "old-button_blue_3slides_pressed.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Buttons/Button_Blue_3Slides_Pressed.png",
+   "size": "192x64"
+  },
+  {
+   "name": "old-button_red_3slides.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Buttons/Button_Red_3Slides.png",
+   "size": "192x64"
+  },
+  {
+   "name": "old-button_red_3slides_pressed.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Buttons/Button_Red_3Slides_Pressed.png",
+   "size": "192x64"
+  },
+  {
+   "name": "old-button_hover_3slides.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Buttons/Button_Hover_3Slides.png",
+   "size": "192x64"
+  },
+  {
+   "name": "old-button_disable_3slides.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Buttons/Button_Disable_3Slides.png",
+   "size": "192x64"
+  },
+  {
+   "name": "old-button_blue_9slides.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Buttons/Button_Blue_9Slides.png",
+   "size": "192x192"
+  },
+  {
+   "name": "old-button_red_9slides.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Buttons/Button_Red_9Slides.png",
+   "size": "192x192"
+  },
+  {
+   "name": "old-button_hover_9slides.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Buttons/Button_Hover_9Slides.png",
+   "size": "192x192"
+  },
+  {
+   "name": "old-ribbon-blue.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Blue_3Slides.png",
+   "size": "192x64"
+  },
+  {
+   "name": "old-ribbon-red.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Red_3Slides.png",
+   "size": "192x64"
+  },
+  {
+   "name": "old-ribbon-yellow.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Yellow_3Slides.png",
+   "size": "192x64"
+  },
+  {
+   "name": "old-carved-9.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Banners/Carved_9Slides.png",
+   "size": "192x192"
+  },
+  {
+   "name": "old-banner-h.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png",
+   "size": "192x192"
+  },
+  {
+   "name": "old-banner-v.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Banners/Banner_Vertical.png",
+   "size": "192x192"
+  },
+  {
+   "name": "old-pointer.png",
+   "source": "old/Tiny Swords (Update 010)/UI/Pointers/01.png",
+   "size": "64x64"
+  }
+ ]
+}
