@@ -1,0 +1,260 @@
+{
+ "slash-light": {
+  "frameWidth": 60,
+  "frameHeight": 60,
+  "frames": 6,
+  "fps": 40,
+  "blend": "add",
+  "anim": "wipe",
+  "arcCentre": [
+   0.5587639106319578,
+   0.5093163287478072
+  ],
+  "arcRadius": 0.3554676480978299,
+  "arcStart": 0.20153081695582217,
+  "arcSpan": 5.361498467321039,
+  "sources": [
+   {
+    "plate": "slash-light/s2",
+    "seed": 7002,
+    "prompt": "a single thin curved sword slash crescent arc, sweeping from lower left to upper right, white-hot core fading to pale gold edges, tapered sharp tips, a few speed lines. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "slash-heavy": {
+  "frameWidth": 92,
+  "frameHeight": 92,
+  "frames": 7,
+  "fps": 34,
+  "blend": "add",
+  "anim": "wipe",
+  "arcCentre": [
+   0.5369665385075466,
+   0.5070404610884948
+  ],
+  "arcRadius": 0.36339127330731286,
+  "arcStart": 0.23514723621337494,
+  "arcSpan": 5.570966760238699,
+  "sources": [
+   {
+    "plate": "slash-heavy/s2",
+    "seed": 7002,
+    "prompt": "a single huge thick curved sword slash crescent, wide arc, blazing white core, orange and deep red outer edges, tapered sharp tips, flying embers along the arc. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "slash-crescent": {
+  "frameWidth": 64,
+  "frameHeight": 64,
+  "frames": 4,
+  "fps": 24,
+  "blend": "add",
+  "anim": "pulse",
+  "chord": 0.6484375,
+  "arcCentre": [
+   0.5388665686117605,
+   0.4857674779925743
+  ],
+  "sources": [
+   {
+    "plate": "slash-crescent/s1",
+    "seed": 7001,
+    "prompt": "a single crescent moon shaped energy blade wave, sharp pointed tips, bright white core, electric cyan and violet edges, motion streaks trailing behind it. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "burst-hit": {
+  "frameWidth": 40,
+  "frameHeight": 40,
+  "frames": 5,
+  "fps": 36,
+  "blend": "add",
+  "anim": "burst",
+  "sources": [
+   {
+    "plate": "burst-hit/s2",
+    "seed": 7002,
+    "prompt": "a small explosive impact starburst, sharp pointed rays radiating from the center, white center, yellow and orange rays, comic hit spark. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "burst-heavy": {
+  "frameWidth": 76,
+  "frameHeight": 76,
+  "frames": 7,
+  "fps": 30,
+  "blend": "add",
+  "anim": "burst",
+  "sources": [
+   {
+    "plate": "burst-heavy/s2",
+    "seed": 7002,
+    "prompt": "a powerful impact explosion flash, jagged spiky starburst with long sharp rays, white-hot center, orange red rim, debris sparks flying outward. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "flash-parry": {
+  "frameWidth": 84,
+  "frameHeight": 84,
+  "frames": 7,
+  "fps": 30,
+  "blend": "add",
+  "anim": "flare",
+  "sources": [
+   {
+    "plate": "flash-parry/s2",
+    "seed": 7002,
+    "prompt": "a brilliant four-pointed star lens flare, long thin horizontal and vertical spikes, intense white center, icy cyan glow, small sparkles. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "sparks-metal": {
+  "frameWidth": 52,
+  "frameHeight": 52,
+  "frames": 6,
+  "fps": 36,
+  "blend": "add",
+  "anim": "spray",
+  "origin": [
+   0.13802083333333334,
+   0.5
+  ],
+  "sources": [
+   {
+    "plate": "sparks-metal/s3",
+    "seed": 7003,
+    "prompt": "a spray of bright metallic sparks flying to the right from a point on the left, thin streaks, white and golden yellow, hot metal grinding sparks. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "ring-shock": {
+  "frameWidth": 96,
+  "frameHeight": 96,
+  "frames": 7,
+  "fps": 30,
+  "blend": "add",
+  "anim": "ring",
+  "sources": [
+   {
+    "plate": "ring-shock/s1",
+    "seed": 7001,
+    "prompt": "a single thin circular shockwave ring, perfect circle, glowing white edge, faint blue inner haze, energy distortion. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "bolt": {
+  "frameWidth": 40,
+  "frameHeight": 96,
+  "frames": 7,
+  "fps": 28,
+  "blend": "add",
+  "anim": "bolt",
+  "sources": [
+   {
+    "plate": "bolt/s1",
+    "seed": 7001,
+    "prompt": "a single jagged lightning bolt striking straight down from top to bottom, branching forks, white core, electric blue and violet glow. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   },
+   {
+    "plate": "bolt/s3",
+    "seed": 7003,
+    "prompt": "a single jagged lightning bolt striking straight down from top to bottom, branching forks, white core, electric blue and violet glow. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "arcs": {
+  "frameWidth": 56,
+  "frameHeight": 56,
+  "frames": 6,
+  "fps": 18,
+  "blend": "add",
+  "anim": "crackle",
+  "sources": [
+   {
+    "plate": "arcs/s1",
+    "seed": 7001,
+    "prompt": "small crackling electric arcs, tangled thin lightning filaments in a loose cluster, white and electric cyan. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   },
+   {
+    "plate": "arcs/s2",
+    "seed": 7002,
+    "prompt": "small crackling electric arcs, tangled thin lightning filaments in a loose cluster, white and electric cyan. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "crack-ground": {
+  "frameWidth": 88,
+  "frameHeight": 88,
+  "frames": 1,
+  "fps": 1,
+  "blend": "add",
+  "anim": "still",
+  "sources": [
+   {
+    "plate": "crack-ground/s1",
+    "seed": 7001,
+    "prompt": "top-down view of a cracked ground impact crater, glowing molten cracks radiating outward, orange glow in the cracks, dark scorched center. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "smoke-puff": {
+  "frameWidth": 44,
+  "frameHeight": 44,
+  "frames": 7,
+  "fps": 20,
+  "blend": "normal",
+  "anim": "puff",
+  "sources": [
+   {
+    "plate": "smoke-puff/s1",
+    "seed": 7001,
+    "prompt": "a soft round puff of grey white dust smoke cloud, stylized, cel shaded, few clean shapes. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ },
+ "shatter": {
+  "frameWidth": 84,
+  "frameHeight": 84,
+  "frames": 7,
+  "fps": 28,
+  "blend": "add",
+  "anim": "burst",
+  "sources": [
+   {
+    "plate": "shatter/s1",
+    "seed": 7001,
+    "prompt": "glass-like shards shattering outward from the center, golden yellow shards, white flash in the middle, broken guard. 2D game visual effect, hand-painted anime action effect, bold clean shapes, crisp edges, high contrast glowing energy, isolated on a pure solid black background, centered, nothing else in frame, no character, no weapon, no text, no border",
+    "workflow": "klein_edit.v1",
+    "model": "FLUX.2 klein 4B (Apache-2.0)"
+   }
+  ]
+ }
+}

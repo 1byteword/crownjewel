@@ -1,0 +1,1177 @@
+{
+ "sounds": {
+  "swing.light": {
+   "files": [
+    "swing-light_0.ogg",
+    "swing-light_1.ogg",
+    "swing-light_2.ogg",
+    "swing-light_3.ogg",
+    "swing-light_4.ogg"
+   ],
+   "peak": [
+    -1.0,
+    -8.85,
+    -10.78,
+    -1.0,
+    -8.88
+   ],
+   "loudness": [
+    -20.09,
+    -20.0,
+    -20.0,
+    -20.12,
+    -20.0
+   ],
+   "length": [
+    0.21,
+    0.277,
+    0.274,
+    0.21,
+    0.277
+   ],
+   "target": -20,
+   "sources": [
+    "freesound/403235.ogg",
+    "freesound/471097.ogg",
+    "freesound/547041.ogg"
+   ]
+  },
+  "swing.finisher": {
+   "files": [
+    "swing-finisher_0.ogg",
+    "swing-finisher_1.ogg",
+    "swing-finisher_2.ogg"
+   ],
+   "peak": [
+    -6.43,
+    -6.81,
+    -7.75
+   ],
+   "loudness": [
+    -18.0,
+    -18.0,
+    -18.0
+   ],
+   "length": [
+    0.381,
+    0.37,
+    0.374
+   ],
+   "target": -18,
+   "sources": [
+    "freesound/495390.ogg",
+    "freesound/522701.ogg",
+    "freesound/840716.ogg",
+    "freesound/840717.ogg",
+    "freesound/859973.ogg",
+    "freesound/867653.ogg"
+   ]
+  },
+  "swing.heavy": {
+   "files": [
+    "swing-heavy_0.ogg",
+    "swing-heavy_1.ogg",
+    "swing-heavy_2.ogg",
+    "swing-heavy_3.ogg"
+   ],
+   "peak": [
+    -9.37,
+    -5.5,
+    -4.54,
+    -9.11
+   ],
+   "loudness": [
+    -16.0,
+    -16.0,
+    -16.0,
+    -16.0
+   ],
+   "length": [
+    0.502,
+    0.559,
+    0.39,
+    0.502
+   ],
+   "target": -16,
+   "sources": [
+    "freesound/317849.ogg",
+    "freesound/434871.ogg",
+    "freesound/471097.ogg",
+    "freesound/485279.ogg",
+    "freesound/507470.ogg",
+    "freesound/607209.ogg",
+    "freesound/702097.ogg"
+   ]
+  },
+  "whiff.heavy": {
+   "files": [
+    "whiff-heavy_0.ogg",
+    "whiff-heavy_1.ogg",
+    "whiff-heavy_2.ogg"
+   ],
+   "peak": [
+    -10.22,
+    -6.29,
+    -5.44
+   ],
+   "loudness": [
+    -17.0,
+    -17.0,
+    -17.0
+   ],
+   "length": [
+    0.56,
+    0.569,
+    0.494
+   ],
+   "target": -17,
+   "sources": [
+    "freesound/495390.ogg",
+    "freesound/867652.ogg",
+    "freesound/867653.ogg"
+   ]
+  },
+  "heavy.windup": {
+   "files": [
+    "heavy-windup_0.ogg",
+    "heavy-windup_1.ogg",
+    "heavy-windup_2.ogg"
+   ],
+   "peak": [
+    -13.98,
+    -14.42,
+    -10.56
+   ],
+   "loudness": [
+    -22.0,
+    -22.0,
+    -22.0
+   ],
+   "length": [
+    0.4,
+    0.4,
+    0.4
+   ],
+   "target": -22,
+   "sources": [
+    "freesound/581594.ogg",
+    "freesound/587436.ogg",
+    "freesound/770037.ogg"
+   ]
+  },
+  "enemy.windup": {
+   "files": [
+    "enemy-windup_0.ogg",
+    "enemy-windup_1.ogg",
+    "enemy-windup_2.ogg"
+   ],
+   "peak": [
+    -9.16,
+    -7.29,
+    -3.99
+   ],
+   "loudness": [
+    -19.0,
+    -19.0,
+    -19.0
+   ],
+   "length": [
+    0.37,
+    0.37,
+    0.37
+   ],
+   "target": -19,
+   "sources": [
+    "freesound/587436.ogg",
+    "freesound/588276.ogg",
+    "freesound/770037.ogg"
+   ]
+  },
+  "hit.light.flesh": {
+   "files": [
+    "hit-light-flesh_0.ogg",
+    "hit-light-flesh_1.ogg",
+    "hit-light-flesh_2.ogg",
+    "hit-light-flesh_3.ogg",
+    "hit-light-flesh_4.ogg"
+   ],
+   "peak": [
+    -3.07,
+    -5.16,
+    -4.81,
+    -5.35,
+    -1.0
+   ],
+   "loudness": [
+    -16.0,
+    -16.0,
+    -16.0,
+    -16.0,
+    -16.33
+   ],
+   "length": [
+    0.231,
+    0.223,
+    0.24,
+    0.162,
+    0.12
+   ],
+   "target": -16,
+   "sources": [
+    "freesound/138480.ogg",
+    "freesound/365574.ogg",
+    "freesound/403532.ogg",
+    "freesound/482267.ogg",
+    "freesound/535362.ogg",
+    "freesound/545523.ogg",
+    "freesound/625305.ogg",
+    "freesound/625306.ogg",
+    "freesound/757508.ogg"
+   ]
+  },
+  "hit.light.armor": {
+   "files": [
+    "hit-light-armor_0.ogg",
+    "hit-light-armor_1.ogg",
+    "hit-light-armor_2.ogg",
+    "hit-light-armor_3.ogg",
+    "hit-light-armor_4.ogg"
+   ],
+   "peak": [
+    -4.2,
+    -5.65,
+    -4.29,
+    -3.63,
+    -5.23
+   ],
+   "loudness": [
+    -16.0,
+    -16.0,
+    -16.0,
+    -16.0,
+    -16.0
+   ],
+   "length": [
+    0.27,
+    0.226,
+    0.185,
+    0.206,
+    0.281
+   ],
+   "target": -16,
+   "sources": [
+    "kenney/impact-sounds/Audio/impactMetal_light_000.ogg",
+    "kenney/impact-sounds/Audio/impactMetal_light_001.ogg",
+    "kenney/impact-sounds/Audio/impactMetal_light_002.ogg",
+    "kenney/impact-sounds/Audio/impactMetal_light_003.ogg",
+    "kenney/impact-sounds/Audio/impactMetal_light_004.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_medium_000.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_medium_001.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_medium_002.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_medium_003.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_medium_004.ogg"
+   ]
+  },
+  "hit.finisher": {
+   "files": [
+    "hit-finisher_0.ogg",
+    "hit-finisher_1.ogg",
+    "hit-finisher_2.ogg"
+   ],
+   "peak": [
+    -7.49,
+    -8.38,
+    -9.81
+   ],
+   "loudness": [
+    -15.0,
+    -15.0,
+    -15.0
+   ],
+   "length": [
+    0.527,
+    0.576,
+    0.553
+   ],
+   "target": -15,
+   "sources": [
+    "kenney/impact-sounds/Audio/impactPunch_heavy_000.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_002.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_003.ogg"
+   ]
+  },
+  "hit.heavy.flesh": {
+   "files": [
+    "hit-heavy-flesh_0.ogg",
+    "hit-heavy-flesh_1.ogg",
+    "hit-heavy-flesh_2.ogg",
+    "hit-heavy-flesh_3.ogg"
+   ],
+   "peak": [
+    -1.91,
+    -2.47,
+    -2.86,
+    -2.89
+   ],
+   "loudness": [
+    -9.0,
+    -9.0,
+    -9.0,
+    -9.0
+   ],
+   "length": [
+    1.25,
+    1.186,
+    1.215,
+    1.215
+   ],
+   "target": -9,
+   "sources": [
+    "freesound/365574.ogg",
+    "freesound/629977.ogg",
+    "freesound/754420.ogg",
+    "freesound/754421.ogg",
+    "freesound/754423.ogg",
+    "freesound/754424.ogg",
+    "freesound/757508.ogg",
+    "freesound/868718.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_000.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_001.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_002.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_004.ogg"
+   ]
+  },
+  "hit.heavy.armor": {
+   "files": [
+    "hit-heavy-armor_0.ogg",
+    "hit-heavy-armor_1.ogg",
+    "hit-heavy-armor_2.ogg",
+    "hit-heavy-armor_3.ogg"
+   ],
+   "peak": [
+    -3.68,
+    -2.36,
+    -3.13,
+    -1.38
+   ],
+   "loudness": [
+    -9.0,
+    -9.0,
+    -9.0,
+    -9.0
+   ],
+   "length": [
+    1.219,
+    1.165,
+    1.237,
+    1.25
+   ],
+   "target": -9,
+   "sources": [
+    "freesound/754420.ogg",
+    "freesound/754421.ogg",
+    "freesound/754423.ogg",
+    "freesound/754424.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_heavy_000.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_heavy_001.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_heavy_003.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_heavy_004.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_000.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_001.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_002.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_004.ogg"
+   ]
+  },
+  "crit.accent": {
+   "files": [
+    "crit-accent_0.ogg",
+    "crit-accent_1.ogg",
+    "crit-accent_2.ogg"
+   ],
+   "peak": [
+    -3.48,
+    -5.69,
+    -5.17
+   ],
+   "loudness": [
+    -15.0,
+    -15.0,
+    -15.0
+   ],
+   "length": [
+    0.8,
+    0.8,
+    0.8
+   ],
+   "target": -15,
+   "sources": [
+    "freesound/330522.ogg",
+    "freesound/351372.ogg",
+    "freesound/657827.ogg"
+   ]
+  },
+  "hurt.player": {
+   "files": [
+    "hurt-player_0.ogg",
+    "hurt-player_1.ogg",
+    "hurt-player_2.ogg",
+    "hurt-player_3.ogg"
+   ],
+   "peak": [
+    -3.21,
+    -5.67,
+    -4.38,
+    -3.95
+   ],
+   "loudness": [
+    -12.0,
+    -12.0,
+    -12.0,
+    -12.0
+   ],
+   "length": [
+    0.29,
+    0.286,
+    0.228,
+    0.286
+   ],
+   "target": -12,
+   "sources": [
+    "freesound/211450.ogg",
+    "freesound/629977.ogg",
+    "freesound/868718.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_light_000.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_light_002.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_light_003.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_light_004.ogg",
+    "kenney/impact-sounds/Audio/impactPunch_heavy_003.ogg"
+   ]
+  },
+  "block.shield": {
+   "files": [
+    "block-shield_0.ogg",
+    "block-shield_1.ogg",
+    "block-shield_2.ogg",
+    "block-shield_3.ogg"
+   ],
+   "peak": [
+    -3.49,
+    -6.21,
+    -1.0,
+    -3.66
+   ],
+   "loudness": [
+    -15.0,
+    -15.0,
+    -15.37,
+    -15.0
+   ],
+   "length": [
+    0.174,
+    0.395,
+    0.301,
+    0.276
+   ],
+   "target": -15,
+   "sources": [
+    "freesound/138489.ogg",
+    "freesound/370203.ogg",
+    "freesound/371353.ogg",
+    "freesound/588277.ogg",
+    "kenney/impact-sounds/Audio/impactWood_medium_000.ogg",
+    "kenney/impact-sounds/Audio/impactWood_medium_001.ogg",
+    "kenney/impact-sounds/Audio/impactWood_medium_002.ogg",
+    "kenney/impact-sounds/Audio/impactWood_medium_003.ogg"
+   ]
+  },
+  "block.heavy": {
+   "files": [
+    "block-heavy_0.ogg",
+    "block-heavy_1.ogg",
+    "block-heavy_2.ogg"
+   ],
+   "peak": [
+    -2.3,
+    -1.19,
+    -2.09
+   ],
+   "loudness": [
+    -12.0,
+    -12.0,
+    -12.0
+   ],
+   "length": [
+    0.46,
+    0.333,
+    0.484
+   ],
+   "target": -12,
+   "sources": [
+    "kenney/impact-sounds/Audio/impactPlate_heavy_000.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_heavy_001.ogg",
+    "kenney/impact-sounds/Audio/impactPlate_heavy_004.ogg",
+    "kenney/impact-sounds/Audio/impactWood_heavy_000.ogg",
+    "kenney/impact-sounds/Audio/impactWood_heavy_001.ogg",
+    "kenney/impact-sounds/Audio/impactWood_heavy_003.ogg"
+   ]
+  },
+  "parry": {
+   "files": [
+    "parry_0.ogg",
+    "parry_1.ogg",
+    "parry_2.ogg",
+    "parry_3.ogg"
+   ],
+   "peak": [
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "loudness": [
+    -7.88,
+    -8.92,
+    -8.14,
+    -9.03
+   ],
+   "length": [
+    1.584,
+    1.488,
+    1.479,
+    1.653
+   ],
+   "target": -7.5,
+   "sources": [
+    "freesound/170709.ogg",
+    "freesound/181938.ogg",
+    "freesound/270588.ogg",
+    "freesound/321889.ogg",
+    "freesound/434338.ogg",
+    "freesound/434339.ogg",
+    "freesound/440069.ogg",
+    "freesound/471095.ogg"
+   ]
+  },
+  "parry.fail": {
+   "files": [
+    "parry-fail_0.ogg",
+    "parry-fail_1.ogg",
+    "parry-fail_2.ogg"
+   ],
+   "peak": [
+    -4.21,
+    -4.07,
+    -4.98
+   ],
+   "loudness": [
+    -13.0,
+    -13.0,
+    -13.0
+   ],
+   "length": [
+    0.309,
+    0.305,
+    0.311
+   ],
+   "target": -13,
+   "sources": [
+    "kenney/impact-sounds/Audio/impactSoft_heavy_000.ogg",
+    "kenney/impact-sounds/Audio/impactSoft_heavy_001.ogg",
+    "kenney/impact-sounds/Audio/impactSoft_heavy_002.ogg",
+    "kenney/impact-sounds/Audio/impactTin_medium_000.ogg",
+    "kenney/impact-sounds/Audio/impactTin_medium_002.ogg",
+    "kenney/impact-sounds/Audio/impactTin_medium_003.ogg"
+   ]
+  },
+  "posture.break": {
+   "files": [
+    "posture-break_0.ogg",
+    "posture-break_1.ogg"
+   ],
+   "peak": [
+    -1.0,
+    -1.0
+   ],
+   "loudness": [
+    -7.88,
+    -7.8
+   ],
+   "length": [
+    2.31,
+    2.346
+   ],
+   "target": -7.5,
+   "sources": [
+    "freesound/754423.ogg",
+    "freesound/754424.ogg",
+    "kenney/impact-sounds/Audio/impactGlass_heavy_001.ogg",
+    "kenney/impact-sounds/Audio/impactGlass_heavy_002.ogg"
+   ]
+  },
+  "dodge": {
+   "files": [
+    "dodge_0.ogg",
+    "dodge_1.ogg",
+    "dodge_2.ogg",
+    "dodge_3.ogg"
+   ],
+   "peak": [
+    -2.0,
+    -6.36,
+    -11.31,
+    -7.56
+   ],
+   "loudness": [
+    -22.0,
+    -22.0,
+    -22.0,
+    -22.0
+   ],
+   "length": [
+    0.256,
+    0.259,
+    0.259,
+    0.264
+   ],
+   "target": -22,
+   "sources": [
+    "freesound/495390.ogg",
+    "freesound/859973.ogg",
+    "freesound/867652.ogg",
+    "freesound/867653.ogg",
+    "kenney/impact-sounds/Audio/footstep_grass_000.ogg",
+    "kenney/impact-sounds/Audio/footstep_grass_001.ogg",
+    "kenney/impact-sounds/Audio/footstep_grass_002.ogg",
+    "kenney/impact-sounds/Audio/footstep_grass_003.ogg"
+   ]
+  },
+  "dodge.perfect": {
+   "files": [
+    "dodge-perfect_0.ogg",
+    "dodge-perfect_1.ogg"
+   ],
+   "peak": [
+    -2.71,
+    -7.69
+   ],
+   "loudness": [
+    -18.0,
+    -18.0
+   ],
+   "length": [
+    0.729,
+    0.725
+   ],
+   "target": -18,
+   "sources": [
+    "freesound/434871.ogg",
+    "freesound/683101.ogg"
+   ]
+  },
+  "footstep": {
+   "files": [
+    "footstep_0.ogg",
+    "footstep_1.ogg",
+    "footstep_2.ogg",
+    "footstep_3.ogg",
+    "footstep_4.ogg"
+   ],
+   "peak": [
+    -12.69,
+    -13.01,
+    -12.89,
+    -13.97,
+    -13.29
+   ],
+   "loudness": [
+    -30.0,
+    -30.0,
+    -30.0,
+    -30.0,
+    -30.0
+   ],
+   "length": [
+    0.159,
+    0.16,
+    0.161,
+    0.162,
+    0.161
+   ],
+   "target": -30,
+   "sources": [
+    "kenney/impact-sounds/Audio/footstep_grass_000.ogg",
+    "kenney/impact-sounds/Audio/footstep_grass_001.ogg",
+    "kenney/impact-sounds/Audio/footstep_grass_002.ogg",
+    "kenney/impact-sounds/Audio/footstep_grass_003.ogg",
+    "kenney/impact-sounds/Audio/footstep_grass_004.ogg"
+   ]
+  },
+  "stagger": {
+   "files": [
+    "stagger_0.ogg",
+    "stagger_1.ogg",
+    "stagger_2.ogg"
+   ],
+   "peak": [
+    -13.82,
+    -3.34,
+    -6.84
+   ],
+   "loudness": [
+    -22.0,
+    -22.0,
+    -22.0
+   ],
+   "length": [
+    0.341,
+    0.345,
+    0.342
+   ],
+   "target": -22,
+   "sources": [
+    "freesound/137252.ogg",
+    "freesound/384890.ogg",
+    "freesound/740037.ogg",
+    "kenney/impact-sounds/Audio/footstep_concrete_000.ogg",
+    "kenney/impact-sounds/Audio/footstep_concrete_002.ogg",
+    "kenney/impact-sounds/Audio/footstep_concrete_004.ogg"
+   ]
+  },
+  "kill": {
+   "files": [
+    "kill_0.ogg",
+    "kill_1.ogg",
+    "kill_2.ogg"
+   ],
+   "peak": [
+    -1.81,
+    -2.1,
+    -1.0
+   ],
+   "loudness": [
+    -10.0,
+    -10.0,
+    -10.23
+   ],
+   "length": [
+    1.696,
+    1.722,
+    1.76
+   ],
+   "target": -10,
+   "sources": [
+    "freesound/629977.ogg",
+    "freesound/74476.ogg",
+    "freesound/754421.ogg",
+    "freesound/754423.ogg",
+    "freesound/754424.ogg",
+    "freesound/868718.ogg"
+   ]
+  },
+  "boss.swing": {
+   "files": [
+    "boss-swing_0.ogg",
+    "boss-swing_1.ogg",
+    "boss-swing_2.ogg"
+   ],
+   "peak": [
+    -3.64,
+    -3.24,
+    -8.01
+   ],
+   "loudness": [
+    -14.0,
+    -14.0,
+    -14.0
+   ],
+   "length": [
+    0.664,
+    0.464,
+    0.597
+   ],
+   "target": -14,
+   "sources": []
+  },
+  "boss.slam": {
+   "files": [
+    "boss-slam_0.ogg",
+    "boss-slam_1.ogg"
+   ],
+   "peak": [
+    -1.0,
+    -1.0
+   ],
+   "loudness": [
+    -7.16,
+    -7.21
+   ],
+   "length": [
+    2.08,
+    2.041
+   ],
+   "target": -7,
+   "sources": [
+    "freesound/609588.ogg",
+    "freesound/754421.ogg",
+    "freesound/754422.ogg",
+    "kenney/sci-fi-sounds/Audio/lowFrequency_explosion_001.ogg"
+   ]
+  },
+  "thunder.charge": {
+   "files": [
+    "thunder-charge_0.ogg",
+    "thunder-charge_1.ogg"
+   ],
+   "peak": [
+    -8.07,
+    -7.43
+   ],
+   "loudness": [
+    -15.0,
+    -15.0
+   ],
+   "length": [
+    0.48,
+    0.48
+   ],
+   "target": -15,
+   "sources": [
+    "freesound/455680.ogg",
+    "freesound/512471.ogg"
+   ]
+  },
+  "thunder.strike": {
+   "files": [
+    "thunder-strike_0.ogg",
+    "thunder-strike_1.ogg"
+   ],
+   "peak": [
+    -1.0,
+    -1.0
+   ],
+   "loudness": [
+    -6.31,
+    -6.28
+   ],
+   "length": [
+    2.904,
+    3.047
+   ],
+   "target": -5.5,
+   "sources": [
+    "freesound/265247.ogg",
+    "freesound/512471.ogg",
+    "freesound/754421.ogg",
+    "freesound/754424.ogg",
+    "kenney/sci-fi-sounds/Audio/explosionCrunch_001.ogg",
+    "kenney/sci-fi-sounds/Audio/explosionCrunch_003.ogg"
+   ]
+  },
+  "thunder.residue": {
+   "files": [
+    "thunder-residue_0.ogg",
+    "thunder-residue_1.ogg",
+    "thunder-residue_2.ogg"
+   ],
+   "peak": [
+    -3.7,
+    -3.3,
+    -4.33
+   ],
+   "loudness": [
+    -22.0,
+    -22.0,
+    -22.0
+   ],
+   "length": [
+    0.486,
+    0.499,
+    0.485
+   ],
+   "target": -22,
+   "sources": [
+    "freesound/136542.ogg",
+    "freesound/265247.ogg",
+    "freesound/853286.ogg"
+   ]
+  },
+  "crescent.cast": {
+   "files": [
+    "crescent-cast_0.ogg",
+    "crescent-cast_1.ogg",
+    "crescent-cast_2.ogg"
+   ],
+   "peak": [
+    -3.3,
+    -3.76,
+    -4.24
+   ],
+   "loudness": [
+    -13.0,
+    -13.0,
+    -13.0
+   ],
+   "length": [
+    1.189,
+    1.178,
+    1.207
+   ],
+   "target": -13,
+   "sources": [
+    "freesound/178832.ogg",
+    "freesound/588276.ogg",
+    "freesound/707339.ogg",
+    "freesound/770037.ogg"
+   ]
+  },
+  "crescent.hit": {
+   "files": [
+    "crescent-hit_0.ogg",
+    "crescent-hit_1.ogg",
+    "crescent-hit_2.ogg"
+   ],
+   "peak": [
+    -1.73,
+    -2.17,
+    -2.87
+   ],
+   "loudness": [
+    -13.0,
+    -13.0,
+    -13.0
+   ],
+   "length": [
+    0.736,
+    0.729,
+    0.734
+   ],
+   "target": -13,
+   "sources": [
+    "freesound/415147.ogg",
+    "freesound/426322.ogg",
+    "freesound/547041.ogg"
+   ]
+  },
+  "bow.shoot": {
+   "files": [
+    "bow-shoot_0.ogg",
+    "bow-shoot_1.ogg",
+    "bow-shoot_2.ogg"
+   ],
+   "peak": [
+    -13.13,
+    -13.38,
+    -12.07
+   ],
+   "loudness": [
+    -22.0,
+    -22.0,
+    -22.0
+   ],
+   "length": [
+    0.25,
+    0.25,
+    0.25
+   ],
+   "target": -22,
+   "sources": [
+    "freesound/178832.ogg",
+    "freesound/434871.ogg",
+    "freesound/683101.ogg"
+   ]
+  },
+  "explode": {
+   "files": [
+    "explode_0.ogg",
+    "explode_1.ogg",
+    "explode_2.ogg"
+   ],
+   "peak": [
+    -1.5,
+    -2.03,
+    -1.0
+   ],
+   "loudness": [
+    -10.0,
+    -10.0,
+    -10.13
+   ],
+   "length": [
+    0.979,
+    0.984,
+    0.951
+   ],
+   "target": -10,
+   "sources": [
+    "freesound/336011.ogg",
+    "kenney/sci-fi-sounds/Audio/explosionCrunch_001.ogg",
+    "kenney/sci-fi-sounds/Audio/explosionCrunch_003.ogg",
+    "kenney/sci-fi-sounds/Audio/explosionCrunch_004.ogg",
+    "kenney/sci-fi-sounds/Audio/lowFrequency_explosion_000.ogg",
+    "kenney/sci-fi-sounds/Audio/lowFrequency_explosion_001.ogg"
+   ]
+  },
+  "ui.denied": {
+   "files": [
+    "ui-denied_0.ogg"
+   ],
+   "peak": [
+    -18.21
+   ],
+   "loudness": [
+    -26.0
+   ],
+   "length": [
+    0.14
+   ],
+   "target": -26,
+   "sources": []
+  },
+  "arrow.cut": {
+   "files": [
+    "arrow-cut_0.ogg",
+    "arrow-cut_1.ogg",
+    "arrow-cut_2.ogg"
+   ],
+   "peak": [
+    -6.46,
+    -5.37,
+    -6.49
+   ],
+   "loudness": [
+    -16.0,
+    -16.0,
+    -16.0
+   ],
+   "length": [
+    0.15,
+    0.15,
+    0.15
+   ],
+   "target": -16,
+   "sources": []
+  },
+  "sword.ember": {
+   "files": [
+    "sword-ember_0.ogg",
+    "sword-ember_1.ogg",
+    "sword-ember_2.ogg",
+    "sword-ember_3.ogg"
+   ],
+   "peak": [
+    -15.32,
+    -13.78,
+    -11.33,
+    -15.06
+   ],
+   "loudness": [
+    -25.0,
+    -25.0,
+    -25.0,
+    -25.0
+   ],
+   "length": [
+    0.4,
+    0.4,
+    0.4,
+    0.4
+   ],
+   "target": -25,
+   "sources": []
+  },
+  "sword.storm": {
+   "files": [
+    "sword-storm_0.ogg",
+    "sword-storm_1.ogg",
+    "sword-storm_2.ogg",
+    "sword-storm_3.ogg"
+   ],
+   "peak": [
+    -6.54,
+    -1.0,
+    -7.8,
+    -8.0
+   ],
+   "loudness": [
+    -25.0,
+    -25.22,
+    -25.0,
+    -25.0
+   ],
+   "length": [
+    0.195,
+    0.185,
+    0.158,
+    0.177
+   ],
+   "target": -25,
+   "sources": [
+    "freesound/136542.ogg",
+    "freesound/455680.ogg",
+    "freesound/512471.ogg",
+    "freesound/853286.ogg"
+   ]
+  },
+  "sword.moon": {
+   "files": [
+    "sword-moon_0.ogg",
+    "sword-moon_1.ogg",
+    "sword-moon_2.ogg",
+    "sword-moon_3.ogg"
+   ],
+   "peak": [
+    -15.45,
+    -15.4,
+    -14.81,
+    -13.37
+   ],
+   "loudness": [
+    -24.0,
+    -24.0,
+    -24.0,
+    -24.0
+   ],
+   "length": [
+    1.483,
+    1.486,
+    1.525,
+    1.516
+   ],
+   "target": -24,
+   "sources": [
+    "freesound/336425.ogg",
+    "freesound/349905.ogg",
+    "freesound/453499.ogg",
+    "freesound/825803.ogg"
+   ]
+  },
+  "sword.blood": {
+   "files": [
+    "sword-blood_0.ogg",
+    "sword-blood_1.ogg",
+    "sword-blood_2.ogg",
+    "sword-blood_3.ogg"
+   ],
+   "peak": [
+    -20.38,
+    -20.72,
+    -20.1,
+    -20.15
+   ],
+   "loudness": [
+    -25.0,
+    -25.0,
+    -25.0,
+    -25.0
+   ],
+   "length": [
+    0.35,
+    0.35,
+    0.35,
+    0.35
+   ],
+   "target": -25,
+   "sources": []
+  }
+ }
+}
