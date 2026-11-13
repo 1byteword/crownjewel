@@ -24,6 +24,7 @@ at `/writing/<slug>`. Source lives under `src/posts/` as Markdown.
 ├── src/posts/YYYY-MM-DD-slug.md     # Post sources (date prefix = sort key, not URL)
 ├── img/                             # Static images
 ├── blade-study/                     # Built game (Vite dist from ~/Documents/Game), served at /blade-study/
+├── aero-open/                       # Built game (Godot web export from ~/Documents/Game3), served at /aero-open/
 ├── dev.py                           # Local dev server with .html fallback (mirrors nginx)
 ├── publish                          # Markdown → HTML publisher
 ├── nginx.conf                       # Cache + gzip + security headers + legacy redirects
@@ -44,6 +45,12 @@ make dev                    # dev.py on :8000 -- matches prod URL routing
 ```bash
 (cd ~/Documents/Game && npm run build)
 rsync -a --delete --exclude 'art/zainan.png' ~/Documents/Game/dist/ blade-study/
+```
+
+## Update Aero Open
+
+```bash
+~/Documents/Game3/tools/publish_web.sh   # Godot web export -> aero-open/
 ```
 
 ## Publish a blog post
